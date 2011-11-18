@@ -1,0 +1,22 @@
+Host fzitunnel
+Hostname lotus.fzi.de
+User steudle
+LocalForward 7777 maserati:22
+Compression yes
+
+Host fzimaserati
+Hostname localhost
+User steudle
+Port 7777
+Compression yes
+ForwardX11 yes
+
+
+Host sshhska
+Hostname login.hs-karlsruhe.de
+User stjo1011
+LocalForward 7777 :80
+Compression yes
+
+# Hostname bitbucket.org
+# ProxyCommand /usr/local/bin/connect -S localhost:7070 %h %p

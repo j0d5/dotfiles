@@ -1,0 +1,44 @@
+# use glob syntax
+syntax: glob
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.tdo
+*.aux
+*.nav
+*.out
+*.toc
+*.snm
+*.blg
+*.ist
+.git
+.svn
+._*
+*.o
+*.a
+*~
+*.swp
+*.swo
+*bak*
+.depend
+.DS_Store
+tags
+.zhistory
+*.orig
+*.mk
+*.log
+*.bbl
+*.glo
+*.vrb
+*.1
+DerivedData
+moc_*
+*.pro.user*
+*.app/
+*.eclipse.*
+
+# switch to regexp syntax.
+# syntax: regexp
+

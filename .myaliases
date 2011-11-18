@@ -1,0 +1,45 @@
+####################################################
+##                                                ##
+## Johannes' alias settings                       ##
+## date: 2010/03/22                               ##
+##                                                ##
+####################################################
+
+if [ -f ~/.dotfiles/.global_aliases ]; then
+	. ~/.dotfiles/.global_aliases
+else
+  echo ".global_aliases  not found!"
+fi
+
+alias ..='cd ..'
+# alias ls='ls --color=auto'
+# alias dir='ls --color=auto --format=vertical'
+# alias vdir='ls --color=auto --format=long'
+alias ll='ls -Glh'
+alias la='ls -GAlh'
+# alias l='ls -CF --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+## Aenderungen bei allen angegebenen Logdateien live anzeigen:
+alias mylogs='sudo tail -f /var/log/{system.log,secure.log}' 
+
+## Die oeffentliche IP ausgeben:
+alias myip="wget -qO - http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'" 
+
+## ssh aliases
+
+## command aliases
+alias x='exit'
+alias c='clear'
+alias s='screen'
+alias r='screen -R'
+alias vi='vim'
+alias sls='screen -ls'
+alias o='open'
+alias p='ps aux | grep '
+
+# get top 10 shell commands:
+alias top10='print -l ? ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
+
