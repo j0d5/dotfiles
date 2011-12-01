@@ -18,6 +18,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias top='top -o cpu -n 30'
+alias gemacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+
 
 ## Aenderungen bei allen angegebenen Logdateien live anzeigen:
 alias mylogs='sudo tail -f /var/log/{system.log,secure.log}' 
