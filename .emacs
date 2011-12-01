@@ -1,6 +1,6 @@
 ;;
 ;; Author: Johannes
-;; Date: 2011/11/30
+;; Date: 2011/12/01
 ;;
 
 ;; read in PATH from .bashrc
@@ -8,7 +8,6 @@
   (setenv "PATH"
     (shell-command-to-string "source $HOME/.bashrc && printf $PATH")))
 
-(setq mac-option-modifier 'none)
 
 ;; disable startup screen
 (setq inhibit-startup-message t)
@@ -19,10 +18,24 @@
 ;;to set background color to black
 (set-background-color "black")
 
+;; highlight current line
+(global-hl-line-mode 1)
+;; set indent to 2
+(setq standard-indent 2)
+;; set default no tabs
+(setq-default indent-tabs-mode nil)
+
+;; Show line-number in the mode line
+(line-number-mode 1)
+;; Show column-number in the mode line
+(column-number-mode 1)
+
+;; set line wrapping
+(setq-default auto-fill-mode 1)
+(setq-default fill-column 80)
+
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/")
 
-;; add tex-path
-(setq exec-path (append exec-path '("/usr/texbin/")))
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 
