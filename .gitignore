@@ -35,7 +35,5 @@ DerivedData
 .hg/
 .hgignore
 *.autosave
-*.autosave
-*.el
 #*
 _*
