@@ -13,12 +13,13 @@ fi
 alias ..='cd ..'
 alias ll='ls -Glh'
 alias la='ls -GAlh'
-# alias l='ls -CF --color=auto'
+# alias l='ls -CF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias top='top -o cpu -n 30'
 alias gemacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias amacs='/usr/bin/aquamacs'
 
 
 ## Aenderungen bei allen angegebenen Logdateien live anzeigen:
