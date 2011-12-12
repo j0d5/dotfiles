@@ -8,7 +8,12 @@
 # if (( !isdarwin )) ; then
 if [ "$OSTYPE" != "darwin11.0" ] ; then
 	alias ls='ls --color=auto'
+else
+  alias gmacs='open /Applications/Emacs.app'
+  alias amacs='/usr/bin/aquamacs'
+  alias gvim='open /Applications/MacVim.app'
 fi
+
 
 alias ..='cd ..'
 alias ll='ls -Glh'
@@ -19,8 +24,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias top='top -o cpu -n 30'
-alias gemacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-alias amacs='/usr/bin/aquamacs'
 
 
 ## Aenderungen bei allen angegebenen Logdateien live anzeigen:
