@@ -19,7 +19,7 @@ export HISTFILE=~/.dotfiles/.zhistory
 export SAVEHIST=20000
 
 # some path variables
-export PATH=$PATH:/usr/local/bin:/usr/bin:/usr/local/sbin:/bin:~/.bin
+export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/bin:~/.bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export PATH=$PATH:/Users/johannes/QtSDK/Desktop/Qt/474/gcc/bin
 export NODE_PATH=/usr/local/lib/node
@@ -65,17 +65,6 @@ fi
 check_com -c dircolors && eval $(dircolors -b)
 # color setup for ls on OS X:
 isdarwin && export CLICOLOR=1
-
-# do MacPorts setup on darwin
-# if isdarwin && [[ -d /opt/local ]]; then
-#     # Note: PATH gets set in /etc/zprofile on Darwin, so this can't go into
-#     # zshenv.
-#     PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-#     MANPATH="/opt/local/share/man:$MANPATH"
-# fi
-
-# do Fink setup on darwin 
-# isdarwin && xsource /sw/bin/init.sh
 
 ## keybindings (run 'bindkeys' for details, more details via man zshzle)
 # use emacs style per default:
