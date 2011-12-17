@@ -2,7 +2,7 @@
 username=Johannes Steudle <johannes@steudle.eu>
 editor = gvim
 merge  = diffmerge
-ignore=~/.hgignore
+ignore=~/.dotfiles/.hgignore
 
 [defaults]
 commit = -v
@@ -25,7 +25,7 @@ cmd.diffmerge = diffmerge
 cmd.vimdiff = gvim
 opts.vimdiff = -f '+next' '+execute "DirDiff" argv(0) argv(1)'
 
-cmd.sourcetreediff=opendiff
+cmd.sourcetreediff=/Applications/p4merge.app/Contents/MacOS/p4merge
 opts.sourcetreediff=
 [merge-tools]
 diffmerge.executable=/usr/local/bin/diffmerge
@@ -40,10 +40,10 @@ sourcetreemerge.gui=False
 sourcetreebulkmerge.gui=False
 sourcetreemerge.binary=False
 sourcetreebulkmerge.executable=/Applications/SourceTree.app/Contents/Resources/hg-merge.sh
-sourcetreemerge.args=$local $other -ancestor $base -merge $output
+sourcetreemerge.args=$base $local $other $output
 sourcetreemerge.checkconflicts=True
 sourcetreemerge.premerge=True
-sourcetreemerge.executable=/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh
+sourcetreemerge.executable=/Applications/p4merge.app/Contents/MacOS/p4merge
 sourcetreebulkmerge.premerge=False
 sourcetreebulkmerge.binary=True
 

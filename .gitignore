@@ -37,3 +37,7 @@ DerivedData
 *.autosave
 #*
 _*
+*._aux
+*._aux
+*.fdb_latexmk
+.sconsign.dblite
