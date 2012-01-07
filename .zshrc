@@ -19,7 +19,7 @@ export HISTFILE=~/.dotfiles/.zhistory
 export SAVEHIST=20000
 
 # some path variables
-export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/bin:/sbin:/usr/texbin:~/.bin
+export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin:/usr/texbin:~/.bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export PATH=$PATH:/Users/johannes/QtSDK/Desktop/Qt/474/gcc/bin
 export NODE_PATH=/usr/local/lib/node
