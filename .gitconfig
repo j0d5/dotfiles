@@ -10,6 +10,14 @@
   ui          = true
   pager       = true
 
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+
 [color "branch"]
   current = yellow reverse
   local   = yellow
