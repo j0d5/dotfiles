@@ -19,8 +19,9 @@ export HISTFILE=~/.dotfiles/.zhistory
 export SAVEHIST=20000
 
 # some path variables
-export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin:/usr/texbin:~/.bin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+export PATH=$PATH:/usr/texbin:~/.bin
 export PATH=$PATH:/Users/johannes/QtSDK/Desktop/Qt/474/gcc/bin
 export NODE_PATH=/usr/local/lib/node
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:$PYTHONPATH
@@ -32,7 +33,6 @@ autoload -U colors
 compinit
 promptinit
 colors
-
 
 PS1='$['$'%{\e[01;32m%}%n@%{\e[0;34m%}%m%{\e[0;00m%}:%{\e[0;36m%}%*%{\e[0;00m%}:%{\e[0;31m%}%~%{\e[0;00m%}][%j]
 %(!.#.:) %{\e[00m%}'
