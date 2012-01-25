@@ -1,7 +1,7 @@
 Host fzitunnel
 Hostname lotus.fzi.de
 User steudle
-LocalForward 7777 maserati:22
+LocalForward 7777 mclaren:22
 Compression yes
 
 Host fzimaserati
