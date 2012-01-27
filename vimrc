@@ -92,6 +92,7 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest  " compiled object files
 set wildignore+=*.pyc             " Python byte code
 set wildignore+=*.spl             " compiled spelling word lists
 set wildignore+=*.sw?             " Vim swap files 
+set wildignore+=.DS_Store         " Mac files 
 
 set thesaurus+=$HOME/.vim/thesaurus/mthesaur.txt
 
