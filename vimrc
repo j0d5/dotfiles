@@ -82,6 +82,17 @@ set wildmode=list:longest,full " set command-line completion mode:
                                " the longest common  string
                                " - on second <Tab>, complete the next full match and show menu
 
+" Ignore these filenames during enhanced command line completion.
+set wildignore+=*/.idea/*,*/.project/*    " ignore IDE project files
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/* " ignore version control files
+set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif " binary images
+set wildignore+=*.luac            " Lua byte code
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest  " compiled object files
+set wildignore+=*.pyc             " Python byte code
+set wildignore+=*.spl             " compiled spelling word lists
+set wildignore+=*.sw?             " Vim swap files 
+
 set thesaurus+=$HOME/.vim/thesaurus/mthesaur.txt
 
 " --------------------
