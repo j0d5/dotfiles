@@ -2,7 +2,7 @@
 username=Johannes Steudle <johannes@steudle.eu>
 editor = gvim
 merge  = diffmerge
-ignore=~/.dotfiles/.hgignore
+ignore=~/.hgignore
 
 [defaults]
 commit = -v

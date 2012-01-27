@@ -41,7 +41,7 @@
 	logallrefupdates = true
 	editor = gvim
 	quotepath = false
-	excludesfile = ~/.dotfiles/.gitignore
+	excludesfile = ~/.gitignore
 
 [merge]
 	tool = diffmerge
