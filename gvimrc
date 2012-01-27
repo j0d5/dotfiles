@@ -15,7 +15,7 @@
 " --------------------
 "set the X11 font to use
 " --------------------
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
 " set guifont=DejaVu\ Sans\ Mono\ 9
 " set guifont=Liberation\ Mono\ 9
 " set guifont=Nimbus\ Mono\ L\ 10
