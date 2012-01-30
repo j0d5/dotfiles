@@ -1,9 +1,9 @@
 "#################################################
 "# Maintainer:	Johannes Steudle                ##
-"# Last change:	2010/05/14                      ##
+"# Last change:	2012/01/30                      ##
 "# .gvimrc                                      ##
 "#                                              ##
-"#     for Unix and OS/2:  ~/.gvimrc            ##
+"#     for Unix and Mac OS:  ~/.gvimrc          ##
 "#################################################
 
 
@@ -15,7 +15,8 @@
 " --------------------
 "set the X11 font to use
 " --------------------
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
 " set guifont=DejaVu\ Sans\ Mono\ 9
 " set guifont=Liberation\ Mono\ 9
 " set guifont=Nimbus\ Mono\ L\ 10
@@ -30,27 +31,24 @@ map! <S-Insert> <MiddleMouse>
 " --------------------
 " Only do this for Vim version 5.0 and later.
 " --------------------
-if version >= 500
-  set guioptions-=T " remove toolbar
-  set guioptions-=m " remove menubar
-  " set relativenumber
- 
-  " I like highlighting strings inside C comments
-  let c_comment_strings=1
+set guioptions-=T " remove toolbar
+set guioptions-=m " remove menubar
+" set relativenumber
 
-  set lines=70
-  set columns=90
+" I like highlighting strings inside C comments
+let c_comment_strings=1
 
-  " set transparency=8
-  " colorscheme johannes
+set lines=70
+set columns=90
 
-  " Switch on syntax highlighting if it wasn't on yet.
-  " if !exists("syntax_on")
-	" syntax off
-	" syntax on
-  " endif
+" set transparency=8
+" colorscheme johannes
 
-endif
+" Switch on syntax highlighting if it wasn't on yet.
+" if !exists("syntax_on")
+" syntax off
+" syntax on
+" endif
 
 " --------------------
 " SPELLCHECKING

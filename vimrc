@@ -1,9 +1,9 @@
 "#################################################
 "# Maintainer:  Johannes Steudle                ##
-"# Last change: 2011/12/13                      ##
+"# Last change: 2012/01/30                      ##
 "# .vimrc                                       ##
 "#                                              ##
-"#     for Unix and OS/2:  ~/.vimrc             ##
+"#     for Unix and Mac OS X:  ~/.vimrc         ##
 "#################################################
 
 
@@ -70,7 +70,7 @@ set incsearch            " incremental searching
 set ignorecase smartcase " Case-insensitive searching
 " nnoremap  :nohlsearch/    " press enter to hide highlighting
 
-"" Assume the /g flag is on :s substitutions to replace all matches in a line
+" Assume the /g flag is on :s substitutions to replace all matches in a line
 set gdefault
 
 " --------------------
@@ -103,8 +103,8 @@ set thesaurus+=$HOME/.vim/thesaurus/mthesaur.txt
 set updatecount=50   " Write swap file to disk after every 50 characters
 set backup           " Enable Backups of the current edited file
 set undofile				 " so is persistent undo ...
-set undolevels=500   " maximum number of changes that can be undone
-set undoreload=500   " maximum number lines to save for undo on a buffer reload
+set undolevels=100   " maximum number of changes that can be undone
+set undoreload=100   " maximum number lines to save for undo on a buffer reload
 au BufWinLeave * silent! mkview   " make vim save view (state) (folds, cursor, etc)
 au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, etc)
 
@@ -123,6 +123,7 @@ set viminfo='20,\"50,:20,%,n~/.vim/.viminfo
 " COLORSCHEME
 " --------------------
 colorscheme johannes_qt
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 
 " Fix my <Backspace> key (in Mac OS X Terminal)
 " set t_kb=
@@ -142,12 +143,11 @@ if has('autocmd')
   "" Enable filetype detection
   filetype on
   "" Load plugin files for specific file types
-  "" This is required to load latex-suite
   filetype plugin on
   "" Load the indent file for specific file types
   filetype indent on
 
-  " autocmd BufEnter * cd %:p:h
+  autocmd BufEnter * cd %:p:h
 
   "" Transparent editing of gpg binary and ascii armor encrypted files.
   "" By Wouter Hanegraaff <wouter@blub.net>
@@ -544,6 +544,8 @@ inoremap <C-L> @@@<ESC>hhkywjl?@@@<CR>P/@@@<CR>3s
 
 " page down with <Space>
 " nmap <Space> <PageDown>
+
+noremap <F6> :GundoToggle<CR>
 
 " --------------------
 " Omni Completion
