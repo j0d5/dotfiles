@@ -21,4 +21,5 @@ alias e='smartextract'
 alias o='open'
 alias fif='find . -type f \( -name "*.c*" -o -name "*.h" \) -print | xargs grep -in'
 alias loc='find . -type f \( -name "*.c*" -o -name "*.h" -o -name "*.py" -o -name "*.sh" \) -print | xargs cat | wc -l'
+alias gsak='wine .wine/drive_c/Program\ Files/gsak/gsak.exe'
 
