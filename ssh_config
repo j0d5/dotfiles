@@ -1,8 +1,16 @@
 Host sshhska
 Hostname login.hs-karlsruhe.de
 User stjo1018
-LocalForward 7777 :80
+LocalForward 9050 :80
 Compression yes
+
+Host vserver_proxy
+HostName 109.73.50.223
+Port 22
+User johannes
+PasswordAuthentication no
+DynamicForward 9050
+ProxyCommand connect -S stjo1018@socks.hs-karlsruhe.de:1080 %h %p
 
 # Host fzitunnel
 # Hostname lotus.fzi.de
@@ -18,5 +26,8 @@ Compression yes
 # ForwardX11 yes
 # 
 
+# Hostname blackjay.de
+# ProxyCommand /usr/local/bin/connect -S localhost:9050 %h %p
+
 # Hostname bitbucket.org
-# ProxyCommand /usr/local/bin/connect -S localhost:7070 %h %p
+# ProxyCommand /usr/local/bin/connect -S localhost:9050 %h %p

@@ -40,7 +40,7 @@
 	filemode = true
 	bare = false
 	logallrefupdates = true
-	editor = gvim
+	editor = mvim
 	quotepath = false
 	excludesfile = ~/.gitignore
 
