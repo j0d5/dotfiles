@@ -263,12 +263,6 @@ if has('autocmd')
     autocmd Filetype mail if has('syntax') | set spell textwidth=70 wrap nonumber | endif
   augroup END
 
-  augroup jemdoc
-    autocmd!
-    autocmd BufNewFile,BufRead *.jemdoc set filetype=jemdoc
-    autocmd Filetype jemdoc setlocal comments=:#,fb:-,fb:.,fb:--,fb:..,fb:\:
-  augroup END
-
   "" Note: The autocommand event is defined to avoid setting this augroup when in the
   "" NERD tree buffer, which causes a conflict with its color settings. 
   augroup highlightextrawhitespace
@@ -283,10 +277,10 @@ if has('autocmd')
     "autocmd Syntax * syntax match ExtraWhitespace /^\t*\zs \+/
   augroup END
 
-  augroup includesyntaxindictionary
-    autocmd!
-    autocmd FileType * exe('setl dict+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
-  augroup END
+  " augroup includesyntaxindictionary
+  "   autocmd!
+  "   autocmd FileType * exe('setl dict+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
+  " augroup END
 endif
 
 " --------------------
