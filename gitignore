@@ -41,3 +41,4 @@ _*
 *._aux
 *.fdb_latexmk
 .sconsign.dblite
+*.class
