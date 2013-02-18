@@ -11,6 +11,7 @@
 *.snm
 *.blg
 *.ist
+*.pyc
 .svn
 ._*
 *.o
