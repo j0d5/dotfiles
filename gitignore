@@ -43,3 +43,6 @@ _*
 *.fdb_latexmk
 .sconsign.dblite
 *.class
+*.synctex.gz
+*.fls
+
