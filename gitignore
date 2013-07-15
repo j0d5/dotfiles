@@ -45,4 +45,4 @@ _*
 *.class
 *.synctex.gz
 *.fls
-
+*.sublime-workspace
