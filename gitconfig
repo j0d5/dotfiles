@@ -2,6 +2,9 @@
 	name = Johannes Steudle
 	email = johannes@steudle.eu
 
+[push]
+default = simple
+
 [color]
   diff        = auto
   status      = auto
@@ -56,7 +59,7 @@
 	cmd = diffmerge $LOCAL $REMOTE
 [difftool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
