@@ -1,3 +1,4 @@
+echo 'loading jaybook.path.zsh'
 export PATH=$HOME/.bin:$PATH
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export PATH=$PATH:/usr/texbin

@@ -1,5 +1,7 @@
 ## Johannes' global alias settings                ##
+echo 'setting global aliases'
 alias ..='cd ..'
+alias l='ls -l'
 alias ll='ls -Glh'
 alias la='ls -GAlh'
 alias lt='ls -GAlhTt'

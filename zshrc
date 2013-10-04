@@ -34,9 +34,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(hosts git)
+plugins=(hosts git mercurial git-flow django brew ant github python sublime)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-source $ZSH_CUSTOM/hosts/_motd.zsh

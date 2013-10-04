@@ -3,3 +3,4 @@
 #
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
+source $ZSH_CUSTOM/hosts/_motd.zsh

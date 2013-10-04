@@ -1,3 +1,4 @@
+echo 'loading functions'
 function extract() {
     unset REMOVE_ARCHIVE
     
