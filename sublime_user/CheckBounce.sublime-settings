@@ -1,0 +1,15 @@
+{
+  // Optionally define regular expressions to set the scope in which spelling should
+  // be checked. The regex should define a named group called "checktext", which the
+  // package will use to extract the text to check. For example, a regex to skip the
+  // preamble in a LaTeX document might look like this:
+  //    (?s)(?<=\\begin\{document\})(?P<checktext>.*)
+  // This expression would only match text between HTML tags:
+  //    (\<\w+\>)(?P<checktext>.*)(\</\w+\>)
+  // Each one must appear in the dictionary below with the key set to the syntax name
+  // and the value set to the regular expression. Remember to double your backslashes.
+  "syntax_regexes":
+  {
+    "LaTeX": ["(?s)(?<=\\\\begin\\{document\\})(?P<checktext>.*)", "[^\\item]"]
+  },
+}
