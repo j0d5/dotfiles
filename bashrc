@@ -63,11 +63,11 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.dotfiles/.mybash ]; then
-	. ~/.dotfiles/.mybash
+if [ -f ~/.dotfiles/mybash ]; then
+	. ~/.dotfiles/mybash
 fi
 # Alias definitions.
-if [ -f ~/.dotfiles/.global_aliases ]; then
-	. ~/.dotfiles/.global_aliases
+if [ -f ~/.dotfiles/global_aliases ]; then
+	. ~/.dotfiles/global_aliases
 fi
 

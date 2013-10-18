@@ -17,7 +17,6 @@ export HISTTIMEFORMAT="%A  %Y-%m-%d  [%T %z] "
 export HISTCONTROL=ignoreboth:erasedups
 export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/bin:~/.bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
-export PATH=$PATH:/Users/johannes/QtSDK/Desktop/Qt/474/gcc/bin
 
 
 # prompt settings
