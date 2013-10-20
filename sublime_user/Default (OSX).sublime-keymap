@@ -1,4 +1,0 @@
-[
-    { "keys": ["super+alt+s"], "command": "act_on_word"},
-    { "keys": ["super+alt+a"], "command": "check_bounce_cycle"}
-]
