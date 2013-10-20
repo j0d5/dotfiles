@@ -3,4 +3,4 @@
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "sublime_user"]
 	path = sublime_user
-	url = https://github.com/johannes82/sublime_user.git
+	url = /Users/johannes/.dotfiles/sublime_user
