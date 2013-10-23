@@ -49,10 +49,10 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Anaconda",
 		"Emmet",
-		"SublimeGit"
+		"Anaconda",
+		"SublimeGit",
+		"Vintage"
 	],
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
