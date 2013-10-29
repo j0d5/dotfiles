@@ -17,4 +17,4 @@ adbks() {
 	else
 		adb -e emu kill && emulator -avd $1 -no-window &
 	fi
-}
+}alias sshBuildUbuntu=ssh jst2hi@bsot-build.hi.de.bosch.com
