@@ -14,12 +14,10 @@ alias myip="wget -qO - http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'"
 ## command aliases
 alias x='exit'
 alias c='clear'
-alias s='screen'
-alias r='screen -R'
 alias vi='vim'
-alias sls='screen -ls'
-alias zrc='vim ~/.zshrc'
 alias e='smartextract'
 alias o='open'
+# find in files
 alias fif='find . -type f \( -name "*.c*" -o -name "*.h" \) -print | xargs grep -in'
+# lines of code
 alias loc='find . -type f \( -name "*.c*" -o -name "*.h" -o -name "*.py" -o -name "*.sh" \) -print | xargs cat | wc -l'
