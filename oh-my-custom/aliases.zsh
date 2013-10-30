@@ -8,7 +8,6 @@ alias lt='ls -GAlhTt'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias top='top -o cpu -n 30'
 alias mylogs='sudo tail -f /var/log/{system.log,secure.log}'
 alias myip="wget -qO - http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'"
 ## command aliases

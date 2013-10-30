@@ -1,3 +1,5 @@
+# general
+alias top='top -o cpu -n 30'
 ## Johannes' jaybook alias settings                ##
 alias gvim='open /Applications/MacVim.app'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
