@@ -1,9 +1,6 @@
 [user]
-  name = Johannes Steudle
-  email = johannes@steudle.eu
-
-[push]
-  default = simple
+  name  = Johannes Steudle
+  email = external.johannes.steudle@bosch-softtec.com
 
 [color]
   diff        = auto
