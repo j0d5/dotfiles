@@ -1,3 +1,6 @@
+# general
+alias genyshell='/Applications/Genymotion\ Shell.app/Contents/MacOS/genyshell'
+
 # ant aliases
 alias antbd='ant clean debug -Dsdk.dir=/Applications/android-sdk -Dndk.dir=/Applications/android-ndk-r9'
 alias antbr='ant clean release -Dsdk.dir=/Applications/android-sdk -Dndk.dir=/Applications/android-ndk-r9'

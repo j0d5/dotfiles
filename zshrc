@@ -7,7 +7,7 @@
 ## Description: .zshrc general settings         ##
 ##                                              ##
 ##################################################
- 
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
@@ -34,6 +34,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(hosts git mercurial git-flow django brew ant github python sublime)
+plugins=(hosts git git-flow ant python autojump)
 
 source $ZSH/oh-my-zsh.sh
