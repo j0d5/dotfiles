@@ -1,5 +1,4 @@
 {
-	// "http_proxy": "localhost:8080",
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -19,8 +18,13 @@
 		"Python Checker",
 		"SideBarEnhancements",
 		"SmartMarkdown",
+		"sublime-gradle",
 		"SublimeGit",
 		"sublimelint",
 		"Wombat Theme"
+	],
+	"repositories":
+	[
+		"https://github.com/koizuss/sublime-gradle"
 	]
 }

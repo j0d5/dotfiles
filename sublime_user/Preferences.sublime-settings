@@ -1,14 +1,14 @@
 {
-	"atomic_save": false,
+	// "atomic_save": false,
 	"bold_folder_labels": true,
-	"caret_style": "smooth",
-	"close_windows_when_empty": false,
+	// "close_windows_when_empty": false,
 	"color_scheme": "Packages/Color Scheme - Default/Cobalt.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": false,
+  "always_show_minimap_viewport": true,
 	"file_exclude_patterns":
 	[
 		".DS_*",
@@ -49,22 +49,12 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Emmet",
 		"Anaconda",
 		"SublimeGit",
-		"Vintage"
+		"Emmet"
 	],
-	"line_padding_bottom": 0,
-	"line_padding_top": 0,
 	"margin": 0,
-	"match_brackets": true,
-	"match_brackets_braces": true,
-	"match_brackets_content": true,
-	"match_brackets_square": true,
-	"match_tags": true,
 	"open_files_in_new_window": true,
-	"remember_open_files": true,
-	"remember_open_folders": true,
 	"rulers":
 	[
 		80
@@ -74,9 +64,5 @@
 	"show_full_path": true,
 	"spell_check": false,
 	"tab_size": 2,
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"wide_caret": true,
-	"word_wrap": true,
-	"wrap_width": 80
+	"trim_trailing_white_space_on_save": true
 }
