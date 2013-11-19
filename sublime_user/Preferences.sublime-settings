@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Cobalt.tmTheme",
+	"color_scheme": "Packages/Base16 Color Schemes/base16-ocean.dark.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -47,8 +47,9 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Anaconda",
-		"Vintage"
+		"Vintage",
+		"Vintageous",
+		"Anaconda"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,

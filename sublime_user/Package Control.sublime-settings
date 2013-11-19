@@ -1,8 +1,10 @@
 {
+	"http_proxy": "localhost:8080",
 	"installed_packages":
 	[
 		"AdvancedNewFile",
 		"Anaconda",
+		"Base16 Color Schemes",
 		"Case Conversion",
 		"CMake",
 		"CodeSearch",
@@ -16,6 +18,7 @@
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
 		"Python Checker",
+		"RemoteEdit",
 		"SideBarEnhancements",
 		"SmartMarkdown",
 		"sublime-gradle",
