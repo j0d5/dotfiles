@@ -3,7 +3,7 @@
   email = johannes@steudle.eu
 
 [push]
-  default = simple
+  default = matching
 
 [color]
   diff        = auto
