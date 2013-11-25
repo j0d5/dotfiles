@@ -5,6 +5,21 @@
 [push]
   default = matching
 
+[alias]
+  ci = commit
+  st = status
+  br = branch
+  co = checkout
+  fe = fetch -v
+  df = diff
+  dfi = diff --ignore-all-space
+  lg = log -p
+  unstage = 'reset HEAD --'
+  last = 'log -1 HEAD'
+  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+  sh = show
+  sf = diff --name-status
+
 [color]
   diff        = auto
   status      = auto
@@ -12,15 +27,6 @@
   interactive = auto
   ui          = true
   pager       = true
-
-[alias]
-  st = status
-  ci = commit
-  fe = fetch -v
-  br = branch
-  co = checkout
-  df = diff
-  lg = log -p
 
 [color "branch"]
   current = yellow reverse
@@ -39,12 +45,7 @@
   untracked = cyan
 
 [core]
-  repositoryformatversion = 0
-  filemode = true
-  bare = false
-  logallrefupdates = true
   editor = mvim
-  quotepath = false
   excludesfile = ~/.gitignore
 
 [merge]
