@@ -4,6 +4,7 @@
 	[
 		"AdvancedNewFile",
 		"Anaconda",
+		"Andrew",
 		"Base16 Color Schemes",
 		"Case Conversion",
 		"CMake",
@@ -15,6 +16,7 @@
 		"LaTeX-cwl",
 		"LaTeXing",
 		"Markdown Preview",
+		"MarkdownEditing",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
 		"Python Checker",
@@ -24,6 +26,7 @@
 		"sublime-gradle",
 		"SublimeGit",
 		"sublimelint",
+		"Theme - Soda",
 		"Vintageous",
 		"Wombat Theme"
 	],

@@ -1,0 +1,64 @@
+[user]
+	name = Johannes Steudle
+	email = external.johannes.steudle@bosch-softtec.com
+[core]
+	excludesfile = /Users/johannes/.gitignore
+
+[push]
+  default = matching
+
+[diff]
+#	tool = Kaleidoscope
+tool = sourcetree
+
+[difftool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = true
+
+[alias]
+ci = commit
+st = status
+br = branch
+co = checkout
+df = diff
+dfi = diff --ignore-all-space
+lg = log -p
+unstage = 'reset HEAD --'
+last = 'log -1 HEAD'
+new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+sh = show
+sf = diff --name-status
+
+[color]
+status = auto
+branch = auto
+interactive = auto
+diff = auto
+
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path =
+
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+
+[mergetool]
+	keepBackup = true
+	prompt = false
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false
+
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+
+[merge]
+	tool = Kaleidoscope
