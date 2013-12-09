@@ -1,9 +1,9 @@
 [user]
-  name = Johannes Steudle
-  email = external.johannes.steudle@bosch-softtec.com
+	name = Johannes Steudle
+	email = external.johannes.steudle@bosch-softtec.com
 
 [core]
-  excludesfile = /Users/johannes/.gitignore
+	excludesfile = /Users/johannes/.gitignore
   editor = subl
 
 [push]
@@ -72,12 +72,12 @@
   trustExitCode = true
 
 [difftool "sourcetree"]
-  cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-  path =
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path = 
 
 [mergetool "sourcetree"]
-  cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-  trustExitCode = true
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
