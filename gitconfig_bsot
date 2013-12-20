@@ -23,6 +23,7 @@
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
   sh = show
   sf = diff --name-status
+	up = "!git remote update -p; git merge --ff-only @{u}"
 
 [color]
   diff        = auto
@@ -76,7 +77,7 @@
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
 
 [difftool "Kaleidoscope"]

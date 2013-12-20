@@ -47,8 +47,8 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Anaconda",
 		"Vintageous",
+		"Anaconda",
 		"Vintage",
 		"Markdown"
 	],
@@ -60,6 +60,7 @@
 	],
 	"scroll_past_end": true,
 	"scroll_speed": 2,
+	"show_encoding": true,
 	"show_full_path": true,
 	"spell_check": false,
 	"tab_size": 2,
