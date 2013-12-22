@@ -1,6 +1,29 @@
 [user]
-  name  = Johannes Steudle
+  name = Johannes Steudle
   email = external.johannes.steudle@bosch-softtec.com
+
+[core]
+  excludesfile = /Users/johannes/.gitignore
+  editor = subl
+
+[push]
+  default = matching
+
+[alias]
+  ci = commit
+  st = status
+  br = branch
+  co = checkout
+  fe = fetch -v
+  df = diff
+  dfi = diff --ignore-all-space
+  lg = log -p
+  unstage = 'reset HEAD --'
+  last = 'log -1 HEAD'
+  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+  sh = show
+  sf = diff --name-status
+  up = "!git remote update -p; git merge --ff-only @{u}"
 
 [color]
   diff        = auto
@@ -8,21 +31,11 @@
   branch      = auto
   interactive = auto
   ui          = true
-  pager       = true
-
-[alias]
-  st = status
-  ci = commit
-  fe = fetch -v
-  br = branch
-  co = checkout
-  df = diff
-  lg = log -p
 
 [color "branch"]
-  current = yellow reverse
+  current = green reverse
   local   = yellow
-  remote  = green
+  remote  = cyan
 
 [color "diff"]
   meta = yellow bold
@@ -31,33 +44,45 @@
   new  = green bold
 
 [color "status"]
-  added     = yellow
-  changed   = green
-  untracked = cyan
+  added     = green
+  changed   = yellow
+  untracked = red
 
-[core]
-  repositoryformatversion = 0
-  filemode = true
-  bare = false
-  logallrefupdates = true
-  editor = mvim
-  quotepath = false
-  excludesfile = ~/.gitignore
+# [color "interactive"]
 
-[merge]
-  tool = diffmerge
 
-[mergetool "diffmerge"]
-  cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
-  trustExitCode = true
 [diff]
-  tool = diffmerge
-[difftool "diffmerge"]
-  cmd = diffmerge $LOCAL $REMOTE
-[difftool "sourcetree"]
+  # tool = Kaleidoscope
+  tool = sourcetree
+[merge]
+  # tool = Kaleidoscope
+  tool = sourcetree
+
+[mergetool]
+  keepBackup = true
+  prompt = false
+[difftool]
+  prompt = false
+
+[difftool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
   path =
-[mergetool "sourcetree"]
+
+[mergetool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
   trustExitCode = true
 
+[difftool "sourcetree"]
+  cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+  path =
+
+[mergetool "sourcetree"]
+  cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+  trustExitCode = true
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true

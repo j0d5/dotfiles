@@ -19,6 +19,7 @@
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
   sh = show
   sf = diff --name-status
+  up = "!git remote update -p; git merge --ff-only @{u}"
 
 [color]
   diff        = auto
