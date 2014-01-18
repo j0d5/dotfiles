@@ -47,10 +47,10 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Markdown",
-		"Vintage",
 		"Vintageous",
-		"Anaconda"
+		"Vintage",
+		"Anaconda",
+		"Markdown"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
