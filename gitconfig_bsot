@@ -1,10 +1,10 @@
 [user]
-	name = Johannes Steudle
+  name = Johannes Steudle
 	email = external.johannes.steudle@bosch-softtec.com
 
 [core]
-	excludesfile = /Users/johannes/.gitignore
   editor = subl
+  excludesfile = ~/.gitignore
 
 [push]
   default = matching
@@ -24,7 +24,7 @@
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
   sh = show
   sf = diff --name-status
-	up = "!git remote update -p; git merge --ff-only @{u}"
+  up = "!git remote update -p; git merge --ff-only @{u}"
 
 [color]
   diff        = auto
@@ -32,6 +32,7 @@
   branch      = auto
   interactive = auto
   ui          = true
+  pager       = true
 
 [color "branch"]
   current = green reverse
@@ -51,10 +52,10 @@
 
 # [color "interactive"]
 
-
 [diff]
   # tool = Kaleidoscope
   tool = sourcetree
+
 [merge]
   # tool = Kaleidoscope
   tool = sourcetree
@@ -62,6 +63,7 @@
 [mergetool]
   keepBackup = true
   prompt = false
+
 [difftool]
   prompt = false
 
