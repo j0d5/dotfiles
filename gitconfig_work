@@ -3,8 +3,8 @@
   email = external.johannes.steudle@bosch-softtec.com
 
 [core]
-  excludesfile = /Users/johannes/.gitignore
   editor = subl
+  excludesfile = ~/.gitignore
 
 [push]
   default = matching
@@ -18,6 +18,7 @@
   df = diff
   dfi = diff --ignore-all-space
   lg = log -p
+  ll = log --pretty=oneline --graph
   unstage = 'reset HEAD --'
   last = 'log -1 HEAD'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
@@ -31,6 +32,7 @@
   branch      = auto
   interactive = auto
   ui          = true
+  pager       = true
 
 [color "branch"]
   current = green reverse
@@ -50,10 +52,10 @@
 
 # [color "interactive"]
 
-
 [diff]
   # tool = Kaleidoscope
   tool = sourcetree
+
 [merge]
   # tool = Kaleidoscope
   tool = sourcetree
@@ -61,6 +63,7 @@
 [mergetool]
   keepBackup = true
   prompt = false
+
 [difftool]
   prompt = false
 
@@ -73,12 +76,12 @@
   trustExitCode = true
 
 [difftool "sourcetree"]
-  cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-  path =
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path =
 
 [mergetool "sourcetree"]
-  cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-  trustExitCode = true
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"

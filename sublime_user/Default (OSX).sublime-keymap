@@ -1,4 +1,7 @@
 [
     { "keys": ["super+alt+s"], "command": "act_on_word"},
-    { "keys": ["super+alt+a"], "command": "check_bounce_cycle"}
+    { "keys": ["super+alt+a"], "command": "check_bounce_cycle"},
+    { "keys": ["alt+up"], "command": "swap_line_up"},
+    { "keys": ["alt+down"], "command": "swap_line_down"},
+    { "keys": ["super+alt+down"], "command": "duplicate_line"}
 ]

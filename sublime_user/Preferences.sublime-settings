@@ -47,10 +47,17 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
+<<<<<<< HEAD
 		"Markdown",
 		"Anaconda",
 		"Vintageous",
 		"Vintage"
+=======
+		"Vintageous",
+		"Vintage",
+		"Markdown",
+		"Anaconda"
+>>>>>>> 98bbe17365e769ee3fd029016a50d26a6e0ba888
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,

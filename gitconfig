@@ -2,6 +2,10 @@
   name = Johannes Steudle
   email = johannes@steudle.eu
 
+[core]
+  editor = subl
+  excludesfile = ~/.gitignore
+
 [push]
   default = matching
 
@@ -14,6 +18,7 @@
   df = diff
   dfi = diff --ignore-all-space
   lg = log -p
+  ll = log --pretty=oneline --graph
   unstage = 'reset HEAD --'
   last = 'log -1 HEAD'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
@@ -30,9 +35,9 @@
   pager       = true
 
 [color "branch"]
-  current = yellow reverse
+  current = green reverse
   local   = yellow
-  remote  = green
+  remote  = cyan
 
 [color "diff"]
   meta = yellow bold
@@ -41,28 +46,46 @@
   new  = green bold
 
 [color "status"]
-  added     = yellow
-  changed   = green
-  untracked = cyan
+  added     = green
+  changed   = yellow
+  untracked = red
 
-[core]
-  editor = mvim
-  excludesfile = ~/.gitignore
+# [color "interactive"]
+
+[diff]
+  # tool = Kaleidoscope
+  tool = sourcetree
 
 [merge]
-  tool = diffmerge
+  # tool = Kaleidoscope
+  tool = sourcetree
 
-[mergetool "diffmerge"]
-  cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
-  trustExitCode = true
-[diff]
-  tool = diffmerge
-[difftool "diffmerge"]
-  cmd = diffmerge $LOCAL $REMOTE
-[difftool "sourcetree"]
+[mergetool]
+  keepBackup = true
+  prompt = false
+
+[difftool]
+  prompt = false
+
+[difftool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
   path =
-[mergetool "sourcetree"]
+
+[mergetool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
   trustExitCode = true
 
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path =
+
+[mergetool "sourcetree"]
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
