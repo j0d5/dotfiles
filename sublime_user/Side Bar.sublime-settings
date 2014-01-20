@@ -1,6 +1,6 @@
 {
-	"version": "2012.06.06.1611.2",
-    "new_files_relative_to_project_root": true,
-    "expand_sidebar_on_startup":          false,
-    "statusbar_file_size" : true
+	"expand_sidebar_on_startup": false,
+	"new_files_relative_to_project_root": true,
+	"statusbar_file_size": true,
+	"version": "setting no longer updated"
 }
