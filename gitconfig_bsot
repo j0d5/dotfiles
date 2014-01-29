@@ -1,10 +1,10 @@
 [user]
-  name = Johannes Steudle
+	name = Johannes Steudle
 	email = external.johannes.steudle@bosch-softtec.com
 
 [core]
   editor = subl
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/johannes/.gitignore
 
 [push]
   default = matching
@@ -80,7 +80,7 @@
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
 
 [difftool "Kaleidoscope"]

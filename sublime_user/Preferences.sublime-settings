@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
+	"color_scheme": "Packages/Deep Blue See/Deep Blue See.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -41,16 +41,16 @@
 	[
 		"directwrite"
 	],
-	"font_size": 12.0,
+	"font_size": 13.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Markdown",
 		"Anaconda",
-		"Vintageous",
-		"Vintage"
+		"Markdown",
+		"Vintage",
+		"Vintageous"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
