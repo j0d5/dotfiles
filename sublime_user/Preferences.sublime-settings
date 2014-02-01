@@ -37,6 +37,7 @@
 		".svn",
 		".hg"
 	],
+	"font_face": "Inconsolata",
 	"font_options":
 	[
 		"directwrite"
@@ -47,10 +48,10 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Anaconda",
-		"Markdown",
 		"Vintage",
-		"Vintageous"
+		"Anaconda",
+		"Vintageous",
+		"Markdown"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
