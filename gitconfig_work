@@ -19,6 +19,7 @@
   dfi = diff --ignore-all-space
   lg = log -p
   ll = log --pretty=oneline --graph
+  l = log --pretty=oneline --decorate=short --graph
   unstage = 'reset HEAD --'
   last = 'log -1 HEAD'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
