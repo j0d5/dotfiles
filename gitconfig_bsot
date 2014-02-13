@@ -3,7 +3,7 @@
 	email = external.johannes.steudle@bosch-softtec.com
 
 [core]
-  editor = subl
+  editor = subl -n -w
 	excludesfile = /Users/johannes/.gitignore
 
 [push]
@@ -19,6 +19,7 @@
   dfi = diff --ignore-all-space
   lg = log -p
   ll = log --pretty=oneline --graph
+  l = log --pretty=oneline --decorate=short --graph --abbrev-commit --date=relative
   unstage = 'reset HEAD --'
   last = 'diff HEAD~1'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
@@ -77,7 +78,7 @@
 
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
