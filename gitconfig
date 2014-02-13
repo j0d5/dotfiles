@@ -19,8 +19,9 @@
   dfi = diff --ignore-all-space
   lg = log -p
   ll = log --pretty=oneline --graph
+  l = log --pretty=oneline --decorate=short --graph --abbrev-commit --date=relative
   unstage = 'reset HEAD --'
-  last = 'log -1 HEAD'
+  last = 'diff HEAD~1'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
   sh = show
   sf = diff --name-status
