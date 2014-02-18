@@ -1,5 +1,4 @@
 {
-	"http_proxy": "localhost:8080",
 	"installed_packages":
 	[
 		"AdvancedNewFile",
