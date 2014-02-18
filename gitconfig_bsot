@@ -4,7 +4,7 @@
 
 [core]
   editor = subl -n -w
-	excludesfile = /.gitignore
+	excludesfile = ~/.gitignore
 
 [push]
   default = matching
