@@ -1,0 +1,13 @@
+Host blackjay.de
+  HostName blackjay.de
+  IdentityFile ~/.ssh/jaybook
+
+Host github.com
+  HostName github.com
+  User johannes82
+  IdentityFile ~/.ssh/jaybook
+
+Host bitbucket.org
+  HostName bitbucket.org
+  User mercjay
+  IdentityFile ~/.ssh/jaybook
