@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Deep Blue See/Deep Blue See.tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -48,10 +48,10 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Anaconda",
 		"Markdown",
 		"Vintage",
-		"Vintageous"
+		"Vintageous",
+		"Anaconda"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
