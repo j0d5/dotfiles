@@ -1,3 +1,4 @@
+echo 'loading jaybook.local.aliases.zsh'
 ## Johannes' jaybook alias settings                ##
 alias gvim='open /Applications/MacVim.app'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'

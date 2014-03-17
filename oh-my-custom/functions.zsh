@@ -1,7 +1,9 @@
 echo 'loading functions'
+
+# function for extracting compressed files
 function extract() {
     unset REMOVE_ARCHIVE
-    
+
     if test "$1" = "-r"; then
         REMOVE=1
         shift
@@ -34,7 +36,8 @@ function extract() {
   fi
 }
 
-psgrep() {
+# greps for process
+function psgrep() {
   if [ ! -z $1 ] ; then
     echo "Grepping for processes matching $1..."
     ps aux | grep -i $1 | grep -v grep
@@ -43,7 +46,8 @@ psgrep() {
   fi
 }
 
-lsofgrep() {
+# greps for open files
+function lsofgrep() {
   if [ ! -z $1 ] ; then
     echo "Grepping for open files matching $1..."
     lsof | grep -i $1 | grep -v grep
@@ -52,7 +56,8 @@ lsofgrep() {
   fi
 }
 
-histgrep() {
+# greps the history for first argument
+function histgrep() {
   if [ ! -z $1 ] ; then
     echo "Grepping history for $1..."
     cat ~/.bash_history | grep -i $1 | grep -v grep
@@ -61,6 +66,7 @@ histgrep() {
   fi
 }
 
+# changes the modifier for given file and dir
 function chmod_fd {
 	find . -type f -exec chmod $1 {} \;
 	find . -type d -exec chmod $2 {} \;
@@ -68,4 +74,13 @@ function chmod_fd {
 
 function sshs {
 	ssh $@ -t screen
+}
+
+function box_name {
+    [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
+}
+
+# prompts the virtual environment information
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }

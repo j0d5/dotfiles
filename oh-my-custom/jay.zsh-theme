@@ -1,33 +1,6 @@
 echo 'loading jay theme'
-if [ "x$OH_MY_ZSH_HG" = "x" ]; then
-    OH_MY_ZSH_HG="hg"
-fi
 
-function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
-}
-
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-
-function hg_prompt_info {
-#    $OH_MY_ZSH_HG prompt --angle-brackets "\
-#< on %{$fg[magenta]%}<branch>%{$reset_color%}>\
-#< at %{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
-#%{$fg[green]%}<status|modified|unknown><update>%{$reset_color%}<
-#patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied#(%{$reset_color%})>>" 2>/dev/null
-}
-
-function box_name {
-    [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
-}
-
-PROMPT='[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[green]%}$(box_name)%{$reset_color%}:%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)$(git_prompt_short_sha)$(git_prompt_status)%{$reset_color%}]
-$(virtualenv_info)$(prompt_char) '
-
+# set colors for zsh git functions
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}"
@@ -43,6 +16,70 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 
+# SEGMENT_SEPARATOR='⮀'
+SEGMENT_SEPARATOR=':'
+
+prompt_time() {
+  echo -n '[%D{%H:%M:%S}] '
+}
+
+# set user and hostname
+prompt_context() {
+  local user=`whoami`
+
+  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    echo -n '['%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[green]%}$(box_name)%{$reset_color%}%{$SEGMENT_SEPARATOR%}
+  fi
+}
+
+# current working directory
+prompt_dir() {
+  echo -n %{$fg_bold[green]%}%~ %{$reset_color%}
+}
+
+# returns the currently used prompt char
+prompt_char() {
+    git branch >/dev/null 2>/dev/null && echo '±' && return
+    echo '○'
+}
+
+prompt_end() {
+  echo "]\n"$(prompt_char)
+}
+
+prompt_git() {
+  echo -n $(git_prompt_info)
+  echo -n $(git_prompt_short_sha)
+  echo -n $(git_prompt_status)
+  echo -n %{$reset_color%}
+}
+
+# Status:
+# - was there an error
+# - am I root
+# - are there background jobs?
+prompt_status() {
+  local symbols
+  symbols=()
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+
+  [[ -n "$symbols" ]] && "$symbols"
+}
+
+## Main prompt
+build_prompt() {
+  prompt_time
+  # RETVAL=$?
+  prompt_status
+  prompt_context
+  prompt_dir
+  prompt_git
+  prompt_end
+}
+
+PROMPT='$(build_prompt) '
 
 # display exitcode on the right when >0
 local return_code="%(?..%{$fg[red]%}%? ↵ %{$reset_color%})"
