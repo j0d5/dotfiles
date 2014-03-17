@@ -1,5 +1,7 @@
 echo "loading global_settings"
 
+export DEFAULT_USER=johannes
+
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up

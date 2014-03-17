@@ -28,7 +28,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    echo -n '['%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[green]%}$(box_name)%{$reset_color%}%{$SEGMENT_SEPARATOR%}
+    echo -n %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[green]%}$(box_name)%{$reset_color%}%{$SEGMENT_SEPARATOR%}
   fi
 }
 
@@ -40,7 +40,11 @@ prompt_dir() {
 # returns the currently used prompt char
 prompt_char() {
     git branch >/dev/null 2>/dev/null && echo '±' && return
-    echo '○'
+    echo '⮀'
+}
+
+prompt_start() {
+  echo -n '['
 }
 
 prompt_end() {
@@ -70,8 +74,9 @@ prompt_status() {
 
 ## Main prompt
 build_prompt() {
-  prompt_time
-  # RETVAL=$?
+  prompt_start
+  # prompt_time
+  RETVAL=$?
   prompt_status
   prompt_context
   prompt_dir
