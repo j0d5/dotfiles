@@ -16,9 +16,9 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 
-# SEGMENT_SEPARATOR='⮀'
 SEGMENT_SEPARATOR=':'
 
+# echo time
 prompt_time() {
   echo -n '[%D{%H:%M:%S}] '
 }
@@ -51,6 +51,7 @@ prompt_end() {
   echo "]\n"$(prompt_char)
 }
 
+# echo git status
 prompt_git() {
   echo -n $(git_prompt_info)
   echo -n $(git_prompt_short_sha)
@@ -58,10 +59,7 @@ prompt_git() {
   echo -n %{$reset_color%}
 }
 
-# Status:
-# - was there an error
-# - am I root
-# - are there background jobs?
+# error, root, background jobs
 prompt_status() {
   local symbols
   symbols=()
@@ -72,7 +70,7 @@ prompt_status() {
   [[ -n "$symbols" ]] && "$symbols"
 }
 
-## Main prompt
+# build prompt
 build_prompt() {
   prompt_start
   # prompt_time
@@ -84,6 +82,7 @@ build_prompt() {
   prompt_end
 }
 
+# set prompt
 PROMPT='$(build_prompt) '
 
 # display exitcode on the right when >0

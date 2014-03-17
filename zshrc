@@ -2,7 +2,7 @@
 ##                                              ##
 ## Author: Johannes Steudle                     ##
 ## File: .zshrc                                 ##
-## Date: 25.01.2012                             ##
+## Date: 17.03.2014                             ##
 ##                                              ##
 ## Description: .zshrc general settings         ##
 ##                                              ##
@@ -34,6 +34,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(git git-flow rails git textmate ruby lighthouse)
-plugins=(hosts autojump history-substring-search command-not-found github sublime brew vagrant gradle ant python osx)
+plugins=(hosts autojump history-substring-search zsh-syntax-highlighting command-not-found github sublime brew vagrant gradle ant python osx)
 
 source $ZSH/oh-my-zsh.sh
