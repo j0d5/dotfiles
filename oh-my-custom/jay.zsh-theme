@@ -39,7 +39,7 @@ prompt_dir() {
 
 # returns the currently used prompt char
 prompt_char() {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
+    git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}⮀%{%F{white}%}' && return
     echo '⮀'
 }
 
