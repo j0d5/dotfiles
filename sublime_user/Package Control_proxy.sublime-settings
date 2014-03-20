@@ -4,7 +4,6 @@
 	[
 		"AdvancedNewFile",
 		"Anaconda",
-		"Andrew",
 		"Base16 Color Schemes",
 		"Case Conversion",
 		"CMake",
@@ -16,28 +15,23 @@
 		"GitGutter",
 		"GPG",
 		"Homebrew-formula-syntax",
-		"Jira",
 		"LaTeX Track Changes",
 		"LaTeX-cwl",
 		"LaTeXing",
 		"Markdown Preview",
 		"MarkdownEditing",
-		"Modific",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
-		"Python Checker",
 		"RemoteEdit",
 		"SideBarEnhancements",
 		"SmartMarkdown",
 		"sublime-gradle",
-		"SublimeGit",
 		"sublimelint",
 		"Sublimerge Pro",
 		"Theme - Cobalt2",
 		"Theme - Soda",
 		"Theme - Spacegray",
-		"Vintageous",
-		"Wombat Theme"
+		"Vintageous"
 	],
 	"repositories":
 	[

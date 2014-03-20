@@ -55,7 +55,9 @@ if has('statusline')
   " Broken down into easily includeable segments
   set statusline=%<%f\    " Filename
   set statusline+=%w%h%m%r " Options
-  set statusline+=%{fugitive#statusline()} " Git Hotness
+  if has('fugitive')
+    set statusline+=%{fugitive#statusline()} " Git Hotness
+  endif
   set statusline+=\ [%{&ff}/%Y]            " filetype
   set statusline+=\ [%{getcwd()}]          " current dir
   "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
@@ -91,8 +93,8 @@ set wildignore+=*.luac            " Lua byte code
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest  " compiled object files
 set wildignore+=*.pyc             " Python byte code
 set wildignore+=*.spl             " compiled spelling word lists
-set wildignore+=*.sw?             " Vim swap files 
-set wildignore+=.DS_Store         " Mac files 
+set wildignore+=*.sw?             " Vim swap files
+set wildignore+=.DS_Store         " Mac files
 
 set thesaurus+=$HOME/.vim/thesaurus/mthesaur.txt
 
@@ -114,7 +116,7 @@ au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, e
 " Remember things between sessions
 " '20  - remember marks for 20 previous files
 " \"50 - save 50 lines for each register
-" :20  - remember 20 items in command-line history 
+" :20  - remember 20 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
 set viminfo='20,\"50,:20,%,n~/.vim/.viminfo
@@ -264,7 +266,7 @@ if has('autocmd')
   augroup END
 
   "" Note: The autocommand event is defined to avoid setting this augroup when in the
-  "" NERD tree buffer, which causes a conflict with its color settings. 
+  "" NERD tree buffer, which causes a conflict with its color settings.
   augroup highlightextrawhitespace
     autocmd!
     "" Highlight extra white space:
@@ -378,12 +380,12 @@ endfunction
 "###############################
 function! InitializeDirectories()
   let separator = "."
-  let parent = $HOME 
+  let parent = $HOME
   let prefix = '.vim'
-  let dir_list = { 
-			  \ 'backups': 'backupdir', 
-			  \ 'views': 'viewdir', 
-			  \ 'swaps': 'directory', 
+  let dir_list = {
+			  \ 'backups': 'backupdir',
+			  \ 'views': 'viewdir',
+			  \ 'swaps': 'directory',
 			  \ 'undos': 'undodir' }
 
   for [dirname, settingname] in items(dir_list)
@@ -396,7 +398,7 @@ function! InitializeDirectories()
 	  if !isdirectory(directory)
 		  echo "Warning: Unable to create backup directory: " . directory
 		  echo "Try: mkdir -p " . directory
-	  else  
+	  else
           let directory = substitute(directory, " ", "\\\\ ", "")
           exec "set " . settingname . "=" . directory
 	  endif
@@ -509,15 +511,15 @@ nnoremap <Esc>p  p'[v']=
 
 " map ,f to display all lines with keyword under cursor and ask which one
 " to jump to
-nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR> 
+nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " open filename under cursor in a new window (use current file's working
-" directory) 
+" directory)
 nnoremap gf :new %:p:h/<cfile><CR>
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 
 " Change to hexmode with CTRL-h
 nnoremap <C-H> :Hexmode<CR>
@@ -556,7 +558,7 @@ nnoremap <silent> <F4> :TlistToggle<CR>
 noremap <C-F12> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " --------------------
-" intelli sense extreme - omni first and then keyword completion 
+" intelli sense extreme - omni first and then keyword completion
 " --------------------
 " inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 " \ "\<lt>C-n>" :

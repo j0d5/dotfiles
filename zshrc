@@ -34,6 +34,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(git git-flow rails git textmate ruby lighthouse)
-plugins=(hosts autojump history-substring-search zsh-syntax-highlighting command-not-found github sublime brew vagrant gradle ant python osx)
+plugins=(hosts history-substring-search zsh-syntax-highlighting wd command-not-found github sublime brew gradle ant python osx)
 
 source $ZSH/oh-my-zsh.sh

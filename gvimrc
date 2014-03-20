@@ -15,11 +15,13 @@
 " --------------------
 "set the X11 font to use
 " --------------------
-" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
-" set guifont=Bitstream\ Vera\ Sans\ Mono\ 10
-" set guifont=DejaVu\ Sans\ Mono\ 9
-" set guifont=Liberation\ Mono\ 9
-" set guifont=Nimbus\ Mono\ L\ 10
+if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h12
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
 
 set mousehide	    " Hide the mouse when typing text
 set tabpagemax=15
