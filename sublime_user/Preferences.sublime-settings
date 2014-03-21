@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"theme": "Soda Light 3.sublime-theme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -11,7 +11,6 @@
 	[
 		".DS_*",
 		"*.fdb_latexmk",
-		"*sublime*",
 		"*.gz",
 		"*.latexmain",
 		"*.aux",
