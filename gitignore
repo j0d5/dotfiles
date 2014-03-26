@@ -1,3 +1,8 @@
+# Mac OS X files
+.DS_Store
+DerivedData
+
+# LaTeX files
 *.idx
 *.ilg
 *.ind
@@ -5,14 +10,44 @@
 *.lot
 *.tdo
 *.aux
+*.fdb_latexmk
+*.synctex.gz
 *.nav
 *.out
 *.toc
 *.snm
 *.blg
 *.ist
+*.log
+*.bib
+*.bbl
+*.glo
+
+# Python files
 *.pyc
+
+# Subversion files
 .svn
+
+# Mercurial files
+.hg/
+.hgignore
+
+# Sublime Text files
+*.sublime-workspace
+*.sublime-project
+
+# Gradle files
+build
+.gradle
+.gradletasknamecache
+
+# Eclipse files
+org.eclipse.jdt.core.prefs
+.settings/
+
+# Misc
+_*
 ._*
 *.o
 *.a
@@ -21,32 +56,13 @@
 *.swo
 *bak*
 .depend
-.DS_Store
 tags
 .zhistory
 *.orig
 *.mk
-*.log
-*.bib
-*.bbl
-*.glo
 *.vrb
 *.1
-DerivedData
-.hg/
-.hgignore
 *.autosave
-#*
-_*
-*._aux
-*._aux
-*.fdb_latexmk
 .sconsign.dblite
 *.class
-*.synctex.gz
 *.fls
-*.sublime-workspace
-build
-.gradle
-org.eclipse.jdt.core.prefs
-.settings/
