@@ -1,7 +1,6 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"theme": "Soda Light 3.sublime-theme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -47,10 +46,10 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Anaconda",
+		"Markdown",
 		"Vintage",
 		"Vintageous",
-		"Markdown"
+		"Anaconda"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
@@ -64,5 +63,6 @@
 	"show_full_path": true,
 	"spell_check": false,
 	"tab_size": 2,
+	"theme": "Soda Light 3.sublime-theme",
 	"trim_trailing_white_space_on_save": true
 }
