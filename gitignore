@@ -46,6 +46,9 @@ build
 org.eclipse.jdt.core.prefs
 .settings/
 
+# Checkstyle files
+.checkstyle
+
 # Misc
 _*
 ._*
