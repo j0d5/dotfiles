@@ -9,8 +9,8 @@ alias antbr='ant clean release -Dsdk.dir=/Applications/android-sdk -Dndk.dir=/Ap
 # android aliases
 alias andup='android update project -p .'
 alias andut='android update test-project -m ../ -p .'
-alias package=`aapt dump badging $* | grep package | awk '{print $2}' | sed s/name=//g | sed s/\'//g`
-alias activity=`aapt dump badging $* | grep Activity | awk '{print $2}' | sed s/name=//g | sed s/\'//g`
+alias package="aapt dump badging $* | grep package | awk '{print $2}' | sed s/name=//g | sed s/\'//g"
+alias activity="aapt dump badging $* | grep Activity | awk '{print $2}' | sed s/name=//g | sed s/\'//g"
 
 # adb aliases
 alias adbr='adb kill-server && adb start-server'
