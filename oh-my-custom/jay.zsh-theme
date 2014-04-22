@@ -48,7 +48,7 @@ prompt_start() {
 }
 
 prompt_end() {
-  echo "]\n"$(prompt_char)
+  echo "]\n"$(prompt_status) $(prompt_char)
 }
 
 # echo git status
@@ -63,11 +63,11 @@ prompt_git() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{$fg[red]%}✘"
+  [[ $UID -eq 0 ]] && symbols+="%{$fg[yellow]%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{$fg[cyan]%}⚙"
 
-  [[ -n "$symbols" ]] && "$symbols"
+  [[ -n "$symbols" ]] && echo "$symbols%{%F{white}%}"
 }
 
 # build prompt
@@ -75,7 +75,6 @@ build_prompt() {
   prompt_start
   # prompt_time
   RETVAL=$?
-  prompt_status
   prompt_context
   prompt_dir
   prompt_git
