@@ -1,0 +1,9 @@
+{
+	// Your GitHub API token
+	// see: https://github.com/condemil/Gist#generating-access-token
+	"token": "cbd304ed5e7dbe625018316cd33c6e5a8f6dc2f1",
+
+	// Proxy server
+	// Format: "http://user:pass@proxy:port"
+	"https_proxy": "http://localhost:8080",
+}
