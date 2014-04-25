@@ -47,8 +47,8 @@
 	"ignored_packages":
 	[
 		"Anaconda",
-		"Vintage",
 		"Markdown",
+		"Vintage",
 		"Vintageous"
 	],
 	"margin": 0,
