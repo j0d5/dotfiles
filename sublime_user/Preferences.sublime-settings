@@ -26,7 +26,8 @@
 		"*.idx",
 		"*.out",
 		"*.log",
-		"*.lib"
+		"*.lib",
+		"*.sublime-workspace"
 	],
 	"folder_exclude_patterns":
 	[
