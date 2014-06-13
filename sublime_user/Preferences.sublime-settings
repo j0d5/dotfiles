@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/Flatland Dark (SL).tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -48,10 +48,10 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintageous",
-		"Vintage",
 		"Markdown",
-		"Anaconda"
+		"Anaconda",
+		"Vintage",
+		"Vintageous"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
