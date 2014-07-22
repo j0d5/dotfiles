@@ -7,7 +7,7 @@
   excludesfile = ~/.gitignore
 
 [push]
-  default = matching
+  default = simple
 
 [alias]
   ci = commit
