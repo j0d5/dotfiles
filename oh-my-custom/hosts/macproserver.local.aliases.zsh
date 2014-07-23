@@ -1,11 +1,3 @@
-# ant aliases
-alias antbd='ant clean debug -Dsdk.dir=/opt/android/android-sdk-macosx -Dndk.dir=/Applications/android-ndk-r9'
-alias antbr='ant clean release -Dsdk.dir=/opt/android/android-sdk-macosx -Dndk.dir=/Applications/android-ndk-r9'
-
-# android aliases
-alias andup='android update project -p .'
-alias andut='android update test-project -m ../ -p .'
-
 # adb aliases
 alias adbr='adb kill-server && adb start-server'
 alias adbk='adb -e emu kill'
