@@ -3,7 +3,7 @@
   email = johannes@steudle.eu
 
 [core]
-  editor = subl
+  editor = subl -n -w
   excludesfile = ~/.gitignore
 
 [push]
@@ -15,6 +15,7 @@
   br = branch
   co = checkout
   fe = fetch -v
+  cl = clean -fd
   df = diff
   dfi = diff --ignore-all-space
   lg = log -p
@@ -77,12 +78,12 @@
   trustExitCode = true
 
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+  path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+  trustExitCode = true
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"

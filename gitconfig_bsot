@@ -7,7 +7,7 @@
 	excludesfile = /Users/johannes/.gitignore
 
 [push]
-	default = simple
+  default = simple
 
 [alias]
   ci = commit
@@ -15,6 +15,7 @@
   br = branch
   co = checkout
   fe = fetch -v
+  cl = clean -fd
   df = diff
   dfi = diff --ignore-all-space
   lg = log -p
@@ -81,7 +82,7 @@
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
 
 [difftool "Kaleidoscope"]
