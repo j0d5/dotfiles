@@ -12,7 +12,7 @@
 [alias]
   ci = commit
   st = status
-  br = branch
+  br = branch -v
   co = checkout
   fe = fetch -v
   cl = clean -fd
@@ -79,7 +79,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
