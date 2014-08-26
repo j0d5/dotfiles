@@ -3,11 +3,26 @@
 	email = external.johannes.steudle@bosch-softtec.com
 
 [core]
+  # open sublime text with new window and wait for result
   editor = subl -n -w
-	excludesfile = /Users/johannes/.gitignore
+	excludesfile = ~/.gitignore
 
 [push]
   default = simple
+
+[rerere]
+  enabled = true
+
+[advice]
+  # hide status hints
+  statusHints = false
+
+[pager]
+  show-branch = true
+  # status = true
+
+[grep]
+  lineNumber = true
 
 [alias]
   ci = commit
@@ -16,6 +31,7 @@
   co = checkout
   fe = fetch -v
   cl = clean -fd
+  up = "!git remote update -p; git merge --ff-only @{u}"
   df = diff
   dfi = diff --ignore-all-space
   lg = log -p
@@ -26,7 +42,10 @@
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
   sh = show
   sf = diff --name-status
-  up = "!git remote update -p; git merge --ff-only @{u}"
+  count = !sh -c 'git log --oneline | wc -l'
+
+  # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
+  dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
 
 [color]
   diff        = auto
@@ -55,11 +74,9 @@
 # [color "interactive"]
 
 [diff]
-  # tool = Kaleidoscope
   tool = sourcetree
 
 [merge]
-  # tool = Kaleidoscope
   tool = sourcetree
 
 [mergetool]
@@ -82,7 +99,7 @@
 	path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
 	trustExitCode = true
 
 [difftool "Kaleidoscope"]
@@ -93,8 +110,8 @@
   trustExitCode = true
 
 [mergetool "sublimerge"]
-cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
-trustExitCode = false
+  cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
+  trustExitCode = false
 
 [difftool "sublimerge"]
-cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+  cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
