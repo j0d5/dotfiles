@@ -24,9 +24,12 @@
 [grep]
   lineNumber = true
 
+[help]
+  autocorrect = 1
+
 [alias]
   ci = commit
-  st = status
+  st = status -sb
   br = branch -v
   co = checkout
   fe = fetch -v
