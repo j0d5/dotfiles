@@ -1,4 +1,4 @@
-echo 'loading hi-z077w.hi.de.bosch.com.aliases.zsh'
+echo 'loading hi-z0ae1.hi.de.bosch.com.aliases.zsh'
 # general
 alias genyshell='/Applications/Genymotion\ Shell.app/Contents/MacOS/genyshell'
 

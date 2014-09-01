@@ -1,4 +1,4 @@
-echo 'loading hi-z077w.hi.de.bosch.com.zsh'
+echo 'loading hi-z0ae1.hi.de.bosch.com.zsh'
 # custom zsh commands
 export http_proxy='http://localhost:8080'
 export https_proxy='https://localhost:8080'
