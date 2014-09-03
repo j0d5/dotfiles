@@ -3,8 +3,6 @@ echo 'loading HI-Z0AE1.local.zsh'
 plugins+=(github sublime brew vagrant gradle ant python)
 
 # custom zsh commands
-export http_proxy='http://localhost:8080'
-export https_proxy='https://localhost:8080'
 
 # generate a nice startup logo
 /usr/local/bin/archey -c
