@@ -1,6 +1,7 @@
 # Mac OS X files
 .DS_Store
 DerivedData
+*.xcuserdatad
 
 # LaTeX files
 *.idx
@@ -47,7 +48,7 @@ org.eclipse.jdt.core.prefs
 .settings/
 
 # Checkstyle files
-.checkstyle
+# .checkstyle
 
 # Misc
 _*
