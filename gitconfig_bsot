@@ -1,6 +1,6 @@
 [user]
 	name = Johannes Steudle
-	email = external.johannes.steudle@bosch-softtec.com
+	email = johannes.steudle@bosch-softtec.com
 
 [core]
   # open sublime text with new window and wait for result
@@ -102,7 +102,7 @@
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
 	trustExitCode = true
 
 [difftool "Kaleidoscope"]

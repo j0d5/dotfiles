@@ -42,16 +42,16 @@
 	[
 		"directwrite"
 	],
-	"font_size": 13.0,
+	"font_size": 14.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage",
 		"Markdown",
-		"Anaconda",
-		"Vintageous"
+		"Vintageous",
+		"Vintage",
+		"Anaconda"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
