@@ -1,4 +1,4 @@
-## Configuration
+# Configuration
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
@@ -16,6 +16,8 @@ alias mon-laptop      2
 alias mon-extern1     1
 alias mon-extern2     0
 
+# Position aliases
+
 ## Abstract positions
 alias moveto    move screenOriginX;screenOriginY screenOriginX;screenOriginY
 alias full      move screenOriginX;screenOriginY screenSizeX;screenSizeY
@@ -28,8 +30,9 @@ alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
 alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
 alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+alias tweetbotpos corner bottom-right
 
-# Concrete positions
+## Concrete positions
 alias 0-to0   ${moveto}    ${mon-laptop}
 alias 0-full  ${full}      ${mon-laptop}
 alias 0-left  ${lefthalf}  ${mon-laptop}
@@ -53,50 +56,51 @@ alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2
 alias 2-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2 ${mon-extern2}
 
 # Layouts
-layout 0monitor 'Safari':REPEAT    ${left90}
-layout 0monitor 'Mail':MAIN_FIRST      ${full}
-layout 0monitor 'OmniFocus':REPEAT ${full}
-layout 0monitor 'Xcode':REPEAT     ${full}
-layout 0monitor 'Eclipse':REPEAT   ${full}
+layout 1monitor 'Safari':REPEAT    ${left90}
+layout 1monitor 'Mail':MAIN_FIRST  ${full}
+layout 1monitor 'OmniFocus':REPEAT ${full}
+layout 1monitor 'Xcode':REPEAT     ${full}
+layout 1monitor 'Eclipse':REPEAT   ${full}
+layout 1monitor 'Monitor':REPEAT   ${full}
+layout 1monitor 'Tweetbot':MAIN_FIRST   ${tweetbotpos}
 
-layout 1monitor 'Eclipse':REPEAT   ${0-full}
+layout 2monitor 'Eclipse':REPEAT   ${0-full}
 
-layout 2monitor 'PathFinder':REPEAT     ${1-to1}
-layout 2monitor 'Eclipse':REPEAT        ${1-full}
-layout 2monitor 'Xcode':REPEAT          ${1-full}
-layout 2monitor 'Safari':REPEAT         ${2-left90}
-layout 2monitor 'Tweetbot':REPEAT       ${2-to2}
-layout 2monitor 'SourceTree':REPEAT     ${2-left90}
-layout 2monitor 'mySPIN_IVI_OSX':REPEAT ${2-to2}
-layout 2monitor 'Mail':MAIN_FIRST           ${0-full}
-layout 2monitor 'OmniFocus':MAIN_FIRST      ${0-full}
-layout 2monitor 'Spotify':MAIN_FIRST        ${0-full}
+layout 3monitor 'PathFinder':REPEAT     ${1-to1}
+layout 3monitor 'Eclipse':REPEAT        ${1-full}
+layout 3monitor 'Xcode':REPEAT          ${1-full}
+layout 3monitor 'Safari':REPEAT         ${2-left90}
+layout 3monitor 'SourceTree':REPEAT     ${2-left90}
+layout 3monitor 'mySPIN_IVI_OSX':REPEAT ${2-to2}
+layout 3monitor 'Tweetbot':MAIN_FIRST   ${tweetbotpos} ${mon-extern2}
+layout 3monitor 'Mail':MAIN_FIRST           ${0-full}
+layout 3monitor 'OmniFocus':MAIN_FIRST      ${0-full}
+layout 3monitor 'Spotify':MAIN_FIRST        ${0-full}
 
-
-# Default Layouts
+## Default Layouts
 default 3monitors resolutions:${mon-extern1};${mon-extern2};${mon-laptop};
-default 1monitors resolutions:${mon-laptop};${mon-extern1};
-default 0monitor  resolutions:${mon-laptop}
+default 2monitors resolutions:${mon-laptop};${mon-extern1};
+default 1monitor  resolutions:${mon-laptop}
 
-# HYPER binding
-alias hyper     ctrl;shift;alt;cmd
+# Key bindings
 
-## Key bindings
-bind g:cmd grid padding:5 0:6,4 1:6,4 2:6,4
+## HYPER binding
+alias hyper ctrl;shift;alt;cmd
+
 bind left:ctrl;cmd  ${lefthalf}
 bind right:ctrl;cmd ${righthalf}
 bind up:ctrl;cmd    ${full}
-bind 1:${hyper} layout 0monitor
-bind 2:${hyper} layout 1monitor
-bind 3:${hyper} layout 2monitor
-bind z:${hyper} undo
 
-bind n:${hyper} throw next
+bind 1:${hyper} layout 1monitor
+bind 2:${hyper} layout 1monitor
+bind 3:${hyper} layout 3monitor
+
+bind n:${hyper}     throw next
 bind right:${hyper} throw right resize
 bind left:${hyper}  throw left  resize
+bind f:${hyper}     throw 1 resize
+bind g:${hyper}     throw 0 resize
 
-bind f:${hyper} throw 1 resize
-bind g:${hyper} throw 0 resize
-
-# Slate
 bind r:${hyper} relaunch
+bind z:${hyper} undo
+bind g:${hyper} grid padding:5 0:6,4 1:6,4 2:6,4
