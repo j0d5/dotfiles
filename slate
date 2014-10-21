@@ -68,6 +68,7 @@ layout 2monitor 'Eclipse':REPEAT   ${0-full}
 
 layout 3monitor 'PathFinder':REPEAT     ${1-to1}
 layout 3monitor 'Eclipse':REPEAT        ${1-full}
+layout 3monitor 'Android Studio':REPEAT ${1-full}
 layout 3monitor 'Xcode':REPEAT          ${1-full}
 layout 3monitor 'Safari':REPEAT         ${2-left90}
 layout 3monitor 'SourceTree':REPEAT     ${2-left90}
