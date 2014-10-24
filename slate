@@ -33,15 +33,17 @@ alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
 alias tweetbotpos corner bottom-right
 
 ## Concrete positions
-alias 0-to0   ${moveto}    ${mon-laptop}
-alias 0-full  ${full}      ${mon-laptop}
-alias 0-left  ${lefthalf}  ${mon-laptop}
-alias 0-right ${righthalf} ${mon-laptop}
+alias 0-to0    ${moveto}    ${mon-laptop}
+alias 0-full   ${full}      ${mon-laptop}
+alias 0-left   ${lefthalf}  ${mon-laptop}
+alias 0-left90 ${left90}    ${mon-laptop}
+alias 0-right  ${righthalf} ${mon-laptop}
 
-alias 1-to1   ${moveto}    ${mon-extern1}
-alias 1-full  ${full}      ${mon-extern1}
-alias 1-left  ${lefthalf}  ${mon-extern1}
-alias 1-right ${righthalf} ${mon-extern1}
+alias 1-to1    ${moveto}    ${mon-extern1}
+alias 1-full   ${full}      ${mon-extern1}
+alias 1-left90 ${left90}    ${mon-extern1}
+alias 1-left   ${lefthalf}  ${mon-extern1}
+alias 1-right  ${righthalf} ${mon-extern1}
 alias 1-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2 ${mon-extern1}
 alias 1-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2 ${mon-extern1}
 
@@ -64,7 +66,14 @@ layout 1monitor 'Eclipse':REPEAT   ${full}
 layout 1monitor 'Monitor':REPEAT   ${full}
 layout 1monitor 'Tweetbot':MAIN_FIRST   ${tweetbotpos}
 
-layout 2monitor 'Eclipse':REPEAT   ${0-full}
+layout 2monitor 'Safari':REPEAT    ${1-left90}
+layout 2monitor 'Mail':MAIN_FIRST  ${1-full}
+layout 2monitor 'OmniFocus':REPEAT ${full}
+layout 2monitor 'Xcode':REPEAT     ${full}
+layout 2monitor 'Eclipse':REPEAT   ${full}
+layout 2monitor 'Android Studio':REPEAT ${full}
+layout 2monitor 'Monitor':REPEAT   ${full}
+layout 2monitor 'Tweetbot':MAIN_FIRST   ${tweetbotpos}
 
 layout 3monitor 'PathFinder':REPEAT     ${1-to1}
 layout 3monitor 'Eclipse':REPEAT        ${1-full}
@@ -80,7 +89,7 @@ layout 3monitor 'Spotify':MAIN_FIRST        ${0-full}
 
 ## Default Layouts
 default 3monitors resolutions:${mon-extern1};${mon-extern2};${mon-laptop};
-default 2monitors resolutions:${mon-laptop};${mon-extern1};
+default 2monitors resolutions:${mon-extern1};${mon-extern2};
 default 1monitor  resolutions:${mon-laptop}
 
 # Key bindings
