@@ -48,9 +48,9 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Markdown",
-		"Vintageous",
 		"Vintage",
+		"Vintageous",
+		"Markdown",
 		"Anaconda"
 	],
 	"margin": 0,

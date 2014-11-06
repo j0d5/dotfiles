@@ -1,9 +1,12 @@
-####################################################
-##                                                ##
-## Johannes' bash settings                        ##
-## date: 2010/03/31                               ##
-##                                                ##
-####################################################
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: .mybash                                ##
+## Date: 31.03.2010                             ##
+##                                              ##
+## Description: bash general settings           ##
+##                                              ##
+##################################################
 
 # history settings
 shopt -s histappend           # append to the end of $HISTFILE

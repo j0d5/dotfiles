@@ -5,7 +5,7 @@
 [core]
   # open sublime text with new window and wait for result
   editor = subl -n -w
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/johannes/.gitignore
 
 [push]
   default = simple
@@ -98,11 +98,11 @@
   trustExitCode = true
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
 	trustExitCode = true
 
 [difftool "Kaleidoscope"]

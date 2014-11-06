@@ -1,8 +1,8 @@
 [ui]
 username=Johannes Steudle <johannes@steudle.eu>
-editor = gvim
+editor = subl -n -w
 merge  = diffmerge
-ignore=~/.hgignore
+ignore = ~/.hgignore
 
 [defaults]
 commit = -v
@@ -14,7 +14,7 @@ unified  = 8
 
 [extensions]
 color =
-hgk=
+hgk =
 hgext.graphlog =
 hgext.extdiff =
 

@@ -1,4 +1,4 @@
-echo 'loading HI-Z0AE1.local.zsh'
+echo 'loading jaybook.hi.de.bosch.com.zsh'
 
 plugins+=(github sublime brew vagrant gradle ant python)
 

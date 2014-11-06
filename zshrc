@@ -32,6 +32,9 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
 
+# Set default editor
+export EDITOR=subl
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(git git-flow rails git textmate ruby lighthouse)
 plugins=(hosts history-substring-search zsh-syntax-highlighting wd command-not-found github sublime brew gradle ant python osx)

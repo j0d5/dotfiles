@@ -64,6 +64,9 @@ build
 .gradle
 .gradletasknamecache
 
+# ant files
+.ant_targets
+
 # Eclipse files
 org.eclipse.jdt.core.prefs
 .settings/
