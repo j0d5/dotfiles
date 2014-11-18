@@ -5,7 +5,7 @@
 [core]
   # open sublime text with new window and wait for result
   editor = subl -n -w
-	excludesfile = /Users/johannes/.gitignore
+	excludesfile = ~/.gitignore
 
 [push]
   default = simple
@@ -120,5 +120,6 @@
   cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
 
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f

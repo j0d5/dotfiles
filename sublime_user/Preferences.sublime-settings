@@ -49,9 +49,9 @@
 	"ignored_packages":
 	[
 		"Vintage",
-		"Vintageous",
 		"Markdown",
-		"Anaconda"
+		"Anaconda",
+		"Vintageous"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
