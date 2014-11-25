@@ -87,20 +87,21 @@ layout 2monitor 'Eclipse':REPEAT        ${full}
 layout 2monitor 'Android Studio':REPEAT ${full}
 layout 2monitor 'SourceTree':MAIN_FIRST ${0-right10} | ${0-left90}
 layout 2monitor 'Monitor':REPEAT        ${1-full}
+layout 2monitor 'Spotify':MAIN_FIRST    ${0-left90}
 layout 2monitor 'Tweetbot':IGNORE_FAIL  ${tweetbotpos} ${mon-left}
 
 layout 3monitor 'PathFinder':REPEAT     ${1-to1}
 layout 3monitor 'Eclipse':REPEAT        ${1-full}
 layout 3monitor 'Android Studio':REPEAT ${1-full}
 layout 3monitor 'Xcode':REPEAT          ${1-full}
-layout 3monitor 'Safari':REPEAT         ${2-left90}
-layout 3monitor 'Google Chrome':REPEAT  ${2-left90}
-layout 3monitor 'SourceTree':REPEAT     ${2-left90}
+layout 3monitor 'Safari':REPEAT         ${0-left90}
+layout 3monitor 'Google Chrome':REPEAT  ${0-left90}
+layout 3monitor 'SourceTree':MAIN_FIRST ${0-right10} | ${0-left90}
 layout 3monitor 'mySPIN_IVI_OSX':REPEAT ${2-to2}
-layout 3monitor 'Tweetbot':MAIN_FIRST   ${tweetbotpos} ${mon-left}
-layout 3monitor 'Mail':MAIN_FIRST       ${0-full}
-layout 3monitor 'OmniFocus':MAIN_FIRST  ${0-full}
-layout 3monitor 'Spotify':MAIN_FIRST    ${0-full}
+layout 3monitor 'Tweetbot':IGNORE_FAIL  ${tweetbotpos} ${mon-left}
+layout 3monitor 'Mail':MAIN_FIRST       ${2-full}
+layout 3monitor 'OmniFocus':MAIN_FIRST  ${2-full}
+layout 3monitor 'Spotify':MAIN_FIRST    ${2-full}
 
 ## Default Layouts
 default 1monitor count:1
