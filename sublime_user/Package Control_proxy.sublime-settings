@@ -1,5 +1,13 @@
 {
 	"http_proxy": "localhost:8080",
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2"
+	],
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -39,6 +47,7 @@
 		"SublimeLinter-annotations",
 		"SublimeLinter-json",
 		"SublimeLinter-pep8",
+		"Sublimerge Pro",
 		"Theme - Cobalt2",
 		"Theme - Flatland",
 		"Theme - Soda",

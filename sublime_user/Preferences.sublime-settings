@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/Solarized (Light) (SL).tmTheme",
+	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -48,15 +48,15 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Find++",
-		"Vintage",
-		"Markdown",
+		"Vintageous",
 		"Git",
 		"FileDiffs",
-		"SublimeLinter",
+		"Vintage",
+		"Markdown",
+		"Find++",
+		"Anaconda",
 		"Gradle_Language",
-		"Vintageous",
-		"Anaconda"
+		"SublimeLinter"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
