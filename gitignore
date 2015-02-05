@@ -75,7 +75,7 @@ org.eclipse.jdt.core.prefs
 # .checkstyle
 
 # Misc
-_*
+#_*
 ._*
 *.o
 *.a

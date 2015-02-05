@@ -1,12 +1,11 @@
 echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
 # general
-alias genyshell='/Applications/Genymotion\ Shell.app/Contents/MacOS/genyshell'
 
 # ant aliases
-alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2'
-alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2'
-alias antServerSDK='(cd Source/ServerSDK && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2 && open reports/testresults/index.html)'
-alias antService='(cd Source/Service && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2 && open reports/testresults/index.html)'
+alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2'
+alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2'
+alias antServerSDK='(cd Source/ServerSDK && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2 && open reports/testresults/index.html)'
+alias antService='(cd Source/Service && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2 && open reports/testresults/index.html)'
 
 # android aliases
 alias andup='android update project -p .'
@@ -21,3 +20,4 @@ alias adbk='adb -e emu kill'
 # ssh aliases
 alias sshBuildUbuntu='ssh jst2hi@bsot-build.hi.de.bosch.com'
 alias sshBuildMacPro='ssh jst2hi@macproserver1.hi.de.bosch.com'
+alias sshRefSys='ssh -Y johannes-ref'

@@ -7,7 +7,7 @@ fi
 
 if [[ -d ~/.dotfiles ]]; then
 	echo "dotfiles directory exists, now linking files..."
-	
+
 	cd ~/
 	ln -is ~/.dotfiles/bashrc    .bashrc
 	ln -is ~/.dotfiles/zshrc     .zshrc
@@ -15,9 +15,10 @@ if [[ -d ~/.dotfiles ]]; then
 	ln -is ~/.dotfiles/gvimrc    .gvimrc
 	ln -is ~/.dotfiles/gitignore .gitignore
 	ln -is ~/.dotfiles/gitconfig .gitconfig
+	ln -is ~/.dotfiles/gitattributes .gitattributes
 	ln -is ~/.dotfiles/hgrc      .hgrc
 	ln -is ~/.dotfiles/hgignore  .hgignore
-	
+
 	echo "linking sublime files..."
 	if [[ -d ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User ]]; then
 		cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User

@@ -1,3 +1,4 @@
+## theme for zsh
 echo 'loading jay theme'
 
 # set colors for zsh git functions

@@ -49,14 +49,14 @@
 	"ignored_packages":
 	[
 		"Vintageous",
-		"Git",
-		"FileDiffs",
 		"Vintage",
 		"Markdown",
-		"Find++",
-		"Anaconda",
 		"Gradle_Language",
-		"SublimeLinter"
+		"FileDiffs",
+		"Find++",
+		"SublimeLinter",
+		"Git",
+		"Anaconda"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
