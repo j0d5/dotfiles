@@ -94,3 +94,6 @@ tags
 .sconsign.dblite
 *.class
 *.fls
+
+# Test projects
+JST*/

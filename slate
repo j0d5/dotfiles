@@ -92,7 +92,7 @@ layout 2monitor 'Xcode':REPEAT          ${full}
 layout 2monitor 'Eclipse':REPEAT        ${full}
 layout 2monitor 'Android Studio':REPEAT ${full}
 layout 2monitor 'SourceTree':REPEAT     ${0-left90}
-layout 2monitor 'Monitor':REPEAT        ${1-full}
+layout 2monitor 'Monitor':REPEAT        ${0-full}
 layout 2monitor 'Spotify':MAIN_FIRST    ${0-left90}
 layout 2monitor 'Tweetbot':IGNORE_FAIL  ${tweetbotpos} ${mon-left}
 
@@ -111,6 +111,7 @@ layout 3monitor 'Microsoft Outlook':MAIN_FIRST    ${2-full}
 layout 3monitor 'Airmail 2':MAIN_FIRST  ${2-full}
 layout 3monitor 'OmniFocus':MAIN_FIRST  ${2-full}
 layout 3monitor 'Spotify':MAIN_FIRST    ${2-full}
+layout 3monitor 'Monitor':REPEAT        ${0-full}
 
 ## Default Layouts
 default 1monitor count:1
