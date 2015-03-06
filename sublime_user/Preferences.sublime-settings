@@ -48,15 +48,15 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"SublimeLinter",
-		"Vintage",
 		"Find++",
-		"FileDiffs",
-		"Anaconda",
 		"Git",
 		"Vintageous",
+		"Gradle_Language",
+		"FileDiffs",
+		"Vintage",
+		"Anaconda",
 		"Markdown",
-		"Gradle_Language"
+		"SublimeLinter"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
