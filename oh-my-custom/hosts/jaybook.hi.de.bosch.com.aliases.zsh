@@ -1,11 +1,14 @@
 echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
 # general
+androidSdkVersion='24.1.2'
 
 # ant aliases
-alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2'
-alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2'
-alias antServerSDK='(cd Source/ServerSDK && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2 && open reports/testresults/index.html)'
-alias antService='(cd Source/Service && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/24.0.2 && open reports/testresults/index.html)'
+alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion''
+alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion''
+alias antServerSDK='(cd Source/ServerSDK && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion' && open reports/testresults/index.html)'
+alias antService='(cd Source/Service && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion' && open reports/testresults/index.html)'
+alias antMiniLauncher='(cd Testing/AndroidMiniLauncherApp && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion' && open reports/testresults/index.html)'
+alias antTestAll='cd ~/Projects/git/mySPIN.Android.ServerSDK && setjdk 1.7 && (antServerSDK && antService && antMiniLauncher)'
 
 # android aliases
 alias andup='android update project -p .'

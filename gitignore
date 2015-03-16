@@ -87,7 +87,6 @@ org.eclipse.jdt.core.prefs
 tags
 .zhistory
 *.orig
-*.mk
 *.vrb
 *.1
 *.autosave

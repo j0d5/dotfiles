@@ -3,10 +3,10 @@ echo 'loading HI-Z0AE1.local.aliases.zsh'
 alias genyshell='/Applications/Genymotion\ Shell.app/Contents/MacOS/genyshell'
 
 # ant aliases
-alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2'
-alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2'
-alias antServerSDK='(cd Source/ServerSDK && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2 && open reports/testresults/index.html)'
-alias antService='(cd Source/Service && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/23.0.2 && open reports/testresults/index.html)'
+alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/24.1.2'
+alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/24.1.2'
+alias antServerSDK='(cd Source/ServerSDK && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/24.1.2 && open reports/testresults/index.html)'
+alias antService='(cd Source/Service && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/24.1.2 && open reports/testresults/index.html)'
 
 # android aliases
 alias andup='android update project -p .'

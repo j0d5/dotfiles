@@ -40,6 +40,7 @@
   lg = log -p
   ll = log --pretty=oneline --graph
   l = log --pretty=oneline --decorate=short --graph --abbrev-commit --date=relative
+  la = log --graph --decorate=short --left-right --boundary --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset'
   unstage = 'reset HEAD --'
   last = 'diff HEAD~1'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
@@ -123,3 +124,7 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+#[filter "hawser"]
+#	clean = git hawser clean %f
+#	smudge = git hawser smudge %f
+#	required = true
