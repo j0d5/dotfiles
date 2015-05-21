@@ -134,6 +134,8 @@ bind 3:${hyper} layout 3monitor
 bind n:${hyper}     throw next
 bind right:${hyper} throw right resize
 bind left:${hyper}  throw left  resize
+bind left:ctrl;alt;cmd throw right resize:screenSizeX/2;screenSizeY
+bind left:ctrl;alt;cmd throw left  resize:screenSizeX/2;screenSizeY
 bind f:${hyper}     throw 1 resize
 bind g:${hyper}     throw 0 resize
 
