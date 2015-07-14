@@ -5,11 +5,13 @@
 	],
 	"installed_packages":
 	[
+		"AcademicMarkdown",
 		"AdvancedNewFile",
 		"Alignment",
 		"Anaconda",
 		"AndLog",
 		"Case Conversion",
+		"Citer",
 		"CMake",
 		"CodeSearch",
 		"DocBlockr",
@@ -28,6 +30,7 @@
 		"LaTeXing",
 		"Markdown Preview",
 		"MarkdownEditing",
+		"Material Theme",
 		"MultiEditUtils",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
@@ -46,7 +49,9 @@
 		"Theme - Soda",
 		"Theme - Soda SolarizedDark",
 		"Theme - Spacegray",
+		"Uncrustify",
 		"Vintageous",
+		"WordCount",
 		"WordHighlight"
 	],
 	"repositories":

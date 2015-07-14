@@ -48,26 +48,26 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Gradle_Language",
-		"Find++",
-		"Vintageous",
-		"Vintage",
-		"Anaconda",
 		"FileDiffs",
-		"Markdown"
+		"Find++",
+		"Markdown",
+		"Anaconda",
+		"Vintage",
+		"Gradle_Language",
+		"Vintageous"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
 	"rulers":
 	[
-		80
+		80,
+		120
 	],
 	"scroll_past_end": true,
-	"scroll_speed": 2,
+	"scroll_speed": 3,
 	"show_encoding": true,
-	"show_full_path": true,
+	"show_full_path": false,
 	"spell_check": false,
 	"tab_size": 2,
-	"theme": "Soda Dark 3.sublime-theme",
 	"trim_trailing_white_space_on_save": true
 }

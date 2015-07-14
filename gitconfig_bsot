@@ -65,8 +65,8 @@
   remote  = cyan
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
+  meta = yellow
+  frag = magenta
   old  = red bold
   new  = green bold
 
@@ -124,7 +124,11 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+
 #[filter "hawser"]
 #	clean = git hawser clean %f
 #	smudge = git hawser smudge %f
 #	required = true
+
+[http]
+	sslVerify = true

@@ -25,12 +25,13 @@ set history=1000     " keep 100 lines of command history
 set ruler            " Show the cursor position all the time
 set pastetoggle=<F2> " Toggle between paste mode on/off
 set smartindent      " Set indention
-set shiftwidth=2     " Shift width
-set tabstop=2        " Tab size
+set shiftwidth=4     " Shift width
+set tabstop=4        " Tab size
 set expandtab        " Tabs to spaces
 set shiftround       " shift to nearest indent
 set icon             " Icon text of the window
 set confirm          " Extra dialog
+" set relativenumber 
 set number           " Line Numbers
 set enc=utf-8        " Use UTF-8 as the default buffer encoding
 set showmatch        " When a bracket is inserted, briefly jump to a matching one
@@ -143,7 +144,8 @@ colorscheme johannes_qt
 
 if has('autocmd')
   "" Enable filetype detection
-  filetype on
+  filetype off "disabled for Vundle
+ 
   "" Load plugin files for specific file types
   filetype plugin on
   "" Load the indent file for specific file types
@@ -412,8 +414,50 @@ call InitializeDirectories()
 "#                        ##
 "###########################
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'tpope/vim-fugitive'
+Plugin 'Wutzara/vim-materialtheme'
+Plugin 'vim-scripts/SmartusLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'powerline/powerline'
+Plugin 'jcf/vim-latex'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'gertjanreynaert/cobalt2-vim-theme'
+Plugin 'naseer/logcat'
+
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
 " load pathogen
-call pathogen#infect()
+" call pathogen#infect()
 
 " netRW: Open files in a split window
 let g:netrw_browse_split = 1

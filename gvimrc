@@ -41,7 +41,7 @@ set guioptions-=m " remove menubar
 let c_comment_strings=1
 
 set lines=70
-set columns=90
+set columns=130
 
 " set transparency=8
 " colorscheme johannes
