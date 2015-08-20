@@ -6,8 +6,6 @@ alias downtime='pmset -g log | grep -e " Sleep  " -e " Wake  "'
 alias pf="open -a \"Path Finder.app\""
 alias bu="brew update && brew upgrade --all && brew cleanup"
 
-plugins+=(osx brew)
-
 # android paths
 androidSdkVersion=24.3.3
 androidBuildToolsVersion=22.0.1

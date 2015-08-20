@@ -48,13 +48,13 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"FileDiffs",
-		"Find++",
-		"Markdown",
-		"Anaconda",
-		"Vintage",
 		"Gradle_Language",
-		"Vintageous"
+		"Vintage",
+		"Anaconda",
+		"Markdown",
+		"Vintageous",
+		"Find++",
+		"FileDiffs"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,

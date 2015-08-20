@@ -1,7 +1,5 @@
 echo 'loading jaybook.hi.de.bosch.com.zsh'
 
-plugins+=(github sublime brew vagrant gradle ant python)
-
 # custom zsh commands
 export http_proxy='http://localhost:8080'
 export https_proxy='https://localhost:8080'

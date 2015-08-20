@@ -39,8 +39,8 @@
   dfi = diff --ignore-all-space
   lg = log -p
   ll = log --pretty=oneline --graph
-  l = log --pretty=oneline --decorate=short --graph --abbrev-commit --date=relative
-  la = log --graph --decorate=short --left-right --boundary --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset'
+  l = log -10 --decorate=short --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset' #--graph
+  la = log --decorate=short --left-right --boundary --abbrev-commit --date=relative --graph --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset'
   unstage = 'reset HEAD --'
   last = 'diff HEAD~1'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
