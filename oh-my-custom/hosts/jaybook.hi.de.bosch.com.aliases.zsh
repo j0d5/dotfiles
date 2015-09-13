@@ -20,6 +20,8 @@ alias activity="aapt dump badging $* | grep Activity | awk '{print $2}' | sed s/
 alias adbr='adb kill-server && adb start-server'
 alias adbk='adb -e emu kill'
 
+alias cleanBuild='find . -type d -name build -exec rm -r {} +'
+
 # ssh aliases
 alias sshBuildUbuntu='ssh jst2hi@bsot-build.hi.de.bosch.com'
 alias sshBuildMacPro='ssh jst2hi@macproserver1.hi.de.bosch.com'
