@@ -2,6 +2,9 @@ echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
 # general
 androidSdkVersion='24.1.2'
 
+# rsync
+alias syncDocs='rsync -vrhzu --exclude-from ~/Documents/exclude.rsync ~/Documents/ /Volumes/jst2hi\$/Eigene\ Dateien/'
+
 # ant aliases
 alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion''
 alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion''
@@ -20,6 +23,7 @@ alias activity="aapt dump badging $* | grep Activity | awk '{print $2}' | sed s/
 alias adbr='adb kill-server && adb start-server'
 alias adbk='adb -e emu kill'
 
+# gradle
 alias cleanBuild='find . -type d -name build -exec rm -r {} +'
 
 # ssh aliases

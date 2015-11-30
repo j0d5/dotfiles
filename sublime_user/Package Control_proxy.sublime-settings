@@ -1,4 +1,5 @@
 {
+	"bootstrapped": true,
 	"http_proxy": "localhost:8080",
 	"in_process_packages":
 	[
@@ -10,6 +11,7 @@
 		"Alignment",
 		"Anaconda",
 		"AndLog",
+		"BeautifyLatex",
 		"Case Conversion",
 		"Citer",
 		"CMake",

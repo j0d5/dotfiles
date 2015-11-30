@@ -23,7 +23,7 @@ set autoindent       " copy indent from current line
 set autoread         " read open files again when changed outside Vim
 set history=1000     " keep 100 lines of command history
 set ruler            " Show the cursor position all the time
-set pastetoggle=<F2> " Toggle between paste mode on/off
+" set pastetoggle=<F2> " Toggle between paste mode on/off
 set smartindent      " Set indention
 set shiftwidth=4     " Shift width
 set tabstop=4        " Tab size
@@ -72,9 +72,6 @@ set hlsearch             " Highlight search
 set incsearch            " incremental searching
 set ignorecase smartcase " Case-insensitive searching
 " nnoremap  :nohlsearch/    " press enter to hide highlighting
-
-" Assume the /g flag is on :s substitutions to replace all matches in a line
-set gdefault
 
 " --------------------
 " WILDMENU
@@ -145,7 +142,7 @@ colorscheme johannes_qt
 if has('autocmd')
   "" Enable filetype detection
   filetype off "disabled for Vundle
- 
+
   "" Load plugin files for specific file types
   filetype plugin on
   "" Load the indent file for specific file types
@@ -433,6 +430,9 @@ Plugin 'jcf/vim-latex'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'gertjanreynaert/cobalt2-vim-theme'
 Plugin 'naseer/logcat'
+Plugin 'junegunn/goyo.vim'
+Plugin 'tpope/vim-surround.git'
+Plugin 'airblade/vim-gitgutter'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html

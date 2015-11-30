@@ -49,12 +49,12 @@
 	"ignored_packages":
 	[
 		"Anaconda",
-		"Markdown",
-		"Vintageous",
-		"Vintage",
 		"FileDiffs",
+		"Find++",
 		"Gradle_Language",
-		"Find++"
+		"Markdown",
+		"Vintage",
+		"Vintageous"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,

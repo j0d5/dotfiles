@@ -2,7 +2,7 @@ echo 'loading jaybook.hi.de.bosch.com.zsh'
 
 # custom zsh commands
 export http_proxy='http://localhost:8080'
-export https_proxy='https://localhost:8080'
+export https_proxy='http://localhost:8080'
 export ANDROID_NDK_HOME='/usr/local/Cellar/android-ndk/r10d'
 
 # generate a nice startup logo

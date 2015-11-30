@@ -5,7 +5,7 @@
 [core]
   # open sublime text with new window and wait for result
   editor = subl -n -w
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 
 [push]
   default = simple
@@ -37,6 +37,7 @@
   up = "!git remote update -p; git merge --ff-only @{u}"
   df = diff
   dfi = diff --ignore-all-space
+  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
   lg = log -p
   ll = log --pretty=oneline --graph
   l = log -10 --decorate=short --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset' #--graph
@@ -60,20 +61,21 @@
   pager       = true
 
 [color "branch"]
-  current = green reverse
-  local   = yellow
-  remote  = cyan
+  current = red reverse
+  local   = blud
+  remote  = green
 
 [color "diff"]
   meta = yellow
   frag = magenta
   old  = red bold
   new  = green bold
+  plain = white
 
 [color "status"]
   added     = green
   changed   = yellow
-  untracked = red
+  untracked = cyan
 
 # [color "interactive"]
 
