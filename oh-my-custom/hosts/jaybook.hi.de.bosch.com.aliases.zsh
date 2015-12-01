@@ -5,14 +5,6 @@ androidSdkVersion='24.1.2'
 # rsync
 alias syncDocs='rsync -vrhzu --exclude-from ~/Documents/exclude.rsync ~/Documents/ /Volumes/jst2hi\$/Eigene\ Dateien/'
 
-# ant aliases
-alias antbd='ant clean debug -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion''
-alias antbr='ant clean release -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion''
-alias antServerSDK='(cd Source/ServerSDK && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion' && open reports/testresults/index.html)'
-alias antService='(cd Source/Service && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion' && open reports/testresults/index.html)'
-alias antMiniLauncher='(cd Testing/AndroidMiniLauncherApp && ant clean test -Dsdk.dir=/usr/local/Cellar/android-sdk/'$androidSdkVersion' && open reports/testresults/index.html)'
-alias antTestAll='cd ~/Projects/git/mySPIN.Android.ServerSDK && setjdk 1.7 && (antServerSDK && antService && antMiniLauncher)'
-
 # android aliases
 alias andup='android update project -p .'
 alias andut='android update test-project -m ../ -p .'
@@ -25,6 +17,8 @@ alias adbk='adb -e emu kill'
 
 # gradle
 alias cleanBuild='find . -type d -name build -exec rm -r {} +'
+alias buildSdk='gradle :Source:Service:clean :Source:ServerSDK:clean :Source:Service:build :Source:ServerSDK:build'
+alias buildMini='gradle :Testing:AudioManagementTest:clean :Testing:AudioManagementTest:build'
 
 # ssh aliases
 alias sshBuildUbuntu='ssh jst2hi@bsot-build.hi.de.bosch.com'
