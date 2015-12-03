@@ -1,4 +1,14 @@
-echo "loading global_settings"
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: global_settings.zsh                    ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for global settings        ##
+##                                              ##
+##################################################
+
+# echo "loading global_settings"
 
 export DEFAULT_USER=johannes
 

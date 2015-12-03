@@ -1,7 +1,17 @@
-echo 'loading functions'
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: functions.zsh                          ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for global functions       ##
+##                                              ##
+##################################################
+
+# echo 'loading functions'
 
 # function for extracting compressed files
-function extract() {
+function e() {
     unset REMOVE_ARCHIVE
 
     if test "$1" = "-r"; then
@@ -37,7 +47,7 @@ function extract() {
 }
 
 # greps for process
-function psgrep() {
+function psg() {
   if [ ! -z $1 ] ; then
     echo "Grepping for processes matching $1..."
     ps aux | grep -i $1 | grep -v grep
@@ -47,7 +57,7 @@ function psgrep() {
 }
 
 # greps for open files
-function lsofgrep() {
+function lsofg() {
   if [ ! -z $1 ] ; then
     echo "Grepping for open files matching $1..."
     lsof | grep -i $1 | grep -v grep
@@ -57,7 +67,7 @@ function lsofgrep() {
 }
 
 # greps the history for first argument
-function histgrep() {
+function histg() {
   if [ ! -z $1 ] ; then
     echo "Grepping history for $1..."
     cat ~/.bash_history | grep -i $1 | grep -v grep
@@ -68,12 +78,12 @@ function histgrep() {
 
 # changes the modifier for given file and dir
 function chmod_fd {
-	find . -type f -exec chmod $1 {} \;
-	find . -type d -exec chmod $2 {} \;
+  find . -type f -exec chmod $1 {} \;
+  find . -type d -exec chmod $2 {} \;
 }
 
 function sshs {
-	ssh $@ -t screen
+  ssh $@ -t screen
 }
 
 function box_name {

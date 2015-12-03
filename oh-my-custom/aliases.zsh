@@ -1,5 +1,15 @@
-## global alias settings
-echo 'setting global aliases'
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: aliases.zsh                            ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for global aliases         ##
+##                                              ##
+##################################################
+
+# echo 'loading global aliases'
+
 alias ..='cd ..'
 # list as colored list with human readable sizes
 alias l='ls -Glhp'

@@ -1,3 +1,14 @@
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: Darwin.zsh                             ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for platform specific      ##
+##              settings                        ##
+##                                              ##
+##################################################
+
 # custom zsh commands
 echo "i'm on a darwin system!"
 # general

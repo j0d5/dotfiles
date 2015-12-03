@@ -1,4 +1,14 @@
-echo 'loading jaybook.hi.de.bosch.com.zsh'
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: jaybook.hi.de.bosch.com.zsh            ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for host specific settings ##
+##                                              ##
+##################################################
+
+# echo 'loading jaybook.hi.de.bosch.com.zsh'
 
 # custom zsh commands
 export http_proxy='http://localhost:8080'

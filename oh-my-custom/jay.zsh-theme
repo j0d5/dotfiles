@@ -1,13 +1,22 @@
-## theme for zsh
-echo 'loading jay theme'
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: jay.zsh-theme                          ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for custom theme           ##
+##                                              ##
+##################################################
+
+# echo 'loading jay theme'
 
 # set colors for zsh git functions
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="[%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}]"
+ZSH_THEME_GIT_PROMPT_PREFIX="(%{%F{50}%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}:"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{%F{red}%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{%F{green}%}"
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{45}%}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%})"
 
 # display different symbols if git repo is modified
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
@@ -35,21 +44,22 @@ prompt_context() {
 
 # current working directory
 prompt_dir() {
-  echo -n %{$fg_bold[green]%}%~ %{$reset_color%}
+  echo -n "%{%F{40}%}%~%{$reset_color%} "
 }
 
 # returns the currently used prompt char
 prompt_char() {
-    git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}⮀%{%F{white}%}' && return
-    echo '⮀'
+  # git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}⮀%{%F{white}%}' && return
+  git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}>%{%F{white}%}' && return
+  echo '>'
 }
 
 prompt_start() {
-  echo -n '['
+  echo -n ''
 }
 
 prompt_end() {
-  echo "]\n"$(prompt_status) $(prompt_char)
+  echo "\n"$(prompt_status)$(prompt_char)
 }
 
 # echo git status
@@ -66,7 +76,7 @@ prompt_status() {
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{$fg[red]%}✘"
   [[ $UID -eq 0 ]] && symbols+="%{$fg[yellow]%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{$fg[cyan]%}⚙"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{$fg[cyan]%}•"
 
   [[ -n "$symbols" ]] && echo "$symbols%{%F{white}%}"
 }
@@ -82,7 +92,7 @@ build_prompt() {
   prompt_end
 }
 
-# set prompt
+# set prompt including trailing space
 PROMPT='$(build_prompt) '
 
 # display exitcode on the right when >0

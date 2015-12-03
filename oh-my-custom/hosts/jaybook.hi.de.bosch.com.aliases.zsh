@@ -1,4 +1,15 @@
-echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: jaybook.hi.de.bosch.com.aliases.zsh    ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for host specific aliases  ##
+##                                              ##
+##################################################
+
+# echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
+
 # general
 androidSdkVersion='24.1.2'
 

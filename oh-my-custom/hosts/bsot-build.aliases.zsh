@@ -1,3 +1,13 @@
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: bsot-build.aliases.zsh                 ##
+## Date: 03.12.2015                             ##
+##                                              ##
+## Description: file for host specific aliases  ##
+##                                              ##
+##################################################
+
 # adb aliases
 alias adbr='adb kill-server && adb start-server'
 alias adbk='adb -e emu kill'
