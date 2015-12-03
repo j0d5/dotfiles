@@ -37,11 +37,12 @@
   up = "!git remote update -p; git merge --ff-only @{u}"
   df = diff
   dfi = diff --ignore-all-space
-  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-  lg = log -p
-  ll = log --pretty=oneline --graph
-  l = log -10 --decorate=short --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset' #--graph
-  la = log --decorate=short --left-right --boundary --abbrev-commit --date=relative --graph --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset'
+  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
+  lg = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative --graph
+  la = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=relative
+  lc  = "!f() { git ll "$1"^.."$1"; }; f"
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
   unstage = 'reset HEAD --'
   last = 'diff HEAD~1'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
@@ -57,13 +58,14 @@
   status      = auto
   branch      = auto
   interactive = auto
-  ui          = true
+  ui          = auto
   pager       = true
 
 [color "branch"]
   current = red reverse
   local   = blue
   remote  = green
+  plain = normal
 
 [color "diff"]
   meta = yellow
@@ -77,7 +79,11 @@
   changed   = yellow
   untracked = cyan
 
-# [color "interactive"]
+[color "interactive"]
+  prompt = normal
+  header = normal
+  help   = normal
+  error  = normal
 
 [diff]
   tool = sourcetree
@@ -102,7 +108,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"

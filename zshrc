@@ -40,3 +40,6 @@ export EDITOR=subl
 plugins=(hosts history-substring-search zsh-syntax-highlighting wd command-not-found sublime brew gradle osx)
 
 source $ZSH/oh-my-zsh.sh
+
+export NVM_DIR="/Users/johannes/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
