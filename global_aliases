@@ -25,10 +25,10 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias top='top -o cpu -n 30'
 
-## Aenderungen bei allen angegebenen Logdateien live anzeigen:
+## live changes for logs
 alias mylogs='sudo tail -f /var/log/{system.log,secure.log}'
 
-## Die oeffentliche IP ausgeben:
+## Show my public ip
 alias myip="wget -qO - http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'"
 
 ## command aliases
@@ -45,3 +45,10 @@ alias fif='find . -type f \( -name "*.c*" -o -name "*.h" \) -print | xargs grep 
 alias loc='find . -type f \( -name "*.c*" -o -name "*.h" -o -name "*.py" -o -name "*.sh" \) -print | xargs cat | wc -l'
 # alias gitcommitcrap='git commit -m "`curl -s 'http://whatthecommit.com/' | grep '<p>' | cut -c4-`"'
 alias pg_stop='sudo -u postgres /Library/PostgreSQL/9.0/bin/pg_ctl stop -D /Library/PostgreSQL/9.0/data'
+
+## bookmarks
+alias j="jump"
+alias s="bookmark"
+# alias d="deletemark"
+# alias p="showmarks"
+alias l="showmarks"

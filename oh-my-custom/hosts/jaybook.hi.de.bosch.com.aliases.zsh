@@ -12,6 +12,8 @@
 
 # general
 androidSdkVersion='24.1.2'
+alias setProxy='export http_proxy=http://localhost:8080 && export https_proxy=http://localhost:8080'
+alias unsetProxy='export http_proxy='' && export https_proxy='''
 
 # rsync
 alias syncDocs='rsync -vrhzu --exclude-from ~/Documents/exclude.rsync ~/Documents/ /Volumes/jst2hi\$/Eigene\ Dateien/'

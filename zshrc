@@ -37,9 +37,13 @@ export EDITOR=subl
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(git git-flow rails git textmate ruby lighthouse)
-plugins=(hosts history-substring-search zsh-syntax-highlighting wd command-not-found sublime brew gradle osx)
+plugins=(hosts history-substring-search zsh-syntax-highlighting wd command-not-found sublime brew gradle osx zshmarks)
 
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="/Users/johannes/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# if [ -f /usr/local/share/liquidprompt ]; then
+#   . /usr/local/share/liquidprompt
+# fi
