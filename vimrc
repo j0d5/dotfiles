@@ -542,7 +542,8 @@ let maplocalleader = "," " Change <LocalLeader>
 " Save file with CTRL-s
 noremap <C-S> :up<CR>
 
-" Visual mode toggle folding
+" Space to toggle folds.
+nnoremap <Space> za
 vnoremap <Space> za
 
 " quickly insert newline in normalmode without leaving
@@ -591,7 +592,7 @@ noremap <F6> :GundoToggle<CR>
 " Omni Completion
 " --------------------
 " set Ctrl+j in insert mode, like VS.Net
-" inoremap <C-j> <C-X><C-O>
+inoremap <C-Space> <C-x><C-o>
 
 " --------------------
 " TagList

@@ -1,6 +1,6 @@
 [user]
-	name = Johannes Steudle
-	email = johannes.steudle@bosch-softtec.com
+  name = Johannes Steudle
+  email = johannes.steudle@bosch-softtec.com
 
 [core]
   # open sublime text with new window and wait for result
@@ -28,10 +28,13 @@
   autocorrect = 1
 
 [alias]
-  ci = commit
+  ec = config --global -e
   st = status -sb
-  br = branch -v
+  ci = commit
+  cm = !git add -A && git commit
   co = checkout
+  cob = checkout -b
+  br = branch -v
   fe = fetch -v
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
@@ -42,6 +45,15 @@
   la = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=relative
   lc  = "!f() { git ll "$1"^.."$1"; }; f"
   lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+  # save your work to a specific commit
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  # and remove it afterwards with keeping the changes
+  undo = reset HEAD~1 --mixed
+
+  # use this instead of just resetting your head. It creates a commit and
+  # removes it afterwards so work is still reachable with 'reflog'
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
   unstage = 'reset HEAD --'
   last = 'diff HEAD~1'
@@ -129,14 +141,14 @@
   cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
 
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
 
 #[filter "hawser"]
-#	clean = git hawser clean %f
-#	smudge = git hawser smudge %f
-#	required = true
+# clean = git hawser clean %f
+# smudge = git hawser smudge %f
+# required = true
 
 [http]
-	sslVerify = true
+  sslVerify = true

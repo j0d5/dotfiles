@@ -1,6 +1,6 @@
 [user]
   name = Johannes Steudle
-  email = johannes@steudle.eu
+  email = jaycloudy@icloud.com
 
 [core]
   # open sublime text with new window and wait for result
@@ -28,19 +28,33 @@
   autocorrect = 1
 
 [alias]
-  ci = commit
+  ec = config --global -e
   st = status -sb
-  br = branch -v
+  ci = commit
+  cm = !git add -A && git commit
   co = checkout
+  cob = checkout -b
+  br = branch -v
   fe = fetch -v
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
   df = diff
   dfi = diff --ignore-all-space
-  lg = log -p
-  ll = log --pretty=oneline --graph
-  l = log --pretty=oneline --decorate=short --graph --abbrev-commit --date=relative
-  la = log --graph --decorate=short --left-right --boundary --abbrev-commit --date=relative --pretty=format:'%Cred%h%Creset %C(222)%d%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset'
+  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
+  lg = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative --graph
+  la = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=relative
+  lc  = "!f() { git ll "$1"^.."$1"; }; f"
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+  # save your work to a specific commit
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  # and remove it afterwards with keeping the changes
+  undo = reset HEAD~1 --mixed
+
+  # use this instead of just resetting your head. It creates a commit and
+  # removes it afterwards so work is still reachable with 'reflog'
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
   unstage = 'reset HEAD --'
   last = 'diff HEAD~1'
   new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
@@ -56,26 +70,32 @@
   status      = auto
   branch      = auto
   interactive = auto
-  ui          = true
+  ui          = auto
   pager       = true
 
 [color "branch"]
-  current = green reverse
-  local   = yellow
-  remote  = cyan
+  current = red reverse
+  local   = blue
+  remote  = green
+  plain = normal
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
+  meta = yellow
+  frag = magenta
   old  = red bold
   new  = green bold
+  plain = white
 
 [color "status"]
   added     = green
   changed   = yellow
-  untracked = red
+  untracked = cyan
 
-# [color "interactive"]
+[color "interactive"]
+  prompt = normal
+  header = normal
+  help   = normal
+  error  = normal
 
 [diff]
   tool = sourcetree
@@ -119,3 +139,16 @@
 
 [difftool "sublimerge"]
   cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
+
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+
+#[filter "hawser"]
+# clean = git hawser clean %f
+# smudge = git hawser smudge %f
+# required = true
+
+[http]
+  sslVerify = true

@@ -26,3 +26,13 @@ adbks() {
     adb -e emu kill && emulator -avd $1 -no-window &
   fi
 }
+
+setProxy() {
+	export http_proxy=http://localhost:8080 && export https_proxy=http://localhost:8080
+	sed -i .bak s/false/true/g ~/.m2/settings.xml
+}
+
+unsetProxy() {
+	export http_proxy='' && export https_proxy=''
+	sed -i .bak s/true/false/g ~/.m2/settings.xml
+}
