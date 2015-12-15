@@ -47,6 +47,7 @@ install_dotfiles() {
   if ! [ -d $DOTDIR ]; then
     echo "$DOTDIR directory does not exist, cloning..."
     git clone https://github.com/johannes82/.dotfiles.git
+    cd $DOTDIR && git submodule init && git submodule update
     echo "Ready to go!"
   else
     echo "$DOTDIR directory exists, continuing..."
