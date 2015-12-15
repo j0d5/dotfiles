@@ -27,7 +27,6 @@ LASTNAME="Steudle"
 EMAIL="jaycloudy@icloud.com"
 GITHUBUSER="johannes82"
 
-source $HOME/$NAME/lib.sh
 
 
 if [[ -z $1 ]]; then
@@ -44,22 +43,22 @@ if [[ -z $4 ]]; then
 fi
 
 install_dotfiles() {
-  action 'check for existing dotfiles'
+  echo 'check for existing dotfiles'
   if ! [ -d $DOTDIR ]; then
-    running "$DOTDIR directory does not exist, cloning..."
-    # mkdir $HOME/$NAME
+    echo "$DOTDIR directory does not exist, cloning..."
     git clone https://github.com/johannes82/.dotfiles.git
-    ok
+    echo "Ready to go!"
   else
-    running "$DOTDIR directory exists" ok
+    echo "$DOTDIR directory exists, continuing..."
   fi
-  ok
 }
+install_dotfiles
+
+source $HOME/$NAME/lib.sh
 
 action "Check on which system we are"
 if [ "Darwin" == $(uname) ]; then
   running "we're on a mac" ok
-  install_dotfiles
   require_brew
 else
   fail "this system is currently not supported"
@@ -70,7 +69,6 @@ check_zsh
 action "Linking the dotfiles"
 for file in ${CFGFILES[@]}
 do
-  #action "Create link for $file"
   link_dotfiles $file
 done
 
