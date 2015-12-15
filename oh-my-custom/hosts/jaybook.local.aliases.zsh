@@ -10,7 +10,6 @@
 
 # echo 'loading jaybook.local.aliases.zsh'
 
-alias gvim='open /Applications/MacVim.app'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias gvim='open /opt/homebrew-cask/Caskroom/macvim/7.4-85/MacVim.app/Contents/MacOS/MacVim'
+alias vim='/opt/homebrew-cask/Caskroom/macvim/7.4-85/MacVim.app/Contents/MacOS/Vim'
 alias pg_stop='sudo -u postgres /Library/PostgreSQL/9.0/bin/pg_ctl stop -D /Library/PostgreSQL/9.0/data'
-

@@ -78,12 +78,10 @@ fi
 
 bot "installing homebrew command-line tools"
 
-
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 # require_brew coreutils
-# Install some other useful utilities like `sponge`
-# require_brew moreutils
+
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 require_brew findutils
 
@@ -92,42 +90,43 @@ require_brew findutils
 #install bash
 #install bash-completion
 
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-#install ringojs
-#install narwhal
-
-# Install other useful binaries
-# require_brew ack
-# Beanstalk http://kr.github.io/beanstalkd/
-#require_brew beanstalkd
-# ln -sfv /usr/local/opt/beanstalk/*.plist ~/Library/LaunchAgents
-# launchctl load ~/Library/LaunchAgents/homebrew.mxcl.beanstalk.plist
-
-# docker setup:
-# require_brew boot2docker
-
-# dos2unix converts windows newlines to unix newlines
-# require_brew dos2unix
-# fortune command--I source this as a better motd :)
+# fancy commands
 require_brew fortune
+require_brew archey
+require_brew cowsay
+
+# android development
+require_brew android-ndk
+require_brew android-sdk
+require_brew gradle
+require_brew apktool
+require_brew dex2jar
+require_brew smali
+
+# iOS development
+require_brew ideviceinstaller
+
+# ZSH!!
+require_brew zsh
+require_brew zsh-completions
+require_brew zsh-syntax-highlighting
+require_brew zsh-lovers
+
+require_brew gcc
+require_brew tmux
+require_brew plantuml
+require_brew lsusb
 require_brew gawk
-# http://www.lcdf.org/gifsicle/ (because I'm a gif junky)
-# require_brew gifsicle
-# skip those GUI clients, git command-line all the way
 require_brew git
-# yes, yes, use git-flow, please :)
 require_brew git-flow
-# why is everyone still not using GPG?
+require_brew git-extras
 require_brew gnupg
+
 # Install GNU `sed`, overwriting the built-in `sed`
 # so we can do "sed -i 's/foo/bar/' file" instead of "sed -i '' 's/foo/bar/' file"
-# require_brew gnu-sed --default-names
-# require_brew go
+require_brew gnu-sed --default-names
 # better, more recent grep
-# require_brew homebrew/dupes/grep
-# require_brew imagemagick
-# require_brew imagesnap
+require_brew homebrew/dupes/grep
 # jq is a JSON grep
 # require_brew jq
 # http://maven.apache.org/
@@ -296,6 +295,8 @@ sudo pmset -a hibernatemode 0;ok
 
 # running "Stop iTunes from responding to the keyboard media keys"
 # launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null;ok
+running "Stop iTunes from opening when device is connected."
+defaults write com.apple.iTunes dontAutomaticallySyncIPods 1
 
 # running "Show icons for hard drives, servers, and removable media on the desktop"
 # defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -468,7 +469,7 @@ running "Disable press-and-hold for keys in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false;ok
 
 running "Set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 0;
+defaults write NSGlobalDomain KeyRepeat -int 3;
 
 # running "Set language and text formats (english/US)"
 # defaults write NSGlobalDomain AppleLanguages -array "en"
@@ -659,14 +660,14 @@ bot "Configuring Hot Corners"
 # 12: Notification Center
 
 running "Top left screen corner → Mission Control"
-defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-corner -int 3
 defaults write com.apple.dock wvous-tl-modifier -int 0;ok
 running "Top right screen corner → Desktop"
 defaults write com.apple.dock wvous-tr-corner -int 4
 defaults write com.apple.dock wvous-tr-modifier -int 0;ok
-running "Bottom right screen corner → Start screen saver"
-defaults write com.apple.dock wvous-br-corner -int 5
-defaults write com.apple.dock wvous-br-modifier -int 0;ok
+# running "Bottom right screen corner → Start screen saver"
+# defaults write com.apple.dock wvous-br-corner -int 5
+# defaults write com.apple.dock wvous-br-modifier -int 0;ok
 
 ###############################################################################
 bot "Configuring Safari & WebKit"
@@ -773,35 +774,37 @@ bot "Terminal & iTerm2"
 ###############################################################################
 
 # running "Only use UTF-8 in Terminal.app"
-# defaults write com.apple.terminal StringEncodings -array 4;ok
-#
+defaults write com.apple.terminal StringEncodings -array 4;ok
+
 # running "Use a modified version of the Solarized Dark theme by default in Terminal.app"
-# TERM_PROFILE='Solarized Dark xterm-256color';
-# CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
-# if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
-# 	open "./configs/${TERM_PROFILE}.terminal";
-# 	sleep 1; # Wait a bit to make sure the theme is loaded
-# 	defaults write com.apple.terminal 'Default Window Settings' -string "${TERM_PROFILE}";
-# 	defaults write com.apple.terminal 'Startup Window Settings' -string "${TERM_PROFILE}";
-# fi;
+TERM_PROFILE='Solarized Dark xterm-256color';
+CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
+if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
+	open "./iTerm/${TERM_PROFILE}.terminal";
+	sleep 1; # Wait a bit to make sure the theme is loaded
+	defaults write com.apple.terminal 'Default Window Settings' -string "${TERM_PROFILE}";
+	defaults write com.apple.terminal 'Startup Window Settings' -string "${TERM_PROFILE}";
+fi;
 
 #running "Enable “focus follows mouse” for Terminal.app and all X11 apps"
 # i.e. hover over a window and start typing in it without clicking first
 #defaults write com.apple.terminal FocusFollowsMouse -bool true
 #defaults write org.x.X11 wm_ffm -bool true;ok
 
-running "Installing the Solarized Dark theme for iTerm (opening file)"
-open "./configs/Solarized Dark.itermcolors";ok
-
+# running "Installing the Solarized Dark theme for iTerm (opening file)"
+# open "./iTerm/Solarized Dark.itermcolors";ok
 running "Don’t display the annoying prompt when quitting iTerm"
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false;ok
 running "hide tab title bars"
 defaults write com.googlecode.iterm2 HideTab -bool true;ok
 running "set system-wide hotkey to show/hide iterm with ^\`"
 defaults write com.googlecode.iterm2 Hotkey -bool true;
-defaults write com.googlecode.iterm2 HotkeyChar -int 96;
-defaults write com.googlecode.iterm2 HotkeyCode -int 50;
-defaults write com.googlecode.iterm2 HotkeyModifiers -int 262401;
+defaults write com.googlecode.iterm2 HotkeyChar -int 63247;
+defaults write com.googlecode.iterm2 HotkeyCode -int 111;
+defaults write com.googlecode.iterm2 HotkeyModifiers -int 8388864;
+defaults write com.googlecode.iterm2 HotKeyTogglesWindow 1;
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder 1;
+defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/Dropbox/Apps/iTerm"
 ok
 
 # running "Make iTerm2 load new tabs in the same directory"

@@ -11,7 +11,6 @@
 # echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
 
 # general
-androidSdkVersion='24.1.2'
 
 # rsync
 alias syncDocs='rsync -vrhzu --exclude-from ~/Documents/exclude.rsync ~/Documents/ /Volumes/jst2hi\$/Eigene\ Dateien/'

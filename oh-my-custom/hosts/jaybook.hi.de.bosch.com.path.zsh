@@ -12,4 +12,4 @@
 
 # local path file
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
-export PATH=$PATH:/Users/johannes/Library/TeXShop/bin/tslatexmk
+export PATH=$PATH:$HOME/Library/TeXShop/bin/tslatexmk

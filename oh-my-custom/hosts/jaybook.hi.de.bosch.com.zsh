@@ -13,25 +13,14 @@
 # custom zsh commands
 export http_proxy='http://localhost:8080'
 export https_proxy='http://localhost:8080'
-export ANDROID_NDK_HOME='/usr/local/Cellar/android-ndk/r10d'
 
-# generate a nice startup logo
-/usr/local/bin/archey -c
-
-# start standard emulator or the emulator given in first argument
-adbks() {
-  if [[ -z $1 ]]; then
-    adb -e emu kill && emulator -avd google_emu_18 -no-window &
-  else
-    adb -e emu kill && emulator -avd $1 -no-window &
-  fi
-}
-
+# set a terminal proxy
 setProxy() {
 	export http_proxy=http://localhost:8080 && export https_proxy=http://localhost:8080
 	sed -i .bak s/false/true/g ~/.m2/settings.xml
 }
 
+# unset a terminal proxy
 unsetProxy() {
 	export http_proxy='' && export https_proxy=''
 	sed -i .bak s/true/false/g ~/.m2/settings.xml

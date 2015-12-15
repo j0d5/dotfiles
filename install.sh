@@ -1,4 +1,14 @@
 #!/bin/bash
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: install.sh                             ##
+## Date: 14.12.2015                             ##
+##                                              ##
+## Description: file for installing dotfiles    ##
+##              and setting up the system       ##
+##                                              ##
+##################################################
 echo "linking script for dotfiles"
 
 # constants
@@ -7,7 +17,9 @@ readonly DOTDIR="$HOME/$NAME"
 readonly BAK="dotfiles_backup"
 readonly CFGFILES=("zshrc" "vimrc" "gvimrc" "gitignore"\
                    "gitattributes" "hgrc" "hgignore"\
-                   "liquidpromptrc" "slate" "dir_colors")
+                   "liquidpromptrc" "slate" "dir_colors"\
+                   "zprofile" "zlogout" "zshenv"\
+                   "crontab")
 
 # default values
 FIRSTNAME="Johannes"
