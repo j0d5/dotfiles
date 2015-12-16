@@ -203,6 +203,7 @@ require_cask adium
 # tools
 # require_cask diffmerge
 require_cask gpgtools
+require_cask java
 # require_cask ireadfast
 require_cask iterm2
 require_cask macvim

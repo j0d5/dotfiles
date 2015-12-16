@@ -11,7 +11,7 @@
 # echo 'loading functions'
 
 # function for extracting compressed files
-function e() {
+function smartextract() {
     unset REMOVE_ARCHIVE
 
     if test "$1" = "-r"; then
