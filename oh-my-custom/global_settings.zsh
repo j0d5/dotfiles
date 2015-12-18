@@ -11,7 +11,6 @@
 # echo "loading global_settings"
 
 export DEFAULT_USER=johannes
-export BOOKMARKS_FILE="$HOME/.dotfiles/bookmarks"
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space

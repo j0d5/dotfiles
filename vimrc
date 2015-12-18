@@ -46,7 +46,7 @@ set completeopt=menu,menuone,longest,preview " Insert mode completion options
 " Limit popup menu height
 set pumheight=15
 set hidden           " Allow switching edited buffers without saving
-set tw=80            " Set line wrapping after 80 characters
+set tw=120            " Set line wrapping after 80 characters
 set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a                     " enable the use of the mouse
@@ -122,7 +122,9 @@ set viminfo='20,\"50,:20,%,n~/.vim/.viminfo
 " --------------------
 " COLORSCHEME
 " --------------------
-colorscheme johannes_qt
+" colorscheme johannes_qt
+set background=dark
+colorscheme solarized
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 
 " Fix my <Backspace> key (in Mac OS X Terminal)
@@ -433,6 +435,7 @@ Plugin 'naseer/logcat'
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-surround.git'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html

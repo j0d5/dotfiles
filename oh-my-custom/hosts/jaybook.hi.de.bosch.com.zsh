@@ -13,6 +13,7 @@
 # custom zsh commands
 export http_proxy='http://localhost:8080'
 export https_proxy='http://localhost:8080'
+export BOOKMARKS_FILE="$HOME/.dotfiles/bookmarks_bsot"
 
 # set a terminal proxy
 setProxy() {

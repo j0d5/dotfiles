@@ -12,3 +12,5 @@
 
 # show message of the day
 # source $ZSH_CUSTOM/hosts/_motd.zsh
+
+export BOOKMARKS_FILE="$HOME/.dotfiles/bookmarks"

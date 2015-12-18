@@ -49,7 +49,6 @@ prompt_dir() {
 
 # returns the currently used prompt char
 prompt_char() {
-  # git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}⮀%{%F{white}%}' && return
   git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}>%{%F{white}%}' && return
   echo '>'
 }
@@ -64,10 +63,20 @@ prompt_end() {
 
 # echo git status
 prompt_git() {
-  echo -n "("$(git_prompt_info)
-  echo -n $(git_prompt_short_sha)")"
-  echo -n $(git_prompt_status)
-  echo -n %{$reset_color%}
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo -n "("
+    echo -n $(git_prompt_info)
+    echo -n $(git_prompt_short_sha)
+    echo -n ":"
+    echo -n $(prompt_git_commit_changes)
+    echo -n ")"
+    echo -n $(git_prompt_status)
+    echo -n %{$reset_color%}
+  fi
+}
+
+prompt_git_commit_changes() {
+  git diff --shortstat | awk '{print "%{%F{red}%}+"$4 "%{%F{white}%}/%{%F{green}%}-"$6"%{%F{white}%}"}'
 }
 
 # error, root, background jobs

@@ -93,7 +93,7 @@ require_brew findutils
 # fancy commands
 require_brew fortune
 require_brew archey
-require_brew cowsay
+# require_brew cowsay
 
 # android development
 require_brew android-ndk
@@ -106,46 +106,38 @@ require_brew smali
 # iOS development
 require_brew ideviceinstaller
 
-# ZSH!!
+# ZSH!!!
 require_brew zsh
 require_brew zsh-completions
 require_brew zsh-syntax-highlighting
 require_brew zsh-lovers
+
+# git !!!
+require_brew git
+require_brew git-flow
+require_brew git-extras
+require_brew tig
 
 require_brew gcc
 require_brew tmux
 require_brew plantuml
 require_brew lsusb
 require_brew gawk
-require_brew git
-require_brew git-flow
-require_brew git-extras
 require_brew gnupg
-
+require_brew nmap
+require_brew tree
+# better, more recent vim
+require_brew vim --override-system-vi
+# Install wget with IRI support
+require_brew wget --enable-iri
 # Install GNU `sed`, overwriting the built-in `sed`
 # so we can do "sed -i 's/foo/bar/' file" instead of "sed -i '' 's/foo/bar/' file"
 require_brew gnu-sed --with-default-names
 # better, more recent grep
 require_brew homebrew/dupes/grep
-# jq is a JSON grep
-# require_brew jq
-# http://maven.apache.org/
-require_brew maven
-require_brew nmap
-# require_brew node
-require_brew nvm
-# better/more recent version of screen
-# require_brew homebrew/dupes/screen
-require_brew tree
-# require_brew ttyrec
-# better, more recent vim
-require_brew vim --override-system-vi
-# require_brew watch
-# Install wget with IRI support
-require_brew wget --enable-iri
 
 # nvm
-require_nvm stable
+# require_nvm stable
 
 ###############################################################################
 bot "NPM Globals..."
@@ -183,6 +175,9 @@ bot "Ruby Gems..."
 # require_brew ruby-build
 # eval "$(rbenv init -)"
 # require_gem git-up
+require_gem fastlane
+require_gem cocoapods
+
 
 ###############################################################################
 # Native Apps (via brew cask)                                                 #
@@ -198,7 +193,7 @@ require_cask dropbox
 
 # communication
 require_cask adium
-# require_cask slack
+require_cask slack
 
 # tools
 # require_cask diffmerge
@@ -212,51 +207,44 @@ require_cask hopper-disassembler
 require_cask karabiner
 require_cask seil
 require_cask kdiff3
-# require_cask keyboard-maestro
 require_cask mactracker
 require_cask slate
 require_cask sourcetree
 require_cask yubikey-personalization-gui
 require_cask android-studio
 require_cask controlplane
-# require_cask dash
 require_cask flux
 require_cask garmin-basecamp
 require_cask path-finder
+require_cask caffeine
+require_cask calibre
+require_cask the-unarchiver
+require_cask vlc
+require_cask xquartz
+require_cask fritzing
+require_cask arduino
+# require_cask dash
+# require_cask keyboard-maestro
+# require_cask bettertouchtool
+# require_cask appcode
 
 require_cask atom
 # require_apm linter
 # require_apm linter-eslint
 # require_apm atom-beautify
 
-require_cask caffeine
-require_cask calibre
-require_cask the-unarchiver
-require_cask vlc
-require_cask xquartz
-
 # development browsers
-# require_cask breach
 require_cask firefox
-# require_cask firefox-aurora
 require_cask google-chrome
-# require_cask google-chrome-canary
 # require_cask torbrowser
 
 # virtal machines
 require_cask virtualbox
-# chef-dk, berkshelf, etc
-#require_cask chefdk
-# vagrant for running dev environments using docker images
-#require_cask vagrant # # | grep Caskroom | sed "s/.*'\(.*\)'.*/open \1\/Vagrant.pkg/g" | sh
 
-require_cask fritzing
-require_cask arduino
-
-# bot "Alright, cleaning up homebrew cache..."
+bot "Alright, cleaning up homebrew cache..."
 # Remove outdated versions from the cellar
-# brew cleanup > /dev/null 2>&1
-# bot "All clean"
+brew cleanup > /dev/null 2>&1
+bot "All clean"
 
 ###############################################################################
 bot "Configuring General System UI/UX..."
@@ -382,7 +370,7 @@ sudo nvram SystemAudioVolume=" ";ok
 # ok
 
 # running "Set highlight color to green"
-# defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600";ok
+defaults write NSGlobalDomain AppleHighlightColor -string "0.99 0.18 0.39";ok
 
 running "Set sidebar icon size to medium"
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2;ok
