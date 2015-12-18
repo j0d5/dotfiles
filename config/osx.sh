@@ -2,7 +2,7 @@
 
 # include my library helpers for colorized echo and require_brew, etc
 readonly NAME=".dotfiles"
-source $HOME/$NAME/lib.sh
+source $HOME/$NAME/config/lib.sh
 
 # Ask for the administrator password upfront
 

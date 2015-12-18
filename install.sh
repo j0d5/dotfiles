@@ -55,7 +55,7 @@ install_dotfiles() {
 }
 install_dotfiles
 
-source $HOME/$NAME/lib.sh
+source $HOME/$NAME/config/lib.sh
 
 action "Check on which system we are"
 if [ "Darwin" == $(uname) ]; then
@@ -73,7 +73,7 @@ do
   link_dotfiles $file
 done
 
-$HOME/$NAME/osx.sh
+$HOME/$NAME/config/osx.sh
 
 running 'Everything installed!' ok
 
