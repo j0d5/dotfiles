@@ -96,9 +96,9 @@ require_brew archey
 # require_brew cowsay
 
 # android development
-require_brew android-ndk
-require_brew android-sdk
-require_brew gradle
+# require_brew android-ndk
+# require_brew android-sdk
+# require_brew gradle
 require_brew apktool
 require_brew dex2jar
 require_brew smali
@@ -126,6 +126,8 @@ require_brew gawk
 require_brew gnupg
 require_brew nmap
 require_brew tree
+require_brew shellcheck
+require_brew ansiweather
 # better, more recent vim
 require_brew vim --override-system-vi
 # Install wget with IRI support

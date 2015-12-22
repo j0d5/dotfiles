@@ -119,13 +119,6 @@ au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, e
 " n    - set name of viminfo file
 set viminfo='20,\"50,:20,%,n~/.vim/.viminfo
 
-" --------------------
-" COLORSCHEME
-" --------------------
-" colorscheme johannes_qt
-set background=dark
-colorscheme solarized
-" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 
 " Fix my <Backspace> key (in Mac OS X Terminal)
 " set t_kb=
@@ -436,6 +429,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-surround.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/syntastic'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -457,6 +451,15 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+
+" --------------------
+" COLORSCHEME
+" --------------------
+" colorscheme johannes_qt
+set background=dark
+colorscheme solarized
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 
 
 " load pathogen

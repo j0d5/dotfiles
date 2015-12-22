@@ -1,4 +1,6 @@
 #!/bin/bash
+# set -euo pipefail
+# IFS=$'\n\t'
 ##################################################
 ##                                              ##
 ## Author: Johannes Steudle                     ##
@@ -19,35 +21,14 @@ readonly CFGFILES=("zshrc" "vimrc" "gvimrc" "gitignore"\
                    "gitattributes" "hgrc" "hgignore"\
                    "liquidpromptrc" "slate" "dir_colors"\
                    "zprofile" "zlogout" "zshenv"\
-                   "crontab")
-
-# default values
-FIRSTNAME="Johannes"
-LASTNAME="Steudle"
-EMAIL="jaycloudy@icloud.com"
-GITHUBUSER="johannes82"
-
-
-
-if [[ -z $1 ]]; then
-  FIRSTNAME=$1
-fi
-if [[ -z $2 ]]; then
-  LASTNAME=$2
-fi
-if [[ -z $3 ]]; then
-  EMAIL=$3
-fi
-if [[ -z $4 ]]; then
-  GITHUBUSER=$4
-fi
+                   "crontab", "ansiweatherrc")
 
 install_dotfiles() {
   echo 'check for existing dotfiles'
-  if ! [ -d $DOTDIR ]; then
+  if ! [ -d "$DOTDIR" ]; then
     echo "$DOTDIR directory does not exist, cloning..."
     git clone https://github.com/johannes82/.dotfiles.git
-    cd $DOTDIR && git submodule init && git submodule update
+    cd "$DOTDIR" && git submodule init && git submodule update
     echo "Ready to go!"
   else
     echo "$DOTDIR directory exists, continuing..."
@@ -55,10 +36,11 @@ install_dotfiles() {
 }
 install_dotfiles
 
-source $HOME/$NAME/config/lib.sh
+# shellcheck source=config/lib.sh
+source "$DOTDIR"/config/lib.sh
 
 action "Check on which system we are"
-if [ "Darwin" == $(uname) ]; then
+if [ "Darwin" == "$(uname)" ]; then
   running "we're on a mac" ok
   require_brew
 else
@@ -68,12 +50,12 @@ fi
 check_zsh
 
 action "Linking the dotfiles"
-for file in ${CFGFILES[@]}
+for file in "${CFGFILES[@]}"
 do
-  link_dotfiles $file
+  link_dotfiles "$file"
 done
 
-$HOME/$NAME/config/osx.sh
+"$DOTDIR"/config/osx.sh
 
 running 'Everything installed!' ok
 

@@ -24,7 +24,7 @@ ZSH_THEME="jay"
 # export CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="false"
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
@@ -33,7 +33,7 @@ DISABLE_AUTO_UPDATE="true"
 # export DISABLE_AUTO_TITLE="true"
 
 # Set default editor
-export EDITOR=subl
+export EDITOR=mvim
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(git git-flow rails git textmate ruby lighthouse)
