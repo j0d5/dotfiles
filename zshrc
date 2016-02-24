@@ -37,7 +37,7 @@ export EDITOR=mvim
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(git git-flow rails git textmate ruby lighthouse)
-plugins=(hosts history-substring-search zsh-syntax-highlighting wd command-not-found sublime brew gradle osx z)
+plugins=(hosts history-substring-search zsh-syntax-highlighting git wd command-not-found sublime brew gradle osx z)
 
 source $ZSH/oh-my-zsh.sh
 

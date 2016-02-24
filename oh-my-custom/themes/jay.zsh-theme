@@ -44,13 +44,13 @@ prompt_context() {
 
 # current working directory
 prompt_dir() {
-  echo -n "%{%F{40}%}%~%{$reset_color%} "
+  echo -n "%{%F{45}%}%~%{$reset_color%} "
 }
 
 # returns the currently used prompt char
 prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}>%{%F{white}%}' && return
-  echo '>'
+  git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}→%{%F{white}%}' && return
+  echo '→'
 }
 
 prompt_start() {
@@ -64,12 +64,14 @@ prompt_end() {
 # echo git status
 prompt_git() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    echo -n "("
-    echo -n $(git_prompt_info)
+    echo -n "["
+    #echo -n $(git_prompt_info)
+    echo -n $(current_branch)
+    echo -n ":"
     echo -n $(git_prompt_short_sha)
     echo -n ":"
     echo -n $(prompt_git_commit_changes)
-    echo -n ")"
+    echo -n "]"
     echo -n $(git_prompt_status)
     echo -n %{$reset_color%}
   fi
