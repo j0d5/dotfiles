@@ -46,15 +46,15 @@ set completeopt=menu,menuone,longest,preview " Insert mode completion options
 " Limit popup menu height
 set pumheight=15
 set hidden           " Allow switching edited buffers without saving
-set tw=120            " Set line wrapping after 80 characters
+set tw=120           " Set line wrapping after 80 characters
 set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
-set mouse=a                     " enable the use of the mouse
+set mouse=a          " enable the use of the mouse
 
 if has('statusline')
-  set laststatus=2     " Always show status line, even for one window
+  set laststatus=2   " Always show status line, even for one window
   " Broken down into easily includeable segments
-  set statusline=%<%f\    " Filename
+  set statusline=%<%f\     " Filename
   set statusline+=%w%h%m%r " Options
   if has('fugitive')
     set statusline+=%{fugitive#statusline()} " Git Hotness
@@ -456,9 +456,9 @@ filetype plugin indent on    " required
 " --------------------
 " COLORSCHEME
 " --------------------
-" colorscheme johannes_qt
-set background=dark
-colorscheme solarized
+colorscheme johannes_qt
+" set background=dark
+" colorscheme solarized
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 
 

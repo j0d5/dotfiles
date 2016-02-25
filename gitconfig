@@ -28,7 +28,7 @@
   autocorrect = 1
 
 [alias]
-  ec = config --global -e
+  ec = config --global -e # open git configuration in editor
   st = status -sb
   ci = commit
   cm = !git add -A && git commit
@@ -38,29 +38,26 @@
   fe = fetch -v
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
-  df = diff
-  dfi = diff --ignore-all-space
+  dfi = diff --ignore-all-space --minimal
+  l = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
   ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
   lg = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative --graph
   la = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=relative
-  lc  = "!f() { git ll "$1"^.."$1"; }; f"
-  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lc  = "!f() { git l "$1"^.."$1"; }; f"
+  last = diff HEAD~1 # diff to previous commit
 
   # save your work to a specific commit
   save = !git add -A && git commit -m 'SAVEPOINT'
   # and remove it afterwards with keeping the changes
   undo = reset HEAD~1 --mixed
+  unstage = 'reset HEAD --'
 
   # use this instead of just resetting your head. It creates a commit and
   # removes it afterwards so work is still reachable with 'reflog'
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
-  unstage = 'reset HEAD --'
-  last = 'diff HEAD~1'
-  new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-  sh = show
-  sf = diff --name-status
-  count = !sh -c 'git log --oneline | wc -l'
+  # new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+  # count = !sh -c 'git log --oneline | wc -l'
 
   # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
   dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
@@ -97,6 +94,9 @@
   help   = normal
   error  = normal
 
+[http]
+  sslVerify = true
+
 [diff]
   tool = sourcetree
 
@@ -109,14 +109,6 @@
 
 [difftool]
   prompt = false
-
-[difftool "p4merge"]
-  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-  path =
-
-[mergetool "p4merge"]
-  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-  trustExitCode = true
 
 [difftool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
@@ -132,13 +124,6 @@
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
-
-[mergetool "sublimerge"]
-  cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
-  trustExitCode = false
-
-[difftool "sublimerge"]
-  cmd = subl -n --wait \"$REMOTE\" \"$LOCAL\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": true}\"
 
 [filter "media"]
   required = true
