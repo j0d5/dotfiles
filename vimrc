@@ -456,8 +456,8 @@ filetype plugin indent on    " required
 " --------------------
 " COLORSCHEME
 " --------------------
-colorscheme johannes_qt
-" set background=dark
+colorscheme solarized
+set background=dark
 " colorscheme solarized
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 

@@ -81,7 +81,7 @@ layout 1monitor 'OmniFocus':REPEAT      ${full}
 layout 1monitor 'Xcode':REPEAT          ${full}
 layout 1monitor 'Eclipse':REPEAT        ${full}
 layout 1monitor 'Android Studio':REPEAT ${full}
-layout 1monitor 'SourceTree':REPEAT     ${left90}
+layout 1monitor 'SourceTree':REPEAT     ${full}
 layout 1monitor 'Monitor':REPEAT        ${full}
 layout 1monitor 'Spotify':MAIN_FIRST    ${full}
 layout 1monitor 'iTunes':MAIN_FIRST     ${full}
