@@ -7,6 +7,3 @@
 [submodule "sublime_user"]
 	path = sublime_user
 	url = /Users/johannes/.dotfiles/sublime_user
-[submodule ".vim"]
-	path = .vim
-	url = ./.vim

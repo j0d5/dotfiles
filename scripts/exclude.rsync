@@ -1,0 +1,10 @@
+exclude.rsync
+sync_documents.sh
+.DS_Store
+.flFE85C6CC
+.localized
+Virtual\ Machines*
+Microsoft-Benutzerdaten/
+Adobe/
+Digital\ Editions*
+Processing/

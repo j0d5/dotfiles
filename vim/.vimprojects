@@ -1,0 +1,20 @@
+
+pace3d=/mnt/home.eu01/stud10/j_steudle/praktikum/pace3d/sim/amr CD= filter="*.h *.c" {
+ amr.h
+ amrboundaries.h
+ amrcellstates.h
+ amrconcrete.h
+ amrconcretetypes.h
+ amrdebug.h
+ amrgeneric.h
+ amrgenerictypes.h
+ amriterator.h
+ amrneighbors.h
+ amrwritefuncs.h
+ amr.c
+ amrboundaries.c
+ amrconcrete.c
+ amrgeneric.c
+ amriterator.c
+ amrwritefuncs.c
+}
