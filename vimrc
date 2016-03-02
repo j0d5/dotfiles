@@ -19,18 +19,18 @@ set showcmd          " Show command mode
 set cursorline       " Highlight active line
 set gdefault         " the /g flag on :s substitutions by default
 set nocompatible     " Use Vim defaults (much better!)
-set autoindent       " copy indent from current line
 set autoread         " read open files again when changed outside Vim
 set history=1000     " keep 100 lines of command history
 set ruler            " Show the cursor position all the time
 " set pastetoggle=<F2> " Toggle between paste mode on/off
+set autoindent       " copy indent from current line
 set smartindent      " Set indention
+set shiftround       " shift to nearest indent
 set shiftwidth=4     " Shift width
 set tabstop=4        " Tab size
 set expandtab        " Tabs to spaces
-set shiftround       " shift to nearest indent
-set icon             " Icon text of the window
-set confirm          " Extra dialog
+" set icon             " Icon text of the window
+" set confirm          " Extra dialog
 " set relativenumber 
 set number           " Line Numbers
 set enc=utf-8        " Use UTF-8 as the default buffer encoding
