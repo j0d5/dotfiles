@@ -16,12 +16,17 @@
 "set the X11 font to use
 " --------------------
 if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h13
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
+  set guifont=Inconsolata\ 12
+elseif has("gui_macvim")
+  set guifont=Inconsolata:h15
+  "set guifont=Menlo\ Regular:h13
+elseif has("gui_win32")
+  set guifont=Consolas:h11:cANSI
+endif
+" set linespace=1.5
+
+set lines=70
+set columns=130
 
 set mousehide	    " Hide the mouse when typing text
 set tabpagemax=15
@@ -39,9 +44,6 @@ set guioptions-=m " remove menubar
 
 " I like highlighting strings inside C comments
 let c_comment_strings=1
-
-set lines=70
-set columns=130
 
 " set transparency=8
 " colorscheme johannes
@@ -76,13 +78,13 @@ fun IsDokuWiki()
     set filetype=dokuwiki
   endif
 endfun
- 
+
 " check for texfile
 autocmd BufWinEnter *.tex,*.txt call SetSpellCheck()
 
 " check for dokuwiki syntax
 autocmd BufWinEnter *.txt call IsDokuWiki()
- 
+
 " --------------------
 " ShowMarks
 " --------------------
