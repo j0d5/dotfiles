@@ -51,6 +51,10 @@ set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
 
+" Create splits to the right (vertical) or to the bottom (horizontal)
+set splitbelow
+set splitright
+
 if has('statusline')
   set laststatus=2   " Always show status line, even for one window
   " Broken down into easily includeable segments
@@ -430,6 +434,8 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vim-android/vim-adb-logcat'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'

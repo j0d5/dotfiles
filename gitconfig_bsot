@@ -78,10 +78,10 @@
 
 [color "diff"]
   meta = yellow
-  frag = magenta
+  frag = green
   old  = red bold
   new  = green bold
-  plain = white
+  plain = white dim
 
 [color "status"]
   added     = green

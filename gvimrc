@@ -38,8 +38,7 @@ map! <S-Insert> <MiddleMouse>
 " --------------------
 " Only do this for Vim version 5.0 and later.
 " --------------------
-set guioptions-=T " remove toolbar
-set guioptions-=m " remove menubar
+set guioptions=agi " no toolbar, menubar, scrollbar
 " set relativenumber
 
 " I like highlighting strings inside C comments
