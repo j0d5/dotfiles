@@ -4,7 +4,8 @@
 
 [core]
   # open sublime text with new window and wait for result
-  editor = subl -n -w
+  # editor = subl -n -w
+  editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"' 
   excludesfile = ~/.gitignore
 
 [push]
