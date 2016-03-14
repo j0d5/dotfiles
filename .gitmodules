@@ -52,3 +52,9 @@
 [submodule "vim-materialtheme"]
     path = vim/bundle/vim-materialtheme
     url = https://github.com/Wutzara/vim-materialtheme.git
+[submodule "editorconfig-vim"]
+    path = vim/bundle/editorconfig-vim
+    url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim-adb-logcat"]
+    path = vim/bundle/vim-adb-logcat
+    url = https://github.com/vim-android/vim-adb-logcat.git

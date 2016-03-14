@@ -39,3 +39,8 @@ unsetProxy() {
 	export http_proxy='' && export https_proxy=''
 	sed -i'.bak' s/true/false/g ~/.m2/settings.xml
 }
+
+update_bsot_repos () {
+	env ZSH=$ZSH /bin/sh $HOME/.dotfiles/scripts/update_repos.sh $HOME/Projects/git
+}
+

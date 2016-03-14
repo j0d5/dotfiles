@@ -29,12 +29,13 @@ endif
 " Keywords
 syn keyword mySPINComponents SDKMain VoiceControl MySpinProtocol
 syn region  mySPINComponents start='\[' end='\]' oneline contains=mySPINComponents
-syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler
+syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler MySpinServiceClient MySpinHandshakeStack
 
 " Types
 syn keyword genericTypes    false true
 syn match   sdkFlag         '\s[[A-Z_]*]\(\s\|$\)'
 syn match   importantSigns  '\s\(=>\|<=\)\s'
+syn match   importantSigns  '\s\(->\|<-\)\s'
 
 " syn match   zshNumber       '\<-\=\(\d\+#\|0x\=\)\=\d\+\>'
 " syn match   zshNumber       '\<-\=\d\+.\d\+\>'
