@@ -8,12 +8,19 @@
 ##                                              ##
 ##################################################
 
-# echo "loading global_settings"
-
+if [[ -n $DEBUG_ZSH ]]; then
+ echo "loading global_settings"
+fi
 export DEFAULT_USER=johannes
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+setopt promptsubst
+
+#setopt no_beep
+setopt auto_cd
+setopt multios
+setopt cdablevars
 
 unalias run-help
 autoload run-help

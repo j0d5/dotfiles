@@ -8,7 +8,9 @@
 ##                                              ##
 ##################################################
 
-# echo 'loading jay theme'
+if [[ -n $DEBUG_ZSH ]]; then
+ echo 'loading jay theme'
+fi
 
 # set colors for zsh git functions
 ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{50}%}"
@@ -25,6 +27,10 @@ ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+
+function box_name {
+  [ -f ~/.box-name ] && cat ~/.box-name || echo ${SHORT_HOST:-$HOST}
+}
 
 SEGMENT_SEPARATOR=':'
 
@@ -66,7 +72,7 @@ prompt_git() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
     echo -n "["
     #echo -n $(git_prompt_info)
-    echo -n $(current_branch)
+    echo -n $(git_current_branch)
     echo -n ":"
     echo -n $(git_prompt_short_sha)
     echo -n ":"

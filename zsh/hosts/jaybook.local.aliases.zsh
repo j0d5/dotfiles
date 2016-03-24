@@ -8,7 +8,9 @@
 ##                                              ##
 ##################################################
 
-# echo 'loading jaybook.local.aliases.zsh'
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading jaybook.local.aliases.zsh'
+fi
 
 alias gvim='open /opt/homebrew-cask/Caskroom/macvim/7.4-85/MacVim.app/Contents/MacOS/MacVim'
 alias vim='/opt/homebrew-cask/Caskroom/macvim/7.4-85/MacVim.app/Contents/MacOS/Vim'

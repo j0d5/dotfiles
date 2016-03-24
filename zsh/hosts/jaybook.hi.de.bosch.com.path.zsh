@@ -1,15 +1,17 @@
 ##################################################
 ##                                              ##
 ## Author: Johannes Steudle                     ##
-## File: paths.zsh                              ##
+## File: jaybook.hi.de.bosch.com.path.zsh       ##
 ## Date: 03.12.2015                             ##
 ##                                              ##
-## Description: file for global path settings   ##
+## Description: file for host specific paths    ##
 ##                                              ##
 ##################################################
 
-# echo 'loading global paths'
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading jaybook.hi.de.bosch.com.path.zsh'
+fi
 
-export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin:$PATH
-export PATH=$PATH:$HOME/.bin
-fpath=(/usr/local/share/zsh-completions $fpath)
+# local path file
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+export PATH=$PATH:$HOME/Library/TeXShop/bin/tslatexmk

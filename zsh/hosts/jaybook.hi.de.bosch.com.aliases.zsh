@@ -8,7 +8,9 @@
 ##                                              ##
 ##################################################
 
-# echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading jaybook.hi.de.bosch.com.aliases.zsh'
+fi
 
 # general
 

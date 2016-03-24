@@ -8,6 +8,10 @@
 ##                                              ##
 ##################################################
 
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading jaybook.hi.de.bosch.com'
+fi
+
 # custom zsh commands
 export http_proxy='http://localhost:8080'
 export https_proxy='http://localhost:8080'

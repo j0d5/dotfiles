@@ -1,15 +1,16 @@
 ##################################################
 ##                                              ##
 ## Author: Johannes Steudle                     ##
-## File: jaybook.local.path.zsh                 ##
+## File: paths.zsh                              ##
 ## Date: 03.12.2015                             ##
 ##                                              ##
-## Description: file for host specific paths    ##
+## Description: file for global path settings   ##
 ##                                              ##
 ##################################################
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading global paths'
+fi
 
-# echo 'loading jaybook.path.zsh'
-
-# local path file
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/texbin
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages/:$PYTHONPATH
+export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:/sbin:$PATH
+export PATH=$PATH:$HOME/.bin
+fpath=(/usr/local/share/zsh-completions $fpath)

@@ -7,8 +7,9 @@
 ## Description: file for global aliases         ##
 ##                                              ##
 ##################################################
-
-# echo 'loading global aliases'
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading global aliases'
+fi
 
 alias ..='cd ..'
 

@@ -1,9 +1,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "zshmarks"]
-	path = oh-my-custom/plugins/zshmarks
-	url = https://github.com/jocelynmallon/zshmarks.git
 [submodule "sublime_user"]
 	path = sublime_user
 	url = /Users/johannes/.dotfiles/sublime_user

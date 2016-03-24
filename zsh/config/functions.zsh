@@ -8,7 +8,9 @@
 ##                                              ##
 ##################################################
 
-# echo 'loading functions'
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading functions'
+fi
 
 # function for extracting compressed files
 function smartextract() {
