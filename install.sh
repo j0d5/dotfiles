@@ -17,11 +17,12 @@ echo "linking script for dotfiles"
 readonly NAME=".dotfiles"
 readonly DOTDIR="$HOME/$NAME"
 readonly BAK="dotfiles_backup"
-readonly CFGFILES=("zshrc" "vimrc" "gvimrc" "gitignore"\
-                   "gitattributes" "hgrc" "hgignore"\
-                   "liquidpromptrc" "slate" "dir_colors"\
-                   "zprofile" "zlogout" "zshenv"\
-                   "crontab", "ansiweatherrc")
+readonly CFGFILES=("zshrc" "vimrc" "gvimrc"\
+ "gitconfig" "gitignore" "gitattributes"\
+ "hgrc" "hgignore"\
+ "zprofile" "zlogout" "zshenv"\
+ "liquidpromptrc" "slate" "dir_colors" "editorconfig"\
+ "crontab" "ansiweatherrc" "htoprc" "valgrindrc")
 
 install_dotfiles() {
   echo 'check for existing dotfiles'
