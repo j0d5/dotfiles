@@ -110,7 +110,7 @@ require_brew ideviceinstaller
 require_brew zsh
 require_brew zsh-completions
 require_brew zsh-syntax-highlighting # nice highlighting
-require_brew history-substring-search # fancy history search
+require_brew zsh-history-substring-search # fancy history search
 require_brew zsh-lovers
 require_brew z # dir tracking
 
@@ -123,6 +123,7 @@ require_brew tig
 require_brew gcc
 require_brew tmux
 require_brew plantuml
+brew tap jlhonora/lsusb
 require_brew lsusb
 require_brew gawk
 require_brew gnupg
