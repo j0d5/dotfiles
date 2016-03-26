@@ -13,7 +13,7 @@
 echo "i'm on a darwin system!"
 
 # todays weather in Hannover
-$(which ansiweather)
+# $(which ansiweather)
 
 # generate a nice startup logo
 $(which archey) -c

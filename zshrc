@@ -16,7 +16,7 @@ ZSH=$HOME/.dotfiles/zsh
 # Set name of the theme to load.
 ZSH_THEME="jay"
 
-plugins=(hosts history-substring-search zsh-syntax-highlighting z)
+plugins=(hosts)
 
 source $ZSH/init_zsh.zsh
 

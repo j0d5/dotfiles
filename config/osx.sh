@@ -109,8 +109,10 @@ require_brew ideviceinstaller
 # ZSH!!!
 require_brew zsh
 require_brew zsh-completions
-require_brew zsh-syntax-highlighting
+require_brew zsh-syntax-highlighting # nice highlighting
+require_brew history-substring-search # fancy history search
 require_brew zsh-lovers
+require_brew z # dir tracking
 
 # git !!!
 require_brew git

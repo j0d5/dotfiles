@@ -15,7 +15,6 @@ fi
 # custom zsh commands
 export http_proxy='http://localhost:8080'
 export https_proxy='http://localhost:8080'
-export BOOKMARKS_FILE="$HOME/.dotfiles/bookmarks_bsot"
 
 # android paths
 androidSdkVersion=$(ls /usr/local/Cellar/android-sdk | sort -r | awk 'NR==1{print $1}')
