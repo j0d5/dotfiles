@@ -186,64 +186,64 @@ require_gem cocoapods
 ###############################################################################
 # Native Apps (via brew cask)                                                 #
 ###############################################################################
-bot "installing GUI tools via homebrew casks..."
+# bot "installing GUI tools via homebrew casks..."
 # brew tap caskroom/versions > /dev/null 2>&1
 
 # cloud storage
 # require_cask amazon-cloud-drive
 # require_cask box-sync
-require_cask dropbox
+# require_cask dropbox
 # require_cask evernote
 
 # communication
-require_cask adium
-require_cask slack
+# require_cask adium
+# require_cask slack
 
 # tools
 # require_cask diffmerge
-require_cask gpgtools
-require_cask java
+# require_cask gpgtools
+# require_cask java
 # require_cask ireadfast
-require_cask iterm2
-require_cask macvim
-require_cask jd-gui
-require_cask hopper-disassembler
-require_cask karabiner
-require_cask seil
-require_cask kdiff3
-require_cask mactracker
-require_cask slate
-require_cask sourcetree
-require_cask yubikey-personalization-gui
-require_cask android-studio
-require_cask controlplane
-require_cask flux
-require_cask garmin-basecamp
-require_cask path-finder
-require_cask caffeine
-require_cask calibre
-require_cask the-unarchiver
-require_cask vlc
-require_cask xquartz
-require_cask fritzing
-require_cask arduino
+# require_cask iterm2
+# require_cask macvim
+# require_cask jd-gui
+# require_cask hopper-disassembler
+# require_cask karabiner
+# require_cask seil
+# require_cask kdiff3
+# require_cask mactracker
+# require_cask slate
+# require_cask sourcetree
+# require_cask yubikey-personalization-gui
+# require_cask android-studio
+# require_cask controlplane
+# require_cask flux
+# require_cask garmin-basecamp
+# require_cask path-finder
+# require_cask caffeine
+# require_cask calibre
+# require_cask the-unarchiver
+# require_cask vlc
+# require_cask xquartz
+# require_cask fritzing
+# require_cask arduino
 # require_cask dash
 # require_cask keyboard-maestro
 # require_cask bettertouchtool
 # require_cask appcode
 
-require_cask atom
+# require_cask atom
 # require_apm linter
 # require_apm linter-eslint
 # require_apm atom-beautify
 
 # development browsers
-require_cask firefox
-require_cask google-chrome
+# require_cask firefox
+# require_cask google-chrome
 # require_cask torbrowser
 
 # virtal machines
-require_cask virtualbox
+# require_cask virtualbox
 
 bot "Alright, cleaning up homebrew cache..."
 # Remove outdated versions from the cellar
