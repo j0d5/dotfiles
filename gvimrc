@@ -11,6 +11,7 @@
 " Make external commands work through a pipe instead of a pseudo-tty
 " --------------------
 "set noguipty
+set macmeta
 
 " --------------------
 "set the X11 font to use
@@ -79,7 +80,7 @@ fun IsDokuWiki()
 endfun
 
 " check for texfile
-autocmd BufWinEnter *.tex,*.txt call SetSpellCheck()
+" autocmd BufWinEnter *.tex,*.txt call SetSpellCheck()
 
 " check for dokuwiki syntax
 autocmd BufWinEnter *.txt call IsDokuWiki()

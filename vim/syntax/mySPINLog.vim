@@ -27,15 +27,19 @@ endif
 " syn match   zshJobSpec      '%\(\d\+\|?\=\w\+\|[%+-]\)'
 
 " Keywords
-syn keyword mySPINComponents SDKMain VoiceControl MySpinProtocol
+syn keyword mySPINComponents SDKMain VoiceControl MySpinProtocol UI Keyboard MySpinNative ScreenCapturing Config EventListener 
 syn region  mySPINComponents start='\[' end='\]' oneline contains=mySPINComponents
 syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler MySpinServiceClient MySpinHandshakeStack
+" syn match   mySPINPackageName 'com\.bosch\.\w+\.\w+(\.\w+)?'
+syn match   mySPINPackageName 'com.bosch.\w\+.\w\+\(.[a-z]\+\)\?'
 
 " Types
 syn keyword genericTypes    false true
 syn match   sdkFlag         '\s[[A-Z_]*]\(\s\|$\)'
 syn match   importantSigns  '\s\(=>\|<=\)\s'
 syn match   importantSigns  '\s\(->\|<-\)\s'
+
+syn match   time            '\s[0-2][0-9]:[0-2][0-9]:[0-5][0-9].[0-9][0-9][0-9]'
 
 " syn match   zshNumber       '\<-\=\(\d\+#\|0x\=\)\=\d\+\>'
 " syn match   zshNumber       '\<-\=\d\+.\d\+\>'
@@ -58,25 +62,27 @@ if version >= 508 || !exists("did_zsh_syn_inits")
 
   HiLink mySPINTags        Todo
   HiLink mySPINComponents  Keyword
+  HiLink mySPINPackageName Type
   HiLink genericTypes      Keyword
   HiLink sdkFlag           String
   HiLink importantSigns    Special
+  HiLink time              Special
 
-  HiLink zshComment       Comment
-  HiLink zshJobSpec       Special
-  HiLink zshPrecommand    Special
-  HiLink zshDelimiter     Keyword
-  HiLink zshConditional   Conditional
-  HiLink zshException	  Exception
-  HiLink zshRepeat        Repeat
-  HiLink zshFunction      Function
-  HiLink zshHereDoc	  String
-  HiLink zshRedir         Operator
-  HiLink zshShellVar      Identifier
-  HiLink zshTypes         Type
-  HiLink zshSwitches      Special
-  HiLink zshNumber        Number
-  HiLink zshSubst	  Identifier
+  " HiLink zshComment       Comment
+  " HiLink zshJobSpec       Special
+  " HiLink zshPrecommand    Special
+  " HiLink zshDelimiter     Keyword
+  " HiLink zshConditional   Conditional
+  " HiLink zshException	  Exception
+  " HiLink zshRepeat        Repeat
+  " HiLink zshFunction      Function
+  " HiLink zshHereDoc	  String
+  " HiLink zshRedir         Operator
+  " HiLink zshShellVar      Identifier
+  " HiLink zshTypes         Type
+  " HiLink zshSwitches      Special
+  " HiLink zshNumber        Number
+  " HiLink zshSubst	  Identifier
 
   delcommand HiLink
 endif

@@ -553,13 +553,16 @@ let maplocalleader = "," " Change <LocalLeader>
 " Save file with CTRL-s
 noremap <C-S> :up<CR>
 
+" Remove all highlightings
+nnoremap <silent><CR> :nohl<CR>
+
 " Space to toggle folds.
 nnoremap <Space> za
 vnoremap <Space> za
 
 " quickly insert newline in normalmode without leaving
-nnoremap <silent><A-o> o<Esc>k
-nnoremap <silent><A-S-o> O<Esc>j
+nnoremap <silent><M-o> o<Esc>k
+nnoremap <silent><M-S-o> O<Esc>j
 
 " map <Alt-p> and <Alt-P> to paste below/above and reformat
 nnoremap <Esc>P  P'[v']=
@@ -582,7 +585,6 @@ nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
 
-nnoremap <silent><CR> :nohl<CR>
 
 " switch to upper/lower window quickly
 " map <C-J> <C-W>j
