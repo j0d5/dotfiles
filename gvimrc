@@ -11,7 +11,7 @@
 " Make external commands work through a pipe instead of a pseudo-tty
 " --------------------
 "set noguipty
-set macmeta
+" set macmeta
 
 " --------------------
 "set the X11 font to use

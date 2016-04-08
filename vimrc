@@ -50,6 +50,7 @@ set tw=120           " Set line wrapping after 80 characters
 set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
+set nospell
 
 " Create splits to the right (vertical) or to the bottom (horizontal)
 set splitbelow
@@ -140,7 +141,7 @@ set viminfo='20,\"50,:20,%,n~/.vim/.viminfo
 
 if has('autocmd')
   "" Enable filetype detection
-  filetype off "disabled for Vundle
+  filetype on "disabled for Vundle
 
   "" Load plugin files for specific file types
   filetype plugin on
@@ -256,11 +257,6 @@ if has('autocmd')
     "" Omnifunc completions
     autocmd FileType css if has('eval') || has('insert_expand') | set omnifunc=csscomplete#CompleteCSS | endif
     autocmd FileType html,xhtml if has('eval') || has('insert_expand') | set omnifunc=htmlcomplete#CompleteTags | endif
-  augroup END
-
-  augroup mail
-    autocmd!
-    autocmd Filetype mail if has('syntax') | set spell textwidth=70 wrap nonumber | endif
   augroup END
 
   "" Note: The autocommand event is defined to avoid setting this augroup when in the
@@ -410,6 +406,8 @@ call InitializeDirectories()
 "#                        ##
 "###########################
 
+filetype off "disabled for Vundle
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -446,7 +444,8 @@ Plugin 'vim-android/vim-adb-logcat'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-" filetype plugin on
+filetype plugin on
+
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -562,7 +561,7 @@ vnoremap <Space> za
 
 " quickly insert newline in normalmode without leaving
 nnoremap <silent><M-o> o<Esc>k
-nnoremap <silent><M-S-o> O<Esc>j
+nnoremap <silent><A-S-o> O<Esc>j
 
 " map <Alt-p> and <Alt-P> to paste below/above and reformat
 nnoremap <Esc>P  P'[v']=
