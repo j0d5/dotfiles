@@ -28,7 +28,7 @@ alias adbr='adb kill-server && adb start-server'
 alias adbk='adb -e emu kill'
 
 # gradle
-alias cleanBuild='find . -type d -name build -exec rm -r {} +'
+alias cleanBuild='find . -maxdepth 3 -type d -name build -or -name obj -exec rm -r {} +'
 alias buildSdk='gradle :Source:Service:clean :Source:ServerSDK:clean :Source:Service:build :Source:ServerSDK:build'
 alias buildMini='gradle :Testing:AudioManagementTest:clean :Testing:AudioManagementTest:build'
 

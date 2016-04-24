@@ -20,7 +20,7 @@ set cursorline       " Highlight active line
 set gdefault         " the /g flag on :s substitutions by default
 set nocompatible     " Use Vim defaults (much better!)
 set autoread         " read open files again when changed outside Vim
-set history=1000     " keep 100 lines of command history
+" set history=1000     " keep 100 lines of command history
 set ruler            " Show the cursor position all the time
 " set pastetoggle=<F2> " Toggle between paste mode on/off
 set autoindent       " copy indent from current line
@@ -119,10 +119,10 @@ au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, e
 " Remember things between sessions
 " '20  - remember marks for 20 previous files
 " \"50 - save 50 lines for each register
-" :20  - remember 20 items in command-line history
+" :200  - remember 200 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,\"50,:20,%,n~/.vim/.viminfo
+set viminfo='20,\"50,:200,%,n~/.dotfiles/vim/viminfo
 
 
 " Fix my <Backspace> key (in Mac OS X Terminal)

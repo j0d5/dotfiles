@@ -8,7 +8,7 @@ function! s:CleanNeedlessLogs()
 "    :g/\(WindowManager\|ActivityManager\|ContextImpl\|ContextWrapper\|InputDispatcher\)/d
 "    :g/\(UploadsManager\|SyncManager\|WifiService\|ConnectivityService\|I\/art:\|Environment\|I\/vCard:\|VCardComposer\)/d
 "    :g/\(PeriodicStatsRecorder\|StatsUtilsManager\|DatabaseUtils\|I\/Telecom\|MediaSessionService\|BluetoothPbapVcardManager\|BluetoothPbapObexServer\)/d
-    g!/\(exception\|fatal\|myspin\|onReceive\|BluetoothScoManager\|voicecontrol\|AoapConnector\|Connection\|MySpinProtocol\|VoiceControl\)/d
+    g!/\(exception\|fatal\|myspin\|onReceive\|BluetoothScoManager\|voicecontrol\|AoapConnector\|Connection]\|MySpinProtocol\|VoiceControl\)/d
 endfunction
 
 command! -nargs=* -complete=file CleanLogFile

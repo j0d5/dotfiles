@@ -29,7 +29,8 @@ endif
 " Keywords
 syn keyword mySPINComponents SDKMain VoiceControl MySpinProtocol UI Keyboard MySpinNative ScreenCapturing Config EventListener 
 syn region  mySPINComponents start='\[' end='\]' oneline contains=mySPINComponents
-syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler MySpinServiceClient MySpinHandshakeStack
+syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler MySpinServiceClient MySpinHandshakeStack VoiceControlBinder VoiceControlPhoneCallReceiver MySpinStackBase VoiceControlChangeMessenger VehicleDataMessenger
+syn match   mySPINError 'AoapConnector\/openConnection\/IOException'
 " syn match   mySPINPackageName 'com\.bosch\.\w+\.\w+(\.\w+)?'
 syn match   mySPINPackageName 'com.bosch.\w\+.\w\+\(.[a-z]\+\)\?'
 
@@ -40,6 +41,10 @@ syn match   importantSigns  '\s\(=>\|<=\)\s'
 syn match   importantSigns  '\s\(->\|<-\)\s'
 
 syn match   time            '\s[0-2][0-9]:[0-2][0-9]:[0-5][0-9].[0-9][0-9][0-9]'
+
+
+" Important android keywords
+" syn keyword androidKeywords UsbDeviceManager
 
 " syn match   zshNumber       '\<-\=\(\d\+#\|0x\=\)\=\d\+\>'
 " syn match   zshNumber       '\<-\=\d\+.\d\+\>'
@@ -63,6 +68,7 @@ if version >= 508 || !exists("did_zsh_syn_inits")
   HiLink mySPINTags        Todo
   HiLink mySPINComponents  Keyword
   HiLink mySPINPackageName Type
+  "HiLink mySPINError       Special
   HiLink genericTypes      Keyword
   HiLink sdkFlag           String
   HiLink importantSigns    Special
@@ -90,5 +96,4 @@ endif
 let b:current_syntax = "mySPINLog"
 
 " vim: set sts=2 sw=2:
-
 
