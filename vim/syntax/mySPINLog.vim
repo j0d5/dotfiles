@@ -29,7 +29,7 @@ endif
 " Keywords
 syn keyword mySPINComponents SDKMain VoiceControl MySpinProtocol UI Keyboard MySpinNative ScreenCapturing Config EventListener 
 syn region  mySPINComponents start='\[' end='\]' oneline contains=mySPINComponents
-syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler MySpinServiceClient MySpinHandshakeStack VoiceControlBinder VoiceControlPhoneCallReceiver MySpinStackBase VoiceControlChangeMessenger VehicleDataMessenger
+syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler MySpinServiceClient MySpinHandshakeStack VoiceControlBinder VoiceControlPhoneCallReceiver MySpinStackBase VoiceControlChangeMessenger VehicleDataMessenger FrameProvider HeartBeatCallback MemoryLogger ConnectedBaseWindow SharedMemoryCreator
 syn match   mySPINError 'AoapConnector\/openConnection\/IOException'
 " syn match   mySPINPackageName 'com\.bosch\.\w+\.\w+(\.\w+)?'
 syn match   mySPINPackageName 'com.bosch.\w\+.\w\+\(.[a-z]\+\)\?'

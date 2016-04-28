@@ -53,6 +53,15 @@
   undo = reset HEAD~1 --mixed
   unstage = 'reset HEAD --'
 
+  # human readable commands
+  branches = branch -a
+  tags = tag
+  stashes = stash list
+  unstage = reset -q HEAD --
+  discard = checkout --
+  uncommit = reset --mixed HEAD~
+  amend = commit --amend
+
   # use this instead of just resetting your head. It creates a commit and
   # removes it afterwards so work is still reachable with 'reflog'
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard

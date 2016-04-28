@@ -4,7 +4,8 @@
 
 [core]
   # open sublime text with new window and wait for result
-  editor = subl -n -w
+  # editor = subl -n -w
+  editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"' 
   excludesfile = ~/.gitignore
 
 [push]
@@ -52,6 +53,15 @@
   undo = reset HEAD~1 --mixed
   unstage = 'reset HEAD --'
 
+  # human readable commands
+  branches = branch -a
+  tags = tag
+  stashes = stash list
+  unstage = reset -q HEAD --
+  discard = checkout --
+  uncommit = reset --mixed HEAD~
+  amend = commit --amend
+
   # use this instead of just resetting your head. It creates a commit and
   # removes it afterwards so work is still reachable with 'reflog'
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
@@ -78,10 +88,10 @@
 
 [color "diff"]
   meta = yellow
-  frag = magenta
+  frag = green
   old  = red bold
   new  = green bold
-  plain = white
+  plain = white dim
 
 [color "status"]
   added     = green
@@ -135,5 +145,3 @@
 # smudge = git hawser smudge %f
 # required = true
 
-[http]
-  sslVerify = true

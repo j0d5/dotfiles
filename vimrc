@@ -46,7 +46,9 @@ set completeopt=menu,menuone,longest,preview " Insert mode completion options
 " Limit popup menu height
 set pumheight=15
 set hidden           " Allow switching edited buffers without saving
-set tw=120           " Set line wrapping after 80 characters
+"set tw=120           " Set line wrapping after 80 characters
+set textwidth=0 wrapmargin=0
+set wrap
 set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
@@ -156,7 +158,7 @@ if has('autocmd')
     autocmd!
     "" First make sure nothing is written to ~/.viminfo while editing
     "" an encrypted file.
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg set viminfo=
+    autocmd BufReadPre,FileReadPre      *.asc,*.gpg " set viminfo=
     "" We don't want a swap file, as it writes unencrypted data to disk
     autocmd BufReadPre,FileReadPre      *.asc,*.gpg set noswapfile
     "" Switch to binary mode to read the encrypted file
