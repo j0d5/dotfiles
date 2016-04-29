@@ -33,6 +33,4 @@ alias buildSdk='gradle :Source:Service:clean :Source:ServerSDK:clean :Source:Ser
 alias buildMini='gradle :Testing:AudioManagementTest:clean :Testing:AudioManagementTest:build'
 
 # ssh aliases
-alias sshBuildUbuntu='ssh jst2hi@bsot-build.hi.de.bosch.com'
-alias sshBuildMacPro='ssh jst2hi@macproserver1.hi.de.bosch.com'
 alias sshRefSys='ssh -Y johannes-ref'
