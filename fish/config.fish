@@ -18,3 +18,13 @@ set -g c3 (set_color 6dc7ff)
 set -g c4 (set_color ffffff)
 set -g ce (set_color $fish_color_error)
 
+setProxy
+setAndroidPaths
+
+set -x EDITOR '/usr/local/bin/mvim'
+# set -g Z_SCRIPT_PATH ~/.config/fisherman/z/conf.d/z.fish
+
+for file in ~/.config/fish/conf.d/*.fish
+    source $file
+end
+
