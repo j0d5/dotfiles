@@ -31,7 +31,7 @@ set tabstop=4        " Tab size
 set expandtab        " Tabs to spaces
 " set icon             " Icon text of the window
 " set confirm          " Extra dialog
-" set relativenumber 
+" set relativenumber
 set number           " Line Numbers
 set enc=utf-8        " Use UTF-8 as the default buffer encoding
 set showmatch        " When a bracket is inserted, briefly jump to a matching one
@@ -417,6 +417,7 @@ call InitializeDirectories()
 "# PlugIn-Configuration   ##
 "#                        ##
 "###########################
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 filetype off "disabled for Vundle
 
@@ -446,6 +447,7 @@ Plugin 'dahu/Insertlessly'
 Plugin 'gertjanreynaert/cobalt2-vim-theme'
 Plugin 'Wutzara/vim-materialtheme'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
