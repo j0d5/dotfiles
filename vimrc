@@ -58,6 +58,16 @@ set nospell
 set splitbelow
 set splitright
 
+" --------------------
+" Shell
+" --------------------
+if $SHELL =~ 'bin/fish'
+    set shell=/bin/sh
+endif
+
+" --------------------
+" StatusLine
+" --------------------
 if has('statusline')
   set laststatus=2   " Always show status line, even for one window
   " Broken down into easily includeable segments
@@ -332,7 +342,7 @@ endfunction
 command -bar Hexmode call ToggleHex()
 
 " helper function to toggle hex mode
-function ToggleHex()
+function! ToggleHex()
   " hex mode should be considered a read-only operation
   " save values for modified and read-only for restoration later,
   " and clear the read-only flag for now
@@ -412,7 +422,7 @@ filetype off "disabled for Vundle
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.dotfiles/vim/vundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -421,21 +431,21 @@ Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'
-Plugin 'Wutzara/vim-materialtheme'
 Plugin 'vim-scripts/SmartusLine'
-Plugin 'scrooloose/nerdtree'
 Plugin 'powerline/powerline'
 Plugin 'jcf/vim-latex'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'gertjanreynaert/cobalt2-vim-theme'
 Plugin 'naseer/logcat'
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-surround.git'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-android/vim-adb-logcat'
+Plugin 'dahu/Insertlessly'
+Plugin 'gertjanreynaert/cobalt2-vim-theme'
+Plugin 'Wutzara/vim-materialtheme'
+Plugin 'altercation/vim-colors-solarized'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'

@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/private/var/folders/fe/fenxnXu1EO4Wd+Hq7dKSz++++TI/-Tmp-/extdiff.U0LVcs/raytracer_docu.393d5ca116d0'
-let g:netrw_dirhist_2='/private/var/folders/fe/fenxnXu1EO4Wd+Hq7dKSz++++TI/-Tmp-/extdiff.U0LVcs/raytracer_docu'
-let g:netrw_dirhist_3='/Users/johannes/development/iHike_/iHike.pbproj'
-let g:netrw_dirhist_4='/Users/johannes/.dotfiles/.hg'

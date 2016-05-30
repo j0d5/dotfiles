@@ -1,0 +1,5 @@
+fish/functions/*
+fish/completions/*
+fish_read_history
+.netrwhist
+fisher.fish.*
