@@ -3,3 +3,4 @@ fish/completions/*
 fish_read_history
 .netrwhist
 fisher.fish.*
+vim/vundle
