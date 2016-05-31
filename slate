@@ -30,29 +30,29 @@ alias mon-home     3
 # Position aliases
 
 ## Abstract positions
-alias moveto    move screenOriginX;screenOriginY screenOriginX;screenOriginY
-alias full      move screenOriginX;screenOriginY screenSizeX;screenSizeY
-alias lefthalf  move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
-alias leftthird move screenOriginX;screenOriginY screenSizeX/3*2;screenSizeY
-alias left75    move screenOriginX;screenOriginY screenSizeX*0.75;screenSizeY
-alias left90    move screenOriginX;screenOriginY screenSizeX*0.90;screenSizeY
-alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
-alias right10   move -screenSizeX*0.3;screenOriginY screenSizeX*0.3;screenSizeY*0.7
-alias right05   move -screenSizeX*0.15;screenOriginY screenSizeX*0.1;screenSizeY*0.5
-alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
-alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
-alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias moveto      move screenOriginX;screenOriginY screenOriginX;screenOriginY
+alias full        move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf    move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias leftthird   move screenOriginX;screenOriginY screenSizeX/3*2;screenSizeY
+alias left75      move screenOriginX;screenOriginY screenSizeX*0.75;screenSizeY
+alias left90      move screenOriginX;screenOriginY screenSizeX*0.90;screenSizeY
+alias righthalf   move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias right10     move -screenSizeX*0.3;screenOriginY screenSizeX*0.3;screenSizeY*0.7
+alias right05     move -screenSizeX*0.15;screenOriginY screenSizeX*0.1;screenSizeY*0.5
+alias topleft     corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright    corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft  corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
 alias tweetbotpos corner bottom-right
 
 ## Concrete positions
-alias 0-to0    ${moveto}    ${mon-left}
-alias 0-full   ${full}      ${mon-left}
-alias 0-left   ${lefthalf}  ${mon-left}
-alias 0-left90 ${left90}    ${mon-left}
-alias 0-right  ${righthalf} ${mon-left}
-alias 0-right10 ${right10}  ${mon-left}
-alias 0-right05 ${right05}  ${mon-left}
+alias 0-to0     ${moveto}    ${mon-left}
+alias 0-full    ${full}      ${mon-left}
+alias 0-left    ${lefthalf}  ${mon-left}
+alias 0-left90  ${left90}    ${mon-left}
+alias 0-right   ${righthalf} ${mon-left}
+alias 0-right10 ${right10}   ${mon-left}
+alias 0-right05 ${right05}   ${mon-left}
 
 alias 1-to1    ${moveto}    ${mon-middle}
 alias 1-full   ${full}      ${mon-middle}
@@ -77,8 +77,8 @@ layout 1monitor 'Safari':REPEAT         ${left90}
 layout 1monitor 'Firefox':REPEAT        ${left90}
 layout 1monitor 'Google Chrome':REPEAT  ${left90}
 layout 1monitor 'Pocket':REPEAT         ${left90}
+layout 1monitor 'Fantastical':REPEAT  ${left90}
 layout 1monitor 'Mail':MAIN_FIRST       ${full}
-layout 1monitor 'Microsoft Outlook':MAIN_FIRST    ${full}
 layout 1monitor 'Airmail 2':MAIN_FIRST  ${full}
 layout 1monitor 'OmniFocus':REPEAT      ${full}
 layout 1monitor 'Xcode':REPEAT          ${full}
@@ -89,42 +89,43 @@ layout 1monitor 'Monitor':REPEAT        ${full}
 layout 1monitor 'Spotify':MAIN_FIRST    ${full}
 layout 1monitor 'iTunes':MAIN_FIRST     ${full}
 layout 1monitor 'Tweetbot':MAIN_FIRST   ${tweetbotpos}
+layout 1monitor 'Microsoft Outlook':MAIN_FIRST    ${full}
 
-layout 2monitor 'Safari':REPEAT         ${0-left90}
-layout 2monitor 'Firefox':REPEAT        ${0-left90}
-layout 2monitor 'Google Chrome':REPEAT  ${0-left90}
-layout 2monitor 'Pocket':REPEAT         ${0-left90}
-layout 2monitor 'Mail':REPEAT           ${0-left90}
-layout 2monitor 'Microsoft Outlook':REPEAT        ${0-left90}
-layout 2monitor 'Airmail 2':REPEAT      ${0-left90}
-layout 2monitor 'OmniFocus':REPEAT      ${0-left90}
-layout 2monitor 'Xcode':REPEAT          ${full}
-layout 2monitor 'Eclipse':REPEAT        ${full}
-layout 2monitor 'Android Studio':REPEAT ${full}
-layout 2monitor 'SourceTree':REPEAT     ${0-left90}
-layout 2monitor 'Monitor':REPEAT        ${0-full}
-layout 2monitor 'Spotify':MAIN_FIRST    ${0-left90}
-layout 2monitor 'iTunes':MAIN_FIRST     ${0-left90}
-layout 2monitor 'Tweetbot':IGNORE_FAIL  ${tweetbotpos} ${mon-left}
-layout 2monitor 'Microsoft Lync':IGNORE_FAIL      ${0-right05}
+layout 2monitor 'Safari':REPEAT              ${0-left90}
+layout 2monitor 'Firefox':REPEAT             ${0-left90}
+layout 2monitor 'Google Chrome':REPEAT       ${0-left90}
+layout 2monitor 'Pocket':REPEAT              ${0-left90}
+layout 2monitor 'Mail':REPEAT                ${0-left90}
+layout 2monitor 'Microsoft Outlook':REPEAT   ${0-left90}
+layout 2monitor 'Airmail 2':REPEAT           ${0-left90}
+layout 2monitor 'OmniFocus':REPEAT           ${0-left90}
+layout 2monitor 'Xcode':REPEAT               ${full}
+layout 2monitor 'Eclipse':REPEAT             ${full}
+layout 2monitor 'Android Studio':REPEAT      ${full}
+layout 2monitor 'SourceTree':REPEAT          ${0-left90}
+layout 2monitor 'Monitor':REPEAT             ${0-full}
+layout 2monitor 'Spotify':MAIN_FIRST         ${0-left90}
+layout 2monitor 'iTunes':MAIN_FIRST          ${0-left90}
+layout 2monitor 'Fantastical':MAIN_FIRST     ${0-left90}
+layout 2monitor 'Tweetbot':IGNORE_FAIL       ${tweetbotpos} ${mon-left}
+layout 2monitor 'Microsoft Lync':IGNORE_FAIL ${0-right05}
 
 layout 3monitor 'Safari':REPEAT         ${0-left90}
 layout 3monitor 'Google Chrome':REPEAT  ${0-left90}
 layout 3monitor 'Firefox':REPEAT        ${0-left90}
+layout 3monitor 'SourceTree':REPEAT     ${0-left90}
 layout 3monitor 'PathFinder':REPEAT     ${1-to1}
+layout 3monitor 'mySPIN_IVI_OSX':REPEAT ${2-to2}
 layout 3monitor 'Eclipse':REPEAT        ${1-full}
 layout 3monitor 'Android Studio':REPEAT ${1-full}
 layout 3monitor 'Xcode':REPEAT          ${1-full}
-layout 3monitor 'SourceTree':REPEAT     ${0-left90}
-layout 3monitor 'mySPIN_IVI_OSX':REPEAT ${2-to2}
-layout 3monitor 'Tweetbot':IGNORE_FAIL  ${tweetbotpos} ${mon-left}
 layout 3monitor 'Mail':MAIN_FIRST       ${2-full}
-layout 3monitor 'Microsoft Outlook':MAIN_FIRST    ${2-full}
 layout 3monitor 'Airmail':MAIN_FIRST    ${2-full}
 layout 3monitor 'OmniFocus':MAIN_FIRST  ${2-full}
 layout 3monitor 'Spotify':MAIN_FIRST    ${2-full}
 layout 3monitor 'iTunes':MAIN_FIRST     ${2-full}
-layout 3monitor 'Monitor':REPEAT        ${0-full}
+layout 3monitor 'Tweetbot':IGNORE_FAIL  ${tweetbotpos} ${mon-left}
+layout 3monitor 'Microsoft Outlook':MAIN_FIRST    ${2-full}
 
 ## Default Layouts
 default 1monitor count:1
@@ -147,11 +148,12 @@ bind 3:${hyper} layout 3monitor
 bind n:${hyper}     throw next
 bind right:${hyper} throw right resize
 bind left:${hyper}  throw left  resize
-bind left:ctrl;alt;cmd throw right resize:screenSizeX/2;screenSizeY
-bind left:ctrl;alt;cmd throw left  resize:screenSizeX/2;screenSizeY
-bind f:${hyper}     throw 1 resize
-bind g:${hyper}     throw 0 resize
+bind left:ctrl;alt;cmd throw right # resize:screenSizeX/2;screenSizeY
+bind left:ctrl;alt;cmd throw left  # resize:screenSizeX/2;screenSizeY
+bind q:${hyper}     throw 0 # resize
+bind w:${hyper}     throw 1 # resize
 
 bind r:${hyper} relaunch
 bind z:${hyper} undo
 bind g:${hyper} grid padding:5 0:6,4 1:6,4 2:6,4
+

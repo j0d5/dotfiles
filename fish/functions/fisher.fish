@@ -15,27 +15,6 @@ if not set -q fisher_cmd_name
     ' | read -gx fisher_cmd_name
 end
 
-# The MIT License (MIT)
-# 
-# Copyright (c) 2016 Jorge Bucaran
-# 
-# Permission is hereby granted, free of charge,  to any person obtaining a copy of
-# this software  and associated documentation  files (the "Software"), to  deal in
-# the Software  without restriction,  including without  limitation the  rights to
-# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-# the Software, and to permit persons to  whom the Software is furnished to do so,
-# subject to the following conditions:
-# 
-# The above copyright  notice and this permission notice shall  be included in all
-# copies or substantial portions of the Software.
-# 
-# THE  SOFTWARE IS  PROVIDED "AS  IS", WITHOUT  WARRANTY OF  ANY KIND,  EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-# FOR A PARTICULAR  PURPOSE AND NONINFRINGEMENT. IN NO EVENT  SHALL THE AUTHORS OR
-# COPYRIGHT HOLDERS BE  LIABLE FOR ANY CLAIM, DAMAGES OR  OTHER LIABILITY, WHETHER
-# IN  AN ACTION  OF  CONTRACT, TORT  OR  OTHERWISE,  ARISING FROM,  OUT  OF OR  IN
-# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 function $fisher_cmd_name -d "fish plugin manager"
     switch "$FISH_VERSION"
         case 2.1.2 2.1.1 2.1.0 2.0.0
@@ -53,7 +32,7 @@ function $fisher_cmd_name -d "fish plugin manager"
             return 1
     end
 
-    set -g fisher_version "2.8.0"
+    set -g fisher_version "2.9.0"
     set -g fisher_spinners ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
     set -g __fisher_stdout /dev/stdout
     set -g __fisher_stderr /dev/stderr
@@ -91,8 +70,12 @@ function $fisher_cmd_name -d "fish plugin manager"
         set -g fisher_cache "$cache_home/fisherman"
     end
 
+    if test -z "$fish_path"
+        set -g fish_path "$fish_config"
+    end
+
     if test -z "$fisher_file"
-        set -g fisher_file "$fish_config/fishfile"
+        set -g fisher_file "$fish_path/fishfile"
     end
 
     switch "$argv[1]"
@@ -109,7 +92,7 @@ function $fisher_cmd_name -d "fish plugin manager"
             return
     end
 
-    command mkdir -p "$fish_config/"{conf.d,functions,completions} "$fisher_config" "$fisher_cache"
+    command mkdir -p {"$fish_path","$fish_config"}/{conf.d,functions,completions} "$fisher_config" "$fisher_cache"
     or return 1
 
     set -l completions "$fish_config/completions/$fisher_cmd_name.fish"
@@ -769,10 +752,10 @@ function __fisher_plugin_enable -a path
             set base "$plugin_name.$base"
         end
 
-        set -l target "$fish_config/$dir/$base"
+        set -l target "$fish_path/$dir/$base"
 
         if test -e "$target" -a ! -L "$target"
-            set -l backup_target "$fish_config/$dir/copy-$base"
+            set -l backup_target "$fish_path/$dir/copy-$base"
 
             __fisher_log info "Backup &$base&" "$__fisher_stderr"
 
@@ -784,8 +767,8 @@ function __fisher_plugin_enable -a path
         builtin source "$target" ^ /dev/null
 
         if test "$base" = "set_color_custom.fish"
-            if test ! -s "$fish_config/fish_colors"
-                __fisher_print_fish_colors > "$fish_config/fish_colors"
+            if test ! -s "$fish_path/fish_colors"
+                __fisher_print_fish_colors > "$fish_path/fish_colors"
             end
 
             set_color_custom
@@ -794,17 +777,17 @@ function __fisher_plugin_enable -a path
 
     for file in $path/{functions/,}*.{py,awk}
         set -l base (basename "$file")
-        command ln -sf "$file" "$fish_config/functions/$base"
+        command ln -sf "$file" "$fish_path/functions/$base"
     end
 
     for file in $path/conf.d/*.{py,awk}
         set -l base (basename "$file")
-        command ln -sf "$file" "$fish_config/conf.d/$base"
+        command ln -sf "$file" "$fish_path/conf.d/$base"
     end
 
     for file in $path/conf.d/*.fish
         set -l base (basename "$file")
-        set -l target "$fish_config/conf.d/$base"
+        set -l target "$fish_path/conf.d/$base"
 
         command ln -sf "$file" "$target"
         builtin source "$target" ^ /dev/null
@@ -812,7 +795,7 @@ function __fisher_plugin_enable -a path
 
     for file in $path/completions/*.fish
         set -l base (basename "$file")
-        set -l target "$fish_config/completions/$base"
+        set -l target "$fish_path/completions/$base"
 
         command ln -sf "$file" "$target"
         builtin source "$target" ^ /dev/null
@@ -853,13 +836,13 @@ function __fisher_plugin_disable -a path
             set base "$plugin_name.$base"
         end
 
-        set -l target "$fish_config/$dir/$base"
+        set -l target "$fish_path/$dir/$base"
 
         command rm -f "$target"
 
         functions -e "$name"
 
-        set -l backup_source "$fish_config/$dir/copy-$base"
+        set -l backup_source "$fish_path/$dir/copy-$base"
 
         if test -e "$backup_source"
             command mv "$backup_source" "$target"
@@ -867,7 +850,7 @@ function __fisher_plugin_disable -a path
         end
 
         if test "$base" = "set_color_custom.fish"
-            set -l fish_colors_config "$fish_config/fish_colors"
+            set -l fish_colors_config "$fish_path/fish_colors"
 
             if test ! -f "$fish_colors_config"
                 __fisher_reset_default_fish_colors
@@ -882,24 +865,24 @@ function __fisher_plugin_disable -a path
 
     for file in $path/conf.d/*.{py,awk}
         set -l base (basename "$file")
-        command rm -f "$fish_config/conf.d/$base"
+        command rm -f "$fish_path/conf.d/$base"
     end
 
     for file in $path/{functions/,}*.{py,awk}
         set -l base (basename "$file")
-        command rm -f "$fish_config/functions/$base"
+        command rm -f "$fish_path/functions/$base"
     end
 
     for file in $path/conf.d/*.fish
         set -l base (basename "$file")
-        command rm -f "$fish_config/conf.d/$base"
+        command rm -f "$fish_path/conf.d/$base"
     end
 
     for file in $path/completions/*.fish
         set -l name (basename "$file" .fish)
         set -l base "$name.fish"
 
-        command rm -f "$fish_config/completions/$base"
+        command rm -f "$fish_path/completions/$base"
         complete -c "$name" --erase
     end
 
@@ -1477,7 +1460,7 @@ end
 
 
 function __fisher_key_bindings_remove -a plugin_name
-    set -l user_key_bindings "$fish_config/functions/fish_user_key_bindings.fish"
+    set -l user_key_bindings "$fish_path/functions/fish_user_key_bindings.fish"
 
     if test ! -f "$user_key_bindings"
         return
@@ -1514,7 +1497,7 @@ end
 
 
 function __fisher_key_bindings_append -a plugin_name file
-    set -l user_key_bindings "$fish_config/functions/fish_user_key_bindings.fish"
+    set -l user_key_bindings "$fish_path/functions/fish_user_key_bindings.fish"
 
     command mkdir -p (dirname "$user_key_bindings")
     command touch "$user_key_bindings"
@@ -2176,6 +2159,7 @@ function __fisher_self_uninstall -a yn
     command rm -f "$fish_config"/{functions,completions}/$fisher_cmd_name.fish "$fisher_file"
 
     set -e fish_config
+    set -e fish_path
     set -e fisher_active_prompt
     set -e fisher_cache
     set -e fisher_config
@@ -2437,4 +2421,3 @@ a snippet, i\.e, one or more \fI\.fish\fR files inside a directory named \fIconf
 .SS "How can I list plugins as dependencies to my plugin?"
 Create a new \fIfishfile\fR file at the root level of your project and write in the plugins\.'
 end
-

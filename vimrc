@@ -312,7 +312,7 @@ set fileencodings+=default
 " --------------------
 " Tab Wrapper function
 " --------------------
-function InsertTabWrapper()
+function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '<leader>k'
         return "<leader><tab>"
@@ -339,7 +339,7 @@ function! ExtractMethod() range
 endfunction
 
 " ex command for toggling hex mode - define mapping if desired
-command -bar Hexmode call ToggleHex()
+command! -bar Hexmode call ToggleHex()
 
 " helper function to toggle hex mode
 function! ToggleHex()
@@ -417,7 +417,6 @@ call InitializeDirectories()
 "# PlugIn-Configuration   ##
 "#                        ##
 "###########################
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 filetype off "disabled for Vundle
 
@@ -432,22 +431,27 @@ Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/SmartusLine'
-Plugin 'powerline/powerline'
+" Plugin 'vim-scripts/SmartusLine'
 Plugin 'jcf/vim-latex'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'naseer/logcat'
-Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-surround.git'
 Plugin 'airblade/vim-gitgutter'
+" Install a syntax checker for vim
 Plugin 'scrooloose/syntastic'
+" Add global syntax formatting config capability
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-android/vim-adb-logcat'
+" Just press enter for newline
 Plugin 'dahu/Insertlessly'
-Plugin 'gertjanreynaert/cobalt2-vim-theme'
 Plugin 'Wutzara/vim-materialtheme'
+" Add Solarized Theme
 Plugin 'altercation/vim-colors-solarized'
+" Little file manager
 Plugin 'ctrlpvim/ctrlp.vim'
+" Nice status bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -469,6 +473,36 @@ filetype plugin on
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" START Configure CTRL-P
+set runtimepath^=~/.vim/vundle/ctrlp.vim
+" set file filter for ctrl-p
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
+" END CTRL-P
+
+" START Configure Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" END Syntastic
+
+
+" configure airline status bar
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
 
 
 " --------------------
