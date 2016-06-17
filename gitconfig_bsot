@@ -5,7 +5,7 @@
 [core]
   # open sublime text with new window and wait for result
   # editor = subl -n -w
-  editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"' 
+  editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
   excludesfile = ~/.gitignore
 
 [push]
@@ -20,6 +20,9 @@
 
 [pager]
   show-branch = true
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
   # status = true
 
 [grep]
@@ -40,8 +43,8 @@
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
   dfi = diff --ignore-all-space --minimal
-  l = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
-  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
+  l = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative -5
+  ll = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -30
   lg = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative --graph
   la = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=relative
   lc  = "!f() { git l "$1"^.."$1"; }; f"
@@ -109,6 +112,7 @@
 
 [diff]
   tool = sourcetree
+  compactionheuristic = true
 
 [merge]
   tool = sourcetree
@@ -121,12 +125,12 @@
   prompt = false
 
 [difftool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+  path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+  trustExitCode = true
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -144,4 +148,7 @@
 # clean = git hawser clean %f
 # smudge = git hawser smudge %f
 # required = true
+
+[interactive]
+  diffFilter = diff-highlight
 

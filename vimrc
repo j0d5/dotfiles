@@ -69,17 +69,17 @@ endif
 " StatusLine
 " --------------------
 if has('statusline')
-  set laststatus=2   " Always show status line, even for one window
-  " Broken down into easily includeable segments
-  set statusline=%<%f\     " Filename
-  set statusline+=%w%h%m%r " Options
-  if has('fugitive')
-    set statusline+=%{fugitive#statusline()} " Git Hotness
-  endif
-  set statusline+=\ [%{&ff}/%Y]            " filetype
-  set statusline+=\ [%{getcwd()}]          " current dir
-  "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
-  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    set laststatus=2   " Always show status line, even for one window
+    " Broken down into easily includeable segments
+    " set statusline=%<%f\     " Filename
+    " set statusline+=%w%h%m%r " Options
+    " if has('fugitive')
+    " set statusline+=%{fugitive#statusline()} " Git Hotness
+    " endif
+    " set statusline+=\ [%{&ff}/%Y]            " filetype
+    " set statusline+=\ [%{getcwd()}]          " current dir
+    " set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
+    " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
 " --------------------
@@ -95,9 +95,9 @@ set ignorecase smartcase " Case-insensitive searching
 " --------------------
 set wildmenu                   " Use menu to show command-line completion (in 'full' case)
 set wildmode=list:longest,full " set command-line completion mode:
-                               " - on first <Tab>, when more than one match, list all matches and complete
-                               " the longest common  string
-                               " - on second <Tab>, complete the next full match and show menu
+" - on first <Tab>, when more than one match, list all matches and complete
+" the longest common  string
+" - on second <Tab>, complete the next full match and show menu
 
 " Ignore these filenames during enhanced command line completion.
 set wildignore+=*/.idea/*,*/.project/*    " ignore IDE project files
@@ -152,143 +152,97 @@ set viminfo='20,\"50,:200,%,n~/.dotfiles/vim/viminfo
 "#################################################
 
 if has('autocmd')
-  "" Enable filetype detection
-  filetype on "disabled for Vundle
+    "" Enable filetype detection
+    filetype on "disabled for Vundle
 
-  "" Load plugin files for specific file types
-  filetype plugin on
-  "" Load the indent file for specific file types
-  filetype indent on
+    "" Load plugin files for specific file types
+    filetype plugin on
+    "" Load the indent file for specific file types
+    filetype indent on
 
-  autocmd BufEnter * cd %:p:h
+    autocmd BufEnter * cd %:p:h
 
-  "" Transparent editing of gpg binary and ascii armor encrypted files.
-  "" By Wouter Hanegraaff <wouter@blub.net>
-  augroup encrypted
-    autocmd!
-    "" First make sure nothing is written to ~/.viminfo while editing
-    "" an encrypted file.
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg " set viminfo=
-    "" We don't want a swap file, as it writes unencrypted data to disk
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg set noswapfile
-    "" Switch to binary mode to read the encrypted file
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg set bin
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg let ch_save = &ch|set ch=2
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg let shsave=&sh
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg let &sh='sh'
-    autocmd BufReadPre,FileReadPre      *.asc,*.gpg let ch_save = &ch|set ch=2
-    autocmd BufReadPost,FileReadPost    *.asc,*.gpg '[,']!gpg --decrypt --default-recipient-self 2> /dev/null
-    autocmd BufReadPost,FileReadPost    *.asc,*.gpg let &sh=shsave
-    "" Switch to normal mode for editing
-    autocmd BufReadPost,FileReadPost    *.asc,*.gpg set nobin
-    autocmd BufReadPost,FileReadPost    *.asc,*.gpg let &ch = ch_save|unlet ch_save
-    autocmd BufReadPost,FileReadPost    *.asc,*.gpg execute ":doautocmd BufReadPost " . expand("%:r")
-    "" Convert all text to encrypted text before writing
-    autocmd BufWritePre,FileWritePre    *.asc,*.gpg set bin
-    autocmd BufWritePre,FileWritePre    *.asc,*.gpg let shsave=&sh
-    autocmd BufWritePre,FileWritePre    *.asc,*.gpg let &sh='sh'
-    autocmd BufWritePre,FileWritePre    *.gpg '[,']!gpg --encrypt --default-recipient-self 2>/dev/null
-    autocmd BufWritePre,FileWritePre    *.asc '[,']!gpg --armor --encrypt --default-recipient-self 2>/dev/null
-    autocmd BufWritePre,FileWritePre    *.asc,*.gpg let &sh=shsave
-    "" Undo the encryption so we are back in the normal text, directly
-    "" after the file has been written.
-    autocmd BufWritePost,FileWritePost  *.asc,*.gpg silent u
-    autocmd BufWritePost,FileWritePost  *.asc,*.gpg set nobin
-  augroup END
+    "" Transparent editing of gpg binary and ascii armor encrypted files.
+    "" By Wouter Hanegraaff <wouter@blub.net>
+    augroup encrypted
+        autocmd!
+        "" First make sure nothing is written to ~/.viminfo while editing
+        "" an encrypted file.
+        autocmd BufReadPre,FileReadPre      *.asc,*.gpg " set viminfo=
+        "" We don't want a swap file, as it writes unencrypted data to disk
+        autocmd BufReadPre,FileReadPre      *.asc,*.gpg set noswapfile
+        "" Switch to binary mode to read the encrypted file
+        autocmd BufReadPre,FileReadPre      *.asc,*.gpg set bin
+        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let ch_save = &ch|set ch=2
+        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let shsave=&sh
+        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let &sh='sh'
+        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let ch_save = &ch|set ch=2
+        autocmd BufReadPost,FileReadPost    *.asc,*.gpg '[,']!gpg --decrypt --default-recipient-self 2> /dev/null
+        autocmd BufReadPost,FileReadPost    *.asc,*.gpg let &sh=shsave
+        "" Switch to normal mode for editing
+        autocmd BufReadPost,FileReadPost    *.asc,*.gpg set nobin
+        autocmd BufReadPost,FileReadPost    *.asc,*.gpg let &ch = ch_save|unlet ch_save
+        autocmd BufReadPost,FileReadPost    *.asc,*.gpg execute ":doautocmd BufReadPost " . expand("%:r")
+        "" Convert all text to encrypted text before writing
+        autocmd BufWritePre,FileWritePre    *.asc,*.gpg set bin
+        autocmd BufWritePre,FileWritePre    *.asc,*.gpg let shsave=&sh
+        autocmd BufWritePre,FileWritePre    *.asc,*.gpg let &sh='sh'
+        autocmd BufWritePre,FileWritePre    *.gpg '[,']!gpg --encrypt --default-recipient-self 2>/dev/null
+        autocmd BufWritePre,FileWritePre    *.asc '[,']!gpg --armor --encrypt --default-recipient-self 2>/dev/null
+        autocmd BufWritePre,FileWritePre    *.asc,*.gpg let &sh=shsave
+        "" Undo the encryption so we are back in the normal text, directly
+        "" after the file has been written.
+        autocmd BufWritePost,FileWritePost  *.asc,*.gpg silent u
+        autocmd BufWritePost,FileWritePost  *.asc,*.gpg set nobin
+    augroup END
 
-  augroup programming
-    autocmd!
-    "" Display line numbers
-    autocmd FileType c,cpp,java,javascript,make,perl,python,slang set number
+    augroup programming
+        autocmd!
 
-    "" For most programming languages except those where whitespace/tabs are
-    "" important, use only tab characters for block indentation.
-    "" Recommended coding convention: use tabs for the block indentation,
-    "" then use spaces for any additional indentation that is internal to the
-    "" block. That preserves code readability when using different tab stops.
-    autocmd FileType c,cpp,java,javascript,perl,slang set noexpandtab shiftwidth=2 tabstop=2
+        "" For actual C (not C++) programming where comments have explicit end
+        "" characters, if starting a new line in the middle of a comment, automatically
+        "" insert the comment leader characters
+        autocmd FileType c set formatoptions+=ro
 
-    "" For C-like programming, have automatic indentation:
-    autocmd FileType c,cpp,slang if has('cindent') | set cindent | endif
+        "" For Perl programming, have things in braces indenting themselves:
+        autocmd FileType perl if has('smartindent') | set smartindent | endif
 
-    "" For actual C (not C++) programming where comments have explicit end
-    "" characters, if starting a new line in the middle of a comment, automatically
-    "" insert the comment leader characters
-    autocmd FileType c set formatoptions+=ro
+        "" For Python programming, use cindent with the appropriate keywords
+        autocmd Filetype python if has('cindent') && has('smartindent') | set cindent
+                    \ cinwords=class,def,elif,else,except,finally,for,if,try,while
+                    \ | endif
 
-    "" For Perl programming, have things in braces indenting themselves:
-    autocmd FileType perl if has('smartindent') | set smartindent | endif
+        "" Omnifunc completions
+        autocmd FileType c      if has('eval') || has('insert_expand') | set omnifunc=ccomplete#Complete | endif
+        autocmd FileType javascript if has('eval') || has('insert_expand') | set omnifunc=javascriptcomplete#CompleteJS | endif
+        autocmd FileType php    if has('eval') || has('insert_expand') | set omnifunc=phpcomplete#CompletePHP | endif
+        autocmd FileType python if has('eval') || has('insert_expand') | set omnifunc=pythoncomplete#Complete | endif
+        autocmd FileType ruby   if has('eval') || has('insert_expand') | set omnifunc=rubycomplete#Complete | endif
+        autocmd FileType sql    if has('eval') || has('insert_expand') | set omnifunc=sqlcomplete#Complete | endif
+        autocmd FileType xml    if has('eval') || has('insert_expand') | set omnifunc=xmlcomplete#CompleteTags | endif
 
-    "" For Python programming, expand tabs to 4 spaces
-    "" since whitespace is important (4 spaces per indentation level)
-    autocmd Filetype python set tabstop=4 shiftwidth=4 expandtab
-    "" For Python programming, use cindent with the appropriate keywords
-    autocmd Filetype python if has('cindent') && has('smartindent') | set cindent
-          \ cinwords=class,def,elif,else,except,finally,for,if,try,while
-          \ | endif
+        " ----------  qmake : set filetype for *.pro  ----------
+        autocmd BufNewFile,BufRead *.pro  set filetype=qmake
+    augroup END
 
-    "" In Makefiles, do not expand tabs to spaces, since actual tab characters
-    "" are needed, and have indentation at 8 chars to be sure that all
-    "" indents are tabs (despite the mappings later):
-    autocmd FileType make set noexpandtab nosmarttab shiftwidth=4 tabstop=4
+    augroup web
+        autocmd!
+        "" For HTML, do not have Vim automatically add a <CR> or line break
+        "" at the end of the last line if there isn't one, otherwise
+        "" the default http headers will be sent
+        autocmd FileType html,xhtml set binary noeol
 
-    "" Omnifunc completions
-    autocmd FileType c      if has('eval') || has('insert_expand') | set omnifunc=ccomplete#Complete | endif
-    autocmd FileType javascript if has('eval') || has('insert_expand') | set omnifunc=javascriptcomplete#CompleteJS | endif
-    autocmd FileType php    if has('eval') || has('insert_expand') | set omnifunc=phpcomplete#CompletePHP | endif
-    autocmd FileType python if has('eval') || has('insert_expand') | set omnifunc=pythoncomplete#Complete | endif
-    autocmd FileType ruby   if has('eval') || has('insert_expand') | set omnifunc=rubycomplete#Complete | endif
-    autocmd FileType sql    if has('eval') || has('insert_expand') | set omnifunc=sqlcomplete#Complete | endif
-    autocmd FileType xml    if has('eval') || has('insert_expand') | set omnifunc=xmlcomplete#CompleteTags | endif
+        "" For CSS, also have things in braces indented:
+        autocmd Filetype css if has('smartindent') | set smartindent | endif
 
-    " ----------  qmake : set filetype for *.pro  ----------
-    autocmd BufNewFile,BufRead *.pro  set filetype=qmake
-  augroup END
+        "" For HTML, generally format text, but if a long line has been created,
+        "" leave it alone when editing
+        autocmd FileType html,xhtml set formatoptions+=tl
 
-  augroup web
-    autocmd!
-    "" For both CSS and HTML, display line numbers
-    autocmd FileType css,html,xhtml set number
-
-    "" For HTML, do not have Vim automatically add a <CR> or line break
-    "" at the end of the last line if there isn't one, otherwise
-    "" the default http headers will be sent
-    autocmd FileType html,xhtml set binary noeol
-
-    "" For both CSS and HTML, use genuine tab characters for
-    "" indentation to make files a few bytes smaller:
-    autocmd FileType css,html,xhtml set noexpandtab shiftwidth=2 tabstop=2
-
-    "" For CSS, also have things in braces indented:
-    autocmd Filetype css if has('smartindent') | set smartindent | endif
-
-    "" For HTML, generally format text, but if a long line has been created,
-    "" leave it alone when editing
-    autocmd FileType html,xhtml set formatoptions+=tl
-
-    "" Omnifunc completions
-    autocmd FileType css if has('eval') || has('insert_expand') | set omnifunc=csscomplete#CompleteCSS | endif
-    autocmd FileType html,xhtml if has('eval') || has('insert_expand') | set omnifunc=htmlcomplete#CompleteTags | endif
-  augroup END
-
-  "" Note: The autocommand event is defined to avoid setting this augroup when in the
-  "" NERD tree buffer, which causes a conflict with its color settings.
-  augroup highlightextrawhitespace
-    autocmd!
-    "" Highlight extra white space:
-    autocmd Syntax *[^{nerdtree}]* highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-    "" Show trailing whitepace and spaces before a tab:
-    autocmd Syntax *[^{nerdtree}]* if has('syntax') | syntax match ExtraWhitespace /\s\+$\| \+\ze\t/ | endif
-    "" Show tabs that are not at the start of a line:
-    "autocmd Syntax *[^{nerdtree}]* syntax match ExtraWhitespace /[^\t]\zs\t\+/
-    "" Show spaces used for indenting (so you use only tabs for indenting).
-    "autocmd Syntax * syntax match ExtraWhitespace /^\t*\zs \+/
-  augroup END
-
-  " augroup includesyntaxindictionary
-  "   autocmd!
-  "   autocmd FileType * exe('setl dict+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
-  " augroup END
+        "" Omnifunc completions
+        autocmd FileType css if has('eval') || has('insert_expand') | set omnifunc=csscomplete#CompleteCSS | endif
+        autocmd FileType html,xhtml if has('eval') || has('insert_expand') | set omnifunc=htmlcomplete#CompleteTags | endif
+    augroup END
 endif
 
 " --------------------
@@ -325,17 +279,17 @@ endfunction
 " Extract Method from visual marked code
 " --------------------
 function! ExtractMethod() range
-  let name = inputdialog("Name of new method:")
-  '<
-  exe "normal! O\<BS>private " . name ."()\<CR>{\<Esc>"
-  '>
-  exe "normal! oreturn ;\<CR>}\<Esc>k"
-  s/return/\/\/ return/ge
-  normal! j%
-  normal! kf(
-  exe "normal! yyPi// = \<Esc>wdwA;\<Esc>"
-  normal! ==
-  normal! j0w
+    let name = inputdialog("Name of new method:")
+    '<
+    exe "normal! O\<BS>private " . name ."()\<CR>{\<Esc>"
+    '>
+    exe "normal! oreturn ;\<CR>}\<Esc>k"
+    s/return/\/\/ return/ge
+    normal! j%
+    normal! kf(
+    exe "normal! yyPi// = \<Esc>wdwA;\<Esc>"
+    normal! ==
+    normal! j0w
 endfunction
 
 " ex command for toggling hex mode - define mapping if desired
@@ -343,40 +297,40 @@ command! -bar Hexmode call ToggleHex()
 
 " helper function to toggle hex mode
 function! ToggleHex()
-  " hex mode should be considered a read-only operation
-  " save values for modified and read-only for restoration later,
-  " and clear the read-only flag for now
-  let l:modified=&mod
-  let l:oldreadonly=&readonly
-  let &readonly=0
-  let l:oldmodifiable=&modifiable
-  let &modifiable=1
-  if !exists("b:editHex") || !b:editHex
-    " save old options
-    let b:oldft=&ft
-    let b:oldbin=&bin
-    " set new options
-    setlocal binary " make sure it overrides any textwidth, etc.
-    let &ft="xxd"
-    " set status
-    let b:editHex=1
-    " switch to hex editor
-    %!xxd
-  else
-    " restore old options
-    let &ft=b:oldft
-    if !b:oldbin
-      setlocal nobinary
+    " hex mode should be considered a read-only operation
+    " save values for modified and read-only for restoration later,
+    " and clear the read-only flag for now
+    let l:modified=&mod
+    let l:oldreadonly=&readonly
+    let &readonly=0
+    let l:oldmodifiable=&modifiable
+    let &modifiable=1
+    if !exists("b:editHex") || !b:editHex
+        " save old options
+        let b:oldft=&ft
+        let b:oldbin=&bin
+        " set new options
+        setlocal binary " make sure it overrides any textwidth, etc.
+        let &ft="xxd"
+        " set status
+        let b:editHex=1
+        " switch to hex editor
+        %!xxd
+    else
+        " restore old options
+        let &ft=b:oldft
+        if !b:oldbin
+            setlocal nobinary
+        endif
+        " set status
+        let b:editHex=0
+        " return to normal editing
+        %!xxd -r
     endif
-    " set status
-    let b:editHex=0
-    " return to normal editing
-    %!xxd -r
-  endif
-  " restore values for modified and read only state
-  let &mod=l:modified
-  let &readonly=l:oldreadonly
-  let &modifiable=l:oldmodifiable
+    " restore values for modified and read only state
+    let &mod=l:modified
+    let &readonly=l:oldreadonly
+    let &modifiable=l:oldmodifiable
 endfunction
 
 "###############################
@@ -385,30 +339,30 @@ endfunction
 "#                            ##
 "###############################
 function! InitializeDirectories()
-  let separator = "."
-  let parent = $HOME
-  let prefix = '.vim'
-  let dir_list = {
-			  \ 'backups': 'backupdir',
-			  \ 'views': 'viewdir',
-			  \ 'swaps': 'directory',
-			  \ 'undos': 'undodir' }
+    let separator = "."
+    let parent = $HOME
+    let prefix = '.vim'
+    let dir_list = {
+                \ 'backups': 'backupdir',
+                \ 'views': 'viewdir',
+                \ 'swaps': 'directory',
+                \ 'undos': 'undodir' }
 
-  for [dirname, settingname] in items(dir_list)
-	  let directory = parent . '/' . prefix . '/' . dirname . "/"
-	  if exists("*mkdir")
-		  if !isdirectory(directory)
-			  call mkdir(directory)
-		  endif
-	  endif
-	  if !isdirectory(directory)
-		  echo "Warning: Unable to create backup directory: " . directory
-		  echo "Try: mkdir -p " . directory
-	  else
-          let directory = substitute(directory, " ", "\\\\ ", "")
-          exec "set " . settingname . "=" . directory
-	  endif
-  endfor
+    for [dirname, settingname] in items(dir_list)
+        let directory = parent . '/' . prefix . '/' . dirname . "/"
+        if exists("*mkdir")
+            if !isdirectory(directory)
+                call mkdir(directory)
+            endif
+        endif
+        if !isdirectory(directory)
+            echo "Warning: Unable to create backup directory: " . directory
+            echo "Try: mkdir -p " . directory
+        else
+            let directory = substitute(directory, " ", "\\\\ ", "")
+            exec "set " . settingname . "=" . directory
+        endif
+    endfor
 endfunction
 call InitializeDirectories()
 
@@ -435,7 +389,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jcf/vim-latex'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'naseer/logcat'
-Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 " Install a syntax checker for vim
 Plugin 'scrooloose/syntastic'
@@ -452,6 +406,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Nice status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" Completion plugins
+Plugin 'ervandew/supertab'
+Plugin 'valloric/youcompleteme'
+" Region expanding
+Plugin 'terryma/vim-expand-region'
+" Comment with gcc
+Plugin 'tpope/vim-commentary.git'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -499,10 +460,20 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " END Syntastic
 
+" START configure markdown
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 2
+"END markdown
+
 
 " configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
 
 
 " --------------------
@@ -545,44 +516,13 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'pdf,dvi'
 
-" --------------------
-" TagList
-" --------------------
-" TagListTagName - Used for tag names
-highlight MyTagListTagName gui=bold guifg=Black guibg=LightBlue
-" TagListTagScope - Used for tag scope
-highlight MyTagListTagScope gui=NONE guifg=Blue
-" TagListTitle - Used for tag titles
-highlight MyTagListTitle gui=bold guifg=Black guibg=LightGrey
-" TagListComment - Used for comments
-highlight MyTagListComment guifg=DarkGreen
-" TagListFileName - Used for filenames
-highlight MyTagListFileName gui=bold guifg=Black guibg=LightBlue
-"let Tlist_Ctags_Cmd = $VIM.'/vimfiles/ctags.exe' " location of ctags tool
-let Tlist_Show_One_File = 1 " Displaying tags for only one file~
-let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
-let Tlist_Use_Right_Window = 0 " split to the right side of the screen
-let Tlist_Sort_Type = "order" " sort by order or name
-let Tlist_Display_Prototype = 0 " do not show prototypes and not tags in the taglist window.
-let Tlist_Compart_Format = 1 " Remove extra information and blank lines from the taglist window.
-let Tlist_GainFocus_On_ToggleOpen = 1 " Jump to taglist window on open.
-let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
-let Tlist_Close_On_Select = 1 " Close the taglist window when a file or tag is selected.
-let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
-let Tlist_WinWidth = 40
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-" let Tlist_Ctags_Cmd = 'ctags --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++'
-" very slow, so I disable this
-" let Tlist_Process_File_Always = 1 " To use the :TlistShowTag and the :TlistShowPrototype commands without the taglist window and the taglist menu, you should set this variable to 1.
-":TlistShowPrototype [filename] [linenumber]
-
 " SuperTab option for context aware completion
- let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "context"
 
 "# Clang autocomplete
 " Disable auto popup, use <Tab> to autocomplete
 let g:clang_complete_auto = 0
- " Show clang errors in the quickfix window
+" Show clang errors in the quickfix window
 let g:clang_complete_copen = 1
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
@@ -592,20 +532,43 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "#                                              ##
 "#################################################
 
-let mapleader = "," " Change <Leader>
-let maplocalleader = "," " Change <LocalLeader>
+let mapleader = "\<Space>" " Change <Leader>
+" let maplocalleader = "," " Change <LocalLeader>
 
-" map :w :up
+" press <Space>o to open a file
+nnoremap <Leader>o :CtrlP<CR>
 
-" Save file with CTRL-s
-noremap <C-S> :up<CR>
+" press <Space>w to save file
+nnoremap <Leader>w :w<CR>
+
+" Jump to the END or BEGINNING of the file
+nnoremap <CR> G
+nnoremap <BS> gg
+
+" Copy & paste to system clipboard with <Space>p and <Space>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Enter visual line mode with <Space><Space>:
+nmap <Leader><Leader> V
+
+" Hit v to select one character
+" Hit v again to expand selection to word
+" Hit v again to expand to paragraph
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Automatically jump to end of text you pasted
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " Remove all highlightings
-nnoremap <silent><CR> :nohl<CR>
-
-" Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
+nnoremap <silent><ESC><ESC> :nohl<CR>
 
 " quickly insert newline in normalmode without leaving
 nnoremap <silent><M-o> o<Esc>k
@@ -619,8 +582,7 @@ nnoremap <Esc>p  p'[v']=
 " to jump to
 nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" open filename under cursor in a new window (use current file's working
-" directory)
+" open filename under cursor in a new window (use current file's working directory)
 nnoremap gf :new %:p:h/<cfile><CR>
 
 " visual shifting (does not exit Visual mode)
@@ -632,7 +594,6 @@ nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
 
-
 " switch to upper/lower window quickly
 " map <C-J> <C-W>j
 " map <C-K> <C-W>k
@@ -643,9 +604,6 @@ inoremap <C-L> @@@<ESC>hhkywjl?@@@<CR>P/@@@<CR>3s
 " use <F6> to toggle line numbers
 " nmap <silent> <F6> :set number!<CR>
 
-" page down with <Space>
-" nmap <Space> <PageDown>
-
 noremap <F6> :GundoToggle<CR>
 
 " --------------------
@@ -653,14 +611,6 @@ noremap <F6> :GundoToggle<CR>
 " --------------------
 " set Ctrl+j in insert mode, like VS.Net
 inoremap <C-Space> <C-x><C-o>
-
-" --------------------
-" TagList
-" --------------------
-" F5: Switch on/off TagList
-nnoremap <silent> <F4> :TlistToggle<CR>
-" set Ctrl+F12 to create ctags
-noremap <C-F12> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " --------------------
 " intelli sense extreme - omni first and then keyword completion
@@ -671,21 +621,6 @@ noremap <C-F12> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+
 " \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
 " \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 " inoremap <C-@> <C-Space>
-
-" --------------------
-" NERDTree configuration
-" --------------------
-let NERDTreeWinSize=35                      " Increase window size to 35 columns
-nnoremap <silent> <F3> :NERDTreeToggle<CR>      " map <F7> to toggle NERDTree window
-
-" --------------------
-" Project
-" --------------------
-noremap <A-S-p> :Project<CR>
-" noremap <A-S-o> :Project<CR>:redraw<CR>/
-nnoremap <silent> <F2> <Plug>ToggleProject
-let g:proj_window_width = 30
-let g:proj_window_increment = 50
 
 " --------------------
 " Function keymappings

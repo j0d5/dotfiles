@@ -28,3 +28,5 @@ for file in ~/.config/fish/conf.d/*.fish
     source $file
 end
 
+
+set -x PATH $PATH /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/
