@@ -384,40 +384,41 @@ call vundle#begin('~/.dotfiles/vim/vundle')
 Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'tpope/vim-fugitive'
-" Plugin 'vim-scripts/SmartusLine'
 Plugin 'jcf/vim-latex'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'naseer/logcat'
-Plugin 'tpope/vim-surround'
+Plugin 'vim-android/vim-adb-logcat'
+
+" git related plugins
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-" Install a syntax checker for vim
+
+" syntax checker for vim
 Plugin 'scrooloose/syntastic'
+
 " Add global syntax formatting config capability
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-android/vim-adb-logcat'
-" Just press enter for newline
-Plugin 'dahu/Insertlessly'
-Plugin 'Wutzara/vim-materialtheme'
+
 " Add Solarized Theme
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Wutzara/vim-materialtheme'
+
 " Little file manager
 Plugin 'ctrlpvim/ctrlp.vim'
 " Nice status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
 " Completion plugins
 Plugin 'ervandew/supertab'
-Plugin 'valloric/youcompleteme'
+" Just press enter for newline
+Plugin 'dahu/Insertlessly'
 " Region expanding
 Plugin 'terryma/vim-expand-region'
+Plugin 'tpope/vim-surround'
+
 " Comment with gcc
 Plugin 'tpope/vim-commentary.git'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -600,27 +601,6 @@ vnoremap <C-H> :<C-U>Hexmode<CR>
 
 " map CTRL-L to piece-wise copying of the line above the current one
 inoremap <C-L> @@@<ESC>hhkywjl?@@@<CR>P/@@@<CR>3s
-
-" use <F6> to toggle line numbers
-" nmap <silent> <F6> :set number!<CR>
-
-noremap <F6> :GundoToggle<CR>
-
-" --------------------
-" Omni Completion
-" --------------------
-" set Ctrl+j in insert mode, like VS.Net
-inoremap <C-Space> <C-x><C-o>
-
-" --------------------
-" intelli sense extreme - omni first and then keyword completion
-" --------------------
-" inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-" \ "\<lt>C-n>" :
-" \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-" \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-" \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-" inoremap <C-@> <C-Space>
 
 " --------------------
 " Function keymappings
