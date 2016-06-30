@@ -41,6 +41,7 @@ set nrformats=octal,hex,alpha  " Enable CTRL-A/CTRL-X to work on octal and hex n
 set backspace=indent,eol,start " Allow backspacing over everything
 set completeopt=menu,menuone,longest,preview " Insert mode completion options
 set hidden           " Allow switching edited buffers without saving
+set shortmess^=I
 " set wrap
 
 " Create splits to the right (vertical) or to the bottom (horizontal)
@@ -134,7 +135,7 @@ au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, e
 " :200  - remember 200 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,\"50,:500,%,n~/.dotfiles/vim/viminfo
+set viminfo='20,<50,:500,n~/.dotfiles/vim/viminfo
 
 
 " Fix my <Backspace> key (in Mac OS X Terminal)
@@ -258,50 +259,42 @@ call InitializeDirectories()
 
 filetype off "disabled for Vundle
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.dotfiles/vim/vundle')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'jcf/vim-latex'
-Plugin 'plasticboy/vim-markdown'
+" Plugins for handling various formats
+Plug 'jcf/vim-latex'
+Plug 'plasticboy/vim-markdown'
 
 " git related plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " syntax checker for vim
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " Add global syntax formatting config capability
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Add Solarized Theme
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Wutzara/vim-materialtheme'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Wutzara/vim-materialtheme'
 
 " Little file manager
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " Nice status bar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Completion plugins
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 " Region expanding
-Plugin 'terryma/vim-expand-region'
-Plugin 'tpope/vim-surround'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-surround'
 
 " Comment with gcc
-Plugin 'tpope/vim-commentary.git'
+Plug 'tpope/vim-commentary.git'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 
 filetype plugin indent on    " required
 
@@ -310,16 +303,6 @@ filetype plugin indent on    " required
 
 " Enable filetype detection
 filetype on "disabled for Vundle
-
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " --------------------
 " COLORSCHEME
