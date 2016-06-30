@@ -1,6 +1,6 @@
 "#################################################
-"# Maintainer:	Johannes Steudle                ##
-"# Last change:	2012/01/30                      ##
+"# Maintainer:  Johannes Steudle                ##
+"# Last change: 2016/06/29                      ##
 "# .gvimrc                                      ##
 "#                                              ##
 "#     for Unix and Mac OS:  ~/.gvimrc          ##
@@ -10,7 +10,7 @@
 " --------------------
 " Make external commands work through a pipe instead of a pseudo-tty
 " --------------------
-"set noguipty
+" set noguipty
 " set macmeta
 
 " --------------------
@@ -24,35 +24,22 @@ elseif has("gui_macvim")
 elseif has("gui_win32")
   set guifont=Consolas:h11:cANSI
 endif
-" set linespace=1.5
 
 set lines=70
 set columns=130
-
-set mousehide	    " Hide the mouse when typing text
-set tabpagemax=15
-
-" Make shift-insert work like in Xterm
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
-
-" --------------------
-" Only do this for Vim version 5.0 and later.
-" --------------------
+set mousehide      " Hide the mouse when typing text
 set guioptions=agi " no toolbar, menubar, scrollbar
+" set linespace=1.5
 " set relativenumber
-
-" I like highlighting strings inside C comments
-let c_comment_strings=1
-
+" set tabpagemax=15
 " set transparency=8
 " colorscheme johannes
 
-" Switch on syntax highlighting if it wasn't on yet.
-" if !exists("syntax_on")
-" syntax off
-" syntax on
-" endif
+" Make shift-insert work like in Xterm
+map! <S-Insert> <MiddleMouse>
+
+" I like highlighting strings inside C comments
+let c_comment_strings=1
 
 " --------------------
 " SPELLCHECKING
@@ -65,25 +52,6 @@ fun SetSpellCheck()
 									" zug to remove word from word list
 									" z= to get list of possibilities
 endfun
-
-" --------------------
-" looks for DokuWiki headlines in the first 20 lines
-" of the current buffer
-" --------------------
-fun IsDokuWiki()
-  if match(getline(1,20),'^ \=\(=\{2,6}\).\+\1 *$') >= 0
-    set textwidth=0
-    set wrap
-    set linebreak
-    set filetype=dokuwiki
-  endif
-endfun
-
-" check for texfile
-" autocmd BufWinEnter *.tex,*.txt call SetSpellCheck()
-
-" check for dokuwiki syntax
-autocmd BufWinEnter *.txt call IsDokuWiki()
 
 " --------------------
 " ShowMarks

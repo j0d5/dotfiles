@@ -1,6 +1,6 @@
 "#################################################
 "# Maintainer:  Johannes Steudle                ##
-"# Last change: 2012/01/30                      ##
+"# Last change: 2016/06/29                      ##
 "# .vimrc                                       ##
 "#                                              ##
 "#     for Unix and Mac OS X:  ~/.vimrc         ##
@@ -13,50 +13,50 @@
 "#                                              ##
 "#################################################
 syntax on
-set title            " Show filename
-set showmode         " Show current mode
-set showcmd          " Show command mode
-set cursorline       " Highlight active line
-set gdefault         " the /g flag on :s substitutions by default
 set nocompatible     " Use Vim defaults (much better!)
-set autoread         " read open files again when changed outside Vim
-" set history=1000     " keep 100 lines of command history
-set ruler            " Show the cursor position all the time
-" set pastetoggle=<F2> " Toggle between paste mode on/off
-set autoindent       " copy indent from current line
-set smartindent      " Set indention
-set shiftround       " shift to nearest indent
-set shiftwidth=4     " Shift width
+set title            " Show filename
+set number           " Line Numbers
 set tabstop=4        " Tab size
 set expandtab        " Tabs to spaces
-" set icon             " Icon text of the window
-" set confirm          " Extra dialog
-" set relativenumber
-set number           " Line Numbers
+set cursorline       " Highlight active line
 set enc=utf-8        " Use UTF-8 as the default buffer encoding
 set showmatch        " When a bracket is inserted, briefly jump to a matching one
-set matchtime=4      " Jump to matching bracket for n/10 seconds
-set scrolloff=3      " Scroll when cursor gets within 3 characters of top/bottom edge
-set visualbell       " Set visual bell instead of acustic
-"set noerrorbells
-set magic            " Use magic escaping
-set nrformats=octal,hex,alpha  " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
-set backspace=indent,eol,start " Allow backspacing over everything
-set completeopt=menu,menuone,longest,preview " Insert mode completion options
-" Limit popup menu height
-set pumheight=15
-set hidden           " Allow switching edited buffers without saving
-"set tw=120           " Set line wrapping after 80 characters
-set textwidth=0 wrapmargin=0
-set wrap
+set autoread         " read open files again when changed outside Vim
+set showmode         " Show current mode
+set showcmd          " Show command mode
 set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
 set nospell
+set ruler            " Show the cursor position all the time
+set autoindent       " copy indent from current line
+set smartindent      " Set indention
+set shiftround       " shift to nearest indent
+set shiftwidth=4     " Shift width
+set matchtime=4      " Jump to matching bracket for n/10 seconds
+set scrolloff=3      " Scroll when cursor gets within 3 characters of top/bottom edge
+set visualbell       " Set visual bell instead of acustic
+set magic            " Use magic escaping
+set nrformats=octal,hex,alpha  " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
+set backspace=indent,eol,start " Allow backspacing over everything
+set completeopt=menu,menuone,longest,preview " Insert mode completion options
+set hidden           " Allow switching edited buffers without saving
+" set wrap
 
 " Create splits to the right (vertical) or to the bottom (horizontal)
 set splitbelow
 set splitright
+" set history=1000     " keep 100 lines of command history
+" set tw=120           " Set line wrapping after 80 characters
+" set textwidth=0 wrapmargin=0
+" set gdefault         " the /g flag on :s substitutions by default
+" set pastetoggle=<F2> " Toggle between paste mode on/off
+" set icon             " Icon text of the window
+" set confirm          " Extra dialog
+" set relativenumber
+" set noerrorbells
+" Limit popup menu height
+" set pumheight=15
 
 " --------------------
 " Shell
@@ -105,13 +105,13 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/* " ignore version control files
 set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif " binary images
 set wildignore+=*.luac            " Lua byte code
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest  " compiled object files
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.so,*.zip  " compiled object files
 set wildignore+=*.pyc             " Python byte code
 set wildignore+=*.spl             " compiled spelling word lists
 set wildignore+=*.sw?             " Vim swap files
 set wildignore+=.DS_Store         " Mac files
-
-set thesaurus+=$HOME/.vim/thesaurus/mthesaur.txt
+set wildignore+=*/tmp/*           " MacOSX/Linux
+set wildignore+=*\\tmp\\*         " Windows
 
 " --------------------
 " BACKUP AND UNDO
@@ -119,7 +119,7 @@ set thesaurus+=$HOME/.vim/thesaurus/mthesaur.txt
 " --------------------
 set updatecount=50   " Write swap file to disk after every 50 characters
 set backup           " Enable Backups of the current edited file
-set undofile				 " so is persistent undo ...
+set undofile         " so is persistent undo ...
 set undolevels=100   " maximum number of changes that can be undone
 set undoreload=100   " maximum number lines to save for undo on a buffer reload
 au BufWinLeave * silent! mkview   " make vim save view (state) (folds, cursor, etc)
@@ -134,7 +134,7 @@ au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, e
 " :200  - remember 200 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,\"50,:200,%,n~/.dotfiles/vim/viminfo
+set viminfo='20,\"50,:500,%,n~/.dotfiles/vim/viminfo
 
 
 " Fix my <Backspace> key (in Mac OS X Terminal)
@@ -143,118 +143,6 @@ set viminfo='20,\"50,:200,%,n~/.dotfiles/vim/viminfo
 
 " Avoid loading MatchParen plugin
 " let loaded_matchparen = 1
-
-
-"#################################################
-"#                                              ##
-"# SPECIAL FILETYPES & ENCODING                 ##
-"#                                              ##
-"#################################################
-
-if has('autocmd')
-    "" Enable filetype detection
-    filetype on "disabled for Vundle
-
-    "" Load plugin files for specific file types
-    filetype plugin on
-    "" Load the indent file for specific file types
-    filetype indent on
-
-    autocmd BufEnter * cd %:p:h
-
-    "" Transparent editing of gpg binary and ascii armor encrypted files.
-    "" By Wouter Hanegraaff <wouter@blub.net>
-    augroup encrypted
-        autocmd!
-        "" First make sure nothing is written to ~/.viminfo while editing
-        "" an encrypted file.
-        autocmd BufReadPre,FileReadPre      *.asc,*.gpg " set viminfo=
-        "" We don't want a swap file, as it writes unencrypted data to disk
-        autocmd BufReadPre,FileReadPre      *.asc,*.gpg set noswapfile
-        "" Switch to binary mode to read the encrypted file
-        autocmd BufReadPre,FileReadPre      *.asc,*.gpg set bin
-        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let ch_save = &ch|set ch=2
-        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let shsave=&sh
-        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let &sh='sh'
-        autocmd BufReadPre,FileReadPre      *.asc,*.gpg let ch_save = &ch|set ch=2
-        autocmd BufReadPost,FileReadPost    *.asc,*.gpg '[,']!gpg --decrypt --default-recipient-self 2> /dev/null
-        autocmd BufReadPost,FileReadPost    *.asc,*.gpg let &sh=shsave
-        "" Switch to normal mode for editing
-        autocmd BufReadPost,FileReadPost    *.asc,*.gpg set nobin
-        autocmd BufReadPost,FileReadPost    *.asc,*.gpg let &ch = ch_save|unlet ch_save
-        autocmd BufReadPost,FileReadPost    *.asc,*.gpg execute ":doautocmd BufReadPost " . expand("%:r")
-        "" Convert all text to encrypted text before writing
-        autocmd BufWritePre,FileWritePre    *.asc,*.gpg set bin
-        autocmd BufWritePre,FileWritePre    *.asc,*.gpg let shsave=&sh
-        autocmd BufWritePre,FileWritePre    *.asc,*.gpg let &sh='sh'
-        autocmd BufWritePre,FileWritePre    *.gpg '[,']!gpg --encrypt --default-recipient-self 2>/dev/null
-        autocmd BufWritePre,FileWritePre    *.asc '[,']!gpg --armor --encrypt --default-recipient-self 2>/dev/null
-        autocmd BufWritePre,FileWritePre    *.asc,*.gpg let &sh=shsave
-        "" Undo the encryption so we are back in the normal text, directly
-        "" after the file has been written.
-        autocmd BufWritePost,FileWritePost  *.asc,*.gpg silent u
-        autocmd BufWritePost,FileWritePost  *.asc,*.gpg set nobin
-    augroup END
-
-    augroup programming
-        autocmd!
-
-        "" For actual C (not C++) programming where comments have explicit end
-        "" characters, if starting a new line in the middle of a comment, automatically
-        "" insert the comment leader characters
-        autocmd FileType c set formatoptions+=ro
-
-        "" For Perl programming, have things in braces indenting themselves:
-        autocmd FileType perl if has('smartindent') | set smartindent | endif
-
-        "" For Python programming, use cindent with the appropriate keywords
-        autocmd Filetype python if has('cindent') && has('smartindent') | set cindent
-                    \ cinwords=class,def,elif,else,except,finally,for,if,try,while
-                    \ | endif
-
-        "" Omnifunc completions
-        autocmd FileType c      if has('eval') || has('insert_expand') | set omnifunc=ccomplete#Complete | endif
-        autocmd FileType javascript if has('eval') || has('insert_expand') | set omnifunc=javascriptcomplete#CompleteJS | endif
-        autocmd FileType php    if has('eval') || has('insert_expand') | set omnifunc=phpcomplete#CompletePHP | endif
-        autocmd FileType python if has('eval') || has('insert_expand') | set omnifunc=pythoncomplete#Complete | endif
-        autocmd FileType ruby   if has('eval') || has('insert_expand') | set omnifunc=rubycomplete#Complete | endif
-        autocmd FileType sql    if has('eval') || has('insert_expand') | set omnifunc=sqlcomplete#Complete | endif
-        autocmd FileType xml    if has('eval') || has('insert_expand') | set omnifunc=xmlcomplete#CompleteTags | endif
-
-        " ----------  qmake : set filetype for *.pro  ----------
-        autocmd BufNewFile,BufRead *.pro  set filetype=qmake
-    augroup END
-
-    augroup web
-        autocmd!
-        "" For HTML, do not have Vim automatically add a <CR> or line break
-        "" at the end of the last line if there isn't one, otherwise
-        "" the default http headers will be sent
-        autocmd FileType html,xhtml set binary noeol
-
-        "" For CSS, also have things in braces indented:
-        autocmd Filetype css if has('smartindent') | set smartindent | endif
-
-        "" For HTML, generally format text, but if a long line has been created,
-        "" leave it alone when editing
-        autocmd FileType html,xhtml set formatoptions+=tl
-
-        "" Omnifunc completions
-        autocmd FileType css if has('eval') || has('insert_expand') | set omnifunc=csscomplete#CompleteCSS | endif
-        autocmd FileType html,xhtml if has('eval') || has('insert_expand') | set omnifunc=htmlcomplete#CompleteTags | endif
-    augroup END
-endif
-
-" --------------------
-" ENCODING
-" --------------------
-" Always check for UTF-8 when trying to determine encodings
-if &fileencodings !~? "utf-8"
-    set fileencodings+=utf-8
-endif
-
-" Make sure we have a sane fallback for encoding detection
-set fileencodings+=default
 
 
 "#################################################
@@ -333,11 +221,7 @@ function! ToggleHex()
     let &modifiable=l:oldmodifiable
 endfunction
 
-"###############################
-"#                            ##
-"# Create directories for vim ##
-"#                            ##
-"###############################
+" Create directories for vim
 function! InitializeDirectories()
     let separator = "."
     let parent = $HOME
@@ -386,8 +270,6 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'jcf/vim-latex'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'naseer/logcat'
-Plugin 'vim-android/vim-adb-logcat'
 
 " git related plugins
 Plugin 'tpope/vim-fugitive'
@@ -411,8 +293,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " Completion plugins
 Plugin 'ervandew/supertab'
-" Just press enter for newline
-Plugin 'dahu/Insertlessly'
 " Region expanding
 Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-surround'
@@ -422,9 +302,14 @@ Plugin 'tpope/vim-commentary.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+" filetype plugin on
+
+" Enable filetype detection
+filetype on "disabled for Vundle
 
 "
 " Brief help
@@ -436,11 +321,16 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" --------------------
+" COLORSCHEME
+" --------------------
+colorscheme solarized
+set background=dark
+" colorscheme solarized
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
+
 " START Configure CTRL-P
-set runtimepath^=~/.vim/vundle/ctrlp.vim
-" set file filter for ctrl-p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set rtp^=~/.vim/vundle/ctrlp.vim
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
@@ -475,19 +365,6 @@ let g:airline_theme='powerlineish'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
-
-
-" --------------------
-" COLORSCHEME
-" --------------------
-colorscheme solarized
-set background=dark
-" colorscheme solarized
-" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
-
-
-" load pathogen
-" call pathogen#infect()
 
 " netRW: Open files in a split window
 let g:netrw_browse_split = 1
@@ -576,15 +453,14 @@ nnoremap <silent><M-o> o<Esc>k
 nnoremap <silent><A-S-o> O<Esc>j
 
 " map <Alt-p> and <Alt-P> to paste below/above and reformat
-nnoremap <Esc>P  P'[v']=
-nnoremap <Esc>p  p'[v']=
+" nnoremap <Esc>P  P'[v']=
+" nnoremap <Esc>p  p'[v']=
 
-" map ,f to display all lines with keyword under cursor and ask which one
-" to jump to
+" map ,f to display all lines with keyword under cursor and ask which one to jump to
 nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " open filename under cursor in a new window (use current file's working directory)
-nnoremap gf :new %:p:h/<cfile><CR>
+" nnoremap gf :new %:p:h/<cfile><CR>
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
@@ -599,11 +475,66 @@ vnoremap <C-H> :<C-U>Hexmode<CR>
 " map <C-J> <C-W>j
 " map <C-K> <C-W>k
 
-" map CTRL-L to piece-wise copying of the line above the current one
-inoremap <C-L> @@@<ESC>hhkywjl?@@@<CR>P/@@@<CR>3s
-
 " --------------------
 " Function keymappings
 " --------------------
 vmap <leader>em :call ExtractMethod()<CR>
+
+
+"#################################################
+"#                                              ##
+"# SPECIAL FILETYPES & ENCODING                 ##
+"#                                              ##
+"#################################################
+
+if has('autocmd')
+
+    autocmd BufEnter * cd %:p:h
+
+    augroup programming
+        autocmd!
+
+        "" For actual C (not C++) programming where comments have explicit end
+        "" characters, if starting a new line in the middle of a comment, automatically
+        "" insert the comment leader characters
+        autocmd FileType c set formatoptions+=ro
+
+        "" For Perl programming, have things in braces indenting themselves:
+        autocmd FileType perl if has('smartindent') | set smartindent | endif
+
+        "" For Python programming, use cindent with the appropriate keywords
+        autocmd Filetype python if has('cindent') && has('smartindent') | set cindent
+                    \ cinwords=class,def,elif,else,except,finally,for,if,try,while
+                    \ | endif
+
+        " ----------  qmake : set filetype for *.pro  ----------
+        autocmd BufNewFile,BufRead *.pro  set filetype=qmake
+    augroup END
+
+    augroup web
+        autocmd!
+        "" For HTML, do not have Vim automatically add a <CR> or line break
+        "" at the end of the last line if there isn't one, otherwise
+        "" the default http headers will be sent
+        autocmd FileType html,xhtml set binary noeol
+
+        "" For CSS, also have things in braces indented:
+        autocmd Filetype css if has('smartindent') | set smartindent | endif
+
+        "" For HTML, generally format text, but if a long line has been created,
+        "" leave it alone when editing
+        autocmd FileType html,xhtml set formatoptions+=tl
+    augroup END
+endif
+
+" --------------------
+" ENCODING
+" --------------------
+" Always check for UTF-8 when trying to determine encodings
+if &fileencodings !~? "utf-8"
+    set fileencodings+=utf-8
+endif
+
+" Make sure we have a sane fallback for encoding detection
+set fileencodings+=default
 
