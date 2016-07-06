@@ -14,12 +14,13 @@
 "#################################################
 syntax on
 set nocompatible     " Use Vim defaults (much better!)
+set ttyfast          " Improves redrawing on newer computers
+set enc=utf-8        " Use UTF-8 as the default buffer encoding
 set title            " Show filename
 set number           " Line Numbers
+set relativenumber   " Show relative numbers
 set tabstop=4        " Tab size
-set expandtab        " Tabs to spaces
 set cursorline       " Highlight active line
-set enc=utf-8        " Use UTF-8 as the default buffer encoding
 set showmatch        " When a bracket is inserted, briefly jump to a matching one
 set autoread         " read open files again when changed outside Vim
 set showmode         " Show current mode
@@ -28,13 +29,17 @@ set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
 set nospell
-set ruler            " Show the cursor position all the time
+set noruler            " Show the cursor position all the time
 set autoindent       " copy indent from current line
-set smartindent      " Set indention
+set nosmartindent      " Set indention
 set shiftround       " shift to nearest indent
 set shiftwidth=4     " Shift width
+set expandtab        " Tabs to spaces
 set matchtime=4      " Jump to matching bracket for n/10 seconds
 set scrolloff=3      " Scroll when cursor gets within 3 characters of top/bottom edge
+set sidescroll=3     " Scroll when cursor gets within 3 characters of left/right edge
+set nostartofline    " Keep cursor in current column when using page commands
+set nojoinspaces     " Insert only one space when joining lines
 set visualbell       " Set visual bell instead of acustic
 set magic            " Use magic escaping
 set nrformats=octal,hex,alpha  " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
@@ -42,14 +47,15 @@ set backspace=indent,eol,start " Allow backspacing over everything
 set completeopt=menu,menuone,longest,preview " Insert mode completion options
 set hidden           " Allow switching edited buffers without saving
 set shortmess^=I
-" set wrap
+set wrap
+set linebreak
+set textwidth=0 wrapmargin=0
 
 " Create splits to the right (vertical) or to the bottom (horizontal)
 set splitbelow
 set splitright
 " set history=1000     " keep 100 lines of command history
 " set tw=120           " Set line wrapping after 80 characters
-" set textwidth=0 wrapmargin=0
 " set gdefault         " the /g flag on :s substitutions by default
 " set pastetoggle=<F2> " Toggle between paste mode on/off
 " set icon             " Icon text of the window
@@ -402,9 +408,18 @@ nnoremap <Leader>o :CtrlP<CR>
 " press <Space>w to save file
 nnoremap <Leader>w :w<CR>
 
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
+noremap <Left>  <NOP>
+noremap <Right> <NOP>
+
 " Jump to the END or BEGINNING of the file
-nnoremap <CR> G
-nnoremap <BS> gg
+" nnoremap <CR> G
+" nnoremap <BS> gg
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
 vmap <Leader>y "+y

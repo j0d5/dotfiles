@@ -33,4 +33,5 @@ for file in ~/.config/fish/conf.d/*.fish
 end
 
 
-set -x PATH $PATH /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight/
+set -x PATH $PATH /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight
+set -x PATH $PATH /usr/local/sbin

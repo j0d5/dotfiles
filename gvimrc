@@ -19,8 +19,10 @@
 if has("gui_gtk2")
   set guifont=Inconsolata\ 12
 elseif has("gui_macvim")
+  " set guifont=Monospace\ 16
   set guifont=Inconsolata:h15
-  "set guifont=Menlo\ Regular:h13
+  " set guifont=Menlo\ Regular:h13
+  set guiheadroom=0
 elseif has("gui_win32")
   set guifont=Consolas:h11:cANSI
 endif
@@ -28,7 +30,7 @@ endif
 set lines=70
 set columns=130
 set mousehide      " Hide the mouse when typing text
-set guioptions=agi " no toolbar, menubar, scrollbar
+set guioptions=aAci " no toolbar, menubar, scrollbar
 " set linespace=1.5
 " set relativenumber
 " set tabpagemax=15
