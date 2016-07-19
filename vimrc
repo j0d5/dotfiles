@@ -417,10 +417,6 @@ noremap <Down>  <NOP>
 noremap <Left>  <NOP>
 noremap <Right> <NOP>
 
-" Jump to the END or BEGINNING of the file
-" nnoremap <CR> G
-" nnoremap <BS> gg
-
 " Copy & paste to system clipboard with <Space>p and <Space>y
 vmap <Leader>y "+y
 vmap <Leader>d "+d

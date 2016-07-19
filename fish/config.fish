@@ -25,7 +25,7 @@ if [ (hostname) = "jaybook.hi.de.bosch.com" ]
     setAndroidPaths
 end
 
-set -x EDITOR '/usr/local/bin/mvim'
+set -x EDITOR 'vim'
 # set -g Z_SCRIPT_PATH ~/.config/fisherman/z/conf.d/z.fish
 
 for file in ~/.config/fish/conf.d/*.fish
@@ -33,5 +33,5 @@ for file in ~/.config/fish/conf.d/*.fish
 end
 
 
-set -x PATH $PATH /usr/local/Cellar/git/2.9.0/share/git-core/contrib/diff-highlight
+set -x PATH $PATH /usr/local/Cellar/git/2.9.2/share/git-core/contrib/diff-highlight
 set -x PATH $PATH /usr/local/sbin
