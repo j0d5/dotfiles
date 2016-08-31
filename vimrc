@@ -443,7 +443,7 @@ nnoremap <silent> p p`]
 nnoremap <silent><ESC><ESC> :nohl<CR>
 
 " quickly insert newline in normalmode without leaving
-nnoremap <silent><M-o> o<Esc>k
+nnoremap <silent><A-o> o<Esc>k
 nnoremap <silent><A-S-o> O<Esc>j
 
 " map <Alt-p> and <Alt-P> to paste below/above and reformat

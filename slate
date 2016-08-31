@@ -108,7 +108,7 @@ layout 2monitor 'Spotify':MAIN_FIRST         ${0-left90}
 layout 2monitor 'iTunes':MAIN_FIRST          ${0-left90}
 layout 2monitor 'Fantastical':MAIN_FIRST     ${0-left90}
 layout 2monitor 'Tweetbot':IGNORE_FAIL       ${tweetbotpos} ${mon-left}
-layout 2monitor 'Microsoft Lync':IGNORE_FAIL ${0-right05}
+layout 2monitor 'Microsoft Lync':MAIN_FIRST ${0-right05}
 
 layout 3monitor 'Safari':REPEAT         ${0-left90}
 layout 3monitor 'Google Chrome':REPEAT  ${0-left90}

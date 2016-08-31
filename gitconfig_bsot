@@ -6,10 +6,10 @@
   # open sublime text with new window and wait for result
   # editor = subl -n -w
   editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
-  excludesfile = ~/.gitignore
+  excludesfile = $HOME/.gitignore
 
 [push]
-  default = simple
+  default = current
 
 [rerere]
   enabled = true
@@ -125,12 +125,12 @@
   prompt = false
 
 [difftool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+  path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+  trustExitCode = true
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -152,3 +152,5 @@
 [interactive]
   diffFilter = diff-highlight
 
+[commit]
+  template = $HOME/.stCommitMsg
