@@ -6,8 +6,8 @@ function setAndroidPaths --description 'Detect and set Android paths'
     echo "using android ndk version $androidNdkVersion"
     echo "using android build tools version $androidBuildToolsVersion"
 
-    set -x ANDROID_HOME /usr/local/Cellar/android-sdk/$androidSdkVersion
-    set -x NDK_HOME /usr/local/Cellar/android-ndk/$androidNdkVersion
+    set -g ANDROID_HOME /usr/local/Cellar/android-sdk/$androidSdkVersion
+    set -g NDK_HOME /usr/local/Cellar/android-ndk/$androidNdkVersion
     set PATH $PATH /usr/local/Cellar/android-sdk/$androidSdkVersion/bin
     set PATH $PATH /usr/local/Cellar/android-sdk/$androidSdkVersion/tools
     set PATH $PATH /usr/local/Cellar/android-sdk/$androidSdkVersion/platform-tools

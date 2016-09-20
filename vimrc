@@ -408,14 +408,14 @@ nnoremap <Leader>o :CtrlP<CR>
 " press <Space>w to save file
 nnoremap <Leader>w :w<CR>
 
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-noremap <Up>    <NOP>
-noremap <Down>  <NOP>
-noremap <Left>  <NOP>
-noremap <Right> <NOP>
+" inoremap <Up>    <NOP>
+" inoremap <Down>  <NOP>
+" inoremap <Left>  <NOP>
+" inoremap <Right> <NOP>
+" noremap <Up>    <NOP>
+" noremap <Down>  <NOP>
+" noremap <Left>  <NOP>
+" noremap <Right> <NOP>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
 vmap <Leader>y "+y

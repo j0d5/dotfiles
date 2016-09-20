@@ -20,9 +20,9 @@
 
 [pager]
   show-branch = true
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+  # log = diff-highlight | less
+  # show = diff-highlight | less
+  # diff = diff-highlight | less
   # status = true
 
 [grep]
@@ -125,12 +125,12 @@
   prompt = false
 
 [difftool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+  path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+  trustExitCode = true
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -144,13 +144,5 @@
   clean = git media clean %f
   smudge = git media smudge %f
 
-#[filter "hawser"]
-# clean = git hawser clean %f
-# smudge = git hawser smudge %f
-# required = true
-
-[interactive]
-  diffFilter = diff-highlight
-
 [commit]
-  template = $HOME/.stCommitMsg
+  template = ~/.stCommitMsg
