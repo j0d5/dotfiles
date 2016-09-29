@@ -18,20 +18,24 @@ set -g c3 (set_color 6dc7ff)
 set -g c4 (set_color ffffff)
 set -g ce (set_color $fish_color_error)
 
-if [ (hostname) = "jaybook.hi.de.bosch.com" ]
+set -l isLAN (ifconfig en1 | grep status)
+
+switch $isLAN
+  case '*status: active'
+    echo "Connected to LAN"
     echo "Setting proxy values"
     setProxy
     echo "Set Android path values"
     setAndroidPaths
+  case '*status: inactive'
+    echo "Not connected to LAN"
 end
 
-set -x EDITOR 'vim'
 # set -g Z_SCRIPT_PATH ~/.config/fisherman/z/conf.d/z.fish
 
 for file in ~/.config/fish/conf.d/*.fish
     source $file
 end
 
-
-set -x PATH $PATH /usr/local/Cellar/git/2.10.0/share/git-core/contrib/diff-highlight
+set -x EDITOR 'vim'
 set -x PATH $PATH /usr/local/sbin
