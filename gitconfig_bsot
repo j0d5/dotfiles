@@ -4,12 +4,27 @@
 
 [core]
   # open sublime text with new window and wait for result
-  # editor = subl -n -w
-  editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
+  editor = subl -n -w
+  # editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
 	excludesfile = /Users/johannes/.gitignore
+	quotepath = false
 
 [push]
   default = current
+
+[pull]
+  ff = true
+
+[diff]
+  tool = sourcetree
+  compactionheuristic = true
+
+[merge]
+  tool = sourcetree
+  log = true
+  ff = false
+  commit = false
+  mergeoptions = --no-commit
 
 [rerere]
   enabled = true
@@ -130,16 +145,6 @@
 
 [http]
   sslVerify = true
-
-[diff]
-  tool = sourcetree
-  compactionheuristic = true
-
-[merge]
-  tool = sourcetree
-	# ff = false
-	log = true
-	commit = false
 
 [mergetool]
   keepBackup = true

@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
