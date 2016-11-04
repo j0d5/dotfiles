@@ -1,13 +1,13 @@
 [user]
 	name = Johannes Steudle
 	email = johannes.steudle@bosch-softtec.com
+	signingkey = AB4D0851
 
 [core]
   # open sublime text with new window and wait for result
   editor = subl -n -w
   # editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
-	excludesfile = /Users/johannes/.gitignore
-	quotepath = false
+	excludesfile = ~/.gitignore
 
 [push]
   default = current
@@ -155,7 +155,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"

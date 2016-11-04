@@ -1,15 +1,30 @@
 [user]
   name = Johannes Steudle
   email = jaycloudy@icloud.com
+  # signingkey = AB4D0851
 
 [core]
   # open sublime text with new window and wait for result
-  # editor = subl -n -w
-  editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"' 
+  editor = subl -n -w
+  # editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
   excludesfile = ~/.gitignore
 
 [push]
   default = simple
+
+[pull]
+  ff = true
+
+[diff]
+  tool = sourcetree
+  compactionheuristic = true
+
+[merge]
+  tool = sourcetree
+  log = true
+  ff = false
+  commit = false
+  mergeoptions = --no-commit
 
 [rerere]
   enabled = true
@@ -40,12 +55,27 @@
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
   dfi = diff --ignore-all-space --minimal
-  l = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
-  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative  -10
-  lg = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative --graph
-  la = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=relative
+
+  # show last commit
+  lh = log --pretty=commit --decorate=auto --date=relative -1
+
+  # show list of commits
+  l = log --decorate --date=relative -5
+
+  # show long list of commits
+  ll = log --decorate --date=relative  -30
+
+  # show log with graph
+  lg = log --decorate --date=relative --graph
+
+  # show commit with all file changes
+  la = log --decorate --numstat --date=relative
+
+  # not working
   lc  = "!f() { git l "$1"^.."$1"; }; f"
-  last = diff HEAD~1 # diff to previous commit
+
+  # show diff to last commit
+  last = diff HEAD~1
 
   # save your work to a specific commit
   save = !git add -A && git commit -m 'SAVEPOINT'
@@ -104,14 +134,14 @@
   help   = normal
   error  = normal
 
+[format]
+	pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
+
+[pretty]
+  commit = "format:%n%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn{%G?}] %n%n%b%n"
+
 [http]
   sslVerify = true
-
-[diff]
-  tool = sourcetree
-
-[merge]
-  tool = sourcetree
 
 [mergetool]
   keepBackup = true
@@ -140,8 +170,5 @@
   clean = git media clean %f
   smudge = git media smudge %f
 
-#[filter "hawser"]
-# clean = git hawser clean %f
-# smudge = git hawser smudge %f
-# required = true
-
+[commit]
+	template = ~/.stCommitMsg
