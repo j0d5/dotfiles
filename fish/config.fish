@@ -18,16 +18,19 @@ set -g c3 (set_color 6dc7ff)
 set -g c4 (set_color ffffff)
 set -g ce (set_color $fish_color_error)
 
-set -l isLAN (ifconfig en1 | grep status)
+if test $TERM != "screen-256color"
+  set -gx TERM xterm-256color
+end
 
-switch $isLAN
-  case '*status: active'
-    echo "Connected to LAN"
+set -l isCompanyLAN (ifconfig | grep 10.34.)
+
+if test $isCompanyLAN
+    echo "Connected to company LAN"
     echo "Setting proxy values"
     setProxy
     echo "Set Android path values"
     setAndroidPaths
-  case '*status: inactive'
+else
     echo "Not connected to LAN"
 end
 
@@ -39,3 +42,5 @@ end
 
 set -x EDITOR 'vim'
 set -x PATH $PATH /usr/local/sbin
+
+aliases
