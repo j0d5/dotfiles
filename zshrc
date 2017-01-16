@@ -39,3 +39,4 @@ export NVM_DIR="/Users/johannes/.nvm"
 # if [ -f /usr/local/share/liquidprompt ]; then
 #   . /usr/local/share/liquidprompt
 # fi
+eval $(/usr/libexec/path_helper -s)

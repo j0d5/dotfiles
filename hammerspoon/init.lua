@@ -1,8 +1,11 @@
 --
+-- All the initialization is done here.
+--
 -- @author Johannes Steudle
 --
---
 require "windows"
+hs.window.animationDuration = 0
+-- hs.window.setFrameCorrectness = 1
 
 function reloadConfig()
   hs.reload()
