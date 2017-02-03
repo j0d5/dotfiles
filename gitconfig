@@ -10,7 +10,7 @@
   excludesfile = ~/.gitignore
 
 [push]
-  default = simple
+  default = current
 
 [pull]
   ff = true
@@ -55,6 +55,7 @@
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
   dfi = diff --ignore-all-space --minimal
+  tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
 
   # show last commit
   lh = log --pretty=commit --decorate=auto --date=relative -1

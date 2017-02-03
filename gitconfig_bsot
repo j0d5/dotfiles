@@ -58,6 +58,7 @@
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
   dfi = diff --ignore-all-space --minimal
+  tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
 
   # show last commit
   lh = log --pretty=commit --decorate=auto --date=relative -1
@@ -155,7 +156,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"

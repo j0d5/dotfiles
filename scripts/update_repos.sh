@@ -14,9 +14,9 @@
 ##################################################
 
 if [ -z "$1" ]; then
-	curDir=$(pwd)
+    curDir=$(pwd)
 else
-	curDir="$1"
+    curDir="$1"
 fi
 echo "Current working directory: $curDir"
 

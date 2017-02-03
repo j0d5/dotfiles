@@ -9,12 +9,12 @@ if mount | grep jst2hi; then
 else
     echo "It's not mounted."
     read -p "Mount Volume? [y/n] " yn
-	case $yn in
+    case $yn in
 		[Yy]* ) mkdir /Volumes/jst2hi \\
             mount_smbfs //jst2hi@HI00FS02/jst2hi$ /Volumes/jst2hi ;;
-		[Nn]* ) exit ;;
-		* ) echo "Please answer yes or no!"
-	esac
+        [Nn]* ) exit ;;
+        * ) echo "Please answer yes or no!"
+    esac
 fi
 
 echo "Scanning files in folders $SOURCE_FOLDER and $TARGET_FOLDER"
@@ -23,10 +23,10 @@ echo "rsync returned: " $RETURN
 
 
 # while true; do
-	read -p "Accept these changes? [y/n] " yn
-	case $yn in
-		[Yy]* ) rsync -vrhz --exclude-from $EXCLUDE_FILE "$SOURCE_FOLDER" "$TARGET_FOLDER" ;;
-		[Nn]* ) exit;;
-		* ) echo "Please answer yes or no!"
-	esac
+read -p "Accept these changes? [y/n] " yn
+case $yn in
+    [Yy]* ) rsync -vrhz --exclude-from $EXCLUDE_FILE "$SOURCE_FOLDER" "$TARGET_FOLDER" ;;
+    [Nn]* ) exit;;
+    * ) echo "Please answer yes or no!"
+esac
 # done
