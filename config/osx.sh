@@ -85,6 +85,9 @@ bot "installing homebrew command-line tools"
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 require_brew findutils
 
+require_brew cntlm
+require_brew openconnect
+
 # Install Bash 4
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 #install bash
@@ -94,6 +97,7 @@ require_brew findutils
 require_brew fortune
 require_brew archey
 # require_brew cowsay
+require_brew ansiweather
 
 # android development
 # require_brew android-ndk
@@ -106,13 +110,15 @@ require_brew smali
 # iOS development
 require_brew ideviceinstaller
 
-# ZSH!!!
+# ZSH !!!
 require_brew zsh
 require_brew zsh-completions
 require_brew zsh-syntax-highlighting # nice highlighting
 require_brew zsh-history-substring-search # fancy history search
 require_brew zsh-lovers
 require_brew z # dir tracking
+
+require_brew fish
 
 # git !!!
 require_brew git
@@ -130,7 +136,6 @@ require_brew gnupg
 require_brew nmap
 require_brew tree
 require_brew shellcheck
-require_brew ansiweather
 # better, more recent vim
 require_brew vim --override-system-vi
 # Install wget with IRI support
@@ -432,8 +437,11 @@ sudo systemsetup -setrestartfreeze on;ok
 running "Check for software updates daily, not just once per week"
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1;ok
 
+# Disable game center. Who uses that thing?
+launchctl unload /System/Library/LaunchAgents/com.apple.gamed.plist 2> /dev/null
+
 # running "Disable Notification Center and remove the menu bar icon"
-# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1;ok
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1;ok
 
 # running "Disable smart quotes as they’re annoying when typing code"
 # defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false;ok
@@ -577,6 +585,16 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv";ok
 
 # running "Empty Trash securely by default"
 # defaults write com.apple.finder EmptyTrashSecurely -bool true;ok
+
+# Enable snap-to-grid for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+# Set the size of icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 32" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 32" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 32" ~/Library/Preferences/com.apple.finder.plist
 
 running "Enable AirDrop over Ethernet and on unsupported Macs running Lion"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true;ok
