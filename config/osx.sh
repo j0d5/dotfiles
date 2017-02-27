@@ -441,7 +441,7 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1;ok
 launchctl unload /System/Library/LaunchAgents/com.apple.gamed.plist 2> /dev/null
 
 # running "Disable Notification Center and remove the menu bar icon"
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1;ok
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1;ok
 
 # running "Disable smart quotes as they’re annoying when typing code"
 # defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false;ok

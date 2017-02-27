@@ -136,3 +136,5 @@ tags
 .sconsign.dblite
 *.class
 *.fls
+*.sublime-project
+Carthage

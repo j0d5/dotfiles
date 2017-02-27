@@ -1,4 +1,4 @@
-function aliases
+function aliases --description 'alias definitions'
   alias p=prevd
   alias n=nextd
   alias e="$EDITOR"
