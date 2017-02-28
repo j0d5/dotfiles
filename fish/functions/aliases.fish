@@ -4,5 +4,4 @@ function aliases --description 'alias definitions'
   alias e="$EDITOR"
   alias ...="cd ../../"
   alias ....="cd ../../../"
-  # alias em="emacsclient -t"
 end
