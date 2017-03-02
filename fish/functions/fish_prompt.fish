@@ -1,1 +1,1 @@
-/Users/johannes/.config/omf/themes/tweetjay/fish_prompt.fish
+/Users/johannes/.local/share/omf/themes/tweetjay/fish_prompt.fish

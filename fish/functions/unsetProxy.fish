@@ -1,4 +1,4 @@
-function unsetProxy --description 'Unsets the terminal proxy variables'
+function unsetProxy -d 'Unsets the terminal proxy variables'
     for i in http https ftp rsync;
       set -g -e "$i"_proxy
     end

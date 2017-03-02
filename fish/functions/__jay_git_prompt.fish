@@ -25,11 +25,11 @@ set -g fish_prompt_git_status_clean '✓'
 
 set -g fish_prompt_git_status_order added modified renamed copied deleted untracked unmerged
 
-function __git_prompt_short_sha --description 'git commit short SHA'
+function __git_prompt_short_sha -d 'git commit short SHA'
     echo -n -s (command git rev-parse --short HEAD 2> /dev/null)
 end
 
-function __jay_git_prompt --description 'Write out the git prompt'
+function __jay_git_prompt -d 'Write out the git prompt'
   set -l branch (git rev-parse --abbrev-ref HEAD ^/dev/null)
   if test -z $branch
     return

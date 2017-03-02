@@ -1,4 +1,4 @@
-function setProxy --description 'Sets the terminal proxy variables'
+function setProxy -d 'Sets the terminal proxy variables'
     for i in http https ftp rsync;
       set -g -x "$i"_proxy 'http://localhost:8080';
     end
