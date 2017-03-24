@@ -22,6 +22,10 @@ if test $TERM != "screen-256color"
   set -gx TERM xterm-256color
 end
 
+if test ~/.bin
+  set -gx PATH $PATH $HOME/.bin
+end
+
 set -l isCompanyLAN (ifconfig | grep 10.34.)
 
 if test $isCompanyLAN
@@ -35,7 +39,7 @@ else
 end
 
 set -gx EDITOR 'vim'
-set -x PATH $PATH /usr/local/sbin
+set -gx PATH $PATH /usr/local/sbin
 
 #for file in ~/.config/fish/conf.d/*.fish
 #    source $file
