@@ -89,7 +89,6 @@
     save = !git add -A && git commit -m 'SAVEPOINT'
     # and remove it afterwards with keeping the changes
     undo = reset HEAD~1 --mixed
-    unstage = 'reset HEAD --'
 
     # human readable commands
     branches = branch -a
