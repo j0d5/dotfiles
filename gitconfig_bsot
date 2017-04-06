@@ -1,7 +1,7 @@
 [user]
     name = Johannes Steudle
     email = johannes.steudle@bosch-softtec.com
-    signingkey = AB4D0851
+    signingkey = DC08F36D
 
 [core]
   # open sublime text with new window and wait for result
@@ -9,8 +9,12 @@
     #editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
     excludesfile = ~/.gitignore
 
+[gpg]
+    program = gpg2
+
 [push]
     default = current
+    # followTags = true
 
 [pull]
     ff = true
@@ -24,11 +28,19 @@
     tool = sourcetree
 
 [merge]
+    #ff = only
+    conflictstyle = diff3
     tool = sourcetree
     log = true
-    ff = false
     commit = false
     mergeoptions = --no-commit
+
+[commit]
+    gpgSign = true
+    template = ~/.stCommitMsg
+
+[status]
+    showUntrackedFiles = all
 
 [stash]
     showPatch = true
@@ -164,12 +176,12 @@
     prompt = false
 
 [difftool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+    path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+    trustExitCode = true
 
 [difftool "Kaleidoscope"]
     cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -178,11 +190,11 @@
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
 
+[difftool "icdiff"]
+    cmd = icdiff --line-numbers --numlines=3 $LOCAL $REMOTE
+
 [filter "media"]
     required = true
     clean = git media clean %f
     smudge = git media smudge %f
-
-[commit]
-    template = ~/.stCommitMsg
 
