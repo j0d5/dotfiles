@@ -297,9 +297,6 @@ Plug 'ervandew/supertab'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 
-" Comment with gcc
-Plug 'tpope/vim-commentary.git'
-
 call plug#end()
 
 filetype plugin indent on    " required
