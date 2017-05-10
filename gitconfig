@@ -1,7 +1,7 @@
 [user]
-    name = Johannes Steudle
-    email = jaycloudy@icloud.com
-    # signingkey = 90B04F9B
+    name = tweetjay
+    email = tweetjay2@gmail.com
+    signingkey = 6C278BED
 
 [core]
   # open sublime text with new window and wait for result
@@ -10,7 +10,7 @@
     excludesfile = ~/.gitignore
 
 [gpg]
-    program = gpg2
+    program = gpg
 
 [push]
     default = current
@@ -28,11 +28,10 @@
     tool = sourcetree
 
 [merge]
-    #ff = only
+    ff = false
     conflictstyle = diff3
     tool = sourcetree
     log = true
-    ff = false
     commit = false
     mergeoptions = --no-commit
 
@@ -41,13 +40,13 @@
     template = ~/.stCommitMsg
 
 [status]
-    showUntrackedFiles = all
+    # showUntrackedFiles = all
 
 [stash]
     showPatch = true
 
 [rerere]
-    enabled = true
+    # enabled = true
 
 [advice]
     # hide status hints
@@ -55,7 +54,7 @@
 
 [pager]
     show-branch = true
-    # log = diff-highlight | less
+    # log  = diff-highlight | less
     # show = diff-highlight | less
     # diff = diff-highlight | less
     # status = true
@@ -95,9 +94,6 @@
     # show commit with all file changes
     la = log --decorate --numstat --date=relative
 
-    # not working
-    lc  = "!f() { git l "$1"^.."$1"; }; f"
-
     # show diff to last commit
     last = diff HEAD~1
 
@@ -107,12 +103,9 @@
     undo = reset HEAD~1 --mixed
 
     # human readable commands
-    branches = branch -a
-    tags = tag
     unstage = reset -q HEAD --
-    discard = checkout --
     uncommit = reset --mixed HEAD~
-    amend = commit --amend
+    # discard = checkout --
 
     # use this instead of just resetting your head. It creates a commit and
     # removes it afterwards so work is still reachable with 'reflog'
@@ -123,6 +116,7 @@
 
     # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
     dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
+	icd = difftool --tool=icdiff
 
 [color]
 # normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
@@ -140,13 +134,13 @@
     current = red reverse
     local   = blue
     remote  = green
-    plain = normal
+    plain   = normal
 
 [color "diff"]
-    meta = white dim
-    frag = cyan
-    old  = red #bold
-    new  = green #bold
+    meta  = white dim
+    frag  = cyan
+    old   = red #bold
+    new   = green #bold
     plain = blue
 
 [color "status"]
@@ -192,10 +186,16 @@
     trustExitCode = true
 
 [difftool "icdiff"]
-    cmd = icdiff --line-numbers --numlines=3 $LOCAL $REMOTE
+  cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE
 
 [filter "media"]
     required = true
-    clean = git media clean %f
-    smudge = git media smudge %f
+    clean    = git media clean %f
+    smudge   = git media smudge %f
+
+[includeIf "gitdir:~/Projects/git/"]
+    path = ~/.dotfiles/gitconfig_bsot
+
+[includeIf "gitdir:~/Projects/private/"]
+    path = ~/.dotfiles/gitconfig_play
 

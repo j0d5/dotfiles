@@ -51,9 +51,5 @@
 		"Vintageous",
 		"WordCount",
 		"WordHighlight"
-	],
-	"repositories":
-	[
-		"https://github.com/koizuss/sublime-gradle"
 	]
 }

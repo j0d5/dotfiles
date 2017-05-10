@@ -22,6 +22,10 @@ if test $TERM != "screen-256color"
   set -gx TERM xterm-256color
 end
 
+# set -gx PATH $PATH /usr/local/sbin
+set -gx PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /usr/local/lib /usr/lib
+set -gx PATH $PATH /usr/local/MacGPG2/bin /Library/TeX/texbin /Applications/Wireshark.app/Contents/MacOS $HOME/.gem/ruby/2.4.0/bin
+
 if test ~/.bin
   set -gx PATH $PATH $HOME/.bin
 end
@@ -39,10 +43,5 @@ else
 end
 
 set -gx EDITOR 'vim'
-set -gx PATH $PATH /usr/local/sbin
-
-#for file in ~/.config/fish/conf.d/*.fish
-#    source $file
-#end
 
 aliases
