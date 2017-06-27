@@ -1,5 +1,5 @@
 -- move focused window to left half
-hs.hotkey.bind({"cmd", "ctrl"}, "Left", function()
+hs.hotkey.bind({"cmd", "ctrl", "shift"}, "Left", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -13,7 +13,7 @@ hs.hotkey.bind({"cmd", "ctrl"}, "Left", function()
 end)
 
 -- move focused window to right half
-hs.hotkey.bind({"cmd", "ctrl"}, "Right", function()
+hs.hotkey.bind({"cmd", "ctrl", "shift"}, "Right", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -27,7 +27,7 @@ hs.hotkey.bind({"cmd", "ctrl"}, "Right", function()
 end)
 
 -- set focused window to fullscreen
-hs.hotkey.bind({"cmd", "ctrl"}, "Up", function()
+hs.hotkey.bind({"cmd", "ctrl", "shift"}, "Up", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()

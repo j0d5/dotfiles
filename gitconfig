@@ -129,6 +129,7 @@
     frag        = auto
     meta        = auto
     pager       = true
+	tag = blue
 
 [color "branch"]
     current = red reverse
@@ -153,6 +154,10 @@
     header = normal
     help   = normal
     error  = normal
+
+[color "decorate"]
+# this is for --decorate
+  tag = blue
 
 [format]
     pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
@@ -198,4 +203,3 @@
 
 [includeIf "gitdir:~/Projects/private/"]
     path = ~/.dotfiles/gitconfig_play
-

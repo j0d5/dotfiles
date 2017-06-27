@@ -20,7 +20,7 @@ profile
 .idea/
 *.hmap
 #CocoaPods
-Pods
+#Pods
 xcuserdata/
 
 # LaTeX files
