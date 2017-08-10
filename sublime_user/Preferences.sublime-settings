@@ -68,5 +68,6 @@
 	"show_full_path": false,
 	"spell_check": false,
 	"tab_size": 2,
+	"theme": "Spacegray Oceanic.sublime-theme",
 	"trim_trailing_white_space_on_save": true
 }

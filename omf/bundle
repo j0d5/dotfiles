@@ -3,8 +3,6 @@ package cd
 package local-config
 package osx
 package z
-theme agnoster
-theme bobthefish
 theme clearance
 theme default
 theme tweetjay
