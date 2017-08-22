@@ -35,8 +35,6 @@ if test $isCompanyLAN
     echo "Connected to company LAN"
     echo "Setting proxy values"
     setProxy
-    echo "Set Android path values"
-    setAndroidPaths
 else
     echo "Not connected to LAN"
 end

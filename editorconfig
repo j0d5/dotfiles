@@ -17,10 +17,18 @@ indent_size = 2
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{java, aidl, swift, m, h, c, cpp, cs}]
+[*.{java, aidl, c, cpp, cs}]
 charset = utf-8
 indent_style = space
-indent_size = 4
+indent_size = 2
+
+[*.{swift, m, h}]
+charset = utf-8
+indent_style = space
+indent_size = 3
+
+[{.gitattributes,.gitignore,.gitmodules}]
+indent_style = tab
 
 [Makefile]
 indent_style = tab
@@ -36,5 +44,5 @@ indent_size = 2
 
 [zshrc]
 indent_style = space
-indent_size = 4
+indent_size = 2
 

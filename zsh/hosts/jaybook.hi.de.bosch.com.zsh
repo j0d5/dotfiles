@@ -16,21 +16,6 @@ fi
 export http_proxy='http://localhost:8080'
 export https_proxy='http://localhost:8080'
 
-# android paths
-androidSdkVersion=$(ls /usr/local/Cellar/android-sdk | sort -r | awk 'NR==1{print $1}')
-echo "using android sdk version $androidSdkVersion"
-androidNdkVersion=$(ls /usr/local/Cellar/android-ndk | sort -r | awk 'NR==1{print $1}')
-echo "using android ndk version $androidNdkVersion"
-androidBuildToolsVersion=$(ls /usr/local/Cellar/android-sdk/$androidSdkVersion/build-tools/ | sort -r | awk 'NR==1{print $1}')
-echo "using android build tools version $androidBuildToolsVersion"
-
-export ANDROID_HOME=/usr/local/Cellar/android-sdk/$androidSdkVersion
-export PATH=$PATH:/usr/local/Cellar/android-sdk/$androidSdkVersion/bin
-export PATH=$PATH:/usr/local/Cellar/android-sdk/$androidSdkVersion/tools
-export PATH=$PATH:/usr/local/Cellar/android-sdk/$androidSdkVersion/platform-tools
-export PATH=$PATH:/usr/local/Cellar/android-sdk/$androidSdkVersion/build-tools/$androidBuildToolsVersion
-export PATH=$PATH:/usr/local/Cellar/android-ndk/$androidNdkVersion
-
 # set a terminal proxy
 setProxy() {
 	export http_proxy=http://localhost:8080 && export https_proxy=http://localhost:8080
