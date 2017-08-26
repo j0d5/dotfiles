@@ -16,12 +16,15 @@ ZSH=$HOME/.dotfiles/zsh
 # Set name of the theme to load.
 ZSH_THEME="jay"
 
-plugins=(hosts)
+plugins=(hosts zsh-syntax-highlighting zsh-autosuggestions)
+
+# You may seed to manually set your language environment
+export LANG=en_US.UTF-8
 
 source $ZSH/init_zsh.zsh
 
 # Set default editor
-export EDITOR=mvim
+export EDITOR=subl
 export PAGER=less
 
 # Set to this to use case-sensitive completion

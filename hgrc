@@ -1,5 +1,5 @@
 [ui]
-username=Johannes Steudle <johannes@steudle.eu>
+username = tweetjay <tweetjay2@gmail.com>
 editor = subl -n -w
 merge  = diffmerge
 ignore = ~/.hgignore

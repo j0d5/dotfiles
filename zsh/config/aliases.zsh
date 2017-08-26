@@ -17,7 +17,12 @@ alias ..='cd ..'
 alias l='ls -Glhp'
 
 # list all as colored list with human readable sizes
-alias la='ls -GAlhp'
+#alias la='ls -GAlhp'
+# exa:
+alias la="exa -abghl --git --color=automatic"
+
+# `cat` with beautiful colors. requires: pip install -U Pygments
+alias c='pygmentize -O style=borland -f console256 -g'
 
 # list sorted by time
 alias lt='ls -GAlhTt'

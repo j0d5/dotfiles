@@ -44,6 +44,7 @@ is_plugin() {
 # before running compinit.
 for plugin ($plugins); do
   if is_plugin $ZSH $plugin; then
+    echo "Load plugin $plugin"
     fpath=($ZSH/plugins/$plugin $fpath)
   fi
 done

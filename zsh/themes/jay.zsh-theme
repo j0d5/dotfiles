@@ -21,12 +21,15 @@ ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{45}%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}"
 
 # display different symbols if git repo is modified
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}+"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%}*"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}-"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}r"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}?"
+
+# Color for zsh autosuggestion [https://github.com/zsh-users/zsh-autosuggestions]
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=$fg[grey]
 
 function box_name {
   [ -f ~/.box-name ] && cat ~/.box-name || echo ${SHORT_HOST:-$HOST}
@@ -48,14 +51,18 @@ prompt_context() {
   fi
 }
 
+shortened_dir() {
+  echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}
+}
+
 # current working directory
 prompt_dir() {
-  echo -n "%{%F{45}%}%~%{$reset_color%} "
+  echo -n "%F{45}$(shortened_dir)$reset_color "
 }
 
 # returns the currently used prompt char
 prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo '%{%F{red}%}→%{%F{white}%}' && return
+  git branch > /dev/null 2> /dev/null && echo '%{%F{red}%}→%{%F{white}%}' && return
   echo '→'
 }
 
@@ -70,13 +77,16 @@ prompt_end() {
 # echo git status
 prompt_git() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo -n $fg[white]
     echo -n "["
-    #echo -n $(git_prompt_info)
+    echo -n $fg[green]
     echo -n $(git_current_branch)
+    echo -n $fg[white]
     echo -n ":"
     echo -n $(git_prompt_short_sha)
-    echo -n ":"
-    echo -n $(prompt_git_commit_changes)
+    # Show the tracked changes
+    #echo -n ":"
+    #echo -n $(prompt_git_commit_changes)
     echo -n "]"
     echo -n $(git_prompt_status)
     echo -n %{$reset_color%}

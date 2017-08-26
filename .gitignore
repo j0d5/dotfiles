@@ -1,8 +1,2 @@
-fish/functions/*
-fish/completions/*
-fish_read_history
 .netrwhist
-fisher.fish.*
 vim/vundle
-z.fish
-omf/themes
