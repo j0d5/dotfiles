@@ -1,6 +1,8 @@
 included:
 
 excluded:
+  - Pods
+  - Carthage
 
 opt_in_rules:
   - empty_count
@@ -15,7 +17,7 @@ opt_in_rules:
   - operator_usage_whitespace
   - closure_end_indentation
   - first_where
-  - sorted_imports
+  #- sorted_imports
   - object_literal
   - number_separator
   - prohibited_super_call
@@ -23,33 +25,58 @@ opt_in_rules:
 
 disabled_rules:
   - cyclomatic_complexity
+  - trailing_whitespace
 
 file_header:
+  #\/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{2}\.
   required_pattern: |
                     \/\/
                     \/\/  .*?\.swift
-                    \/\/  SwiftLint
+                    \/\/  .*?
                     \/\/
-                    \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{2}\.
-                    \/\/  Copyright © \d{4} Realm\. All rights reserved\.
+                    \/\/  Copyright © \d{4} Bosch SoftTec GmbH\. All rights reserved\.
                     \/\/
 
-force_cast: warning
-line_length: 120
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+
+line_length: 140
 number_separator:
-minimum_length: 5
+  minimum_length: 5
+
+nesting:
+  type_level: 3
+  statement_level: 5
+
+function_body_length:
+  warning: 100
+  error: 200
+
+function_parameter_count:
+  warning: 6
+  error: 10
+
 type_body_length:
-  - 300 # warning
-  - 400 # error
-# or they can set both explicitly
+  - 700 # warning
+  - 1200 # error
+
 file_length:
-  warning: 500
+  warning: 700
   error: 1200
+
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
+identifier_name:
+  min_length: 2
+  max_length:
+    warning: 40
+    error: 50
+
 type_name:
-  min_length: 4 # only warning
+  min_length: 3 # only warning
   max_length: # warning and error
-  warning: 40
-  error: 50
+    warning: 40
+    error: 50
+
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
