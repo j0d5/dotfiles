@@ -4,4 +4,6 @@ function aliases -d 'alias definitions'
   alias e="$EDITOR"
   alias ...="cd ../../"
   alias ....="cd ../../../"
+  # exa:
+  alias la="exa -abghl --git --color=automatic"
 end
