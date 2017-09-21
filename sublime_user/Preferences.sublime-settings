@@ -37,11 +37,7 @@
 		".svn",
 		".hg"
 	],
-	"font_face": "Inconsolata",
-	"font_options":
-	[
-		"directwrite"
-	],
+	"font_face": "Fira Code",
 	"font_size": 15,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -59,7 +55,6 @@
 	"open_files_in_new_window": true,
 	"rulers":
 	[
-		80,
 		120
 	],
 	"scroll_past_end": true,
@@ -67,7 +62,8 @@
 	"show_encoding": true,
 	"show_full_path": false,
 	"spell_check": false,
-	"tab_size": 2,
+	"tab_size": 4,
 	"theme": "Spacegray Oceanic.sublime-theme",
+	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
