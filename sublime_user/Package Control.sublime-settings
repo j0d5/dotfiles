@@ -1,51 +1,49 @@
 {
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
+		"AcademicMarkdown",
 		"AdvancedNewFile",
 		"Alignment",
 		"Anaconda",
-		"AndLog",
+		"BeautifyLatex",
 		"Case Conversion",
 		"CMake",
 		"CodeSearch",
 		"DocBlockr",
+		"EditorConfig",
 		"Emmet",
-		"FileDiffs",
 		"Gist",
-		"Git",
 		"GitGutter",
 		"Go To Definition",
-		"GPG",
 		"Homebrew-formula-syntax",
-		"LaTeX Track Changes",
-		"LaTeX-cwl",
 		"LaTeXing",
 		"Markdown Preview",
 		"MarkdownEditing",
-		"Modific",
+		"Material Theme",
 		"MultiEditUtils",
-		"OpenGL Shading Language (GLSL)",
 		"Package Control",
-		"RemoteEdit",
 		"SideBarEnhancements",
 		"SmartMarkdown",
-		"sublime-gradle",
 		"SublimeGit",
-		"sublimelint",
 		"SublimeLinter",
 		"SublimeLinter-annotations",
+		"SublimeLinter-contrib-bashate",
+		"SublimeLinter-contrib-swiftlint",
 		"SublimeLinter-json",
 		"SublimeLinter-pep8",
+		"Sublimerge 3",
 		"Sublimerge Pro",
 		"Theme - Cobalt2",
-		"Theme - Flatland",
+		"Theme - Midnight",
 		"Theme - Soda",
 		"Theme - Soda SolarizedDark",
 		"Theme - Spacegray",
-		"Vintageous"
-	],
-	"repositories":
-	[
-		"https://github.com/koizuss/sublime-gradle"
+		"Uncrustify",
+		"WordCount",
+		"WordHighlight"
 	]
 }

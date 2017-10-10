@@ -44,12 +44,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Anaconda",
-		"FileDiffs",
-		"Find++",
-		"Markdown",
-		"Vintage",
-		"Vintageous"
+		"Anaconda"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,
