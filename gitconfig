@@ -1,11 +1,17 @@
 [user]
-    name = tweetjay
-    email = tweetjay2@gmail.com
-    signingkey = 6C278BED
+  name = tweetjay
+  email = tweetjay2@gmail.com
+  signingkey = 6C278BED
+
+[includeIf "gitdir:~/Developer/git/"]
+  path = ~/.dotfiles/gitconfig_bsot
+
+[includeIf "gitdir:~/Developer/private/"]
+  path = ~/.dotfiles/gitconfig_play
 
 [core]
   # open sublime text with new window and wait for result
-    excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   editor = subl -n -w
   #editor = mvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
 
@@ -30,14 +36,14 @@
 [merge]
   ff = false
   conflictstyle = diff3
-  tool = sourcetree
+	tool = sourcetree
   log = true
   commit = false
   mergeoptions = --no-commit
 
 [commit]
   gpgSign = true
-  template = ~/.stCommitMsg
+	template = ~/.stCommitMsg
 
 [status]
   # showUntrackedFiles = all
@@ -176,12 +182,12 @@
   prompt = false
 
 [difftool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-  path =
+	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+	path =
 
 [mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-  trustExitCode = true
+	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+	trustExitCode = true
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -197,12 +203,6 @@
   required = true
   clean  = git media clean %f
   smudge   = git media smudge %f
-
-[includeIf "gitdir:~/Projects/git/"]
-  path = ~/.dotfiles/gitconfig_bsot
-
-[includeIf "gitdir:~/Projects/private/"]
-  path = ~/.dotfiles/gitconfig_play
 
 [credential]
   helper = osxkeychain
