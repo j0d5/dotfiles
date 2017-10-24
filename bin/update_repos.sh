@@ -18,6 +18,7 @@ if [ -z "$1" ]; then
 else
     curDir="$1"
 fi
+
 echo "Current working directory: $curDir"
 
 readonly repos=( $(find "$curDir" -type d -maxdepth 2) )
@@ -26,4 +27,3 @@ for name in "${repos[@]}"; do
     [ -d "$name"/.git ] && echo "Updating repository $name" \
         && (cd "$name" && git remote update -p; git merge --ff-only @{u})
 done
-

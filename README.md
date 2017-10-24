@@ -7,36 +7,18 @@ sessions.
 
 ## Getting Started
 
-### Prerequisites
-
-__Disclaimer:__ currently only Mac OS X is supported.
-
-* Mac OS X
-* git must be installed
-* `curl` or `wget` for script based cloning
-
-
-### Basic Installation
-
-To download and install this dotfile configuration run one of the following
-commands or just clone the repository and run the __install.sh__ script.
-
-#### via curl
-
-```shell
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/johannes82/.dotfiles/master/install.sh)"
+Clone the repository into your home folder:
+```
+git clone https://github.com/tweetjay/dotfiles ~/.dotfiles
+```
+Cd into the folder:
+```
+cd ~/.dotfiles
+```
+Run make and choose the targets you want to execute:
+```
+make
 ```
 
-#### via wget
-
-```shell
-	sh -c "$(wget  https://raw.githubusercontent.com/johannes82/.dotfiles/master/install.sh -O -)"
-```
-
-### Updating
-
-To update the repository just run the following command in the dotfiles directory:
-
-```shell
-	git pull --rebase --stat origin master
-```
+## Special thanks to:
+* [bluemaex](https://github.com/bluemaex/dotfiles)

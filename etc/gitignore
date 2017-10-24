@@ -3,7 +3,7 @@
 _Store
 
 ## Build generated
-build/
+#build/
 DerivedData/
 
 ## Various settings
@@ -19,8 +19,6 @@ profile
 *.moved-aside
 .idea/
 *.hmap
-#CocoaPods
-#Pods
 xcuserdata/
 
 # LaTeX files
@@ -61,7 +59,7 @@ xcuserdata/
 *.hmap
 *.ipa
 *.dSYM.zip
-*.dSYM
+#*.dSYM
 
 # Sublime Text files
 *.sublime-workspace
@@ -71,7 +69,7 @@ timeline.xctimeline
 playground.xcworkspace
 
 # Gradle files
-build
+#build
 .gradle
 .gradletasknamecache
 
@@ -99,8 +97,8 @@ org.eclipse.jdt.core.prefs
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-Carthage/Build
+Carthage/Checkouts
+#Carthage/Build
 
 # fastlane
 #
@@ -137,4 +135,3 @@ tags
 *.class
 *.fls
 *.sublime-project
-Carthage

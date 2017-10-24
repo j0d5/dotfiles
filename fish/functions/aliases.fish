@@ -6,4 +6,5 @@ function aliases -d 'alias definitions'
   alias ....="cd ../../../"
   # exa:
   alias la="exa -abghl --git --color=automatic"
+  alias lan="la -snew"
 end

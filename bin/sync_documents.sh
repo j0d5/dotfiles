@@ -1,4 +1,13 @@
 #!/bin/sh
+# set -euo pipefail
+# IFS=$'\n\t'
+##################################################
+##                                              ##
+## Author: Johannes Steudle                     ##
+## File: sync_documents.sh                      ##
+## Date: 14.12.2015                             ##
+##                                              ##
+##################################################
 
 EXCLUDE_FILE=$HOME/.dotfiles/scripts/exclude.rsync
 SOURCE_FOLDER="$HOME/Documents/"

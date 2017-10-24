@@ -1,0 +1,95 @@
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "caskroom/cask"
+
+# Android
+brew "apktool"
+brew "dex2jar"
+brew "checkstyle"
+
+# iOS
+brew "carthage"
+brew "chisel"
+brew "swiftlint"
+brew "marathon-swift"
+brew "xctool"
+brew "ideviceinstaller"
+
+# git
+brew "git"
+brew "git-extras"
+brew "git-flow-avh"
+brew "git-lfs"
+brew "gist"
+brew "tig"
+
+# languages
+brew "pyenv"
+brew "pyenv-virtualenvwrapper"
+brew "python"
+brew "ruby"
+brew "erlang"
+brew "plantuml"
+
+# shells
+brew "fish"
+
+brew "bash"
+brew "bash-completion@2"
+
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-history-substring-search"
+brew "zsh-syntax-highlighting"
+
+# shell tools
+brew "tmux"
+brew "tree"
+brew "wget", args: ["with-iri"]
+brew "vim", args: ["with-override-system-vi"]
+brew "ffmpeg"
+brew "imagemagick"
+brew "mas"
+brew "fswatch"
+brew "openssl"
+brew "openssh"
+brew "htop"
+brew "iftop"
+brew "icdiff"
+brew "the_silver_searcher"
+brew "z"
+brew "cmake"
+brew "nmap"
+brew "cntlm"
+brew "openconnect"
+brew "curl"
+brew "duti"
+brew "exa" # cool ls -la
+brew "lsusb"
+# brew "coreutils"
+# brew "multitail"
+# brew "archey"
+# brew "exercism"
+# brew "exiftool"
+
+cask "alfred"
+cask "docker"
+cask "firefox"
+cask "gitup"
+cask "google-chrome"
+cask "iterm2"
+cask "little-snitch"
+cask "micro-snitch"
+cask "sublime-text"
+cask "atom"
+cask "sourcetree"
+cask "sketch"
+cask "sketch-toolbox"
+cask "hopper-disassembler"
+
+# mas "1Password", id: 443987910
+mas "Tweetbot", id: 557168941
+mas "Fantastical 2", id: 975937182
+mas "Xcode", id: 497799835
+mas "Affinity Designer", id: 824171161

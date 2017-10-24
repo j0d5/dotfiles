@@ -1,7 +1,0 @@
-[user]
-    name = Johannes Steudle
-    email = johannes.steudle@bosch-softtec.com
-    signingkey = DC08F36D
-
-[url "https://github.com/"]
-    insteadOf = git@github.com:

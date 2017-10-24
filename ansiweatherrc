@@ -1,5 +1,0 @@
-location:Hannover, DE
-fetch_cmd:curl -sf
-units:metric
-daylight:true
-forecast:0
