@@ -118,6 +118,11 @@
   dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
   icd = difftool --tool=icdiff
 
+  # Tag management
+  cleanLocalTags = fetch --prune origin "+refs/tags/*:refs/tags/*"
+  renametag = "!sh -c 'set -e; git tag $2 $1; git tag -d $1; git push origin :refs/tags/$1; git push --tags' -"
+
+
 [color]
 # normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
 # bold, dim, ul (underline), blink, and reverse
