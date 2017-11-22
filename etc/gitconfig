@@ -20,20 +20,23 @@
   ff = true
 
 [diff]
+  tool = sourcetree
   compactionheuristic = true
   context = 6
   indentHeuristic = true
   # mnemonicPrefix = true
   # noprefix = true
-  tool = sourcetree
 
 [merge]
-  ff = false
-  conflictstyle = diff3
 	tool = sourcetree
+  ff = false
+  # conflictstyle = diff3
   log = true
   commit = false
-  mergeoptions = --no-commit
+  # mergeoptions = --no-commit
+
+[blame]
+  blankboundary = true
 
 [commit]
   gpgSign = true
@@ -187,13 +190,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
 	trustExitCode = true
-
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
 
 [difftool "icdiff"]
   cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE

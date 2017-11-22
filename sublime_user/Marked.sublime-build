@@ -1,0 +1,4 @@
+{
+  "shell": "true",
+  "cmd": ["open -a 'Marked 2' \"$file\""]
+}
