@@ -49,7 +49,7 @@ brew "tree"
 brew "wget", args: ["with-iri"]
 brew "vim", args: ["with-override-system-vi"]
 brew "ffmpeg"
-brew "imagemagick"
+# brew "imagemagick"
 brew "mas"
 brew "fswatch"
 brew "openssl"

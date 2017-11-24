@@ -12,6 +12,8 @@ if [[ -n $DEBUG_ZSH ]]; then
  echo 'loading jay theme'
 fi
 
+PROMPT_COLOR_DIR="%F{40}"
+
 # set colors for zsh git functions
 ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{50}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}:"
@@ -57,7 +59,7 @@ shortened_dir() {
 
 # current working directory
 prompt_dir() {
-  echo -n "%F{45}$(shortened_dir)$reset_color "
+  echo -n "$PROMPT_COLOR_DIR$(shortened_dir)$reset_color "
 }
 
 # returns the currently used prompt char
