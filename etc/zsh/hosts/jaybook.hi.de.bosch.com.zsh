@@ -31,4 +31,3 @@ unsetProxy() {
 update_bsot_repos () {
 	env ZSH=$ZSH /bin/sh $HOME/.dotfiles/scripts/update_repos.sh $HOME/Projects/git
 }
-

@@ -8,7 +8,7 @@
 ##                                              ##
 ##################################################
 
-#export DEBUG_ZSH=true
+# export DEBUG_ZSH=true
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/etc/zsh
@@ -16,7 +16,7 @@ ZSH=$HOME/.dotfiles/etc/zsh
 # Set name of the theme to load.
 ZSH_THEME="jay"
 
-plugins=(hosts zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting)
 
 # You may seed to manually set your language environment
 export LANG=en_US.UTF-8
@@ -30,16 +30,7 @@ export PAGER=less
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# export DISABLE_AUTO_TITLE="true"
-
-export NVM_DIR="/Users/johannes/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# if [ -f /usr/local/share/liquidprompt ]; then
-#   . /usr/local/share/liquidprompt
-# fi
 eval $(/usr/libexec/path_helper -s)

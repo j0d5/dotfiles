@@ -12,7 +12,7 @@ if [[ -n $DEBUG_ZSH ]]; then
  echo 'loading jay theme'
 fi
 
-PROMPT_COLOR_DIR="%F{40}"
+PROMPT_COLOR_DIR="%F{green}"
 
 # set colors for zsh git functions
 ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{50}%}"
@@ -54,7 +54,11 @@ prompt_context() {
 }
 
 shortened_dir() {
-  echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}
+  if [[ $(pwd) == "$HOME" ]]; then
+    echo "~"
+  else
+    echo ${${:-/${(j:/:)${(M)${(s:/:)${(D)PWD:h}}#(|.)[^.]}}/${PWD:t}}//\/~/\~}
+  fi
 }
 
 # current working directory
