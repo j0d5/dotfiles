@@ -1,5 +1,4 @@
 package brew
-package cd
 package local-config
 package osx
 package z
