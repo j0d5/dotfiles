@@ -18,7 +18,7 @@ set ttyfast          " Improves redrawing on newer computers
 set enc=utf-8        " Use UTF-8 as the default buffer encoding
 set title            " Show filename
 set number           " Line Numbers
-set relativenumber   " Show relative numbers
+" set relativenumber   " Show relative numbers
 set tabstop=4        " Tab size
 set cursorline       " Highlight active line
 set showmatch        " When a bracket is inserted, briefly jump to a matching one

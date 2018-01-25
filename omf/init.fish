@@ -42,3 +42,4 @@ end
 set -gx EDITOR 'vim'
 
 aliases
+
