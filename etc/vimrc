@@ -287,15 +287,21 @@ Plug 'Wutzara/vim-materialtheme'
 
 " Little file manager
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-eunuch'
+
 " Nice status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Completion plugins
 Plug 'ervandew/supertab'
+
 " Region expanding
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 call plug#end()
 
