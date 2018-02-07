@@ -29,9 +29,9 @@ set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
 set nospell
-set noruler            " Show the cursor position all the time
+set noruler          " Show the cursor position all the time
 set autoindent       " copy indent from current line
-set nosmartindent      " Set indention
+set nosmartindent    " Set indention
 set shiftround       " shift to nearest indent
 set shiftwidth=4     " Shift width
 set expandtab        " Tabs to spaces
@@ -41,6 +41,7 @@ set sidescroll=3     " Scroll when cursor gets within 3 characters of left/right
 set nostartofline    " Keep cursor in current column when using page commands
 set nojoinspaces     " Insert only one space when joining lines
 set visualbell       " Set visual bell instead of acustic
+" set noerrorbells
 set magic            " Use magic escaping
 set nrformats=octal,hex,alpha  " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
 set backspace=indent,eol,start " Allow backspacing over everything
@@ -52,16 +53,14 @@ set linebreak
 set textwidth=0 wrapmargin=0
 
 " Create splits to the right (vertical) or to the bottom (horizontal)
-set splitbelow
 set splitright
+set splitbelow
 " set history=1000     " keep 100 lines of command history
 " set tw=120           " Set line wrapping after 80 characters
 " set gdefault         " the /g flag on :s substitutions by default
 " set pastetoggle=<F2> " Toggle between paste mode on/off
 " set icon             " Icon text of the window
 " set confirm          " Extra dialog
-" set relativenumber
-" set noerrorbells
 " Limit popup menu height
 " set pumheight=15
 
