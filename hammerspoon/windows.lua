@@ -40,6 +40,34 @@ hs.hotkey.bind({"cmd", "ctrl", "shift"}, "Up", function()
   win:setFrame(f)
 end)
 
+-- set focused window to upper half
+hs.hotkey.bind({"cmd", "ctrl", "shift", "alt"}, "Up", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+-- set focused window to lower half
+hs.hotkey.bind({"cmd", "ctrl", "shift", "alt"}, "Down", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y + (max.h / 2)
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
 function applyWindowLayout() -- default window layout
   local numberOfScreens = #hs.screen.allScreens()
   local left85 = {0.0, 0.0, 0.85, 1.0}

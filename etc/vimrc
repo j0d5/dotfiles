@@ -280,9 +280,10 @@ Plug 'scrooloose/syntastic'
 " Add global syntax formatting config capability
 Plug 'editorconfig/editorconfig-vim'
 
-" Add Solarized Theme
+" Add Theme
 Plug 'altercation/vim-colors-solarized'
 Plug 'Wutzara/vim-materialtheme'
+Plug 'tweetjay/tweetjay.vim'
 
 " Little file manager
 Plug 'ctrlpvim/ctrlp.vim'
@@ -315,7 +316,7 @@ filetype on "disabled for Vundle
 " --------------------
 " COLORSCHEME
 " --------------------
-colorscheme solarized
+colorscheme tweetjay
 set background=dark
 " colorscheme solarized
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10

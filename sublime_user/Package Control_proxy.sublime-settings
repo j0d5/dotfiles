@@ -25,7 +25,9 @@
 		"SublimeLinter-contrib-bashate",
 		"SublimeLinter-contrib-swiftlint",
 		"SublimeLinter-json",
+		"SublimeLinter-lua",
 		"SublimeLinter-pep8",
+		"SublimeLinter-shellcheck",
 		"Theme - Cobalt2"
 	]
 }
