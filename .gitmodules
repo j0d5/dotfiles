@@ -7,6 +7,6 @@
 [submodule "etc/zsh/plugins/zsh-syntax-highlighting"]
 	path = etc/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "dotbot"]
+[submodule "meta/dotbot"]
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot
