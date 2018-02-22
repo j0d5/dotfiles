@@ -4,9 +4,9 @@ tap "homebrew/services"
 tap "caskroom/cask"
 
 # Android
-brew "apktool"
-brew "dex2jar"
-brew "checkstyle"
+# brew "apktool"
+# brew "dex2jar"
+# brew "checkstyle"
 
 # iOS
 brew "carthage"

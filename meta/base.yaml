@@ -5,26 +5,3 @@
 
 - clean: ['~']
 
-- link:
-  # ~/.dotfiles: ''
-    ~/.tmux.conf: etc/tmux.conf
-    ~/.zshrc: etc/zshrc
-    ~/.ackrc: etc/ackrc
-    ~/.bashrc: etc/bashrc
-    ~/.dir_colors: etc/dir_colors
-    ~/.editorconfig: etc/editorconfig
-    ~/.hgignore: etc/hgignore
-    ~/.hgrc: etc/hgrc
-    ~/.htoprc: etc/htoprc
-    ~/.pythonrc: etc/pythonrc
-    ~/.slate: etc/slate
-    ~/.tmux.conf: etc/tmux.conf
-    ~/.valgrindrc: etc/valgrindrc
-    ~/.wgetrc: etc/wgetrc
-    ~/.config/omf:
-      create: true
-      path: omf
-    ~/.config/fish:
-      create: true
-      path: fish
-
