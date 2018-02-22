@@ -1,8 +1,8 @@
 " File: android_log_helper.vim
-" Author: Johannes Steudle (jaycloudy AT icloud DOT com)
-" Version: 0.0
+" Author: Johannes Steudle (tweetjay2 AT icloud DOT com)
+" Version: 0.1
 " Last Modified: April 06, 2016
-" 
+"
 
 function! s:CleanNeedlessLogs()
 "    :g/\(WindowManager\|ActivityManager\|ContextImpl\|ContextWrapper\|InputDispatcher\)/d

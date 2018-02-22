@@ -1,7 +1,7 @@
 " mySPIN Vim Syntaxfile
 " Language:      mySPIN Logs
 " Maintainer:    Johannes Steudle <johannes.steudle@bosch-softtec.com>
-" URL:           
+" URL:
 " Last Change:   March 2, 2016 10:10
 
 if !exists("main_syntax")
@@ -10,7 +10,7 @@ if !exists("main_syntax")
   elseif exists("b:current_syntax")
     finish
   endif
-  let main_syntax = "mySPINLog"
+  let main_syntax = "mySPIN_Android_Log"
 endif
 
 " Todo
@@ -27,7 +27,7 @@ endif
 " syn match   zshJobSpec      '%\(\d\+\|?\=\w\+\|[%+-]\)'
 
 " Keywords
-syn keyword mySPINComponents SDKMain VoiceControl MySpinProtocol UI Keyboard MySpinNative ScreenCapturing Config EventListener 
+syn keyword mySPINComponents SDKMain VoiceControl MySpinProtocol UI Keyboard MySpinNative ScreenCapturing Config EventListener
 syn region  mySPINComponents start='\[' end='\]' oneline contains=mySPINComponents
 syn keyword mySPINTags mySPIN MySpin MySpinService MySpinServerSDK MySpinStack MySpinStackV10x MySpinStackV11x MySpinVoiceControlManager BluetoothScoManager VoiceControlStateMessageHandler MySpinServiceClient MySpinHandshakeStack VoiceControlBinder VoiceControlPhoneCallReceiver MySpinStackBase VoiceControlChangeMessenger VehicleDataMessenger FrameProvider HeartBeatCallback MemoryLogger ConnectedBaseWindow SharedMemoryCreator
 syn match   mySPINError 'AoapConnector\/openConnection\/IOException'

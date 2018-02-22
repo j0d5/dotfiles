@@ -44,7 +44,7 @@ set guioptions+=ci " no toolbar, menubar, scrollbar
 map! <S-Insert> <MiddleMouse>
 
 " I like highlighting strings inside C comments
-let c_comment_strings=1
+" let c_comment_strings=1
 
 " --------------------
 " SPELLCHECKING

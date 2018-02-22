@@ -1,3 +1,0 @@
-# brew nightly updates
-0 3 * * *  brew update
-0 4 * * *  brew upgrade

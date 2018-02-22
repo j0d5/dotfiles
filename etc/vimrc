@@ -1,6 +1,6 @@
 "#################################################
 "# Maintainer:  Johannes Steudle                ##
-"# Last change: 2016/06/29                      ##
+"# Last change: 2018/02/22                      ##
 "# .vimrc                                       ##
 "#                                              ##
 "#     for Unix and Mac OS X:  ~/.vimrc         ##
@@ -18,9 +18,8 @@ set ttyfast          " Improves redrawing on newer computers
 set enc=utf-8        " Use UTF-8 as the default buffer encoding
 set title            " Show filename
 set number           " Line Numbers
-" set relativenumber   " Show relative numbers
 set tabstop=4        " Tab size
-set cursorline       " Highlight active line
+" set cursorline       " Highlight active line
 set showmatch        " When a bracket is inserted, briefly jump to a matching one
 set autoread         " read open files again when changed outside Vim
 set showmode         " Show current mode
@@ -29,7 +28,7 @@ set ch=2             " Make command line two lines high
 set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
 set nospell
-set noruler          " Show the cursor position all the time
+set ruler          " Show the cursor position all the time
 set autoindent       " copy indent from current line
 set nosmartindent    " Set indention
 set shiftround       " shift to nearest indent
@@ -41,7 +40,6 @@ set sidescroll=3     " Scroll when cursor gets within 3 characters of left/right
 set nostartofline    " Keep cursor in current column when using page commands
 set nojoinspaces     " Insert only one space when joining lines
 set visualbell       " Set visual bell instead of acustic
-" set noerrorbells
 set magic            " Use magic escaping
 set nrformats=octal,hex,alpha  " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
 set backspace=indent,eol,start " Allow backspacing over everything
@@ -51,6 +49,7 @@ set shortmess^=I
 set wrap
 set linebreak
 set textwidth=0 wrapmargin=0
+set autochdir " automatically set current directory to directory of last opened file
 
 " Create splits to the right (vertical) or to the bottom (horizontal)
 set splitright
@@ -146,10 +145,6 @@ set viminfo='20,<50,:500,n~/.dotfiles/etc/vim/viminfo
 " Fix my <Backspace> key (in Mac OS X Terminal)
 " set t_kb=
 " fixdel
-
-" Avoid loading MatchParen plugin
-" let loaded_matchparen = 1
-
 
 "#################################################
 "#                                              ##
@@ -262,13 +257,12 @@ call InitializeDirectories()
 "#                        ##
 "###########################
 
-filetype off "disabled for Vundle
-
 call plug#begin('~/.vim/plugged')
 
 " Plugins for handling various formats
-Plug 'jcf/vim-latex'
-Plug 'plasticboy/vim-markdown'
+Plug 'jcf/vim-latex', { 'for': 'latex' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown'
 
 " git related plugins
 Plug 'tpope/vim-fugitive'
@@ -276,6 +270,18 @@ Plug 'airblade/vim-gitgutter'
 
 " syntax checker for vim
 Plug 'scrooloose/syntastic'
+
+" syntax plugins
+Plug 'keith/swift.vim'
+Plug 'b4winckler/vim-objc'
+Plug 'rizzatti/dash.vim'
+Plug 'Rip-Rip/clang_complete'
+Plug 'darfink/vim-plist'
+Plug 'aliva/vim-fish'
+Plug 'mileszs/ack.vim'
+Plug 'vim-python/python-syntax'
+" Plug 'fatih/vim-go'
+" Plug 'rust-lang/rust.vim'
 
 " Add global syntax formatting config capability
 Plug 'editorconfig/editorconfig-vim'
@@ -305,24 +311,45 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 call plug#end()
 
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-
-" Enable filetype detection
-filetype on "disabled for Vundle
-
 " --------------------
 " COLORSCHEME
 " --------------------
-colorscheme tweetjay
-set background=dark
+" colorscheme tweetjay
+" set background=dark
 " colorscheme solarized
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 
-" START Configure CTRL-P
-set rtp^=~/.vim/vundle/ctrlp.vim
+" highlight current line, but only in active window
+augroup CursorLineOnlyInActiveWindow
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+augroup END
+
+" vim can autodetect this based on $TERM (e.g. 'xterm-256color')
+" but it can be set to force 256 colors
+" set t_Co=256
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+    let g:lightline = {'colorscheme': 'solarized'}
+elseif &t_Co < 256
+    colorscheme default
+    set nocursorline " looks bad in this mode
+else
+    set background=dark
+    let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
+    colorscheme solarized
+    " customized colors
+    highlight SignColumn ctermbg=234
+    highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
+    highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
+    let g:lightline = {'colorscheme': 'dark'}
+    highlight SpellBad cterm=underline
+endif
+
+" START configure CTRL-P
+" set rtp^=~/.vim/vundle/ctrlp.vim
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
@@ -332,23 +359,23 @@ let g:ctrlp_custom_ignore = {
             \ }
 " END CTRL-P
 
-" START Configure Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" START configure Syntastic
+if has('syntastic')
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
+    " START configure syntastic swift
+    let g:syntastic_swift_swiftlint_use_defaults = 1
+    let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
+    " END
+endif
 " END Syntastic
-
-" START configure markdown
-let g:vim_markdown_folding_level = 6
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 2
-"END markdown
-
 
 " configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
@@ -357,6 +384,25 @@ let g:airline_theme='powerlineish'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
+
+" START configure markdown
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 2
+
+let g:markdown_fenced_languages = [
+    \ 'bash=sh',
+    \ 'c',
+    \ 'erb=eruby',
+    \ 'javascript',
+    \ 'json',
+    \ 'perl',
+    \ 'python',
+    \ 'ruby',
+    \ 'yaml',
+    \ 'go',
+\]
+"END markdown
 
 " netRW: Open files in a split window
 let g:netrw_browse_split = 1
@@ -534,4 +580,9 @@ endif
 
 " Make sure we have a sane fallback for encoding detection
 set fileencodings+=default
+
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
 
