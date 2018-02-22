@@ -261,8 +261,11 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins for handling various formats
 Plug 'jcf/vim-latex', { 'for': 'latex' }
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-" Plug 'plasticboy/vim-markdown'
+" Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'itspriddle/vim-marked'
+Plug 'junegunn/goyo.vim'
 
 " git related plugins
 Plug 'tpope/vim-fugitive'
