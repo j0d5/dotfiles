@@ -1,0 +1,5 @@
+- link:
+    ~/.vimrc:  etc/vimrc
+    ~/.gvimrc: etc/gvimrc
+    ~/.vim:    etc/vim
+

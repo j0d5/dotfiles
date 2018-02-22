@@ -1,5 +1,6 @@
 - defaults:
     link:
+      create: true
       relink: true
 
 - clean: ['~']
@@ -7,30 +8,23 @@
 - link:
   # ~/.dotfiles: ''
     ~/.tmux.conf: etc/tmux.conf
-    ~/.vim: etc/vim
-    ~/.vimrc: etc/vimrc
     ~/.zshrc: etc/zshrc
     ~/.ackrc: etc/ackrc
     ~/.bashrc: etc/bashrc
     ~/.dir_colors: etc/dir_colors
     ~/.editorconfig: etc/editorconfig
-    ~/.gitattributes: etc/gitattributes
-    ~/.gitconfig: etc/gitconfig
-    ~/.gitignore: etc/gitignore
-    ~/.gitk: etc/gitk
-    ~/.gvimrc: etc/gvimrc
     ~/.hgignore: etc/hgignore
     ~/.hgrc: etc/hgrc
     ~/.htoprc: etc/htoprc
     ~/.pythonrc: etc/pythonrc
     ~/.slate: etc/slate
-    ~/.tigrc: etc/tigrc
     ~/.tmux.conf: etc/tmux.conf
     ~/.valgrindrc: etc/valgrindrc
-    ~/.vim: etc/vim
-    ~/.vimrc: etc/vimrc
     ~/.wgetrc: etc/wgetrc
-
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    ~/.config/omf:
+      create: true
+      path: omf
+    ~/.config/fish:
+      create: true
+      path: fish
 
