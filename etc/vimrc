@@ -283,6 +283,7 @@ Plug 'darfink/vim-plist'
 Plug 'aliva/vim-fish'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
+Plug 'aklt/plantuml-syntax'
 " Plug 'fatih/vim-go'
 " Plug 'rust-lang/rust.vim'
 
