@@ -30,6 +30,7 @@ set -gx PATH $PATH /usr/local/MacGPG2/bin /Library/TeX/texbin
 set -gx PATH $PATH /Applications/Wireshark.app/Contents/MacOS
 set -gx PATH $PATH $HOME/.gem/ruby/2.4.0/bin $HOME/.rvm/bin
 set -gx PATH $PATH /Applications/Araxis\ Merge.app/Contents/Utilities
+set -gx PATH $PATH /usr/local/opt/python@2/bin
 
 if test ~/.bin
   set -gx PATH $PATH $HOME/.bin

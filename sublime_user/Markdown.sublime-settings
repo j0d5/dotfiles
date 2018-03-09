@@ -1,25 +1,22 @@
 {
-	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
+	"auto_match_enabled": true,
+	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
+	"draw_centered": true,
 	"extensions":
 	[
 		"md",
 		"mdown"
 	],
-
-  "tab_size": 4,
-  "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": false,
-  "auto_match_enabled": true,
-
-  // Layout
-  "draw_centered": true,
-  "word_wrap": true,
-  "wrap_width": 80,
-  "rulers": [],
-
-  // Line
-  "line_numbers": false,
-  "highlight_line": true,
-  "line_padding_top": 2,
-  "line_padding_bottom": 2,
+	"highlight_line": true,
+	"line_numbers": false,
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"rulers":
+	[
+	],
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": false,
+	"word_wrap": true,
+	"wrap_width": 80
 }

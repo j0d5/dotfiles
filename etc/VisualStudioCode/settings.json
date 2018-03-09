@@ -1,0 +1,10 @@
+{
+  "editor.fontFamily": "Fira Code",
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorStyle": "line",
+  "editor.rulers": [ 120 ],
+  "terminal.external.osxExec": "iTerm.app",
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.iconTheme": "eq-material-theme-icons",
+
+}
