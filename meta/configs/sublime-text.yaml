@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- link:
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings:          etc/SublimeText/Preferences.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Bash.sublime-settings:                 etc/SublimeText/Bash.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/CheckBounce.sublime-settings:          etc/SublimeText/CheckBounce.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap:          etc/SublimeText/Default (OSX).sublime-keymap
+    ~/Library/Application Support/Sublime Text 3/Packages/User/fish.sublime-settings:                 etc/SublimeText/fish.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Gist.sublime-settings:                 etc/SublimeText/Gist.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/LaTeX.sublime-settings:                etc/SublimeText/LaTeX.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/LaTeX.sublime-build:                   etc/SublimeText/LaTeX.sublime-build
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Markdown (Standard).sublime-settings:  etc/SublimeText/Markdown (Standard).sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Markdown.sublime-settings:             etc/SublimeText/Markdown.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings:      etc/SublimeText/MarkdownPreview.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Marked.sublime-build:                  etc/SublimeText/Marked.sublime-build
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Package Control_proxy.sublime-settings:  etc/SublimeText/Package Control.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings:        etc/SublimeText/Package Control.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Side Bar.sublime-settings:               etc/SublimeText/Side Bar.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings:          etc/SublimeText/SublimeLinter.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Textile.sublime-settings:                etc/SublimeText/Textile.sublime-settings
+    ~/Library/Application Support/Sublime Text 3/Packages/User/Snippets:                                etc/SublimeText/Snippets
