@@ -45,9 +45,9 @@
 	"ignored_packages":
 	[
 		"AndLog",
+		"Sublimerge Pro",
 		"Vintage",
-		"Vintageous",
-		"Sublimerge Pro"
+		"Vintageous"
 	],
 	"margin": 0,
 	"open_files_in_new_window": true,

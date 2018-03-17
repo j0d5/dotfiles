@@ -45,5 +45,9 @@
 		"Uncrustify",
 		"WordCount",
 		"WordHighlight"
+	],
+	"repositories":
+	[
+		"https://github.com/jvantuyl/sublime_diagram_plugin"
 	]
 }
