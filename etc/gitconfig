@@ -4,6 +4,9 @@
   # editor = subl -n -w
   editor = vim -f # --nomru -c "au VimLeave * !open -a iTerm"'
 
+[init]
+  templatedir = ~/.dotfiles/etc/git-templates
+
 [gpg]
   program = gpg
 
@@ -180,7 +183,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
@@ -201,5 +204,6 @@
   # Load local configs to maybe overwrite anything above
   # git-scm.com/docs/git-config#_includes
   path = ~/.gitconfig_local
+
 [gui]
 	recentrepo = /Users/johannes/Developer/git/mySPIN.iOS.ServerSDK
