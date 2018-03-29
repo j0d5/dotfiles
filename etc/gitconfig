@@ -70,14 +70,17 @@
   ec = config --global -e # open git configuration in editor
   st = status -sb
   ci = commit
-  cm = !git add -A && git commit
   co = checkout
   cob = checkout -b
   br = branch -v
   fe = fetch -v
   cl = clean -fd
   up = "!git remote update -p; git merge --ff-only @{u}"
+
+  # fast diff without spaces
   dfi = diff --ignore-all-space --minimal
+
+  # tracking branches
   tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
 
   # show last commit
@@ -90,7 +93,9 @@
   ll = log --decorate --date=relative  -30
 
   # show log with graph
-  lg = log --decorate --date=relative --graph
+  ls = log --graph --oneline --all --decorate --simplify-by-decoration --pretty=graph
+  lg = log --graph --oneline --all --decorate --topo-order
+  # lg = log --decorate --date=relative --graph
 
   # show commit with all file changes
   la = log --decorate --numstat --date=relative
@@ -117,6 +122,8 @@
 
   # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
   dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
+
+  # use icdiff as difftool
   icd = difftool --tool=icdiff
 
   # Tag management
@@ -170,6 +177,7 @@
 
 [pretty]
   commit = "format:%n%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn{%G?}] %n%n%b%n"
+  graph = "format:%C(green)%h %C(yellow)[%ar]%Cred%d %Creset%s%Cblue [%cn]"
 
 [http]
   sslVerify = true
@@ -183,7 +191,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
@@ -194,7 +202,7 @@
 
 [filter "media"]
   required = true
-  clean  = git media clean %f
+  clean    = git media clean %f
   smudge   = git media smudge %f
 
 [credential]
