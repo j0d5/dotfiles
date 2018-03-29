@@ -1,0 +1,5 @@
+- link:
+    ~/.bashrc:       etc/bashrc
+    ~/.bash_profile: etc/bash_profile
+    # ~/.bash_aliases: etc/aliases
+    # ~/.bash_logout:  etc/logout

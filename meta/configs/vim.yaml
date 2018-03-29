@@ -1,0 +1,8 @@
+- link:
+    ~/.vimrc:  etc/vimrc
+    ~/.gvimrc: etc/gvimrc
+    ~/.vim:    etc/vim
+
+- shell:
+    - [vim -c 'PlugInstall' +qall, Installing vim plugins]
+

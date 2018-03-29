@@ -1,0 +1,8 @@
+- link:
+    ~/.config/omf:
+      create: true
+      path: omf
+    ~/.config/fish:
+      create: true
+      path: fish
+

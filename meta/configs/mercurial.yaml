@@ -1,0 +1,4 @@
+- link:
+    ~/.hgrc: etc/hgrc
+    ~/.hgignore: etc/hgignore
+

@@ -16,7 +16,7 @@
   // Layout
   "draw_centered": true,
   "word_wrap": true,
-  "wrap_width": 80,
+  "wrap_width": 120,
   "rulers": [],
 
   // Line

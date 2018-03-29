@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
+	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -38,13 +38,14 @@
 		".hg"
 	],
 	"font_face": "Fira Code",
-	"font_size": 15,
+	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
 		"AndLog",
+		"Sublimerge Pro",
 		"Vintage",
 		"Vintageous"
 	],
@@ -60,7 +61,7 @@
 	"show_full_path": false,
 	"spell_check": false,
 	"tab_size": 4,
-	"theme": "Cobalt2.sublime-theme",
+	"theme": "Soda SolarizedDark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

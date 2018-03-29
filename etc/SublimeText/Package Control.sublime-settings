@@ -1,0 +1,53 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AcademicMarkdown",
+		"AdvancedNewFile",
+		"Alignment",
+		"Anaconda",
+		"BeautifyLatex",
+		"Case Conversion",
+		"CMake",
+		"CodeSearch",
+		"DocBlockr",
+		"EditorConfig",
+		"Emmet",
+		"Gist",
+		"GitGutter",
+		"Go To Definition",
+		"Homebrew-formula-syntax",
+		"LaTeXing",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Material Theme",
+		"MultiEditUtils",
+		"Package Control",
+		"SideBarEnhancements",
+		"SmartMarkdown",
+		"Solarized Color Scheme",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"SublimeLinter-contrib-bashate",
+		"SublimeLinter-contrib-swiftlint",
+		"SublimeLinter-json",
+		"SublimeLinter-pep8",
+		"Sublimerge 3",
+		"Theme - Cobalt2",
+		"Theme - Midnight",
+		"Theme - Soda",
+		"Theme - Soda SolarizedDark",
+		"Theme - Spacegray",
+		"Uncrustify",
+		"WordCount",
+		"WordHighlight"
+	],
+	"repositories":
+	[
+		"https://github.com/jvantuyl/sublime_diagram_plugin"
+	]
+}
