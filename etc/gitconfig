@@ -22,6 +22,7 @@
   compactionheuristic = true
   context = 6
   indentHeuristic = true
+  colorMoved = zebra
   # mnemonicPrefix = true
   # noprefix = true
 
@@ -191,7 +192,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
@@ -215,3 +216,6 @@
 
 [gui]
 	recentrepo = /Users/johannes/Developer/git/mySPIN.iOS.ServerSDK
+
+[icdiff]
+	options = --highlight --line-numbers
