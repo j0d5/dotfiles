@@ -8,9 +8,7 @@ COMMIT="$(command git rev-parse --short HEAD 2> /dev/null)"
 
 echo "[pre-push] executing integration template hook"
 
-TEMPLATE="^+[For a detailed description of this template see wiki.|http://bsot-wiki.hi.de.bosch.com/x/SoGy]+^
-
-*Repository:* $REPOSITORY
+TEMPLATE="*Repository:* $REPOSITORY
 
 *Integrated on Branch:* $BRANCH
 *Integration Commit:*   $COMMIT"
