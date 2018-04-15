@@ -1,0 +1,22 @@
+#!/bin/sh
+# REFNAME="$1"
+PUSH_ADDRESS="$2"
+
+REPOSITORY=${PUSH_ADDRESS##*:}
+BRANCH="$(command git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+COMMIT="$(command git rev-parse --short HEAD 2> /dev/null)"
+
+echo "[pre-push] executing integration template hook"
+
+TEMPLATE="^+[For a detailed description of this template see wiki.|http://bsot-wiki.hi.de.bosch.com/x/SoGy]+^
+
+*Repository:* $REPOSITORY
+
+*Integrated on Branch:* $BRANCH
+*Integration Commit:*   $COMMIT"
+
+# copy to clipboard
+echo "$TEMPLATE" | pbcopy
+
+echo "[pre-push] copied tempplate to clipboard"
+
