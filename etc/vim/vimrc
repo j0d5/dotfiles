@@ -1,68 +1,38 @@
 "#################################################
 "# Maintainer:  Johannes Steudle                ##
-"# Last change: 2018/02/22                      ##
 "# .vimrc                                       ##
 "#                                              ##
 "#     for Unix and Mac OS X:  ~/.vimrc         ##
 "#################################################
 
-
-"#################################################
-"#                                              ##
-"# DEFAULT SET                                  ##
-"#                                              ##
-"#################################################
 syntax on
 set nocompatible     " Use Vim defaults (much better!)
+set title            " Show filename
+set ch=2             " Make command line two lines high
 set ttyfast          " Improves redrawing on newer computers
 set enc=utf-8        " Use UTF-8 as the default buffer encoding
-set title            " Show filename
-" set number           " Line Numbers
-set number relativenumber " hybrid relative numbers
-set tabstop=4        " Tab size
-" set cursorline       " Highlight active line
-set showmatch        " When a bracket is inserted, briefly jump to a matching one
-set autoread         " read open files again when changed outside Vim
-set showmode         " Show current mode
-set showcmd          " Show command mode
-set ch=2             " Make command line two lines high
-set browsedir=current           " which directory to use for the file browser
 set mouse=a          " enable the use of the mouse
+set number relativenumber " hybrid relative numbers
+set showmatch        " When a bracket is inserted, briefly jump to a matching one
+set matchtime=4      " Jump to matching bracket for n/10 seconds
+set autoread         " read open files again when changed outside Vim
 set nospell
-set ruler          " Show the cursor position all the time
 set autoindent       " copy indent from current line
-set nosmartindent    " Set indention
+set smartindent      " Set indention
 set shiftround       " shift to nearest indent
 set shiftwidth=4     " Shift width
+set tabstop=4        " Tab size
 set expandtab        " Tabs to spaces
-set matchtime=4      " Jump to matching bracket for n/10 seconds
-" set scrolloff=3      " Scroll when cursor gets within 3 characters of top/bottom edge
-" set sidescroll=3     " Scroll when cursor gets within 3 characters of left/right edge
 set nostartofline    " Keep cursor in current column when using page commands
 set nojoinspaces     " Insert only one space when joining lines
 set visualbell       " Set visual bell instead of acustic
 set magic            " Use magic escaping
-set nrformats=octal,hex,alpha  " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
-set backspace=indent,eol,start " Allow backspacing over everything
 set completeopt=menu,menuone,longest,preview " Insert mode completion options
 set hidden           " Allow switching edited buffers without saving
 set shortmess^=I
 set wrap
 set linebreak
-set textwidth=0 wrapmargin=0
 set autochdir " automatically set current directory to directory of last opened file
-
-" Create splits to the right (vertical) or to the bottom (horizontal)
-set splitright
-set splitbelow
-" set history=1000     " keep 100 lines of command history
-" set tw=120           " Set line wrapping after 80 characters
-" set gdefault         " the /g flag on :s substitutions by default
-" set pastetoggle=<F2> " Toggle between paste mode on/off
-" set icon             " Icon text of the window
-" set confirm          " Extra dialog
-" Limit popup menu height
-" set pumheight=15
 
 " --------------------
 " Shell
@@ -74,8 +44,8 @@ endif
 " --------------------
 " StatusLine
 " --------------------
-if has('statusline')
-    set laststatus=2   " Always show status line, even for one window
+" if has('statusline')
+    " set laststatus=2   " Always show status line, even for one window
     " Broken down into easily includeable segments
     " set statusline=%<%f\     " Filename
     " set statusline+=%w%h%m%r " Options
@@ -86,7 +56,7 @@ if has('statusline')
     " set statusline+=\ [%{getcwd()}]          " current dir
     " set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
     " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
+" endif
 
 " --------------------
 " SEARCH
@@ -140,7 +110,7 @@ au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, e
 " :200  - remember 200 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,<50,:500,n~/.dotfiles/etc/vim/viminfo
+set viminfo='20,<50,:500,n~/.viminfo
 
 
 " Fix my <Backspace> key (in Mac OS X Terminal)
@@ -268,7 +238,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'itspriddle/vim-marked'
 Plug 'junegunn/goyo.vim'
 
-" git related plugins
+" git plugins
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
@@ -285,11 +255,10 @@ Plug 'aliva/vim-fish'
 Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
 Plug 'aklt/plantuml-syntax'
-" Plug 'fatih/vim-go'
-" Plug 'rust-lang/rust.vim'
 
 " Add global syntax formatting config capability
 Plug 'editorconfig/editorconfig-vim'
+
 " Auto formatting various files
 Plug 'sbdchd/neoformat'
 
@@ -316,6 +285,8 @@ if executable('ctags')
 endif
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'davidhalter/jedi-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'Valloric/YouCompleteMe'
 
 " Fancy starting screen
 Plug 'mhinz/vim-startify'
@@ -326,30 +297,24 @@ Plug 'terryma/vim-expand-region'
 Plug 'rking/ag.vim'
 Plug 'terryma/vim-multiple-cursors'
 
-Plug 'Shougo/denite.nvim'
-
 " On-demand loading
 " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Shougo/vimfiler.vim', { 'on':  'F3' }
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+" if has('nvim')
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+  " Plug 'Shougo/deoplete.nvim'
+  " Plug 'roxma/nvim-yarp'
+  " Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
 " --------------------
 " COLORSCHEME
 " --------------------
-" colorscheme tweetjay
-" set background=dark
-" colorscheme solarized
-" set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h10
 
 " highlight current line, but only in active window
 augroup CursorLineOnlyInActiveWindow
@@ -412,9 +377,7 @@ endif
 " configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline_powerline_fonts = 1
-" let g:airline_theme='powerlineish'
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline_left_sep=''
@@ -488,12 +451,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 let mapleader = "\<Space>" " Change <Leader>
 " let maplocalleader = "," " Change <LocalLeader>
 
-" press <Space>o to open a file
-nnoremap <Leader>o :CtrlP<CR>
-
-" press <Space>w to save file
-nnoremap <Leader>w :w<CR>
-
+" disable arrow keys
 " inoremap <Up>    <NOP>
 " inoremap <Down>  <NOP>
 " inoremap <Left>  <NOP>
@@ -505,7 +463,7 @@ nnoremap <Leader>w :w<CR>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
 vmap <Leader>y "+y
-vmap <Leader>d "+d
+" vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
