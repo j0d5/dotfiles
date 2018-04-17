@@ -110,8 +110,11 @@ au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, e
 " :200  - remember 200 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,<50,:500,n~/.viminfo
-
+if has('nvim')
+    set viminfo='20,<50,:500,n$HOME/.nviminfo
+else
+    set viminfo='20,<50,:500,n$HOME/.viminfo
+endif
 
 " Fix my <Backspace> key (in Mac OS X Terminal)
 " set t_kb=
@@ -228,7 +231,7 @@ call InitializeDirectories()
 "#                        ##
 "###########################
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('$HOME/.vim/plugged')
 
 " Plugins for handling various formats
 Plug 'jcf/vim-latex', { 'for': 'latex' }
