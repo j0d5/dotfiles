@@ -20,11 +20,10 @@
 [diff]
   tool = sourcetree
   compactionheuristic = true
-  context = 6
+  context = 4
   indentHeuristic = true
   colorMoved = zebra
-  # mnemonicPrefix = true
-  # noprefix = true
+  # orderFile = true
 
 [merge]
 	tool = sourcetree
@@ -41,14 +40,8 @@
   gpgSign = true
 	template = ~/.stCommitMsg
 
-[status]
-  # showUntrackedFiles = all
-
 [stash]
   showPatch = true
-
-[rerere]
-  # enabled = true
 
 [advice]
   # hide status hints
@@ -135,15 +128,15 @@
 [color]
 # normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
 # bold, dim, ul (underline), blink, and reverse
-  diff    = auto
-  status    = auto
-  branch    = auto
+  diff   = auto
+  status = auto
+  branch = auto
   interactive = auto
-  ui      = auto
-  frag    = auto
-  meta    = auto
-  pager     = true
-  tag = blue
+  ui     = auto
+  frag   = auto
+  meta   = auto
+  pager  = true
+  tag    = blue
 
 [color "branch"]
   current = red reverse
@@ -156,10 +149,10 @@
   frag  = cyan
   old   = red #bold
   new   = green #bold
-  plain = blue
+  plain = blue dim
 
 [color "status"]
-  added   = green
+  added     = green
   changed   = yellow
   untracked = cyan
 
@@ -170,7 +163,6 @@
   error  = normal
 
 [color "decorate"]
-# this is for --decorate
   tag = blue
 
 [format]
@@ -178,7 +170,7 @@
 
 [pretty]
   commit = "format:%n%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn{%G?}] %n%n%b%n"
-  graph = "format:%C(green)%h %C(yellow)[%ar]%Cred%d %Creset%s%Cblue [%cn]"
+  graph  = "format:%C(green)%h %C(yellow)[%ar]%Cred%d %Creset%s%Cblue [%cn]"
 
 [http]
   sslVerify = true
@@ -219,3 +211,4 @@
 
 [icdiff]
 	options = --highlight --line-numbers
+
