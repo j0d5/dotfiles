@@ -7,4 +7,5 @@
     ~/.valgrindrc: etc/valgrindrc
     ~/.wgetrc: etc/wgetrc
     ~/.htoprc: etc/htoprc
+    ~/.hammerspoon: hammerspoon
 

@@ -1,6 +1,6 @@
 - link:
-    ~/.vimrc:  etc/vimrc
-    ~/.gvimrc: etc/gvimrc
+    ~/.vimrc:  etc/vim/vimrc
+    ~/.gvimrc: etc/vim/gvimrc
     ~/.vim:    etc/vim
 
 - shell:
