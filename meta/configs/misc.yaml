@@ -8,4 +8,5 @@
     ~/.wgetrc: etc/wgetrc
     ~/.htoprc: etc/htoprc
     ~/.hammerspoon: hammerspoon
+    ~/bin: bin
 

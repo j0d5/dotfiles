@@ -1,0 +1,5 @@
+command script import /usr/local/opt/chisel/libexec/fblldb.py
+command script import $HOME/Developer/external/dotfiles/etc/nudge.py
+
+command alias poc expression -l objc -O --
+
