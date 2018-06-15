@@ -11,7 +11,7 @@
 # export DEBUG_ZSH=true
 
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.dotfiles/etc/zsh
+ZSH=$HOME/.zsh
 
 # Set name of the theme to load.
 ZSH_THEME="jay"

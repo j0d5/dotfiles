@@ -27,12 +27,12 @@ set -gx  LC_ALL en_US.UTF-8
 set -gx NPM_PACKAGES "$HOME/.npm-packages"
 
 set -gx PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /usr/local/lib /usr/lib
-set -gx PATH $PATH (pwd)/bin
+set -gx PATH $PATH /usr/local/opt/python@2/bin
 set -gx PATH $PATH /usr/local/MacGPG2/bin /Library/TeX/texbin
 set -gx PATH $PATH /Applications/Wireshark.app/Contents/MacOS
-set -gx PATH $PATH $HOME/.gem/ruby/2.4.0/bin $HOME/.rvm/bin
 set -gx PATH $PATH /Applications/Araxis\ Merge.app/Contents/Utilities
-set -gx PATH $PATH /usr/local/opt/python@2/bin
+set -gx PATH $PATH $HOME/.bin $HOME/.bin/bin
+set -gx PATH $PATH $HOME/.gem/ruby/2.4.0/bin $HOME/.rvm/bin
 set -gx PATH $PATH "$NPM_PACKAGES/bin"
 
 set -l isCompanyLAN (ifconfig | grep 10.34.)

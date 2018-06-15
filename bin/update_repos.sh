@@ -4,7 +4,7 @@
 ##################################################
 ##                                              ##
 ## Author: Johannes Steudle                     ##
-## File: install.sh                             ##
+## File: update_repos.sh                        ##
 ## Date: 14.12.2015                             ##
 ##                                              ##
 ## Description: This is a script for checking   ##

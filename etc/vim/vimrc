@@ -22,6 +22,7 @@ set smartindent      " Set indention
 set shiftround       " shift to nearest indent
 set shiftwidth=4     " Shift width
 set tabstop=4        " Tab size
+set smarttab
 set expandtab        " Tabs to spaces
 set nostartofline    " Keep cursor in current column when using page commands
 set nojoinspaces     " Insert only one space when joining lines
@@ -33,6 +34,9 @@ set shortmess^=I
 set wrap
 set linebreak
 set autochdir " automatically set current directory to directory of last opened file
+
+" OSX stupid backspace fix
+set backspace=indent,eol,start
 
 " --------------------
 " Shell
@@ -266,9 +270,13 @@ Plug 'sbdchd/neoformat'
 Plug 'altercation/vim-colors-solarized'
 Plug 'Wutzara/vim-materialtheme'
 Plug 'tweetjay/tweetjay.vim'
+Plug 'ryanoasis/vim-devicons'
 
 " Little file manager
 Plug 'ctrlpvim/ctrlp.vim'
+
+" Buffer manager
+Plug 'jeetsukumaran/vim-buffergator'
 
 " Nice status bar
 Plug 'vim-airline/vim-airline'
@@ -370,10 +378,11 @@ endif
 
 " configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#formatter = 'default'
 " let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='hybrid'
+" let g:airline_solarized_bg='dark'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_section_z=''
@@ -458,6 +467,9 @@ let mapleader = "\<Space>" " Change <Leader>
 " noremap <Down>  <NOP>
 " noremap <Left>  <NOP>
 " noremap <Right> <NOP>
+
+nnoremap <Leader>o :Files<CR>
+nnoremap <Leader>O :CtrlP<CR>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
 vmap <Leader>y "+y
