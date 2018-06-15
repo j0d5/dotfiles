@@ -56,19 +56,18 @@ usbWatcher:start()
 -- local bambooState = hs.menubar.new()
 
 -- function parseResult(responseStatus, responseBody, responseHeader)
---   hs.pasteboard.setContents(responseBody)
-
+--     hs.pasteboard.setContents(responseBody)
 -- end
 
 -- function getServerPage()
 --   -- fetch serverpage and extract branch state
---   hs.http.asyncGet("http://bsot-macsrv2.hi.de.bosch.com:8085/telemetry.action?filter=favourites", nil, parseResult)
+--     hs.http.asyncGet("http://bsot-macsrv2.hi.de.bosch.com:8085/telemetry.action?filter=favourites", nil, parseResult)
 -- end
 
 -- if bambooState then
---   bambooState:setTitle("All clear")
---   bambooState:setClickCallback(getServerPage)
---   -- bambooState:setIcon() -- place small icon in hammerspoon folder
+--     bambooState:setTitle("All clear")
+--     bambooState:setClickCallback(getServerPage)
+--     -- bambooState:setIcon() -- place small icon in hammerspoon folder
 -- end
 
 -- local caffeine = hs.menubar.new()

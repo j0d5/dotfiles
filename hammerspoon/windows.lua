@@ -12,6 +12,20 @@ hs.hotkey.bind({"cmd", "ctrl", "shift"}, "Left", function()
   win:setFrame(f)
 end)
 
+-- move focused window to left three-fourths
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "Left", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w / 4 * 3
+  f.h = max.h
+  win:setFrame(f)
+end)
+
 -- move focused window to right half
 hs.hotkey.bind({"cmd", "ctrl", "shift"}, "Right", function()
   local win = hs.window.focusedWindow()
@@ -22,6 +36,20 @@ hs.hotkey.bind({"cmd", "ctrl", "shift"}, "Right", function()
   f.x = max.x + (max.w / 2)
   f.y = max.y
   f.w = max.w / 2
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+-- move focused window to right three-fourths
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "Right", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + (max.w / 4)
+  f.y = max.y
+  f.w = max.w / 4 * 3
   f.h = max.h
   win:setFrame(f)
 end)
