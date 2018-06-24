@@ -7,18 +7,8 @@ sessions.
 
 ## Getting Started
 
-Clone the repository into your home folder:
-```
-git clone https://github.com/tweetjay/dotfiles ~/.dotfiles
-```
-Cd into the folder:
-```
-cd ~/.dotfiles
-```
-Run make and choose the targets you want to execute:
-```
-make
-```
+* Clone the repository into your home folder: `git clone https://github.com/tweetjay/dotfiles ~/.dotfiles`
+* Cd into the folder: `cd ~/.dotfiles`
+* Update the submodules with: `git submodule init && git submodule update`
+* Run `./install-profile default`
 
-## Special thanks to:
-* [bluemaex](https://github.com/bluemaex/dotfiles)

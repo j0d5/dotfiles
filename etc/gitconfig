@@ -84,11 +84,12 @@
   l = log --decorate --date=relative -5
 
   # show long list of commits
-  ll = log --decorate --date=relative  -30
+  ll = log --decorate --date=relative -30
 
   # show log with graph
   ls = log --graph --oneline --all --decorate --simplify-by-decoration --pretty=graph
-  lg = log --graph --oneline --all --decorate --topo-order
+  lg = log --graph --oneline --all --decorate --topo-order --date=relative -30
+  llg = log --graph --oneline --all --decorate --topo-order
   # lg = log --decorate --date=relative --graph
 
   # show commit with all file changes
@@ -184,7 +185,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
