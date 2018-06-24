@@ -4,11 +4,6 @@ tap "homebrew/services"
 tap "caskroom/cask"
 tap "caskroom/fonts"
 
-# Android
-# brew "apktool"
-# brew "dex2jar"
-# brew "checkstyle"
-
 # iOS
 brew "carthage"
 brew "chisel"
@@ -16,6 +11,7 @@ brew "swiftlint"
 brew "marathon-swift"
 brew "xctool"
 brew "ideviceinstaller"
+brew "jazzy"
 
 # git
 brew "git"
@@ -51,6 +47,7 @@ brew "zsh-syntax-highlighting"
 brew "tmux"
 brew "tree"
 brew "wget", args: ["with-iri"]
+brew "neovim"
 brew "vim", args: ["with-override-system-vi"]
 brew "ffmpeg"
 # brew "imagemagick"
