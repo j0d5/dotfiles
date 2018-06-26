@@ -1,11 +1,12 @@
 [core]
-  # open sublime text with new window and wait for result
   excludesfile = ~/.gitignore
-  # editor = subl -n -w
+	hookspath = ~/.git/hooks
   editor = nvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
+  # open sublime text with new window and wait for result
+  # editor = subl -n -w
 
 [init]
-  templatedir = ~/.dotfiles/etc/git-templates
+  templatedir = ~/.git/templates
 
 [gpg]
   program = gpg
@@ -38,7 +39,7 @@
 
 [commit]
   gpgSign = true
-	template = ~/.stCommitMsg
+	template = ~/.git/templates/commit-msg-template
 
 [stash]
   showPatch = true

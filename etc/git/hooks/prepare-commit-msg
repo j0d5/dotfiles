@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Edit: @shaiay and I came up with a bash-only solution to this.
+grep -Ev "(# Please.*|# with.*|^#$)" $1 > /tmp/msg && cat /tmp/msg > $1
+
