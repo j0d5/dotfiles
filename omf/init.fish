@@ -1,3 +1,6 @@
+#
+# fish initialization file
+#
 set -g normal (set_color normal)
 set -g magenta (set_color magenta)
 set -g yellow (set_color yellow)
@@ -24,16 +27,41 @@ end
 
 set -gx  LC_ALL en_US.UTF-8
 
-set -gx NPM_PACKAGES "$HOME/.npm-packages"
 
-set -gx PATH /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin /usr/local/lib /usr/lib
-set -gx PATH $PATH /usr/local/opt/python@2/bin
-set -gx PATH $PATH /usr/local/MacGPG2/bin /Library/TeX/texbin
-set -gx PATH $PATH /Applications/Wireshark.app/Contents/MacOS
-set -gx PATH $PATH /Applications/Araxis\ Merge.app/Contents/Utilities
-set -gx PATH $PATH $HOME/.bin $HOME/.bin/bin
-set -gx PATH $PATH $HOME/.gem/ruby/2.4.0/bin $HOME/.rvm/bin
-set -gx PATH $PATH "$NPM_PACKAGES/bin"
+set -g fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
+
+if test -d $HOME/.bin
+  set -g fish_user_paths $fish_user_paths "$HOME/.bin" "$HOME/.bin/bin"
+end
+
+if test -d "/Applications/Wireshark.app/Contents/MacOS"
+  set -g fish_user_paths $fish_user_paths "/Applications/Wireshark.app/Contents/MacOS"
+end
+
+if test -d "/Applications/Araxis Merge.app/Contents/Utilities"
+  set -g fish_user_paths $fish_user_paths "/Applications/Araxis Merge.app/Contents/Utilities"
+end
+
+if test -d "/usr/local/opt/python@2/bin"
+  set -g fish_user_paths $fish_user_paths "/usr/local/opt/python@2/bin"
+end
+
+if test -d "$HOME/.gem/ruby/2.4.0/bin"
+  set -g fish_user_paths $fish_user_paths "$HOME/.gem/ruby/2.4.0/bin"
+end
+
+if test -d "$HOME/.rvm/bin"
+  set -g fish_user_paths $fish_user_paths "$HOME/.rvm/bin"
+end
+
+if test -d "$NPM_PACKAGES/bin"
+  set -g fish_user_paths $fish_user_paths "$NPM_PACKAGES/bin"
+  set -gx NPM_PACKAGES "$HOME/.npm-packages"
+end
+
+if test -d "/usr/local/opt/qt/bin"
+  set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
+end
 
 set -l isCompanyLAN (ifconfig | grep 10.34.)
 
