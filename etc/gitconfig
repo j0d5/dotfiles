@@ -1,7 +1,7 @@
 [core]
   excludesfile = ~/.gitignore
 	hookspath = ~/.git/hooks
-  editor = nvim -f # --nomru -c "au VimLeave * !open -a iTerm"'
+  editor = vim -f # --nomru -c "au VimLeave * !open -a iTerm"'
   # open sublime text with new window and wait for result
   # editor = subl -n -w
 
