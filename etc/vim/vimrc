@@ -331,7 +331,6 @@ augroup END
 if has('gui_running')
     set background=dark
     colorscheme solarized
-    let g:lightline = {'colorscheme': 'solarized'}
 elseif &t_Co < 256
     colorscheme default
     set nocursorline " looks bad in this mode
@@ -343,9 +342,9 @@ else
     highlight SignColumn ctermbg=234
     highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
     highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
-    let g:lightline = {'colorscheme': 'dark'}
     highlight SpellBad cterm=underline
 endif
+set colorcolumn=100
 
 " START configure CTRL-P
 " set rtp^=~/.vim/vundle/ctrlp.vim
@@ -379,13 +378,8 @@ endif
 " configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#formatter = 'default'
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='hybrid'
-" let g:airline_solarized_bg='dark'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_section_z=''
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 
 " NerdTree configuration
 " autocmd StdinReadPre * let s:std_in=1
