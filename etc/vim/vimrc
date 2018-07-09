@@ -45,22 +45,10 @@ if $SHELL =~ 'bin/fish'
     set shell=/bin/sh
 endif
 
-" --------------------
-" StatusLine
-" --------------------
-" if has('statusline')
-    " set laststatus=2   " Always show status line, even for one window
-    " Broken down into easily includeable segments
-    " set statusline=%<%f\     " Filename
-    " set statusline+=%w%h%m%r " Options
-    " if has('fugitive')
-    " set statusline+=%{fugitive#statusline()} " Git Hotness
-    " endif
-    " set statusline+=\ [%{&ff}/%Y]            " filetype
-    " set statusline+=\ [%{getcwd()}]          " current dir
-    " set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
-    " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-" endif
+" Temporary workaround for python 3.7: https://github.com/vim/vim/issues/3117#issuecomment-402622616
+if has('python3')
+  silent! python3 1
+endif
 
 " --------------------
 " SEARCH
@@ -129,35 +117,6 @@ endif
 "# Functions                                    ##
 "#                                              ##
 "#################################################
-
-" --------------------
-" Tab Wrapper function
-" --------------------
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '<leader>k'
-        return "<leader><tab>"
-    else
-        return "<leader><c-p>"
-    endif
-endfunction
-
-" --------------------
-" Extract Method from visual marked code
-" --------------------
-function! ExtractMethod() range
-    let name = inputdialog("Name of new method:")
-    '<
-    exe "normal! O\<BS>private " . name ."()\<CR>{\<Esc>"
-    '>
-    exe "normal! oreturn ;\<CR>}\<Esc>k"
-    s/return/\/\/ return/ge
-    normal! j%
-    normal! kf(
-    exe "normal! yyPi// = \<Esc>wdwA;\<Esc>"
-    normal! ==
-    normal! j0w
-endfunction
 
 " ex command for toggling hex mode - define mapping if desired
 command! -bar Hexmode call ToggleHex()
@@ -374,6 +333,23 @@ if has('syntastic')
     " END
 endif
 " END Syntastic
+
+" --------------------
+" StatusLine
+" --------------------
+" if has('statusline')
+    " set laststatus=2   " Always show status line, even for one window
+    " Broken down into easily includeable segments
+    " set statusline=%<%f\     " Filename
+    " set statusline+=%w%h%m%r " Options
+    " if has('fugitive')
+    " set statusline+=%{fugitive#statusline()} " Git Hotness
+    " endif
+    " set statusline+=\ [%{&ff}/%Y]            " filetype
+    " set statusline+=\ [%{getcwd()}]          " current dir
+    " set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
+    " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+" endif
 
 " configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
