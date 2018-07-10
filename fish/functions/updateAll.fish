@@ -10,7 +10,4 @@ function updateAll -d 'Upgrade and clean all available package managers'
 
     echo "[oh-my-fish] updating"
     omf update
-
-    echo "[marathon] updating"
-    marathon update
 end
