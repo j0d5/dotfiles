@@ -21,10 +21,8 @@ if has("gui_gtk2")
 elseif has("gui_macvim")
   " set guifont=Monospace\ 16
   set guifont=Fira\ Code:h13
-  " set guifont=Inconsolata\ for\ Powerline:h15
+  set guifont=Source\ Code\ Pro:h14
   " set guifont=Menlo\ for\ Powerline:h13
-  " set guifont=Inconsolata:h15
-  " set guifont=Menlo\ Regular:h13
   set guiheadroom=0
 elseif has("gui_win32")
   set guifont=Consolas:h13:cANSI
