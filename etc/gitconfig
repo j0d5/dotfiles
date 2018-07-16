@@ -34,6 +34,9 @@
   commit = false
   # mergeoptions = --no-commit
 
+[rebase]
+	autoStash = true
+
 [blame]
   blankboundary = true
 
