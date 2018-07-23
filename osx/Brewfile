@@ -89,7 +89,8 @@ cask "vlc"
 cask "wireshark"
 
 # mas "1Password", id: 443987910
-mas "Tweetbot", id: 557168941
+# mas "Tweetbot", id: 557168941
 mas "Fantastical 2", id: 975937182
 mas "Xcode", id: 497799835
 mas "Affinity Designer", id: 824171161
+
