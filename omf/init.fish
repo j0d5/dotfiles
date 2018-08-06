@@ -31,7 +31,7 @@ set -gx  LC_ALL en_US.UTF-8
 set -g fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 
 if test -d $HOME/.bin
-  set -g fish_user_paths $fish_user_paths "$HOME/.bin" "$HOME/.bin/bin"
+  set -g fish_user_paths $fish_user_paths "$HOME/.bin" "$HOME/.bin"
 end
 
 if test -d "/Applications/Wireshark.app/Contents/MacOS"
