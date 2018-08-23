@@ -1,8 +1,10 @@
+[include]
+  path = ~/.gitconfig_local
+
 [core]
   excludesfile = ~/.gitignore
 	hookspath = ~/.git/hooks
-  editor = vim -f # --nomru -c "au VimLeave * !open -a iTerm"'
-  # open sublime text with new window and wait for result
+  editor = vim -f
   # editor = subl -n -w
 
 [init]
@@ -12,8 +14,13 @@
   program = gpg
 
 [push]
-  default = current
-  # followTags = true
+  default = simple
+
+[fetch]
+  prune = 1
+
+[rerere]
+  enabled = 1
 
 [pull]
   ff = true
@@ -24,21 +31,17 @@
   context = 4
   indentHeuristic = true
   colorMoved = zebra
-  # orderFile = true
+  algorithm = patience
 
 [merge]
 	tool = sourcetree
   ff = false
-  # conflictstyle = diff3
   log = true
   commit = false
   # mergeoptions = --no-commit
 
 [rebase]
 	autoStash = true
-
-[blame]
-  blankboundary = true
 
 [commit]
   gpgSign = true
@@ -47,29 +50,25 @@
 [stash]
   showPatch = true
 
+[apply]
+	# Cleanup whitespace by default when apply patches.
+	whitespace = fix
+
 [advice]
   # hide status hints
-  statusHints = false
+  # statusHints = false
 
 [pager]
   show-branch = true
-  # log  = diff-highlight | less
-  # show = diff-highlight | less
-  # diff = diff-highlight | less
-  # status = true
 
 [grep]
   lineNumber = true
-
-[help]
-  autocorrect = 1
 
 [alias]
   ec = config --global -e # open git configuration in editor
   st = status -sb
   ci = commit
   co = checkout
-  cob = checkout -b
   br = branch -v
   fe = fetch -v
   cl = clean -fd
@@ -133,42 +132,33 @@
 [color]
 # normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
 # bold, dim, ul (underline), blink, and reverse
-  diff   = auto
-  status = auto
-  branch = auto
-  interactive = auto
   ui     = auto
-  frag   = auto
-  meta   = auto
-  pager  = true
-  tag    = blue
+#   branch = auto
+#   interactive = auto
+#   frag   = auto
+#   meta   = auto
+#   pager  = true
+#   tag    = blue
 
-[color "branch"]
-  current = red reverse
-  local   = blue
-  remote  = green
-  plain   = normal
-
-[color "diff"]
-  meta  = white dim
-  frag  = cyan
-  old   = red #bold
-  new   = green #bold
-  plain = blue dim
+# [color "branch"]
+#   current = red reverse
+#   local   = blue
+#   remote  = green
+#   plain   = normal
 
 [color "status"]
   added     = green
   changed   = yellow
   untracked = cyan
-
-[color "interactive"]
-  prompt = normal
-  header = normal
-  help   = normal
-  error  = normal
-
-[color "decorate"]
-  tag = blue
+#
+# [color "interactive"]
+#   prompt = normal
+#   header = normal
+#   help   = normal
+#   error  = normal
+#
+# [color "decorate"]
+#   tag = blue
 
 [format]
   pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
@@ -189,7 +179,7 @@
 
 [difftool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
@@ -205,14 +195,6 @@
 
 [credential]
   helper = osxkeychain
-
-[include]
-  # Load local configs to maybe overwrite anything above
-  # git-scm.com/docs/git-config#_includes
-  path = ~/.gitconfig_local
-
-[gui]
-	recentrepo = /Users/johannes/Developer/git/mySPIN.iOS.ServerSDK
 
 [icdiff]
 	options = --highlight --line-numbers
