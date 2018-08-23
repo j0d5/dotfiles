@@ -1,3 +1,5 @@
+rvm default
+
 #
 # fish initialization file
 #
@@ -74,4 +76,5 @@ end
 set -gx EDITOR 'nvim'
 
 aliases
+
 
