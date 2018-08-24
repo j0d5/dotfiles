@@ -27,6 +27,9 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Menu bar: show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent YES
+
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.99 0.18 0.39"
 
@@ -104,7 +107,10 @@ sudo pmset -a hibernatemode 0
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
@@ -412,8 +418,8 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 
 # Display emails in threaded mode, sorted by date (oldest at the top)
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "no"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "no"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
 
 # Disable inline attachments (just show the icons)
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true

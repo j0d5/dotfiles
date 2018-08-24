@@ -233,6 +233,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'Wutzara/vim-materialtheme'
 Plug 'tweetjay/tweetjay.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 
 " Little file manager
 Plug 'ctrlpvim/ctrlp.vim'
@@ -252,12 +253,6 @@ Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
-" Plug 'majutsushi/tagbar'
-" Plug 'vim-scripts/taglist.vim'
-" if executable('ctags')
-    " Plug 'prabirshrestha/asyncomplete-tags.vim'
-    " Plug 'ludovicchabant/vim-gutentags'
-" endif
 
 " Fancy starting screen
 Plug 'mhinz/vim-startify'
@@ -292,7 +287,7 @@ augroup END
 " set t_Co=256
 if has('gui_running')
     set background=dark
-    colorscheme solarized
+    colorscheme onehalfdark
 elseif &t_Co < 256
     colorscheme default
     set nocursorline " looks bad in this mode
@@ -311,7 +306,6 @@ set colorcolumn=100
 " START configure CTRL-P
 " set rtp^=~/.vim/vundle/ctrlp.vim
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
             \ 'file': '\v\.(exe|so|dll)$',
@@ -357,8 +351,8 @@ endif
 " configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='onehalfdark'
+" let g:airline_solarized_bg='dark'
 
 " NerdTree configuration
 " autocmd StdinReadPre * let s:std_in=1
@@ -372,14 +366,13 @@ let g:vim_markdown_new_list_item_indent = 2
 let g:markdown_fenced_languages = [
     \ 'bash=sh',
     \ 'c',
-    \ 'erb=eruby',
     \ 'javascript',
     \ 'json',
-    \ 'perl',
     \ 'python',
     \ 'ruby',
     \ 'yaml',
-    \ 'go',
+    \ 'swift',
+    \ 'objc'
 \]
 "END markdown
 
@@ -441,8 +434,7 @@ let mapleader = "\<Space>" " Change <Leader>
 " noremap <Left>  <NOP>
 " noremap <Right> <NOP>
 
-nnoremap <Leader>o :Files<CR>
-nnoremap <Leader>O :CtrlP<CR>
+nnoremap <Leader>o :CtrlP<CR>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
 vmap <Leader>y "+y
@@ -492,9 +484,11 @@ nnoremap <C-H> :Hexmode<CR>
 inoremap <C-H> <Esc>:Hexmode<CR>
 vnoremap <C-H> :<C-U>Hexmode<CR>
 
-" switch to upper/lower window quickly
-" map <C-J> <C-W>j
-" map <C-K> <C-W>k
+" Better window navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 map <F3> :NERDTreeToggle<CR>
 
@@ -503,7 +497,6 @@ map <F3> :NERDTreeToggle<CR>
 " --------------------
 vmap <leader>em :call ExtractMethod()<CR>
 
-
 "#################################################
 "#                                              ##
 "# SPECIAL FILETYPES & ENCODING                 ##
@@ -511,7 +504,6 @@ vmap <leader>em :call ExtractMethod()<CR>
 "#################################################
 
 if has('autocmd')
-
     autocmd BufEnter * cd %:p:h
 
     augroup programming

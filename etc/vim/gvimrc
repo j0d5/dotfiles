@@ -34,11 +34,6 @@ set mousehide      " Hide the mouse when typing text
 set guioptions-=aA
 set guioptions+=ci " no toolbar, menubar, scrollbar
 " set mouse-=a " Disable mouse selection
-" set linespace=1.5
-" set relativenumber
-" set tabpagemax=15
-" set transparency=8
-" colorscheme johannes
 
 " Make shift-insert work like in Xterm
 map! <S-Insert> <MiddleMouse>
