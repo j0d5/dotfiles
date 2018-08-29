@@ -230,8 +230,7 @@ Plug 'sbdchd/neoformat'
 
 " Add Theme
 Plug 'altercation/vim-colors-solarized'
-Plug 'Wutzara/vim-materialtheme'
-Plug 'tweetjay/tweetjay.vim'
+Plug 'tweetjay/tweetjay-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 
