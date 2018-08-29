@@ -7,7 +7,4 @@ function updateAll -d 'Upgrade and clean all available package managers'
 
     echo "[npm] Update node packages"
     npm --global update
-
-    echo "[oh-my-fish] updating"
-    omf update
 end
