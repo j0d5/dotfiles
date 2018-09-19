@@ -32,6 +32,8 @@ set -gx  LC_ALL en_US.UTF-8
 
 set -g fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 
+set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
+
 if test -d $HOME/.bin
   set -g fish_user_paths $fish_user_paths "$HOME/.bin" "$HOME/.bin"
 end
