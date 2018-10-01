@@ -233,6 +233,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tweetjay/tweetjay-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+Plug 'ErichDonGubler/vim-sublime-monokai'
 
 " Little file manager
 Plug 'ctrlpvim/ctrlp.vim'

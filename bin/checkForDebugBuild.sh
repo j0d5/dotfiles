@@ -10,6 +10,8 @@ checkForDebugBuild () {
 
     __check_encryption "$file"
 
+    __check_bitcode_available "$file"
+
     __check_for_assertion "$file"
 
     __check_debug_symbols "$file"
@@ -49,7 +51,8 @@ __check_debug_symbols () {
 
     __print "Return from difftool: $result"
     if test -n result; then
-    __print "could be a debug build" "warning"
+    __print "Could be a debug build" "warning"
+    __print "This information is not reliable!" "warning"
     fi
     __print
 
@@ -77,6 +80,16 @@ __check_encryption () {
         __print "Encryption info found!"
     else
         __print "No encryption info found!"
+    fi
+    __print
+}
+
+__check_bitcode_available () {
+    __print "Check if bitcode is available" "info"
+    if otool -arch armv7 -arch arm64 -l "$1" | grep -A 4 __LLVM; then
+        __print "Bitcode info found! Check if filesize is > 1!"
+    else
+        __print "No Bitcode info found!"
     fi
     __print
 }

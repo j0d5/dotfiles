@@ -133,32 +133,11 @@
 # normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
 # bold, dim, ul (underline), blink, and reverse
   ui     = auto
-#   branch = auto
-#   interactive = auto
-#   frag   = auto
-#   meta   = auto
-#   pager  = true
-#   tag    = blue
-
-# [color "branch"]
-#   current = red reverse
-#   local   = blue
-#   remote  = green
-#   plain   = normal
 
 [color "status"]
   added     = green
   changed   = yellow
   untracked = cyan
-#
-# [color "interactive"]
-#   prompt = normal
-#   header = normal
-#   help   = normal
-#   error  = normal
-#
-# [color "decorate"]
-#   tag = blue
 
 [format]
   pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
