@@ -4,5 +4,5 @@
     ~/.gitignore:     etc/gitignore
     ~/.gitk:          etc/gitk
     ~/.tigrc:         etc/tigrc
-    ~/.git:           etc/git
+    ~/.git:           git
 

@@ -1,8 +1,8 @@
 - link:
-    ~/.vimrc:                etc/vim/vimrc
-    ~/.gvimrc:               etc/vim/gvimrc
-    ~/.vim:                  etc/vim
-    ~/.config/nvim/init.vim: etc/vim/vimrc
+    ~/.vimrc:                vim/vimrc
+    ~/.gvimrc:               vim/gvimrc
+    ~/.vim:                  vim
+    ~/.config/nvim/init.vim: vim/vimrc
 
 - shell:
     - [vim -c 'PlugInstall' +qall, Installing vim plugins]

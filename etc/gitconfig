@@ -122,12 +122,24 @@
     dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
 
   # use icdiff as difftool
-  icd = difftool --tool=icdiff
+    icd = difftool --tool=icdiff
+
+    deleteBranch = "!sh -c \
+        if [[ -z "$1" ]]; then \
+            echo "\n🤔 Oops… you forgot to provide the branch name"; \
+            echo "👉 E.g. gbdel branch_name\n"; \
+        else \
+            echo "\n⏳ Deleting…\n"; \
+            git branch -D "$1"; # Local delete. \
+            git push origin --delete "$1"; # Remote delete. \
+            echo "\n✅ Git branch $1 was deleted from local and remote.\n"; \
+        fi"
 
   # Tag management
-  cleanLocalTags = fetch --prune origin "+refs/tags/*:refs/tags/*"
-  renametag = "!sh -c 'set -e; git tag $2 $1; git tag -d $1; git push origin :refs/tags/$1; git push --tags' -"
-  renamebranch = "!sh -c 'git push origin origin/$1:refs/heads/$2 :$1' - "
+    cleanremotetags = "!f() { git push origin :( git tag | grep -v -E "((dr|ff|release)/[0-9].[0-9].[0-9])" ) }; f"
+    cleanlocaltags = fetch --prune origin "+refs/tags/*:refs/tags/*"
+    renametag = "!sh -c 'set -e; git tag $2 $1; git tag -d $1; git push origin :refs/tags/$1; git push --tags' -"
+    renamebranch = "!sh -c 'git push origin origin/$1:refs/heads/$2 :$1' - "
 
 [color]
 # normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
