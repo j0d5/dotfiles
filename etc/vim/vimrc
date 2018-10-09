@@ -237,6 +237,7 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 
 " Little file manager
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-eunuch'
 
 " Buffer manager
 Plug 'jeetsukumaran/vim-buffergator'

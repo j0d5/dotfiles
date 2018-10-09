@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 CHECKED_FLAGS="(fcontext\(|fdescribe\(|xcontext\(|xdescribe\(|fit\(|xit\()"
 

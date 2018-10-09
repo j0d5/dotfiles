@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Check the given file for debug symbols
 checkForDebugBuild () {

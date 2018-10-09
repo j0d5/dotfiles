@@ -1,125 +1,125 @@
 [include]
-  path = ~/.gitconfig_local
+    path = ~/.gitconfig_local
 
 [core]
-  excludesfile = ~/.gitignore
-	hookspath = ~/.git/hooks
-  editor = vim -f
+    excludesfile = ~/.gitignore
+    hookspath = ~/.git/hooks
+    editor = vim -f
   # editor = subl -n -w
 
 [init]
-  templatedir = ~/.git/templates
+    templatedir = ~/.git/templates
 
 [gpg]
-  program = gpg
+    program = gpg
 
 [push]
-  default = simple
+    default = simple
 
 [fetch]
-  prune = 1
+    prune = 1
 
 [rerere]
-  enabled = 1
+    enabled = 1
 
 [pull]
-  ff = true
+    ff = true
 
 [diff]
-  tool = sourcetree
-  compactionheuristic = true
-  context = 4
-  indentHeuristic = true
-  colorMoved = zebra
-  algorithm = patience
+    tool = sourcetree
+    compactionheuristic = true
+    context = 4
+    indentHeuristic = true
+    colorMoved = zebra
+    algorithm = patience
 
 [merge]
-	tool = sourcetree
-  ff = false
-  log = true
-  commit = false
+    tool = sourcetree
+    ff = false
+    log = true
+    commit = false
   # mergeoptions = --no-commit
 
 [rebase]
-	autoStash = true
+    autoStash = true
 
 [commit]
-  gpgSign = true
-	template = ~/.git/templates/commit-msg-template
+    gpgSign = true
+    template = ~/.git/templates/commit-msg-template
 
 [stash]
-  showPatch = true
+    showPatch = true
 
 [apply]
-	# Cleanup whitespace by default when apply patches.
-	whitespace = fix
+    # Cleanup whitespace by default when apply patches.
+    whitespace = fix
 
 [advice]
   # hide status hints
   # statusHints = false
 
 [pager]
-  show-branch = true
+    show-branch = true
 
 [grep]
-  lineNumber = true
+    lineNumber = true
 
 [alias]
-  ec = config --global -e # open git configuration in editor
-  st = status -sb
-  ci = commit
-  co = checkout
-  br = branch -v
-  fe = fetch -v
-  cl = clean -fd
-  up = "!git remote update -p; git merge --ff-only @{u}"
+    ec = config --global -e # open git configuration in editor
+    st = status -sb
+    ci = commit
+    co = checkout
+    br = branch -v
+    fe = fetch -v
+    cl = clean -fd
+    up = "!git remote update -p; git merge --ff-only @{u}"
 
   # fast diff without spaces
-  dfi = diff --ignore-all-space --minimal
+    dfi = diff --ignore-all-space --minimal
 
   # tracking branches
-  tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
+    tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
 
   # show last commit
-  lh = log --pretty=commit --decorate=auto --date=relative -1
+    lh = log --pretty=commit --decorate=auto --date=relative -1
 
   # show list of commits
-  l = log --decorate --date=relative -5
+    l = log --decorate --date=relative -5
 
   # show long list of commits
-  ll = log --decorate --date=relative -30
+    ll = log --decorate --date=relative -30
 
   # show log with graph
-  ls = log --graph --oneline --all --decorate --simplify-by-decoration --pretty=graph
-  lg = log --graph --oneline --all --decorate --topo-order --date=relative -30
-  llg = log --graph --oneline --all --decorate --topo-order
+    ls = log --graph --oneline --all --decorate --simplify-by-decoration --pretty=graph
+    lg = log --graph --oneline --all --decorate --topo-order --date=relative -30
+    llg = log --graph --oneline --all --decorate --topo-order
   # lg = log --decorate --date=relative --graph
 
   # show commit with all file changes
-  la = log --decorate --numstat --date=relative
+    la = log --decorate --numstat --date=relative
 
   # show diff to last commit
-  last = diff HEAD~1
+    last = diff HEAD~1
 
   # save your work to a specific commit
-  save = !git add -A && git commit -m 'SAVEPOINT'
+    save = !git add -A && git commit -m 'SAVEPOINT'
   # and remove it afterwards with keeping the changes
-  undo = reset HEAD~1 --mixed
+    undo = reset HEAD~1 --mixed
 
   # human readable commands
-  unstage = reset -q HEAD --
-  uncommit = reset --mixed HEAD~
+    unstage = reset -q HEAD --
+    uncommit = reset --mixed HEAD~
   # discard = checkout --
 
   # use this instead of just resetting your head. It creates a commit and
   # removes it afterwards so work is still reachable with 'reflog'
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
   # new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
   # count = !sh -c 'git log --oneline | wc -l'
 
   # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
-  dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
+    dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
 
   # use icdiff as difftool
   icd = difftool --tool=icdiff
@@ -132,54 +132,54 @@
 [color]
 # normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
 # bold, dim, ul (underline), blink, and reverse
-  ui     = auto
+    ui = auto
 
 [color "status"]
-  added     = green
-  changed   = yellow
-  untracked = cyan
+    added     = green
+    changed   = yellow
+    untracked = cyan
 
 [format]
-  pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
+    pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
 
 [pretty]
-  commit = "format:%n%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn{%G?}] %n%n%b%n"
-  graph  = "format:%C(green)%h %C(yellow)[%ar]%Cred%d %Creset%s%Cblue [%cn]"
+    commit = "format:%n%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn{%G?}] %n%n%b%n"
+    graph  = "format:%C(green)%h %C(yellow)[%ar]%Cred%d %Creset%s%Cblue [%cn]"
 
 [http]
-  sslVerify = true
+    sslVerify = true
 
 [mergetool]
-  keepBackup = true
-  prompt = false
+    keepBackup = true
+    prompt = false
 
 [difftool]
-  prompt = false
+    prompt = false
 
 [difftool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-	path =
+    cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+    path =
 
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+    trustExitCode = true
 
 [difftool "icdiff"]
-  cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE
+    cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE
 
 [filter "media"]
-  required = true
-  clean    = git media clean %f
-  smudge   = git media smudge %f
+    required = true
+    clean    = git media clean %f
+    smudge   = git media smudge %f
 
 [credential]
-  helper = osxkeychain
+    helper = osxkeychain
 
 [icdiff]
-	options = --highlight --line-numbers
+    options = --highlight --line-numbers
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
