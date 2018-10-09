@@ -1,9 +1,0 @@
-- shell:
-    - [./osx/check_brew.sh, Check brew installation]
-    -
-      command: brew bundle --verbose --file="osx/Brewfile"
-      stdout: true
-      stderr: true
-      description: Install all brew packages
-    - [brew cleanup -s, Cleanup brew]
-

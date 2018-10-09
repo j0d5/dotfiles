@@ -1,7 +1,0 @@
-- defaults:
-    link:
-      relink: true
-      force: true
-
-- link:
-    ~/Library/Application Support/Code/User/settings.json:  etc/VisualStudioCode/settings.json
