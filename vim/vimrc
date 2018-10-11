@@ -4,7 +4,8 @@
 "     for Unix and macOS: ~/.vimrc
 " }}}
 
-set nocompatible     " Use Vim defaults (much better!)
+" Use Vim defaults (much better!)
+set nocompatible     
 
 syntax on
 
@@ -22,7 +23,6 @@ set cmdheight=2        " Make command line two lines high
 set laststatus=2       " Always show status line, even for one window
 set termencoding=utf-8
 set encoding=utf-8     " Use UTF-8 as the default buffer encoding
-set lazyredraw
 " }}}
 
 " Indentation {{{
@@ -48,7 +48,6 @@ set nojoinspaces     " Insert only one space when joining lines
 set magic            " Use magic escaping
 set completeopt=menu,menuone,longest,preview " Insert mode completion options
 set backspace=indent,eol,start
-" set shortmess^=I
 " }}}
 
 " Show some invisible characters {{{
@@ -73,22 +72,18 @@ set linebreak
 " }}}
 
 " Search {{{ See http://stevelosh.com/blog/2010/09/coming-home-to-vim/
-nnoremap / /\v
-vnoremap / /\v
 set hlsearch             " Highlight search
 set incsearch            " incremental searching
 set ignorecase smartcase " Case-insensitive searching
 set showmatch            " When a bracket is inserted, briefly jump to a matching one
 nnoremap <tab> %
 vnoremap <tab> %
-" nnoremap  :nohlsearch/    " press enter to hide highlighting
 " }}}
 
 " Wildmenu {{{
 set wildmenu                   " Use menu to show command-line completion (in 'full' case)
 set wildmode=list:longest,full " set command-line completion mode:
-" - on first <Tab>, when more than one match, list all matches and complete
-" the longest common  string
+" - on first <Tab>, when more than one match, list all matches and complete the longest common string
 " - on second <Tab>, complete the next full match and show menu
 
 " Ignore these filenames during enhanced command line completion.
@@ -106,30 +101,6 @@ set wildignore+=*/tmp/*           " MacOSX/Linux
 set wildignore+=*\\tmp\\*         " Windows
 " }}}
 
-" Backup and undo {{{
-set updatecount=50   " Write swap file to disk after every 50 characters
-set backup           " Enable Backups of the current edited file
-set undofile         " so is persistent undo ...
-set undolevels=100   " maximum number of changes that can be undone
-set undoreload=100   " maximum number lines to save for undo on a buffer reload
-au BufWinLeave * silent! mkview   " make vim save view (state) (folds, cursor, etc)
-au BufWinEnter * silent! loadview " make vim load view (state) (folds, cursor, etc)
-" }}}
-
-" Save states {{{ 
-" Remember things between sessions
-" '20  - remember marks for 20 previous files
-" \"50 - save 50 lines for each register
-" :200  - remember 200 items in command-line history
-" %    - remember the buffer list (if vim started without a file arg)
-" n    - set name of viminfo file
-if has('nvim')
-    set viminfo='20,<50,:500,n$HOME/.nviminfo
-else
-    set viminfo='20,<50,:500,n$HOME/.viminfo
-endif
-" }}}
-
 " Python {{{
 let g:python_host_prog  = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -140,88 +111,12 @@ if has('python3')
 endif
 " }}}
 
-" Functions {{{
-
-" ex command for toggling hex mode - define mapping if desired
-command! -bar Hexmode call ToggleHex()
-
-" helper function to toggle hex mode
-function! ToggleHex()
-    " hex mode should be considered a read-only operation
-    " save values for modified and read-only for restoration later,
-    " and clear the read-only flag for now
-    let l:modified=&mod
-    let l:oldreadonly=&readonly
-    let &readonly=0
-    let l:oldmodifiable=&modifiable
-    let &modifiable=1
-    if !exists("b:editHex") || !b:editHex
-        " save old options
-        let b:oldft=&ft
-        let b:oldbin=&bin
-        " set new options
-        setlocal binary " make sure it overrides any textwidth, etc.
-        let &ft="xxd"
-        " set status
-        let b:editHex=1
-        " switch to hex editor
-        %!xxd
-    else
-        " restore old options
-        let &ft=b:oldft
-        if !b:oldbin
-            setlocal nobinary
-        endif
-        " set status
-        let b:editHex=0
-        " return to normal editing
-        %!xxd -r
-    endif
-    " restore values for modified and read only state
-    let &mod=l:modified
-    let &readonly=l:oldreadonly
-    let &modifiable=l:oldmodifiable
-endfunction
-
-" Create directories for vim
-function! InitializeDirectories()
-    let separator = "."
-    let parent = $HOME
-    let prefix = '.vim'
-    let dir_list = {
-                \ 'backups': 'backupdir',
-                \ 'views': 'viewdir',
-                \ 'swaps': 'directory',
-                \ 'undos': 'undodir' }
-
-    for [dirname, settingname] in items(dir_list)
-        let directory = parent . '/' . prefix . '/' . dirname . "/"
-        if exists("*mkdir")
-            if !isdirectory(directory)
-                call mkdir(directory)
-            endif
-        endif
-        if !isdirectory(directory)
-            echo "Warning: Unable to create backup directory: " . directory
-            echo "Try: mkdir -p " . directory
-        else
-            let directory = substitute(directory, " ", "\\\\ ", "")
-            exec "set " . settingname . "=" . directory
-        endif
-    endfor
-endfunction
-call InitializeDirectories()
-" }}}
-
 " PlugIn-Configuration {{{
 call plug#begin('$HOME/.vim/plugged')
 
 " Plugins for handling various formats
-Plug 'jcf/vim-latex', { 'for': 'latex' }
-" Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 
 " git plugins
 Plug 'tpope/vim-fugitive'
@@ -248,7 +143,6 @@ Plug 'sbdchd/neoformat'
 
 " Add Theme
 Plug 'altercation/vim-colors-solarized'
-Plug 'tweetjay/tweetjay-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'ErichDonGubler/vim-sublime-monokai'
@@ -270,7 +164,7 @@ Plug 'Rip-Rip/clang_complete'
 Plug 'ervandew/supertab'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
 
@@ -289,21 +183,14 @@ Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 
+" Own plugins
+Plug 'tweetjay/tweetjay-theme'
+Plug 'tweetjay/vim-backstate'
+
 call plug#end()
 " }}}
 
 " Colorscheme {{{
-
-" highlight current line, but only in active window
-augroup CursorLineOnlyInActiveWindow
-    autocmd!
-    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    autocmd WinLeave * setlocal nocursorline
-augroup END
-
-" vim can autodetect this based on $TERM (e.g. 'xterm-256color')
-" but it can be set to force 256 colors
-" set t_Co=256
 if has('gui_running')
     set background=dark
     colorscheme onehalfdark
@@ -320,10 +207,16 @@ else
     highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
     highlight SpellBad cterm=underline
 endif
+
+" highlight current line, but only in active window
+augroup CursorLineOnlyInActiveWindow
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+augroup END
 " }}}
 
 " Configure CTRL-P {{{
-" set rtp^=~/.vim/vundle/ctrlp.vim
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
             \ 'file': '\v\.(exe|so|dll)$',
@@ -347,34 +240,15 @@ if has('syntastic')
 endif
 " }}}
 
-" StatusLine {{{
-" if has('statusline')
-    " set laststatus=2   " Always show status line, even for one window
-    " Broken down into easily includeable segments
-    " set statusline=%<%f\     " Filename
-    " set statusline+=%w%h%m%r " Options
-    " if has('fugitive')
-    " set statusline+=%{fugitive#statusline()} " Git Hotness
-    " endif
-    " set statusline+=\ [%{&ff}/%Y]            " filetype
-    " set statusline+=\ [%{getcwd()}]          " current dir
-    " set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
-    " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-" endif
-
-" configure airline status bar
+" StatusLine {{{ configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='onehalfdark'
 " let g:airline_solarized_bg='dark'
 " }}}
 
-" NerdTree configuration
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " Configure markdown {{{
-let g:vim_markdown_folding_level = 6
+" let g:vim_markdown_folding_level = 6
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 2
 
@@ -389,32 +263,6 @@ let g:markdown_fenced_languages = [
     \ 'swift',
     \ 'objc'
 \]
-" }}}
-
-" netRW: Open files in a split window
-" let g:netrw_browse_split = 1
-let g:vimfiler_as_default_explorer = 1
-
-" Source import {{{ Source vimrc.fix file, fix vim bugs
-let VIM_FIX=expand("$BM_HOME/.vim/vimrc.fix")
-if filereadable(VIM_FIX)
-    exe "source " VIM_FIX
-endif
-" }}}
-
-" Set LaTeX {{{
-" let g:tex_indent_items = 1
-" let g:Tex_SmartQuoteOpen = '"`'
-" let g:Tex_SmartQuoteClose = "\"'"
-" let Tex_ViewRuleComplete_pdf = '/usr/bin/open -a Skim $*.pdf'
-if has('mac')
-    " FIX: There's an issue with latex-suite finding the PDF viewer on Macs.
-    let Tex_ViewRule_pdf = 'open $*.pdf'
-endif
-let g:tex_flavor='latex'
-" let g:Tex_CompileRule_pdf
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats = 'pdf,dvi'
 " }}}
 
 " SuperTab {{{ option for context aware completion
@@ -455,8 +303,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-nnoremap ; :
-
 " Use jj to escape
 inoremap jj <ESC>
 
@@ -491,67 +337,16 @@ nnoremap <silent><ESC><ESC> :nohl<CR>
 nnoremap <silent><A-o> o<Esc>k
 nnoremap <silent><A-S-o> O<Esc>j
 
-" map <Alt-p> and <Alt-P> to paste below/above and reformat
-" nnoremap <Esc>P  P'[v']=
-" nnoremap <Esc>p  p'[v']=
-
 " map ,f to display all lines with keyword under cursor and ask which one to jump to
 nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-" open filename under cursor in a new window (use current file's working directory)
-" nnoremap gf :new %:p:h/<cfile><CR>
-
-" visual shifting (does not exit Visual mode)
-vnoremap < <gv
-vnoremap > >gv
-
-" Change to hexmode with CTRL-h
-nnoremap <C-H> :Hexmode<CR>
-inoremap <C-H> <Esc>:Hexmode<CR>
-vnoremap <C-H> :<C-U>Hexmode<CR>
-
 map <F3> :NERDTreeToggle<CR>
-vmap <leader>em :call ExtractMethod()<CR>
 " }}}
 
 " Special filetypes and encoding {{{
 if has('autocmd')
-    autocmd BufEnter * cd %:p:h
-
-    augroup programming
-        autocmd!
-
-        "" For actual C (not C++) programming where comments have explicit end
-        "" characters, if starting a new line in the middle of a comment, automatically
-        "" insert the comment leader characters
-        autocmd FileType c set formatoptions+=ro
-
-        "" For Perl programming, have things in braces indenting themselves:
-        autocmd FileType perl if has('smartindent') | set smartindent | endif
-
-        "" For Python programming, use cindent with the appropriate keywords
-        autocmd Filetype python if has('cindent') && has('smartindent') | set cindent
-                    \ cinwords=class,def,elif,else,except,finally,for,if,try,while
-                    \ | endif
-
-        " ----------  qmake : set filetype for *.pro  ----------
-        autocmd BufNewFile,BufRead *.pro  set filetype=qmake
-    augroup END
-
-    augroup web
-        autocmd!
-        "" For HTML, do not have Vim automatically add a <CR> or line break
-        "" at the end of the last line if there isn't one, otherwise
-        "" the default http headers will be sent
-        autocmd FileType html,xhtml set binary noeol
-
-        "" For CSS, also have things in braces indented:
-        autocmd Filetype css if has('smartindent') | set smartindent | endif
-
-        "" For HTML, generally format text, but if a long line has been created,
-        "" leave it alone when editing
-        autocmd FileType html,xhtml set formatoptions+=tl
-    augroup END
+    "autocmd BufEnter * cd %:p:h
+    filetype plugin indent on
 endif
 " }}}
 
@@ -560,7 +355,6 @@ endif
 if &fileencodings !~? "utf-8"
     set fileencodings+=utf-8
 endif
-
 " Make sure we have a sane fallback for encoding detection
 set fileencodings+=default
 " }}}
