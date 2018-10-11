@@ -1,3 +1,0 @@
-- shell:
-    - [./osx/osx-defaults, Set some sane macOS defaults]
-

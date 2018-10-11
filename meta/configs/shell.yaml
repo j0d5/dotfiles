@@ -1,4 +1,0 @@
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - [./shells/configure_shells.sh, Configure default shells]
-

@@ -1,8 +1,0 @@
-- link:
-    ~/.gitattributes: etc/gitattributes
-    ~/.gitconfig:     etc/gitconfig
-    ~/.gitignore:     etc/gitignore
-    ~/.gitk:          etc/gitk
-    ~/.tigrc:         etc/tigrc
-    ~/.git:           git
-

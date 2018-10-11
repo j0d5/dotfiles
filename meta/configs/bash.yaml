@@ -1,6 +1,0 @@
-- link:
-    ~/.bashrc:       etc/bashrc
-    ~/.bash_profile: etc/bash_profile
-    ~/.mybash:       etc/mybash
-    # ~/.bash_aliases: etc/aliases
-    # ~/.bash_logout:  etc/logout
