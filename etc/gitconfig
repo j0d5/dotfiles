@@ -5,7 +5,7 @@
     excludesfile = ~/.gitignore
     hookspath = ~/.git/hooks
     editor = vim -f
-  # editor = subl -n -w
+    # editor = subl -n -w
 
 [init]
     templatedir = ~/.git/templates
@@ -38,7 +38,7 @@
     ff = false
     log = true
     commit = false
-  # mergeoptions = --no-commit
+    # mergeoptions = --no-commit
 
 [rebase]
     autoStash = true
@@ -55,8 +55,8 @@
     whitespace = fix
 
 [advice]
-  # hide status hints
-  # statusHints = false
+    # hide status hints
+    # statusHints = false
 
 [pager]
     show-branch = true
@@ -74,68 +74,68 @@
     cl = clean -fd
     up = "!git remote update -p; git merge --ff-only @{u}"
 
-  # fast diff without spaces
+    # fast diff without spaces
     dfi = diff --ignore-all-space --minimal
 
-  # tracking branches
+    # tracking branches
     tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
 
-  # show last commit
+    # show last commit
     lh = log --pretty=commit --decorate=auto --date=relative -1
 
-  # show list of commits
+    # show list of commits
     l = log --decorate --date=relative -5
 
-  # show long list of commits
+    # show long list of commits
     ll = log --decorate --date=relative -30
 
-  # show log with graph
+    # show log with graph
     ls = log --graph --oneline --all --decorate --simplify-by-decoration --pretty=graph
     lg = log --graph --oneline --all --decorate --topo-order --date=relative -30
     llg = log --graph --oneline --all --decorate --topo-order
-  # lg = log --decorate --date=relative --graph
+    # lg = log --decorate --date=relative --graph
 
-  # show commit with all file changes
+    # show commit with all file changes
     la = log --decorate --numstat --date=relative
 
-  # show diff to last commit
+    # show diff to last commit
     last = diff HEAD~1
 
-  # save your work to a specific commit
+    # save your work to a specific commit
     save = !git add -A && git commit -m 'SAVEPOINT'
-  # and remove it afterwards with keeping the changes
+    # and remove it afterwards with keeping the changes
     undo = reset HEAD~1 --mixed
 
-  # human readable commands
+    # human readable commands
     unstage = reset -q HEAD --
     uncommit = reset --mixed HEAD~
-  # discard = checkout --
+    # discard = checkout --
 
-  # use this instead of just resetting your head. It creates a commit and
-  # removes it afterwards so work is still reachable with 'reflog'
+    # use this instead of just resetting your head. It creates a commit and
+    # removes it afterwards so work is still reachable with 'reflog'
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
-  # new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-  # count = !sh -c 'git log --oneline | wc -l'
+    # new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    # count = !sh -c 'git log --oneline | wc -l'
 
-  # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
+    # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
     dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
 
-  # use icdiff as difftool
+    # use icdiff as difftool
     icd = difftool --tool=icdiff
 
     deleteBranch = "!sh -c \
         if [[ -z "$1" ]]; then \
-            echo "\n🤔 Oops… you forgot to provide the branch name"; \
-            echo "👉 E.g. gbdel branch_name\n"; \
+        echo "\n🤔 Oops… you forgot to provide the branch name"; \
+        echo "👉 E.g. gbdel branch_name\n"; \
         else \
-            echo "\n⏳ Deleting…\n"; \
-            git branch -D "$1"; # Local delete. \
-            git push origin --delete "$1"; # Remote delete. \
-            echo "\n✅ Git branch $1 was deleted from local and remote.\n"; \
+        echo "\n⏳ Deleting…\n"; \
+        git branch -D "$1"; # Local delete. \
+        git push origin --delete "$1"; # Remote delete. \
+        echo "\n✅ Git branch $1 was deleted from local and remote.\n"; \
         fi"
 
-  # Tag management
+    # Tag management
     cleanremotetags = "!f() { git push origin :( git tag | grep -v -E "((dr|ff|release)/[0-9].[0-9].[0-9])" ) }; f"
     cleanlocaltags = fetch --prune origin "+refs/tags/*:refs/tags/*"
     renametag = "!sh -c 'set -e; git tag $2 $1; git tag -d $1; git push origin :refs/tags/$1; git push --tags' -"
