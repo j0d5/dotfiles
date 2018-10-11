@@ -14,7 +14,7 @@ all: etc defaults shell ## all osx tasks (probably only on a new setup)
 
 etc: $(foreach F, $(DOTFILES), _install-dot/$F) ## Symlink files into home
 _install-dot/%:
-	/bin/ln -sf $(DOTPATH)/$* $(HOME)/.$(notdir $*)
+	#/bin/ln -sf $(DOTPATH)/$* $(HOME)/.$(notdir $*)
 
 defaults: ## set some sane osx default preferences
 	$(DOTPATH)/osx-defaults
@@ -30,10 +30,3 @@ shell: ## adds homebrew bash and zsh to /etc/shells and sets bash as new shell
 	sudo sh -c "if ! grep /usr/local/bin/zsh /etc/shells; then echo /usr/local/bin/zsh >> /etc/shells; fi"
 	sudo sh -c "if ! grep /usr/local/bin/fish /etc/shells; then echo /usr/local/bin/fish >> /etc/shells; fi"
 	chsh -s /usr/local/bin/fish
-
-atom: ## install atom plugins
-	apm install --packages-file $(DOTPATH)/etc/.atom/Atomfile
-	apm upgrade --no-confirm
-
-atom-backup: ## save current atom plugin list
-	apm list --installed --bare > $(DOTPATH)/etc/.atom/Atomfile
