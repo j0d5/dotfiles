@@ -8,6 +8,7 @@ tap "caskroom/fonts"
 brew "carthage"
 brew "chisel"
 brew "swiftlint"
+brew "swiftformat"
 brew "marathon-swift"
 brew "xctool"
 brew "ideviceinstaller"
@@ -27,6 +28,12 @@ brew "python"
 brew "ruby"
 brew "erlang"
 brew "haskell-stack"
+
+# linter
+brew "prettier"
+brew "gitlint"
+brew "shellcheck"
+brew "eslint"
 
 # shells
 brew "fish"

@@ -5,7 +5,7 @@
 " }}}
 
 " Use Vim defaults (much better!)
-set nocompatible     
+set nocompatible
 
 syntax on
 
@@ -123,7 +123,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " syntax checker for vim
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 " syntax plugins
 Plug 'keith/swift.vim'
@@ -168,9 +169,6 @@ Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
 
-" Fancy starting screen
-Plug 'mhinz/vim-startify'
-
 " Region expanding
 Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
@@ -186,6 +184,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 " Own plugins
 Plug 'tweetjay/tweetjay-theme'
 Plug 'tweetjay/vim-backstate'
+
+" Fancy starting screen
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 " }}}
