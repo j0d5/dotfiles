@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+# set -e
 
 # Check the given file for debug symbols
 checkForDebugBuild () {
@@ -8,6 +8,10 @@ checkForDebugBuild () {
     __print "Checking for debug symbols $file..." "info"
 
     __check_architectures "$file"
+
+    __check_coverage_symbols "$file"
+
+    __check_profiling_data "$file"
 
     __check_encryption "$file"
 
@@ -18,66 +22,80 @@ checkForDebugBuild () {
     __check_debug_symbols "$file"
 }
 
+# Checks if the library contains all necessary architectures
 __check_architectures () {
-    __print "Extracting architectures..." "info"
-    if [ "$(command -v lipo)" ]; then
-        lipo -i "$1"
+    __print "Checking architectures..." "info"
+    if ! [ -x "$(command -v lipo)" ]; then
+        __print "lipo not available!" "error"
+        return
     fi
-    __print
-}
 
-__check_for_assertion () {
-    __print "Check for assertions..." "info"
+    VALID_ARCHS="i386 x86_64 armv7 arm64"
+    ARCHITECTURES="$(lipo -info "$1" | rev | cut -d ':' -f1 | rev)"
+    IS_FAT=true
+    for VALID_ARCH in $VALID_ARCHS; do
+        FOUND=false
+        for ARCH in $ARCHITECTURES; do
+            if [ "$VALID_ARCH" = "$ARCH" ]; then
+                FOUND=true
+            fi
+        done
+        if [ $FOUND = false ]; then
+            IS_FAT=false
+            __print "Did not find architecture $VALID_ARCH" "warning"
+            break
+        fi
+    done
 
-    if nm "$1" | grep -q "NSAssertionHandler"; then
-        __print "Found assertion symbols!" "error"
+    if [ $IS_FAT = true ]; then
+        __print "It's a fat library: $ARCHITECTURES" "success"
     else
-        __print "No assertion symbols found!"
+        __print "It's a thin library: $ARCHITECTURES" "warning"
     fi
     __print
 }
 
-__check_debug_symbols () {
-    __print "Extracting object symbols to files" "info"
-    firstFile="/var/tmp/nonDebugSymbols.txt"
-    secondFile="/var/tmp/allSymbols.txt"
-    __print
-
-    nm "$1" > $firstFile
-    nm -a "$1" > $secondFile
-
-    __print "Check if there is a difference..." "info"
-    result=$(diff -q $firstFile $secondFile)
-    __print
-
-    __print "Return from difftool: $result"
-    if test -n result; then
-    __print "Could be a debug build" "warning"
-    __print "This information is not reliable!" "warning"
+# Checks if the library contains unwanted coverage data
+__check_coverage_symbols () {
+    __print "Check for coverage symbols..." "info"
+    if ! [ -x "$(command -v otool)" ]; then
+        __print "otool not available!" "error"
+        return
     fi
-    __print
 
-    __print "Removing created temporary files"
-    # rm $firstFile
-    # rm $secondFile
+    if otool -l -arch all "$1" | grep __llvm_cov; then
+        __print "Contains coverage symbols!" "error"
+    else
+        __print "No coverage symbols found!" "success"
+    fi
     __print
 }
 
-# "Checks if unwanted profiling data are in the library"
+# Checks if the library contains unwanted profiling data
 __check_profiling_data () {
     __print "Check profiling info..." "info"
+    if ! [ -x "$(command -v otool)" ]; then
+        __print "otool not available!" "error"
+        return
+    fi
+
     if otool -l -arch all "$1" | grep __llvm_; then
         __print "Contains profiling data!" "error"
     else
-        __print "No profiling info found!"
+        __print "No profiling info found!" "success"
     fi
     __print
 }
 
-    # "Checks if the library is encrypted"
+# Checks if the library is encrypted, it's not a must
 __check_encryption () {
     __print "Check encryption info..." "info"
-    if otool -l "$1" | grep -A 4 LC_ENCRYPTION_INFO; then
+    if ! [ -x "$(command -v otool)" ]; then
+        __print "otool not available!" "error"
+        return
+    fi
+
+    if otool -l "$1" | grep -q LC_ENCRYPTION_INFO; then
         __print "Encryption info found!"
     else
         __print "No encryption info found!"
@@ -85,12 +103,78 @@ __check_encryption () {
     __print
 }
 
+# Checks if the library contains information about bitcode
 __check_bitcode_available () {
     __print "Check if bitcode is available" "info"
-    if otool -arch armv7 -arch arm64 -l "$1" | grep -A 4 __LLVM; then
-        __print "Bitcode info found! Check if filesize is > 1!"
+    if ! [ -x "$(command -v otool)" ]; then
+        __print "otool not available!" "error"
+        return
+    fi
+
+    # Check for LLVM symbols, indicator for bitcode
+    CONTAINS_LLVM=false
+    if otool -arch arm64 -l "$1" | grep -q __LLVM; then
+        CONTAINS_LLVM=true
+    fi
+
+    # Check for filesize > 1, in combination with LLVM symbols it means that we use bitcode
+    CONTAINS_FILESIZE=true
+    SIZES=$(otool -arch arm64 -l "$1" | grep filesize | rev | cut -d ' ' -f1 | rev)
+    for FILESIZE in $SIZES; do
+        if ! [ "$FILESIZE" -gt "1" ]; then
+            CONTAINS_FILESIZE=false
+        fi
+    done
+
+    if [ $CONTAINS_LLVM = true ] && [ $CONTAINS_FILESIZE = true ]; then
+        __print "Bitcode info found!" "success"
     else
         __print "No Bitcode info found!"
+    fi
+    __print
+}
+
+# Checks if the library contains active assertions
+__check_for_assertion () {
+    __print "Check for assertions..." "info"
+    if ! [ -x "$(command -v nm)" ]; then
+        __print "nm not available!" "error"
+        return
+    fi
+
+    if nm "$1" | grep -q "NSAssertionHandler"; then
+        __print "Found assertion symbols!" "error"
+    else
+        __print "No assertion symbols found!" "success"
+    fi
+    __print
+}
+
+# Checks if there are debugs symbols in the library
+__check_debug_symbols () {
+    __print "Check for debug symbols" "info"
+    if ! [ -x "$(command -v nm)" ]; then
+        __print "nm not available!" "error"
+        return
+    fi
+
+    firstFile="/var/tmp/nonDebugSymbols.txt"
+    secondFile="/var/tmp/allSymbols.txt"
+
+    # Dump symbols to files
+    nm "$1" > $firstFile
+    nm -a "$1" > $secondFile
+
+    # Diff files
+    diff -q $firstFile $secondFile
+    result=$?
+
+    if [ $result -eq 1 ]; then
+        __print "Contains debug symbols! Please check files." "error"
+    else
+        __print "No debug information found!" "success"
+        rm $firstFile
+        rm $secondFile
     fi
     __print
 }
@@ -119,7 +203,7 @@ __print () {
 }
 
 if [ -z "$1" ]; then
-    echo "No file name!"
+    __print "No file name!" "error"
     echo "Usage: checkForDebugBuild <file>"
     exit 1
 fi
