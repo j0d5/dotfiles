@@ -35,7 +35,11 @@ set -g fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
 if test -d $HOME/.bin
-  set -g fish_user_paths $fish_user_paths "$HOME/.bin" "$HOME/.bin"
+  set -g fish_user_paths $fish_user_paths "$HOME/.bin"
+end
+
+if test -d $HOME/.dev
+  set -g fish_user_paths $fish_user_paths "$HOME/.dev"
 end
 
 if test -d "/Applications/Wireshark.app/Contents/MacOS"
