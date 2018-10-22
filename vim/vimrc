@@ -69,6 +69,7 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 set linebreak
+set display+=lastline
 " }}}
 
 " Search {{{ See http://stevelosh.com/blog/2010/09/coming-home-to-vim/
@@ -114,6 +115,9 @@ endif
 " PlugIn-Configuration {{{
 call plug#begin('$HOME/.vim/plugged')
 
+" Motion
+Plug 'chaoren/vim-wordmotion'
+
 " Plugins for handling various formats
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
@@ -123,7 +127,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " syntax checker for vim
-" Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 
 " syntax plugins
@@ -135,6 +138,7 @@ Plug 'mileszs/ack.vim'
 Plug 'vim-python/python-syntax'
 Plug 'aklt/plantuml-syntax'
 Plug 'vim-scripts/Rainbow-Parenthsis-Bundle'
+Plug 'vim-scripts/confluencewiki.vim'
 
 " Add global syntax formatting config capability
 Plug 'editorconfig/editorconfig-vim'
@@ -165,7 +169,6 @@ Plug 'Rip-Rip/clang_complete'
 Plug 'ervandew/supertab'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
-" Plug 'davidhalter/jedi-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
 
