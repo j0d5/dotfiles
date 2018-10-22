@@ -1,5 +1,3 @@
-rvm default
-
 #
 # fish initialization file
 #
@@ -56,10 +54,6 @@ end
 
 if test -d "$HOME/.gem/ruby/2.4.0/bin"
   set -g fish_user_paths $fish_user_paths "$HOME/.gem/ruby/2.4.0/bin"
-end
-
-if test -d "$HOME/.rvm/bin"
-  set -g fish_user_paths $fish_user_paths "$HOME/.rvm/bin"
 end
 
 if test -d "$NPM_PACKAGES/bin"
