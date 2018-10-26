@@ -152,10 +152,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'ErichDonGubler/vim-sublime-monokai'
 
-" Little file manager
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-eunuch'
-
 " Buffer manager
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'vim-scripts/YankRing.vim'
@@ -177,12 +173,17 @@ Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 
-" searching
+" Use the fancy silver searcher
 Plug 'rking/ag.vim'
 
-" On-demand loading
+" Nice filetree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+
+" Little file manager
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-eunuch'
+
 
 " Own plugins
 Plug 'tweetjay/tweetjay-theme'
