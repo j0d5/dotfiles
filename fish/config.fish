@@ -65,6 +65,10 @@ if test -d "/usr/local/opt/qt/bin"
   set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
 end
 
+if test -f "/usr/local/etc/grc.fish"
+    source /usr/local/etc/grc.fish
+end
+
 set -l isCompanyLAN (ifconfig | grep 10.34.)
 
 if test $isCompanyLAN
