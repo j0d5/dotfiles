@@ -10,7 +10,7 @@ set nocompatible
 syntax on
 
 " Shell {{{
-if $SHELL =~ 'bin/fish'
+if $SHELL =~? 'bin/fish'
     set shell=/bin/sh
 endif
 " }}}
@@ -184,9 +184,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-eunuch'
 
-
 " Own plugins
-Plug 'tweetjay/tweetjay-theme'
+Plug 'tweetjay/tweetjay-theme', { 'rtp': 'vim/' }
 Plug 'tweetjay/vim-backstate'
 
 " Fancy starting screen
@@ -198,14 +197,16 @@ call plug#end()
 " Colorscheme {{{
 if has('gui_running')
     set background=dark
-    colorscheme onehalfdark
+    " colorscheme onehalfdark
+    colorscheme tweetjay
 elseif &t_Co < 256
     colorscheme default
     set nocursorline " looks bad in this mode
 else
     set background=dark
     let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
-    colorscheme solarized
+    " colorscheme solarized
+    colorscheme tweetjay
     " customized colors
     highlight SignColumn ctermbg=234
     highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
@@ -271,7 +272,7 @@ let g:markdown_fenced_languages = [
 " }}}
 
 " SuperTab {{{ option for context aware completion
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = 'context'
 " }}}
 
 " Clang autocomplete {{{
@@ -357,7 +358,7 @@ endif
 
 " Encoding {{{
 " Always check for UTF-8 when trying to determine encodings
-if &fileencodings !~? "utf-8"
+if &fileencodings !~? 'utf-8'
     set fileencodings+=utf-8
 endif
 " Make sure we have a sane fallback for encoding detection
@@ -365,7 +366,7 @@ set fileencodings+=default
 " }}}
 
 " Load local vim config {{{
-let $LOCALFILE=expand("~/.vimrc_local")
+let $LOCALFILE=expand('~/.vimrc_local')
 if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
