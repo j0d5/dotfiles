@@ -5,7 +5,7 @@
 " }}}
 
 " Use Vim defaults (much better!)
-set nocompatible
+" set nocompatible
 
 syntax on
 
@@ -23,6 +23,7 @@ set cmdheight=2        " Make command line two lines high
 set laststatus=2       " Always show status line, even for one window
 set termencoding=utf-8
 set encoding=utf-8     " Use UTF-8 as the default buffer encoding
+scriptencoding utf-8
 " }}}
 
 " Indentation {{{
@@ -115,32 +116,29 @@ endif
 " PlugIn-Configuration {{{
 call plug#begin('$HOME/.vim/plugged')
 
-" Motion
+" Motion - jump to camel case
 Plug 'chaoren/vim-wordmotion'
+
+" Git plugin - show changed lines in gutter
+Plug 'airblade/vim-gitgutter'
+
+" Syntax checker and linter for vim
+Plug 'w0rp/ale'
+
+" Syntax highlighting plugins
+Plug 'keith/swift.vim'
+Plug 'b4winckler/vim-objc'
+Plug 'darfink/vim-plist'
+Plug 'aliva/vim-fish'
+Plug 'vim-python/python-syntax'
+Plug 'aklt/plantuml-syntax'
+Plug 'vim-scripts/confluencewiki.vim'
 
 " Plugins for handling various formats
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 
-" git plugins
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-" syntax checker for vim
-Plug 'w0rp/ale'
-
-" syntax plugins
-Plug 'keith/swift.vim'
-Plug 'b4winckler/vim-objc'
-Plug 'darfink/vim-plist'
-Plug 'aliva/vim-fish'
-Plug 'mileszs/ack.vim'
-Plug 'vim-python/python-syntax'
-Plug 'aklt/plantuml-syntax'
-Plug 'vim-scripts/Rainbow-Parenthsis-Bundle'
-Plug 'vim-scripts/confluencewiki.vim'
-
-" Add global syntax formatting config capability
+" Add editorconfig syntax formatting
 Plug 'editorconfig/editorconfig-vim'
 
 " Auto formatting various files
@@ -152,9 +150,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'ErichDonGubler/vim-sublime-monokai'
 
-" Buffer manager
+" Buffer manager - open with <leader>b
 Plug 'jeetsukumaran/vim-buffergator'
-Plug 'vim-scripts/YankRing.vim'
 
 " Nice status bar
 Plug 'vim-airline/vim-airline'
