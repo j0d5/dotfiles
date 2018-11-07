@@ -21,7 +21,7 @@ if has("gui_gtk2")
 elseif has("gui_macvim")
   " set guifont=Monospace\ 16
   set guifont=Fira\ Code:h13
-  set guifont=Source\ Code\ Pro:h14
+  " set guifont=Source\ Code\ Pro:h14
   " set guifont=Menlo\ for\ Powerline:h13
   set guiheadroom=0
 elseif has("gui_win32")
@@ -34,6 +34,7 @@ set mousehide      " Hide the mouse when typing text
 set guioptions-=aA
 set guioptions+=ci " no toolbar, menubar, scrollbar
 " set mouse-=a " Disable mouse selection
+set linespace=2
 
 " Make shift-insert work like in Xterm
 map! <S-Insert> <MiddleMouse>

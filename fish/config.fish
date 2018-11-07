@@ -61,6 +61,10 @@ if test -d "$NPM_PACKAGES/bin"
   set -gx NPM_PACKAGES "$HOME/.npm-packages"
 end
 
+if test -d "/Applications/Xcode.app/Contents/Developer"
+    set -gx DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
+end
+
 if test -d "/usr/local/opt/qt/bin"
   set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
 end

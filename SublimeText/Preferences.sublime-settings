@@ -61,7 +61,7 @@
 	"show_full_path": false,
 	"spell_check": false,
 	"tab_size": 4,
-	"theme": "Soda SolarizedDark.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
