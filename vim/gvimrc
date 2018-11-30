@@ -1,33 +1,29 @@
-"#################################################
-"# Maintainer:  Johannes Steudle                ##
-"# Last change: 2016/06/29                      ##
-"# .gvimrc                                      ##
-"#                                              ##
-"#     for Unix and Mac OS:  ~/.gvimrc          ##
-"#################################################
+" {{{
+" Maintainer: Johannes Steudle
+" .gvimrc
+"     for Unix and macOS: ~/.gvimrc
+" }}}
 
-
-" --------------------
-" Make external commands work through a pipe instead of a pseudo-tty
-" --------------------
+" Make external commands work through a pipe instead of a pseudo-tty {{{
 " set noguipty
 " set macmeta
+" }}}
 
-" --------------------
-"set the X11 font to use
-" --------------------
-if has("gui_gtk2")
+" Font {{{
+if has('gui_gtk2')
   set guifont=Inconsolata\ 13
-elseif has("gui_macvim")
+elseif has('gui_macvim')
   " set guifont=Monospace\ 16
   set guifont=Fira\ Code:h13
   " set guifont=Source\ Code\ Pro:h14
   " set guifont=Menlo\ for\ Powerline:h13
   set guiheadroom=0
-elseif has("gui_win32")
+elseif has('gui_win32')
   set guifont=Consolas:h13:cANSI
 endif
+" }}}
 
+" Configuration {{{
 set lines=70
 set columns=120
 set mousehide      " Hide the mouse when typing text
@@ -35,16 +31,13 @@ set guioptions-=aA
 set guioptions+=ci " no toolbar, menubar, scrollbar
 " set mouse-=a " Disable mouse selection
 set linespace=2
+" }}}
 
-" Make shift-insert work like in Xterm
-map! <S-Insert> <MiddleMouse>
+" Keyboard {{{
+map! <S-Insert> <MiddleMouse> " Make shift-insert work like in Xterm
+" }}}
 
-" I like highlighting strings inside C comments
-" let c_comment_strings=1
-
-" --------------------
-" SPELLCHECKING
-" --------------------
+" Spellchecking {{{
 fun SetSpellCheck()
   set spell spelllang=en,de		    " Spell checking language
   set spell spellsuggest=double,10	" Description of the spell-checker
@@ -53,11 +46,10 @@ fun SetSpellCheck()
 									" zug to remove word from word list
 									" z= to get list of possibilities
 endfun
+" }}}
 
-" --------------------
-" ShowMarks
-" --------------------
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+" ShowMarks {{{
+let showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 " Don't leave on by default, use :ShowMarksOn to enable
 let g:showmarks_enable = 0
 " For marks a-z
@@ -68,4 +60,5 @@ highlight ShowMarksHLu gui=bold guibg=LightRed guifg=DarkRed
 highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
 " For multiple marks on the same line.
 highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
+" }}}
 

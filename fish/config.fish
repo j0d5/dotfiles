@@ -1,6 +1,8 @@
 #
 # fish initialization file
 #
+
+# fish specific configuration {{{
 set -g normal (set_color normal)
 set -g magenta (set_color magenta)
 set -g yellow (set_color yellow)
@@ -21,12 +23,23 @@ set -g c3 (set_color 6dc7ff)
 set -g c4 (set_color ffffff)
 set -g ce (set_color $fish_color_error)
 
+fish_vi_key_bindings
+
 if test $TERM != "screen-256color"
   set -gx TERM xterm-256color
 end
 
 set -gx  LC_ALL en_US.UTF-8
+# }}}
 
+# ruby configuration {{{
+status --is-interactive; and source (rbenv init -|psub)
+set -g fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
+
+if test -d "$HOME/.gem/ruby/2.4.0/bin"
+  set -g fish_user_paths $fish_user_paths "$HOME/.gem/ruby/2.4.0/bin"
+end
+# }}}
 
 set -g fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 
@@ -50,10 +63,6 @@ end
 
 if test -d "/usr/local/opt/python@2/bin"
   set -g fish_user_paths $fish_user_paths "/usr/local/opt/python@2/bin"
-end
-
-if test -d "$HOME/.gem/ruby/2.4.0/bin"
-  set -g fish_user_paths $fish_user_paths "$HOME/.gem/ruby/2.4.0/bin"
 end
 
 if test -d "$NPM_PACKAGES/bin"

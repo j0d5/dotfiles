@@ -3,7 +3,9 @@
 --
 -- @author Johannes Steudle
 --
-require "windows"
+require "windowLayout"
+require "layoutHotkeys"
+
 hs.window.animationDuration = 0
 -- hs.window.setFrameCorrectness = 1
 
@@ -20,16 +22,16 @@ local homeSSID = "Mustermann5G"
 local lastSSID = hs.wifi.currentNetwork()
 
 function ssidChangedCallback()
-    newSSID = hs.wifi.currentNetwork()
+  newSSID = hs.wifi.currentNetwork()
 
-    if newSSID == homeSSID and lastSSID ~= homeSSID then
-        -- We just joined our home WiFi network
-        hs.audiodevice.defaultOutputDevice():setVolume(25)
-    elseif newSSID ~= homeSSID and lastSSID == homeSSID then
-        -- We just departed our home WiFi network
-        hs.audiodevice.defaultOutputDevice():setVolume(0)
-    end
-    lastSSID = newSSID
+  if newSSID == homeSSID and lastSSID ~= homeSSID then
+    -- We just joined our home WiFi network
+    hs.audiodevice.defaultOutputDevice():setVolume(25)
+  elseif newSSID ~= homeSSID and lastSSID == homeSSID then
+    -- We just departed our home WiFi network
+    hs.audiodevice.defaultOutputDevice():setVolume(0)
+  end
+  lastSSID = newSSID
 end
 
 wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
@@ -38,20 +40,19 @@ wifiWatcher:start()
 -- create an usb watcher and look for known devices
 local usbWatcher = nil
 function usbDeviceCallback(data)
-    if (data["productName"] == "dynadock U3.0") then
-        if (data["eventType"] == "added") then
-          hs.alert.show("dynadock U3.0 connected")
-        elseif (data["eventType"] == "removed") then
-          --  app = hs.appfinder.appFromName("ScanSnap Manager")
-          --  app:kill()
-          hs.alert.show("dynadock U3.0 disconnected")
-        end
+  if (data["productName"] == "dynadock U3.0") then
+    if (data["eventType"] == "added") then
+      hs.alert.show("dynadock U3.0 connected")
+    elseif (data["eventType"] == "removed") then
+      --  app = hs.appfinder.appFromName("ScanSnap Manager")
+      --  app:kill()
+      hs.alert.show("dynadock U3.0 disconnected")
     end
+  end
 end
 
 usbWatcher = hs.usb.watcher.new(usbDeviceCallback)
 usbWatcher:start()
-
 
 -- local bambooState = hs.menubar.new()
 
@@ -87,5 +88,4 @@ usbWatcher:start()
 --     caffeine:setClickCallback(caffeineClicked)
 --     setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
 -- end
-
 

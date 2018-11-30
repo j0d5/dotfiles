@@ -104,7 +104,7 @@ set wildignore+=*\\tmp\\*         " Windows
 " }}}
 
 " Python {{{
-let g:python_host_prog  = '/usr/local/bin/python'
+let g:python_host_prog  = '/usr/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Temporary workaround for python 3.7: https://github.com/vim/vim/issues/3117#issuecomment-402622616
@@ -293,22 +293,21 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Map 'j' and 'k' also to virtual lines
 nnoremap j gj
 nnoremap k gk
 
-" Better window navigation
+" Window navigation with hjkl
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
 " Use jj to escape
 inoremap jj <ESC>
 
+" Map <leader> o to CtrlP plugin
 nnoremap <Leader>o :CtrlP<CR>
 
 " Copy & paste to system clipboard with <Space>p and <Space>y
@@ -322,9 +321,7 @@ vmap <Leader>P "+P
 " Enter visual line mode with <Space><Space>:
 nmap <Leader><Leader> V
 
-" Hit v to select one character
-" Hit v again to expand selection to word
-" Hit v again to expand to paragraph
+" 'v' select one character, 'v' again select word, 'v' again select paragraph
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
@@ -336,11 +333,11 @@ nnoremap <silent> p p`]
 " Remove all highlightings
 nnoremap <silent><ESC><ESC> :nohl<CR>
 
-" quickly insert newline in normalmode without leaving
+" Quickly insert newline in normalmode without leaving <Not working>
 nnoremap <silent><A-o> o<Esc>k
 nnoremap <silent><A-S-o> O<Esc>j
 
-" map ,f to display all lines with keyword under cursor and ask which one to jump to
+" Map ,f to display all lines with keyword under cursor and ask which one to jump to
 nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 map <F3> :NERDTreeToggle<CR>
