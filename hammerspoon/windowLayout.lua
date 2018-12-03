@@ -16,7 +16,6 @@ function applyWindowLayout() -- default window layout
   local left85 = {0.0, 0.0, 0.85, 1.0}
   local right50 = hs.layout.right50
   local left50 = hs.layout.left50
-  local tweetbotLocation = {0.81, 0.535, 0.19, 0.2}
 
   for i = 1, numberOfScreens do
     hs.alert.show(screens[i]:name())
@@ -125,8 +124,8 @@ function applyWindowLayout() -- default window layout
 
 -- Layout for productivity stuff
         {"Mail",         nil,          mainScreen, max, nil, nil},
-        {"Fantastical",  nil,          mainScreen, {0.0, 0.5, 0.5, 0.5}, nil, nil},
-        {"Rocket.Chat", nil,           mainScreen, {0.25, 0.15, 0.75, 0.85}, nil, nil},
+        {"Fantastical",  nil,          mainScreen, max, nil, nil},
+        {"Rocket.Chat", nil,           mainScreen, max, nil, nil},
         {"Microsoft Outlook", nil,     mainScreen, left85,              nil, nil},
         {"Microsoft Lync", "Microsoft Lync", mainScreen, {0.85, 0, 0.15, 0.5}, nil, nil},
 
