@@ -144,6 +144,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Auto formatting various files
 Plug 'sbdchd/neoformat'
 
+" Easy alignment
+Plug 'junegunn/vim-easy-align'
+
 " Add Theme
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
@@ -157,11 +160,6 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Completion plugins
-Plug 'Rip-Rip/clang_complete'
-Plug 'ervandew/supertab'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
 
@@ -266,18 +264,6 @@ let g:markdown_fenced_languages = [
     \ 'swift',
     \ 'objc'
 \]
-" }}}
-
-" SuperTab {{{ option for context aware completion
-let g:SuperTabDefaultCompletionType = 'context'
-" }}}
-
-" Clang autocomplete {{{
-" Disable auto popup, use <Tab> to autocomplete
-let g:clang_complete_auto = 0
-" Show clang errors in the quickfix window
-let g:clang_complete_copen = 1
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 " }}}
 
 " Key mappings {{{
