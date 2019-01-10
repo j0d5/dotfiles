@@ -1,5 +1,3 @@
+*.old
 .netrwhist
 vim/vundle
-*.old
-
-fish/functions

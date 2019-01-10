@@ -1,1 +1,0 @@
-/Users/johannes/.config/fisherman/tweetjay/fish_title.fish
