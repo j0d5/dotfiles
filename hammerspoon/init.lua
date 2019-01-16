@@ -1,4 +1,3 @@
---
 -- All the initialization is done here.
 --
 -- @author Johannes Steudle
@@ -9,7 +8,7 @@ require "layoutHotkeys"
 hs.window.animationDuration = 0
 -- hs.window.setFrameCorrectness = 1
 
-function reloadConfig()
+local function reloadConfig()
   hs.reload()
   hs.alert.show("Config loaded")
 end
@@ -17,12 +16,11 @@ end
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", reloadConfig)
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
-local wifiWatcher = nil
 local homeSSID = "Mustermann5G"
 local lastSSID = hs.wifi.currentNetwork()
 
-function ssidChangedCallback()
-  newSSID = hs.wifi.currentNetwork()
+local function ssidChangedCallback()
+  local newSSID = hs.wifi.currentNetwork()
 
   if newSSID == homeSSID and lastSSID ~= homeSSID then
     -- We just joined our home WiFi network
@@ -34,12 +32,11 @@ function ssidChangedCallback()
   lastSSID = newSSID
 end
 
-wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
+local wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
 wifiWatcher:start()
 
 -- create an usb watcher and look for known devices
-local usbWatcher = nil
-function usbDeviceCallback(data)
+local function usbDeviceCallback(data)
   if (data["productName"] == "dynadock U3.0") then
     if (data["eventType"] == "added") then
       hs.alert.show("dynadock U3.0 connected")
@@ -51,7 +48,7 @@ function usbDeviceCallback(data)
   end
 end
 
-usbWatcher = hs.usb.watcher.new(usbDeviceCallback)
+local usbWatcher = hs.usb.watcher.new(usbDeviceCallback)
 usbWatcher:start()
 
 -- local bambooState = hs.menubar.new()
