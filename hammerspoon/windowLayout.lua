@@ -6,7 +6,8 @@
 
 -- define all the known displays
 local display4k = "U3277WB"
-local displayInteral = "Color LCD"
+local display4kHome = "U28E590"
+local displayInternal = "Color LCD"
 
 local function applyWindowLayout() -- default window layout
   local numberOfScreens = #hs.screen.allScreens()
@@ -80,7 +81,7 @@ local function applyWindowLayout() -- default window layout
   else
     local mainScreen = screens[1]:name() -- apply 1 screen layout
 
-    if mainScreen == display4k then
+    if mainScreen == display4k or mainScreen == display4kHome then
       hs.alert.show("Detected 4K Monitor, applying special layout")
       windowLayout = {
 

@@ -23,7 +23,7 @@ set -g c3 (set_color 6dc7ff)
 set -g c4 (set_color ffffff)
 set -g ce (set_color $fish_color_error)
 
-fish_vi_key_bindings
+# fish_vi_key_bindings
 
 if test $TERM != "screen-256color"
   set -gx TERM xterm-256color
