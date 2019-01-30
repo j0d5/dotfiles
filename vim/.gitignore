@@ -8,3 +8,5 @@ bundle
 bundle.old
 bundle.disabled
 plugged/
+vundle
+spell/*.add*

@@ -5,3 +5,5 @@ Package Control.system-ca-bundle
 Package Control.ca-list
 Package Control.ca-bundle
 Package Control.ca-certs
+Package Control.merged-ca-bundle
+oscrypto-ca-bundle.crt

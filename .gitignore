@@ -1,5 +1,2 @@
 *.old
 .netrwhist
-vim/vundle
-SublimeText/Package Control.merged-ca-bundle
-SublimeText/oscrypto-ca-bundle.crt
