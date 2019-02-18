@@ -33,6 +33,7 @@
 		"SublimeLinter-contrib-bashate",
 		"SublimeLinter-contrib-swiftlint",
 		"SublimeLinter-json",
+		"SublimeLinter-shellcheck",
 		"Theme - Cobalt2",
 		"Theme - Midnight",
 		"Theme - Soda",

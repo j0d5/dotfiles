@@ -7,5 +7,7 @@
   { "keys": ["super+shift+d"], "command": "duplicate_line" },
   { "keys": ["super+alt+down"], "command": "sublimerge_go_down"},
   { "keys": ["super+alt+up"], "command": "sublimerge_go_up"},
-  { "keys": ["super+v"], "command": "paste_and_indent"}
+  { "keys": ["super+v"], "command": "paste_and_indent"},
+  // Remap the overlay menu to Super+Shift+O like in Xcode
+  { "keys": ["super+shift+o"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
 ]
