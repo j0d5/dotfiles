@@ -27,6 +27,8 @@ set -g ce (set_color $fish_color_error)
 
 if test $TERM != "screen-256color"
   set -gx TERM xterm-256color
+  set -gx LS_COLORS (bash -c 'eval `gdircolors ~/.dircolors`; echo $LS_COLORS')
+  set -gx EXA_COLORS 'uu=0:gu=0:di=32:da=38;5;33'
 end
 
 set -gx  LC_ALL en_US.UTF-8
