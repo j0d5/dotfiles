@@ -28,7 +28,7 @@ autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 
 source `brew --prefix`'/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-source `brew --prefix`'/opt/zsh-history-substring-search/zsh-history-substring-search.zsh'
+source `brew --prefix`'/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
 source `brew --prefix`/etc/profile.d/z.sh
 
 export HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS=i

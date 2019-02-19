@@ -1,12 +1,12 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: .zshrc                                 ##
-## Date: 17.03.2014                             ##
-##                                              ##
-## Description: .zshrc general settings         ##
-##                                              ##
-##################################################
+## {{{
+##
+## Author: Johannes Steudle
+## File: .zshrc
+## Date: 17.03.2014
+##
+## Description: .zshrc general settings
+##
+## }}}
 
 # export DEBUG_ZSH=true
 
@@ -14,7 +14,7 @@
 ZSH=$HOME/.zsh
 
 # Set name of the theme to load.
-ZSH_THEME="jay"
+ZSH_THEME="tweetjay"
 
 plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting)
 
@@ -24,7 +24,7 @@ export LANG=en_US.UTF-8
 source $ZSH/init_zsh.zsh
 
 # Set default editor
-export EDITOR=subl
+export EDITOR=nvim
 export PAGER=less
 
 # Set to this to use case-sensitive completion

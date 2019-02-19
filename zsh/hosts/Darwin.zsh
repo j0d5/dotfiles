@@ -16,7 +16,7 @@ echo "i'm on a darwin system!"
 # $(which ansiweather)
 
 # generate a nice startup logo
-$(which archey) -c
+# $(which archey) -c
 
 # general
 alias top='top -o cpu -n 30'

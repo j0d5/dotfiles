@@ -1,15 +1,14 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: jay.zsh-theme                          ##
-## Date: 03.12.2015                             ##
-##                                              ##
-## Description: file for custom theme           ##
-##                                              ##
-##################################################
+# {{{
+## Author: Johannes Steudle
+## File: tweetjay.zsh-theme
+## Date: 03.12.2015
+##
+## Description: file for custom theme
+##
+## }}}
 
 if [[ -n $DEBUG_ZSH ]]; then
- echo 'loading jay theme'
+ echo 'loading tweetjay theme'
 fi
 
 PROMPT_COLOR_DIR="%F{green}"
@@ -17,18 +16,18 @@ PROMPT_COLOR_DIR="%F{green}"
 # set colors for zsh git functions
 ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{50}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}:"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{%F{red}%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{%F{green}%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{%F{red}%}🤮 "
+ZSH_THEME_GIT_PROMPT_CLEAN="%{%F{green}%}🦄 "
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{45}%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}"
 
 # display different symbols if git repo is modified
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}+"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%}*"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}-"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}r"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}?"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}🤓 "
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%}🧐 "
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}😱 "
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%}🧐 "
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}🤯 "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%}🤔 "
 
 # Color for zsh autosuggestion [https://github.com/zsh-users/zsh-autosuggestions]
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=$fg[grey]

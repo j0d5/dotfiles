@@ -1,12 +1,12 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: global_settings.zsh                    ##
-## Date: 24.03.2016                             ##
-##                                              ##
-## Description: file for global settings        ##
-##                                              ##
-##################################################
+## {{{
+##
+## Author: Johannes Steudle
+## File: global_settings.zsh
+## Date: 24.03.2016
+##
+## Description: file for global settings
+##
+## }}}
 
 if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading init_zsh'
@@ -32,7 +32,6 @@ autoload -U compaudit compinit
 for config_file ($ZSH/lib/*.zsh); do
   source $config_file
 done
-
 
 is_plugin() {
   local base_dir=$1
