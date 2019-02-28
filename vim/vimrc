@@ -126,17 +126,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 
 " Syntax highlighting plugins
-Plug 'keith/swift.vim'
+Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'b4winckler/vim-objc'
 Plug 'darfink/vim-plist'
-Plug 'aliva/vim-fish'
-Plug 'vim-python/python-syntax'
-Plug 'aklt/plantuml-syntax'
-Plug 'vim-scripts/confluencewiki.vim'
+Plug 'aliva/vim-fish', { 'for': 'fish' }
+Plug 'vim-python/python-syntax', { 'for': 'python' }
+Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 
 " Plugins for handling various formats
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
+Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 
 " Add editorconfig syntax formatting
 Plug 'editorconfig/editorconfig-vim'
@@ -246,24 +247,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='onehalfdark'
 " let g:airline_solarized_bg='dark'
-" }}}
-
-" Configure markdown {{{
-" let g:vim_markdown_folding_level = 6
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_new_list_item_indent = 2
-
-let g:markdown_fenced_languages = [
-    \ 'bash=sh',
-    \ 'c',
-    \ 'javascript',
-    \ 'json',
-    \ 'python',
-    \ 'ruby',
-    \ 'yaml',
-    \ 'swift',
-    \ 'objc'
-\]
 " }}}
 
 " Key mappings {{{
