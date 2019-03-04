@@ -149,9 +149,8 @@ Plug 'sbdchd/neoformat'
 Plug 'junegunn/vim-easy-align'
 
 " Add Theme
-Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+Plug 'altercation/vim-colors-solarized'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 
 " Buffer manager - open with <leader>b
@@ -161,12 +160,17 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Autocompletion
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
 
 " Region expanding
 Plug 'terryma/vim-expand-region'
+
+" Easier handling of multiple cursors
 Plug 'terryma/vim-multiple-cursors'
+
+" Surround content
 Plug 'tpope/vim-surround'
 
 " Use the fancy silver searcher
@@ -193,15 +197,13 @@ call plug#end()
 " Colorscheme {{{
 if has('gui_running')
     set background=dark
-    " colorscheme onehalfdark
     colorscheme tweetjay
 elseif &t_Co < 256
     colorscheme default
     set nocursorline " looks bad in this mode
 else
     set background=dark
-    let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
-    " colorscheme solarized
+    " let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
     colorscheme tweetjay
     " customized colors
     highlight SignColumn ctermbg=234
@@ -245,7 +247,7 @@ endif
 " StatusLine {{{ configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='onehalfdark'
+let g:airline_theme='tweetjay_dark'
 " let g:airline_solarized_bg='dark'
 " }}}
 
