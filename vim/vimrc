@@ -150,6 +150,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Add Theme
 Plug 'ryanoasis/vim-devicons'
+Plug 'tweetjay/vim-tweetjay'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 
@@ -184,8 +185,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-eunuch'
 
-" Own plugins
-Plug 'tweetjay/vim-tweetjay'
+" Settings for backup edited files
 Plug 'tweetjay/vim-backstate'
 
 " Fancy starting screen
