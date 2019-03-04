@@ -185,7 +185,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-eunuch'
 
 " Own plugins
-Plug 'tweetjay/tweetjay-theme', { 'rtp': 'vim/' }
+Plug 'tweetjay/vim-tweetjay'
 Plug 'tweetjay/vim-backstate'
 
 " Fancy starting screen
