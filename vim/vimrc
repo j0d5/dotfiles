@@ -19,23 +19,20 @@ set hidden           " Allow switching edited buffers without saving
 set title            " Show filename
 
 " Layout {{{
-set cmdheight=2        " Make command line two lines high
-set laststatus=2       " Always show status line, even for one window
-set termencoding=utf-8
+" set termencoding=utf-8
 set encoding=utf-8     " Use UTF-8 as the default buffer encoding
-scriptencoding utf-8
+" scriptencoding utf-8
 " }}}
 
 " Behavior {{{
-set autoread         " read open files again when changed outside Vim
-set ttyfast          " Improves redrawing on newer computers
+set autoread         " Read open files again when changed outside Vim
 set switchbuf=useopen           " reveal already opened files from the
                                 " quickfix window instead of opening new
                                 " buffers
 set nostartofline    " Keep cursor in current column when using page commands
-set autochdir " automatically set current directory to directory of last opened file
+set autochdir        " Automatically set current directory to directory of last opened file
 set visualbell       " Set visual bell instead of acustic
-set mouse=a          " enable the use of the mouse
+set mouse=a          " Enable the use of the mouse
 set number relativenumber " hybrid relative numbers
 set matchtime=4      " Jump to matching bracket for n/10 seconds
 set nospell
@@ -121,82 +118,7 @@ endif
 
 " PlugIn-Configuration {{{
 call plug#begin('$HOME/.vim/plugged')
-
-" Motion - jump to camel case
-Plug 'chaoren/vim-wordmotion'
-
-" Git plugin - show changed lines in gutter
-Plug 'airblade/vim-gitgutter'
-
-" Syntax checker and linter for vim
-Plug 'w0rp/ale'
-
-" Syntax highlighting plugins
-Plug 'keith/swift.vim', { 'for': 'swift' }
-Plug 'b4winckler/vim-objc'
-Plug 'darfink/vim-plist'
-Plug 'aliva/vim-fish', { 'for': 'fish' }
-Plug 'vim-python/python-syntax', { 'for': 'python' }
-Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
-
-" Plugins for handling various formats
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
-
-" Add editorconfig syntax formatting
-Plug 'editorconfig/editorconfig-vim'
-
-" Auto formatting various files
-Plug 'sbdchd/neoformat'
-
-" Easy alignment
-Plug 'junegunn/vim-easy-align'
-
-" Add Theme
-Plug 'ryanoasis/vim-devicons'
-Plug 'tweetjay/vim-tweetjay'
-Plug 'altercation/vim-colors-solarized'
-Plug 'ErichDonGubler/vim-sublime-monokai'
-
-" Buffer manager - open with <leader>b
-Plug 'jeetsukumaran/vim-buffergator'
-
-" Nice status bar
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Autocompletion
-Plug 'Raimondi/delimitMate'
-Plug 'Valloric/YouCompleteMe'
-
-" Region expanding
-Plug 'terryma/vim-expand-region'
-
-" Easier handling of multiple cursors
-Plug 'terryma/vim-multiple-cursors'
-
-" Surround content
-Plug 'tpope/vim-surround'
-
-" Use the fancy silver searcher
-Plug 'rking/ag.vim'
-
-" Nice filetree
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-
-" Little file manager
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-eunuch'
-
-" Settings for backup edited files
-Plug 'tweetjay/vim-backstate'
-
-" Fancy starting screen
-Plug 'mhinz/vim-startify'
-
+so ~/.vim/settings/plugins.vim
 call plug#end()
 " }}}
 
@@ -206,19 +128,18 @@ if has('gui_running')
     colorscheme tweetjay
 elseif &t_Co < 256
     colorscheme default
-    set nocursorline " looks bad in this mode
+    set nocursorline " Looks bad in this mode
 else
     set background=dark
-    " let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
     colorscheme tweetjay
-    " customized colors
+    " Customized colors
     highlight SignColumn ctermbg=234
     highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
     highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
     highlight SpellBad cterm=underline
 endif
 
-" highlight current line, but only in active window
+" Highlight current line, but only in active window
 augroup CursorLineOnlyInActiveWindow
     autocmd!
     autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
@@ -226,129 +147,17 @@ augroup CursorLineOnlyInActiveWindow
 augroup END
 " }}}
 
-" Configure CTRL-P {{{
-" let g:ctrlp_custom_ignore = {
-"             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"             \ }
-if exists("g:ctrlp_user_command")
-  unlet g:ctrlp_user_command
-endif
-if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command =
-    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-else
-  " Fall back to using git ls-files if Ag is not available
-  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-endif
-" }}}
-
-" Configure Ale {{{
-" fix files on save
-let g:ale_fix_on_save = 1
-
-" lint after 1000ms after changes are made both on insert mode and normal mode
-let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_delay = 1000
-
-" use nice symbols for errors and warnings
-let g:ale_sign_error = '❗️'
-let g:ale_sign_warning = '❓'
-
-" fixer configurations
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\}
-" }}}
-
-" Configure Syntastic {{{
-if has('syntastic')
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-
-    let g:syntastic_swift_swiftlint_use_defaults = 1
-    let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
-endif
-" }}}
-
 " StatusLine {{{ configure airline status bar
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='tweetjay_dark'
-" let g:airline_solarized_bg='dark'
 " }}}
 
-" Key mappings {{{
-let mapleader = "\<Space>" " Change <Leader>
-" let maplocalleader = "," " Change <LocalLeader>
-
-" Disable arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-" Map 'j' and 'k' also to virtual lines
-nnoremap j gj
-nnoremap k gk
-
-" Window navigation with hjkl
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" Use jj to escape
-inoremap jj <ESC>
-
-" Map <leader> o to CtrlP plugin
-nnoremap <Leader>o :CtrlP<CR>
-
-" Copy & paste to system clipboard with <Space>p and <Space>y
-vmap <Leader>y "+y
-" vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
-
-" Enter visual line mode with <Space><Space>:
-nmap <Leader><Leader> V
-
-" 'v' select one character, 'v' again select word, 'v' again select paragraph
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
-" Automatically jump to end of text you pasted
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
-
-" Remove all highlightings
-nnoremap <silent><ESC><ESC> :nohl<CR>
-
-" Quickly insert newline in normalmode without leaving <Not working>
-nnoremap <silent><A-o> o<Esc>k
-nnoremap <silent><A-S-o> O<Esc>j
-
-" Map ,f to display all lines with keyword under cursor and ask which one to jump to
-nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-
-map <F3> :NERDTreeToggle<CR>
+" Source settings {{{
+so ~/.vim/settings/ale.vim
+so ~/.vim/settings/ale.vim
+so ~/.vim/settings/ctrlp.vim
+so ~/.vim/settings/keymap.vim
 " }}}
 
 " Special filetypes and encoding {{{
