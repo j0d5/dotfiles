@@ -26,12 +26,6 @@ set encoding=utf-8     " Use UTF-8 as the default buffer encoding
 scriptencoding utf-8
 " }}}
 
-" Indentation {{{
-set autoindent       " copy indent from current line
-set smartindent      " Set indention
-set shiftround       " shift to nearest indent
-" }}}
-
 " Behavior {{{
 set autoread         " read open files again when changed outside Vim
 set ttyfast          " Improves redrawing on newer computers
@@ -52,8 +46,14 @@ set backspace=indent,eol,start
 " }}}
 
 " Show some invisible characters {{{
-set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
-set nolist
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+" }}}
+
+" Indentation {{{
+set autoindent       " copy indent from current line
+set smartindent      " Set indention
+set shiftround       " shift to nearest indent
 " }}}
 
 " Tab settings {{{
@@ -80,6 +80,12 @@ set ignorecase smartcase " Case-insensitive searching
 set showmatch            " When a bracket is inserted, briefly jump to a matching one
 nnoremap <tab> %
 vnoremap <tab> %
+" }}}
+
+" Scrolling {{{
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
 " }}}
 
 " Wildmenu {{{
@@ -221,11 +227,42 @@ augroup END
 " }}}
 
 " Configure CTRL-P {{{
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll)$',
-            \ 'link': 'some_bad_symbolic_links',
-            \ }
+" let g:ctrlp_custom_ignore = {
+"             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"             \ }
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command =
+    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+else
+  " Fall back to using git ls-files if Ag is not available
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+endif
+" }}}
+
+" Configure Ale {{{
+" fix files on save
+let g:ale_fix_on_save = 1
+
+" lint after 1000ms after changes are made both on insert mode and normal mode
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_delay = 1000
+
+" use nice symbols for errors and warnings
+let g:ale_sign_error = '❗️'
+let g:ale_sign_warning = '❓'
+
+" fixer configurations
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
 " }}}
 
 " Configure Syntastic {{{
