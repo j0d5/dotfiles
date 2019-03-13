@@ -2,6 +2,12 @@
 let mapleader = "\<Space>" " Change <Leader>
 " let maplocalleader = "," " Change <LocalLeader>
 
+" Use jj to escape
+inoremap jj <ESC>
+
+" Go to last edit location with leader + -
+nnoremap <leader> - '.
+
 " Disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -22,8 +28,18 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Use jj to escape
-inoremap jj <ESC>
+" Change tab with Cmd + <number>
+map <silent> <D-1> :tabn 1<cr>
+map <silent> <D-2> :tabn 2<cr>
+map <silent> <D-3> :tabn 3<cr>
+map <silent> <D-4> :tabn 4<cr>
+map <silent> <D-5> :tabn 5<cr>
+map <silent> <D-6> :tabn 6<cr>
+map <silent> <D-7> :tabn 7<cr>
+map <silent> <D-8> :tabn 8<cr>
+map <silent> <D-9> :tabn 9<cr>
+
+" Do this for buffers?
 
 " Map <leader> o to CtrlP plugin
 nnoremap <Leader>o :CtrlP<CR>
