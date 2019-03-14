@@ -3,9 +3,7 @@
 
 [core]
     excludesfile = ~/.gitignore
-    hookspath = ~/.git/hooks
     editor = nvim
-    # editor = subl -n -w
 
 [init]
     templatedir = ~/.git/templates
