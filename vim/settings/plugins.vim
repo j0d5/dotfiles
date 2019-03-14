@@ -10,7 +10,6 @@ Plug 'w0rp/ale'
 " Syntax highlighting plugins
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'b4winckler/vim-objc'
-Plug 'darfink/vim-plist'
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
