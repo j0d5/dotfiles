@@ -11,18 +11,27 @@
 #
 # }}}
 
-echo "Running system update"
+echo "Running system-update script"
 
-export http_proxy=localhost:8080
-export https_proxy=localhost:8080
+# check for proxy
+if ifconfig | grep -q 'inet 10.'; then
+  echo "Found company network"
+  export http_proxy=localhost:8080
+  export https_proxy=localhost:8080
+fi
 
-echo "Updating brew"
 # homebrew
-brew update
-brew upgrade
-brew cask upgrade
-brew cleanup
-brew prune
+BREW=/usr/local/bin/brew
+if [ -x "$BREW" ]; then
+  echo "Updating brew"
+  $BREW update
+  $BREW upgrade
+  $BREW cask upgrade
+  $BREW cleanup
+  $BREW prune
+else
+  >&2 echo "Command brew not found!"
+fi
 
 echo "Updating gems"
 # ruby gems
@@ -38,6 +47,3 @@ echo "Updating npm"
 # npm disaster
 npm install npm -g
 npm update -g
-
-# update dotfiles
-# (cd ~/.dotfiles && git pull && make etc)

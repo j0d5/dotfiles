@@ -17,10 +17,14 @@ else
     curDir="$1"
 fi
 
-echo "Current working directory: $curDir"
+echo "Checking directory: $curDir"
 
-export http_proxy=localhost:8080
-export https_proxy=localhost:8080
+# check for proxy
+if ifconfig | grep -q 'inet 10.'; then
+  echo "Found company network"
+  export http_proxy=localhost:8080
+  export https_proxy=localhost:8080
+fi
 
 readonly repos=( $(find "$curDir" -type d -maxdepth 2) )
 
