@@ -84,7 +84,7 @@ if test -f "/usr/local/etc/grc.fish"
     source /usr/local/etc/grc.fish
 end
 
-set -l isCompanyLAN (ifconfig | grep 10.34.)
+set -l isCompanyLAN (ifconfig | grep 'inet 10.')
 
 if test $isCompanyLAN
     echo "Connected to company LAN"
@@ -95,5 +95,3 @@ end
 set -gx EDITOR 'nvim'
 
 aliases
-
-
