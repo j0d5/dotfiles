@@ -11,21 +11,30 @@
 
 " Font {{{
 if has('gui_gtk2')
-  set guifont=Inconsolata\ 13
+    set guifont=Inconsolata\ 13
 elseif has('gui_macvim')
-  " set guifont=Monospace\ 16
-  set guifont=Fira\ Code:h13
-  " set guifont=Source\ Code\ Pro:h14
-  " set guifont=Menlo\ for\ Powerline:h13
-  set guiheadroom=0
+    " set guifont=Monospace\ 16
+    set guifont=Fira\ Code:h13
+    " set guifont=Source\ Code\ Pro:h14
+    " set guifont=Menlo\ for\ Powerline:h13
+    set guiheadroom=0
 elseif has('gui_win32')
-  set guifont=Consolas:h13:cANSI
+    set guifont=Consolas:h13:cANSI
 endif
 " }}}
 
 " Configuration {{{
-set lines=70
-set columns=120
+if &diff
+    " setup for diff mode
+    " set lines=999 columns=999
+    " double the width up to a reasonable maximum
+    winpos 0 0
+    let &columns = ((&columns * 2 > 300) ? 300 : &columns * 2)
+else
+    " setup for non-diff mode
+    set lines=70
+    set columns=120
+endif
 set mousehide      " Hide the mouse when typing text
 set guioptions-=aA
 set guioptions+=ci " no toolbar, menubar, scrollbar
@@ -39,12 +48,12 @@ map! <S-Insert> <MiddleMouse> " Make shift-insert work like in Xterm
 
 " Spellchecking {{{
 fun SetSpellCheck()
-  set spell spelllang=en,de		    " Spell checking language
-  set spell spellsuggest=double,10	" Description of the spell-checker
-									" zg to add word to word list
-									" zw to reverse
-									" zug to remove word from word list
-									" z= to get list of possibilities
+    set spell spelllang=en,de		    " Spell checking language
+    set spell spellsuggest=double,10	" Description of the spell-checker
+                                        " zg to add word to word list
+                                        " zw to reverse
+                                        " zug to remove word from word list
+                                        " z= to get list of possibilities
 endfun
 " }}}
 
@@ -61,4 +70,3 @@ highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
 " For multiple marks on the same line.
 highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
 " }}}
-
