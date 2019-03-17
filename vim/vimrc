@@ -124,13 +124,11 @@ call plug#end()
 
 " Colorscheme {{{
 if has('gui_running')
-    set background=dark
     colorscheme tweetjay
 elseif &t_Co < 256
     colorscheme default
     set nocursorline " Looks bad in this mode
 else
-    set background=dark
     colorscheme tweetjay
     " Customized colors
     highlight SignColumn ctermbg=234

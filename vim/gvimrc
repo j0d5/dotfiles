@@ -4,42 +4,37 @@
 "     for Unix and macOS: ~/.gvimrc
 " }}}
 
-" Make external commands work through a pipe instead of a pseudo-tty {{{
-" set noguipty
-" set macmeta
+" Make 'alt' key a meta key {{{
+set macmeta
 " }}}
 
 " Font {{{
 if has('gui_gtk2')
     set guifont=Inconsolata\ 13
 elseif has('gui_macvim')
-    " set guifont=Monospace\ 16
-    set guifont=Fira\ Code:h13
-    " set guifont=Source\ Code\ Pro:h14
-    " set guifont=Menlo\ for\ Powerline:h13
-    set guiheadroom=0
+    " set guifont=Fira\ Code:h13
+    set guifont=Fira\ Mono\ for\ Powerline:h13
+    " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h13
 elseif has('gui_win32')
     set guifont=Consolas:h13:cANSI
 endif
 " }}}
 
 " Configuration {{{
-if &diff
-    " setup for diff mode
+if &diff " setup for diff mode
     " set lines=999 columns=999
     " double the width up to a reasonable maximum
-    winpos 0 0
-    let &columns = ((&columns * 2 > 300) ? 300 : &columns * 2)
-else
-    " setup for non-diff mode
+    winpos 0 23
+    let &columns = ((&columns * 2 > 250) ? 250 : &columns * 2)
+else " setup for non-diff mode
     set lines=70
     set columns=120
 endif
-set mousehide      " Hide the mouse when typing text
 set guioptions-=aA
 set guioptions+=ci " no toolbar, menubar, scrollbar
-" set mouse-=a " Disable mouse selection
 set linespace=2
+set mousehide      " Hide the mouse when typing text
+" set mouse-=a " Disable mouse selection
 " }}}
 
 " Keyboard {{{
@@ -60,7 +55,7 @@ endfun
 " ShowMarks {{{
 let showmarks_include = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 " Don't leave on by default, use :ShowMarksOn to enable
-let g:showmarks_enable = 0
+let g:showmarks_enable = 1
 " For marks a-z
 highlight ShowMarksHLl gui=bold guibg=LightBlue guifg=Blue
 " For marks A-Z
