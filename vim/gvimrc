@@ -4,10 +4,6 @@
 "     for Unix and macOS: ~/.gvimrc
 " }}}
 
-" Make 'alt' key a meta key {{{
-set macmeta
-" }}}
-
 " Font {{{
 if has('gui_gtk2')
     set guifont=Inconsolata\ 13
