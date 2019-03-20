@@ -86,7 +86,7 @@ end
 
 set -l isCompanyLAN (ifconfig | grep 'inet 10.')
 
-if test $isCompanyLAN
+if test -n "$isCompanyLAN"
     echo "Connected to company LAN"
     echo "Setting proxy values"
     setProxy
