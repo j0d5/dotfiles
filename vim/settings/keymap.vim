@@ -28,18 +28,20 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Change tab with Cmd + <number>
-map <silent> <D-1> :tabn 1<cr>
-map <silent> <D-2> :tabn 2<cr>
-map <silent> <D-3> :tabn 3<cr>
-map <silent> <D-4> :tabn 4<cr>
-map <silent> <D-5> :tabn 5<cr>
-map <silent> <D-6> :tabn 6<cr>
-map <silent> <D-7> :tabn 7<cr>
-map <silent> <D-8> :tabn 8<cr>
-map <silent> <D-9> :tabn 9<cr>
+" Cycle through buffers
+nnoremap <C-Tab> :bn<cr>
+nnoremap <C-S-Tab> :bp<cr>
 
-" Do this for buffers?
+" Change tab with Cmd + <number>
+nnoremap <silent> <D-1> :tabn 1<cr>
+nnoremap <silent> <D-2> :tabn 2<cr>
+nnoremap <silent> <D-3> :tabn 3<cr>
+nnoremap <silent> <D-4> :tabn 4<cr>
+nnoremap <silent> <D-5> :tabn 5<cr>
+nnoremap <silent> <D-6> :tabn 6<cr>
+nnoremap <silent> <D-7> :tabn 7<cr>
+nnoremap <silent> <D-8> :tabn 8<cr>
+nnoremap <silent> <D-9> :tabn 9<cr>
 
 " Map <leader> o to CtrlP plugin
 nnoremap <Leader>o :CtrlP<CR>
