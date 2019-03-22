@@ -78,23 +78,19 @@
     # tracking branches
     tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
 
-    # show last commit
-    lh = log --pretty=commit --decorate=auto --date=relative -1
-
     # show list of commits
-    l = log --decorate --date=relative -5
+    l = log --date=short -10 --pretty=commitline
 
-    # show long list of commits
-    ll = log --decorate --date=relative -30
+    # show last commit
+    lh = log --date=short -1 --pretty=commit
 
     # show log with graph
-    ls = log --graph --oneline --all --decorate --simplify-by-decoration --pretty=graph
-    lg = log --graph --oneline --all --decorate --topo-order --date=relative -30
-    llg = log --graph --oneline --all --decorate --topo-order
-    # lg = log --decorate --date=relative --graph
+    ls = log --graph --oneline --all --decorate --simplify-by-decoration --date=short --pretty=graph
+    lg = log --graph --oneline --all --decorate --topo-order -30 --date=short --pretty=graph
+    llg = log --graph --oneline --all --decorate --topo-order --date=short --pretty=graph
 
     # show commit with all file changes
-    la = log --decorate --numstat --date=relative
+    la = log --decorate --numstat --pretty=commitline
 
     # show diff to last commit
     last = diff HEAD~1
@@ -112,9 +108,6 @@
     # use this instead of just resetting your head. It creates a commit and
     # removes it afterwards so work is still reachable with 'reflog'
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-
-    # new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-    # count = !sh -c 'git log --oneline | wc -l'
 
     # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
     dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
@@ -153,8 +146,9 @@
     pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
 
 [pretty]
-    commit = "format:%n%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn{%G?}] %n%n%b%n"
-    graph  = "format:%C(green)%h %C(yellow)[%ar]%Cred%d %Creset%s%Cblue [%cn]"
+    commitline = "format:%C(cyan bold)[%h] %Creset%C(green)[%ad] %C(red bold)%d %Creset%s%C(blue italic) [%cn]"
+    commit = "format:%C(cyan bold)[%h] %Creset%C(green)[%ad] %C(red bold)%d %C(blue italic) [%cn]%C(reset)[%G?]%n%s%n%n%b"
+    graph  = "format:%C(cyan bold)[%h] %C(red bold)%d %Creset%s%C(blue italic) [%cn] %Creset%C(green)[%ad]"
 
 [http]
     sslVerify = true
