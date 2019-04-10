@@ -99,11 +99,13 @@ local function applyWindowLayout() -- default window layout
         {"Google Chrome", nil, mainScreen, left50, nil, nil},
 
 -- Layout for productivity stuff
-        {"Mail",                           nil, mainScreen,  {0.0, 0.0,  0.5, 0.5}, nil, nil},
-        {"Fantastical",                    nil, mainScreen,  {0.0, 0.5,  0.5, 0.5}, nil, nil},
-        {"Rocket.Chat",                    nil, mainScreen,  {0.5, 0.5,  0.5, 0.5}, nil, nil},
-        {"Microsoft Outlook",              nil, mainScreen,  {0.0, 0.0,  0.5, 0.5}, nil, nil},
-        {"Microsoft Lync",    "Microsoft Lync", mainScreen, {0.85, 0,   0.15, 0.5}, nil, nil},
+        {"Mail",                           nil, mainScreen, {0.0, 0.0, 0.5, 0.5}, nil, nil},
+        {"Fantastical",                    nil, mainScreen, {0.0, 0.5, 0.5, 0.5}, nil, nil},
+        {"Calendar",                       nil, mainScreen, {0.0, 0.5, 0.5, 0.5}, nil, nil},
+        {"Things",                         nil, mainScreen, {0.0, 0.0, 0.15, 0.4}, nil, nil},
+        {"Rocket.Chat",                    nil, mainScreen, {0.5, 0.5, 0.5, 0.5}, nil, nil},
+        {"Microsoft Outlook",              nil, mainScreen, {0.0, 0.0, 0.5, 0.5}, nil, nil},
+        {"Microsoft Lync",    "Microsoft Lync", mainScreen, {0.85, 0.0, 0.15, 0.5}, nil, nil},
 
 -- Layout for multimedia
         {"iTunes",  "iTunes", mainScreen,  max, nil, nil},
@@ -127,6 +129,7 @@ local function applyWindowLayout() -- default window layout
 -- Layout for productivity stuff
         {"Mail",                           nil, mainScreen,    max, nil, nil},
         {"Fantastical",                    nil, mainScreen,    max, nil, nil},
+        {"Things",                         nil, mainScreen, {0.0, 0.0, 0.15, 0.4}, nil, nil},
         {"Rocket.Chat",                    nil, mainScreen,    max, nil, nil},
         {"Microsoft Outlook",              nil, mainScreen, left85, nil, nil},
         {"Microsoft Lync",    "Microsoft Lync", mainScreen,  {0.85, 0,   0.15, 0.5}, nil, nil},
