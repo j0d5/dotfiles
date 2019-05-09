@@ -76,28 +76,23 @@ brew "exa" # cool ls -la
 cask "alfred"
 cask "macvim"
 cask "hammerspoon"
-# cask "little-snitch"
-# cask "micro-snitch"
 cask "iterm2"
 cask "sublime-text"
 cask "dash"
-# cask "kdiff3"
 cask "sourcetree"
 cask "sketch"
 cask "hopper-disassembler"
 cask "uncrustifyx"
-cask "quickradar"
 cask "simsim"
-cask "docker"
 cask "arduino"
 cask "fritzing"
-cask "caffeine"
 cask "vlc"
 cask "wireshark"
+# cask "docker"
+# cask "quickradar"
+# cask "kdiff3"
+# cask "little-snitch"
+# cask "micro-snitch"
 
-# mas "1Password", id: 443987910
-# mas "Tweetbot", id: 557168941
 mas "Fantastical 2", id: 975937182
 mas "Xcode", id: 497799835
-mas "Affinity Designer", id: 824171161
-

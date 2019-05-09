@@ -19,6 +19,8 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
+Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 
 " Add editorconfig syntax formatting
 Plug 'editorconfig/editorconfig-vim'
