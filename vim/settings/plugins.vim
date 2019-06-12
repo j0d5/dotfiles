@@ -50,7 +50,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Autocompletion
 Plug 'Raimondi/delimitMate'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh' }
 
 " Region expanding
 Plug 'terryma/vim-expand-region'
