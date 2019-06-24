@@ -64,6 +64,9 @@ Plug 'tpope/vim-surround'
 " Use the fancy silver searcher
 Plug 'rking/ag.vim'
 
+" Nice highlighting of words
+Plug 'RRethy/vim-illuminate'
+
 " Nice filetree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
