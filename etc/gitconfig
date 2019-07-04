@@ -24,7 +24,7 @@
     ff = true
 
 [diff]
-    tool = sourcetree
+    tool = araxis
     compactionheuristic = true
     context = 4
     indentHeuristic = true
@@ -32,7 +32,7 @@
     algorithm = patience
 
 [merge]
-    tool = sourcetree
+    tool = araxis
     ff = false
     log = true
     commit = false
@@ -86,7 +86,7 @@
 
     # show log with graph
     ls = log --graph --oneline --all --decorate --simplify-by-decoration --date=short --pretty=graph
-    lg = log --graph --oneline --all --decorate --topo-order -30 --date=short --pretty=graph
+    lg = log --graph --oneline --decorate --topo-order -30 --date=short --pretty=graph # --all
     llg = log --graph --oneline --all --decorate --topo-order --date=short --pretty=graph
 
     # show commit with all file changes
@@ -160,11 +160,11 @@
 [difftool]
     prompt = false
 
-[difftool "sourcetree"]
+[difftool "araxis"]
     cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
     path =
 
-[mergetool "sourcetree"]
+[mergetool "araxis"]
     cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
     trustExitCode = true
 
