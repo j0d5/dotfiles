@@ -42,7 +42,6 @@
     autoStash = true
 
 [commit]
-    gpgSign = true
     template = ~/.git/templates/commit-msg-template
 
 [stash]
@@ -51,10 +50,6 @@
 [apply]
     # Cleanup whitespace by default when apply patches.
     whitespace = fix
-
-[advice]
-    # hide status hints
-    # statusHints = false
 
 [pager]
     show-branch = true
@@ -86,7 +81,7 @@
 
     # show log with graph
     ls = log --graph --oneline --all --decorate --simplify-by-decoration --date=short --pretty=graph
-    lg = log --graph --oneline --decorate --topo-order -30 --date=short --pretty=graph # --all
+    lg = log --graph --oneline --decorate --topo-order -20 --date=short --pretty=graph # --all
     llg = log --graph --oneline --all --decorate --topo-order --date=short --pretty=graph
 
     # show commit with all file changes
@@ -110,7 +105,7 @@
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
     # http://stackoverflow.com/questions/224687/git-find-duplicate-blobs-files-in-this-tree/8408640#8408640
-    dupes = !"git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
+    dupes = "!git ls-tree -r HEAD | cut -c 13- | sort | uniq -d" # -w 40"
 
     # use icdiff as difftool
     icd = difftool --tool=icdiff
@@ -125,6 +120,8 @@
         git push origin --delete "$1"; # Remote delete. \
         echo "\n✅ Git branch $1 was deleted from local and remote.\n"; \
         fi"
+
+    rbr = "!git for-each-ref --sort=committerdate --format='%(refname:short) * %(authorname) * %(committerdate:relative)' refs/remotes/ | column -t -s '*'"
 
     # Tag management
     cleanremotetags = "!f() { git push origin :( git tag | grep -v -E "((dr|ff|release)/[0-9].[0-9].[0-9])" ) }; f"
@@ -149,13 +146,6 @@
     commitline = "format:%C(cyan bold)[%h] %Creset%C(green)[%ad] %C(red bold)%d %Creset%s%C(blue italic) [%cn]"
     commit = "format:%C(cyan bold)[%h] %Creset%C(green)[%ad] %C(red bold)%d %C(blue italic) [%cn]%C(reset)[%G?]%n%s%n%n%b"
     graph  = "format:%C(cyan bold)[%h] %C(red bold)%d %Creset%s%C(blue italic) [%cn] %Creset%C(green)[%ad]"
-
-[http]
-    sslVerify = true
-
-[mergetool]
-    keepBackup = true
-    prompt = false
 
 [difftool]
     prompt = false
