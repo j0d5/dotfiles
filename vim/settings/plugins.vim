@@ -1,5 +1,5 @@
 " Motion - jump to camel case
-Plug 'chaoren/vim-wordmotion'
+" Plug 'chaoren/vim-wordmotion'
 
 " Git plugin - show changed lines in gutter
 Plug 'airblade/vim-gitgutter'
@@ -17,19 +17,8 @@ Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 " Plugins for handling various formats
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
-
-" Add editorconfig syntax formatting
-Plug 'editorconfig/editorconfig-vim'
-
-" Auto formatting various files
-Plug 'sbdchd/neoformat'
-
-" Easy alignment
-Plug 'junegunn/vim-easy-align'
 
 " Add Theme
 Plug 'ryanoasis/vim-devicons'
