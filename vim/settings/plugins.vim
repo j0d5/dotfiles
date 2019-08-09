@@ -13,6 +13,10 @@ Plug 'b4winckler/vim-objc'
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
+Plug 'neovimhaskell/haskell-vim'
+
+Plug 'alx741/vim-hindent'
+Plug 'mpickering/hlint-refactor-vim'
 
 " Plugins for handling various formats
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -26,6 +30,8 @@ Plug 'tweetjay/vim-tweetjay'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tomasr/molokai'
+Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
 
 " Uncover usage problems in your writing
 Plug 'reedes/vim-wordy', { 'for': 'markdown' }
@@ -60,9 +66,14 @@ Plug 'RRethy/vim-illuminate'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 
+Plug 'liuchengxu/vista.vim'
+
 " Little file manager
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-eunuch'
+" Fuzzy file search
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Settings for backup edited files
 Plug 'tweetjay/vim-backstate'

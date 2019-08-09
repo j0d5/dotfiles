@@ -51,6 +51,10 @@ if test -d $HOME/.bin
   set -g fish_user_paths $fish_user_paths "$HOME/.bin"
 end
 
+if test -d $HOME/.local/bin
+  set -g fish_user_paths $fish_user_paths "$HOME/.local/bin"
+end
+
 if test -d $HOME/.dev
   set -g fish_user_paths $fish_user_paths "$HOME/.dev"
 end

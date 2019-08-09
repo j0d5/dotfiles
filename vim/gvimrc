@@ -39,7 +39,7 @@ map! <S-Insert> <MiddleMouse> " Make shift-insert work like in Xterm
 " }}}
 
 " Spellchecking {{{
-fun SetSpellCheck()
+fun SetSpellCheck() abort
     set spell spelllang=en,de		    " Spell checking language
     set spell spellsuggest=double,10	" Description of the spell-checker
                                         " zg to add word to word list

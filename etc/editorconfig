@@ -25,7 +25,7 @@ indent_size = 2
 [*.{swift, m, h}]
 charset = utf-8
 indent_style = space
-indent_size = 3
+indent_size = 4
 
 [{.gitattributes,.gitignore,.gitmodules}]
 indent_style = tab

@@ -4,9 +4,6 @@
 "     for Unix and macOS: ~/.vimrc
 " }}}
 
-" Use Vim defaults (much better!)
-" set nocompatible
-
 syntax on
 
 " Shell {{{
@@ -49,16 +46,15 @@ set list listchars=tab:\ \ ,trail:·
 
 " Indentation {{{
 set autoindent       " copy indent from current line
-set smartindent      " Set indention
 set shiftround       " shift to nearest indent
 " }}}
 
 " Tab settings {{{
 set tabstop=4        " Tab size
 set shiftwidth=4     " Shift width
-set softtabstop=4
 set expandtab        " Tabs to spaces
-set smarttab
+" set softtabstop=4
+" set smarttab
 " }}}
 
 " Handle long lines {{{
@@ -160,6 +156,9 @@ so ~/.vim/settings/plantuml-previewer.vim
 so ~/.vim/settings/coc.vim
 " }}}
 
+" Configure fuzzy file search
+" set rtp+=/usr/local/opt/fzf
+
 " Special filetypes and encoding {{{
 if has('autocmd')
     "autocmd BufEnter * cd %:p:h
@@ -175,6 +174,12 @@ endif
 " Make sure we have a sane fallback for encoding detection
 set fileencodings+=default
 set fileformats=unix,dos,mac
+" }}}
+
+" {{{ Set some nice diff options
+if has('nvim-0.3.2') || has("patch-8.1.0360")
+    set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+endif
 " }}}
 
 " Load local vim config {{{

@@ -113,3 +113,13 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+if expand('$INSTALL_COC_PLUGINS') == 'yes'
+  :CocInstall coc-json
+  :CocInstall coc-github
+  :CocInstall coc-git
+  :CocInstall coc-html
+  :CocInstall coc-css
+  :CocInstall coc-svg
+  :CocInstall coc-emoji
+endif
