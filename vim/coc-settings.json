@@ -10,6 +10,13 @@
         }
       }
     },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      // custom config path
+      // "args": ["-c", "/path/to/your/config.yaml"],
+      "filetypes": ["vim", "eruby", "markdown"]
+    },
     "haskell": {
       "command": "hie-wrapper",
       "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
