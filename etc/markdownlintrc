@@ -1,0 +1,7 @@
+{
+  "default": true,
+  "header-style": { "style": "atx" }, // Consistent header style
+  "ul-style": { "style": "consistent" }, // Consistent list style
+  "ul-indent": { "indent": 4 }, // Indent lists by 4
+  "line-length": { "code_block_line:length": 120 }
+}
