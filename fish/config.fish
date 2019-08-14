@@ -34,58 +34,67 @@ end
 set -gx  LC_ALL en_US.UTF-8
 # }}}
 
-# ruby configuration {{{
-status --is-interactive; and source (rbenv init -|psub)
-set -g fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
-
-if test -d "$HOME/.gem/ruby/2.4.0/bin"
-  set -g fish_user_paths $fish_user_paths "$HOME/.gem/ruby/2.4.0/bin"
-end
-# }}}
-
-set -g fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
-
-set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
+set -U fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
+set -U fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
 if test -d $HOME/.bin
-  set -g fish_user_paths $fish_user_paths "$HOME/.bin"
-end
-
-if test -d $HOME/go/bin
-  set -g fish_user_paths $fish_user_paths "$HOME/go/bin"
+  set -Ux fish_user_paths $fish_user_paths "$HOME/.bin"
 end
 
 if test -d $HOME/.local/bin
-  set -g fish_user_paths $fish_user_paths "$HOME/.local/bin"
+  set -Ux fish_user_paths $fish_user_paths "$HOME/.local/bin"
 end
 
+# ruby configuration {{{
+status --is-interactive; and source (rbenv init -|psub)
+set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
+
+if test -d "$HOME/.gem/ruby/2.4.0/bin"
+  set -U fish_user_paths $fish_user_paths "$HOME/.gem/ruby/2.4.0/bin"
+end
+# }}}
+
+# Haskell language {{{
+if test -d $HOME/.cabal/bin
+  set -U fish_user_paths $fish_user_paths "$HOME/.cabal/bin"
+end
+if test -d $HOME/.ghcup/bin
+  set -U fish_user_paths $fish_user_paths "$HOME/.ghcup/bin"
+end
+if test -d $HOME/.ghcup/env
+  set -U fish_user_paths $fish_user_paths "$HOME/.ghcup/env"
+end
+# }}}
+
+# Go language {{{
+if test -d $HOME/go/bin
+  set -U fish_user_paths $fish_user_paths "$HOME/go/bin"
+end
+# }}}
+
 if test -d $HOME/.dev
-  set -g fish_user_paths $fish_user_paths "$HOME/.dev"
+  set -Ux fish_user_paths $fish_user_paths "$HOME/.dev"
 end
 
 if test -d "/Applications/Wireshark.app/Contents/MacOS"
-  set -g fish_user_paths $fish_user_paths "/Applications/Wireshark.app/Contents/MacOS"
+  set -U fish_user_paths $fish_user_paths "/Applications/Wireshark.app/Contents/MacOS"
 end
 
 if test -d "/Applications/Araxis Merge.app/Contents/Utilities"
-  set -g fish_user_paths $fish_user_paths "/Applications/Araxis Merge.app/Contents/Utilities"
+  set -U fish_user_paths $fish_user_paths "/Applications/Araxis Merge.app/Contents/Utilities"
 end
 
 if test -d "/usr/local/opt/python@2/bin"
-  set -g fish_user_paths $fish_user_paths "/usr/local/opt/python@2/bin"
+  set -U fish_user_paths $fish_user_paths "/usr/local/opt/python@2/bin"
 end
 
 if test -d "$NPM_PACKAGES/bin"
-  set -g fish_user_paths $fish_user_paths "$NPM_PACKAGES/bin"
-  set -gx NPM_PACKAGES "$HOME/.npm-packages"
+  set -U fish_user_paths $fish_user_paths "$NPM_PACKAGES/bin"
+  set -Ux NPM_PACKAGES "$HOME/.npm-packages"
 end
 
 if test -d "/Applications/Xcode.app/Contents/Developer"
-    set -gx DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
-end
-
-if test -d "/usr/local/opt/qt/bin"
-  set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
+    set -Ux DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
 end
 
 if test -f "/usr/local/etc/grc.fish"
@@ -100,9 +109,8 @@ if test -n "$isCompanyLAN"
     setProxy
 end
 
-set -gx EDITOR 'nvim'
+set -Ux EDITOR 'nvim'
 
 aliases
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
