@@ -1,11 +1,15 @@
 # Views
-set blame-view	= date:default author:full file-name:auto id:yes,color line-number:no,interval=5 text
 set grep-view	= file-name:no line-number:yes,interval=1 text
-set main-view	= line-number:no,interval=5 id:no date:custom author:abbreviated commit-title:yes,graph,refs,overflow=no
 set refs-view	= line-number:no id:no date:default author:full ref commit-title
 set stash-view	= line-number:no,interval=5 id:no date:default author:full commit-title
 set status-view	= line-number:yes,interval=5 status:short file-name
 set tree-view	= line-number:no,interval=5 mode author:full file-size date:default id:no file-name
+
+set main-view	= line-number:no,interval=5 id:no date:custom author:abbreviated commit-title:yes,graph,refs,overflow=no
+set main-view-date-format = "%Y-%m-%d %H:%M"
+
+set blame-view	= date:custom author:full file-name:auto id:yes,color line-number:no,interval=5 text
+set blame-view-date-format = "%Y-%m-%d %H:%M"
 
 # Pager based views
 set pager-view	= line-number:no,interval=5 text
