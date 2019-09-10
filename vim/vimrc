@@ -141,14 +141,8 @@ augroup CursorLineOnlyInActiveWindow
 augroup END
 " }}}
 
-" StatusLine {{{ configure airline status bar
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='tweetjay_dark'
-" }}}
-
 " Source settings {{{
+so ~/.vim/settings/statusline.vim
 so ~/.vim/settings/ale.vim
 so ~/.vim/settings/ctrlp.vim
 so ~/.vim/settings/keymap.vim
