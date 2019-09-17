@@ -16,5 +16,4 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
 
-let g:airline#extensions#ale#enabled = 1
 " }}}
