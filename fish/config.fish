@@ -34,15 +34,15 @@ end
 set -gx  LC_ALL en_US.UTF-8
 # }}}
 
-set -U fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
+set -U fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 set -U fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
-if test -d $HOME/.bin
-  set -Ux fish_user_paths $fish_user_paths "$HOME/.bin"
+if test -d "$HOME/.bin"
+  set -U fish_user_paths $fish_user_paths "$HOME/.bin"
 end
 
-if test -d $HOME/.local/bin
-  set -Ux fish_user_paths $fish_user_paths "$HOME/.local/bin"
+if test -d "$HOME/.local/bin"
+  set -U fish_user_paths $fish_user_paths "$HOME/.local/bin"
 end
 
 # ruby configuration {{{
@@ -55,25 +55,25 @@ end
 # }}}
 
 # Haskell language {{{
-if test -d $HOME/.cabal/bin
+if test -d "$HOME/.cabal/bin"
   set -U fish_user_paths $fish_user_paths "$HOME/.cabal/bin"
 end
-if test -d $HOME/.ghcup/bin
+if test -d "$HOME/.ghcup/bin"
   set -U fish_user_paths $fish_user_paths "$HOME/.ghcup/bin"
 end
-if test -d $HOME/.ghcup/env
+if test -d "$HOME/.ghcup/env"
   set -U fish_user_paths $fish_user_paths "$HOME/.ghcup/env"
 end
 # }}}
 
 # Go language {{{
-if test -d $HOME/go/bin
+if test -d "$HOME/go/bin"
   set -U fish_user_paths $fish_user_paths "$HOME/go/bin"
 end
 # }}}
 
-if test -d $HOME/.dev
-  set -Ux fish_user_paths $fish_user_paths "$HOME/.dev"
+if test -d "$HOME/.dev"
+  set -U fish_user_paths $fish_user_paths "$HOME/.dev"
 end
 
 if test -d "/Applications/Wireshark.app/Contents/MacOS"
@@ -90,11 +90,11 @@ end
 
 if test -d "$NPM_PACKAGES/bin"
   set -U fish_user_paths $fish_user_paths "$NPM_PACKAGES/bin"
-  set -Ux NPM_PACKAGES "$HOME/.npm-packages"
+  set -U NPM_PACKAGES "$HOME/.npm-packages"
 end
 
 if test -d "/Applications/Xcode.app/Contents/Developer"
-    set -Ux DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
+    set -U DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
 end
 
 if test -f "/usr/local/etc/grc.fish"
@@ -109,7 +109,7 @@ if test -n "$isCompanyLAN"
     setProxy
 end
 
-set -Ux EDITOR 'nvim'
+set -U EDITOR 'nvim'
 
 aliases
 
