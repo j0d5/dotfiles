@@ -23,7 +23,7 @@ set -g c3 (set_color 6dc7ff)
 set -g c4 (set_color ffffff)
 set -g ce (set_color $fish_color_error)
 
-# fish_vi_key_bindings
+fish_vi_key_bindings
 
 if test $TERM != "screen-256color"
   set -gx TERM xterm-256color
@@ -34,7 +34,14 @@ end
 set -gx  LC_ALL en_US.UTF-8
 # }}}
 
-set -U fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
+set -U fish_user_paths ""
+# ruby configuration {{{
+status --is-interactive; and source (rbenv init -|psub)
+set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
+set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/bin"
+# }}}
+
+set -U fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 set -U fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
 if test -d "$HOME/.bin"
@@ -44,15 +51,6 @@ end
 if test -d "$HOME/.local/bin"
   set -U fish_user_paths $fish_user_paths "$HOME/.local/bin"
 end
-
-# ruby configuration {{{
-status --is-interactive; and source (rbenv init -|psub)
-set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
-
-if test -d "$HOME/.gem/ruby/2.4.0/bin"
-  set -U fish_user_paths $fish_user_paths "$HOME/.gem/ruby/2.4.0/bin"
-end
-# }}}
 
 # Haskell language {{{
 if test -d "$HOME/.cabal/bin"
