@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Based on ~/.macos — https://mths.be/macos
-# with own modifications (398496c2372d65c0e6770d02b0c5b49c0d636f31)
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -583,4 +582,3 @@ for app in "Activity Monitor" \
 	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-
