@@ -148,6 +148,7 @@ so ~/.vim/settings/ctrlp.vim
 so ~/.vim/settings/keymap.vim
 so ~/.vim/settings/plantuml-previewer.vim
 so ~/.vim/settings/coc.vim
+so ~/.vim/settings/buffergator.vim
 " }}}
 
 " Configure fuzzy file search
