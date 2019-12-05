@@ -12,7 +12,7 @@ if [[ -n $DEBUG_ZSH ]]; then
  echo "loading global_settings"
 fi
 
-export DEFAULT_USER=johannes
+export DEFAULT_USER=$(whoami)
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space

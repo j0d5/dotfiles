@@ -18,7 +18,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{50}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}:"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{%F{red}%}🤮 "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{%F{green}%}🦄 "
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{45}%}"
+# ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{45}%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}"
 
 # display different symbols if git repo is modified
@@ -91,7 +91,7 @@ prompt_git() {
     echo -n $(git_prompt_short_sha)
     # Show the tracked changes
     #echo -n ":"
-    #echo -n $(prompt_git_commit_changes)
+    echo -n $(prompt_git_commit_changes)
     echo -n "]"
     echo -n $(git_prompt_status)
     echo -n %{$reset_color%}
