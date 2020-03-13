@@ -57,10 +57,6 @@ vmap <Leader>P "+P
 " Enter visual line mode with <Space><Space>:
 nmap <Leader><Leader> V
 
-" 'v' select one character, 'v' again select word, 'v' again select paragraph
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
 " Automatically jump to end of text you pasted
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -69,12 +65,4 @@ nnoremap <silent> p p`]
 " Remove all highlightings
 nnoremap <silent><ESC><ESC> :nohl<CR>
 
-" Quickly insert newline in normalmode without leaving <Not working>
-nnoremap <silent><A-o> o<Esc>k
-nnoremap <silent><A-S-o> O<Esc>j
-
-" Map ,f to display all lines with keyword under cursor and ask which one to jump to
-nnoremap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-
-map <F3> :NERDTreeToggle<CR>
 " }}}
