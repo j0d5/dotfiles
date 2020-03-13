@@ -43,24 +43,13 @@ function! ReadOnly()
         return ''
 endfunction
 
-function! GitInfo()
-    let git = fugitive#head()
-    if git != ''
-        return ' '.fugitive#head()
-    else
-        return ''
-endfunction
-
 set laststatus=2
 set statusline=
 set statusline+=%{ChangeStatuslineColor()}               " Changing the statusline color
 set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
 set statusline+=%0*\ [%n]                                " buffernr
-set statusline+=%2*\ %{GitInfo()}\                        " Git Branch name
 set statusline+=%0*\ %<%F\ %{ReadOnly()}\ %m\ %w\        " File+path
 set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}             " Syntastic errors
-" set statusline+=%*
 set statusline+=%0*\ %=                                  " Space
 set statusline+=%3*\ %y\                                 " FileType
 set statusline+=%0*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]  " Encoding + Fileformat
