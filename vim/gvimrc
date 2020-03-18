@@ -8,10 +8,7 @@
 if has('gui_gtk2')
     set guifont=Inconsolata\ 13
 elseif has('gui_macvim')
-    " set guifont=Fira\ Code:h13
-    set guifont=Fira\ Mono\ for\ Powerline:h13
-    " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h13
-    " set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+    set guifont=SF\ Mono\ Medium:h13
 elseif has('gui_win32')
     set guifont=Consolas:h13:cANSI
 endif

@@ -6,7 +6,7 @@
     editor = nvim
 
 [init]
-    templatedir = ~/.git/templates
+    # templatedir = ~/.git/templates
 
 [gpg]
     program = gpg
