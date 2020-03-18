@@ -23,6 +23,9 @@ setopt auto_cd
 setopt multios
 setopt cdablevars
 
+export TERM="xterm-256color"
+export SHELL=/usr/local/bin/zsh
+
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
@@ -39,10 +42,6 @@ export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white'
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
 
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
