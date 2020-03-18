@@ -88,4 +88,4 @@ done
 unset config_file
 
 # Load the theme
-source "$ZSH/themes/$ZSH_THEME.zsh-theme"
+source "$ZSH/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme"
