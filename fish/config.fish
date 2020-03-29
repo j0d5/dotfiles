@@ -112,3 +112,4 @@ set -U EDITOR 'nvim'
 aliases
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
