@@ -41,9 +41,11 @@ __print "Fetch latest tags ..."
 git fetch --tags
 
 # Enter all valid patterns for tags, e.g. : 'release' will match all 'release/0.0.0.0' (major, minor, patch, optional build)
-VALID_TAGS="release|ff|snapshot"
+# VALID_TAGS="release|ff|snapshot"
 # Get all invalid tags with inverse regex
-INVALID_TAGS=$(git tag | grep -vE "($VALID_TAGS)\/[0-9].[0-9].[0-9](.[0-9]+)?")
+# INVALID_TAGS=$(git tag | grep -vE "($VALID_TAGS)\/[0-9].[0-9].[0-9](.[0-9]+)?")
+REGEX="^(release\/([0-9]+)\.([0-9]+)\.([0-9]+))$|^(snapshot\/((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:-([0-9-]\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*)))?))$"
+INVALID_TAGS=$(git tag | grep -vE "($REGEX)")
 
 # Check if there are any invalid tags
 if [ -z "$INVALID_TAGS" ]; then

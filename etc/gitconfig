@@ -145,6 +145,7 @@
 [pretty]
     commitline = "format:%C(cyan bold)[%h] %Creset%C(green)[%ad] %C(red bold)%d %Creset%s%C(blue italic) [%cn]"
     commit = "format:%C(cyan bold)[%h] %C(green)[%ad] %C(red bold)%d %C(blue italic)[%cn] %C(reset)[%G?]%n%s%n%n%b"
+    #                [   hash   ] [    date    ] [ reference ]           [ committer name ]
     graph  = "format:%C(cyan)[%h] %C(green)[%ad] %C(red bold)%d %Creset%s %C(blue italic)[%cn]"
 
 [difftool]
