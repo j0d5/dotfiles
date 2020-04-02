@@ -41,11 +41,11 @@ set -U fish_user_paths ""
 status --is-interactive; and source (rbenv init -|psub)
 set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
 set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/bin"
-set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
+set -U fish_user_paths $fish_user_paths "/usr/local/opt/ruby/bin"
 # }}}
 
 set -U fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
-set -U fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
+set -U fish_user_paths $fish_user_paths "/usr/local/opt/sqlite/bin"
 
 # Add path for local scripts and binaries {{{
 if test -d "$HOME/.bin"
