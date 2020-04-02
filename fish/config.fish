@@ -34,23 +34,38 @@ end
 set -gx  LC_ALL en_US.UTF-8
 # }}}
 
+# Clear user path
 set -U fish_user_paths ""
+
 # ruby configuration {{{
 status --is-interactive; and source (rbenv init -|psub)
 set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
 set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/bin"
+set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 # }}}
 
 set -U fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 set -U fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 
+# Add path for local scripts and binaries {{{
 if test -d "$HOME/.bin"
   set -U fish_user_paths $fish_user_paths "$HOME/.bin"
+else
+  echo "Invalid path for .bin!"
 end
 
 if test -d "$HOME/.local/bin"
   set -U fish_user_paths $fish_user_paths "$HOME/.local/bin"
+else
+  echo "Invalid path for .local/bin!"
 end
+
+if test -d "$HOME/.dev"
+  set -U fish_user_paths $fish_user_paths "$HOME/.dev"
+else
+  echo "Invalid path for .dev!"
+end
+# }}}
 
 # Haskell language {{{
 if test -d "$HOME/.cabal/bin"
@@ -67,19 +82,21 @@ end
 # Go language {{{
 if test -d "$HOME/go/bin"
   set -U fish_user_paths $fish_user_paths "$HOME/go/bin"
+else
+  echo "Invalid path for go!"
 end
 # }}}
 
-if test -d "$HOME/.dev"
-  set -U fish_user_paths $fish_user_paths "$HOME/.dev"
-end
-
 if test -d "/Applications/Wireshark.app/Contents/MacOS"
   set -U fish_user_paths $fish_user_paths "/Applications/Wireshark.app/Contents/MacOS"
+else
+  echo "Wireshark does not seem to be installed!"
 end
 
 if test -d "/Applications/Araxis Merge.app/Contents/Utilities"
   set -U fish_user_paths $fish_user_paths "/Applications/Araxis Merge.app/Contents/Utilities"
+else
+  echo "Araxis does not seem to be installed!"
 end
 
 if test -d "/usr/local/opt/python@2/bin"
@@ -93,6 +110,8 @@ end
 
 if test -d "/Applications/Xcode.app/Contents/Developer"
     set -U DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
+else
+  echo "Xcode does not seem to be installed!"
 end
 
 if test -f "/usr/local/etc/grc.fish"
@@ -112,4 +131,3 @@ set -U EDITOR 'nvim'
 aliases
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
