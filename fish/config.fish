@@ -46,6 +46,7 @@ set -U fish_user_paths $fish_user_paths "/usr/local/opt/ruby/bin"
 
 set -U fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 set -U fish_user_paths $fish_user_paths "/usr/local/opt/sqlite/bin"
+set -U fish_user_paths $fish_user_paths "/usr/local/opt/openssl@1.1/bin"
 
 # Add path for local scripts and binaries {{{
 if test -d "$HOME/.bin"
