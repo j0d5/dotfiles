@@ -155,6 +155,9 @@
     renametag = "!sh -c 'set -e; git tag $2 $1; git tag -d $1; git push origin :refs/tags/$1; git push --tags' -"
     renamebranch = "!sh -c 'git push origin origin/$1:refs/heads/$2 :$1' - "
 
+[commit]
+    template = ~/.git/templates/commit-msg-template
+
 [filter "media"]
     required = true
     clean    = git media clean %f
