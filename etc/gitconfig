@@ -5,31 +5,25 @@
     excludesfile = ~/.gitignore
     editor = nvim
 
-[init]
-    # templatedir = ~/.git/templates
-
-[gpg]
-    program = gpg
-
 [push]
     default = simple
 
 [fetch]
-    prune = 1
-
-[rerere]
-    enabled = 1
-
-[pull]
-    ff = true
+    prune = true
 
 [diff]
-    tool = araxis
-    compactionheuristic = true
-    context = 4
-    indentHeuristic = true
+    context = 3
+    noprefix = true
+    # different prefix for kind of object
+    # mnemonicprefix = true
     colorMoved = zebra
-    algorithm = patience
+    tool = araxis
+    # algorithm = patience
+    # indentHeuristic = true
+    # compactionheuristic = true
+
+[branch]
+    autosetuprebase = always
 
 [merge]
     tool = araxis
@@ -38,24 +32,59 @@
     commit = false
     # mergeoptions = --no-commit
 
+[gpg]
+    program = gpg
+
+[rerere]
+    enabled = true
+
 [rebase]
     autoStash = true
 
-[commit]
-    template = ~/.git/templates/commit-msg-template
+[color]
+# normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
+# bold, dim, ul (underline), blink, and reverse
+    ui = auto
 
-[stash]
-    showPatch = true
+[color "branch"]
+    current = red reverse
+    local = blue
+    remote = green
 
-[apply]
-    # Cleanup whitespace by default when apply patches.
-    whitespace = fix
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red bold
+    new = green
+    plain = white
 
-[pager]
-    show-branch = true
+[color "status"]
+    added     = green
+    changed   = yellow
+    untracked = cyan
 
-[grep]
-    lineNumber = true
+[pretty]
+    commitline = "format:%C(cyan bold)[%h] %Creset%C(green)[%ad] %C(red bold)%d %Creset%s%C(blue italic) [%cn]"
+    commit = "format:%C(cyan bold)[%h] %C(green)[%ad] %C(red bold)%d %C(blue italic)[%cn] %C(reset)[%G?]%n%s%n%n%b"
+    #                [   hash   ] [ reference ]                [ committer date ] [ committer name ]
+    graph  = "format:%C(red)%h %Creset-%C(cyan bold)%d %Creset%s %C(green)[%cr] %C(blue italic)[%cn]"
+
+[difftool "araxis"]
+    cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+    path =
+
+[mergetool "araxis"]
+    cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
+    trustExitCode = true
+
+[difftool "vimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE
+
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[difftool "icdiff"]
+    cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE
 
 [alias]
     ec = config --global -e # open git configuration in editor
@@ -74,18 +103,15 @@
     tr = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
 
     # show list of commits
-    l = log --date=format:'%Y-%m-%d %H:%M' -10 --pretty=commitline
+    l = log --date=format:'%Y-%m-%d %H:%M' -10 --pretty=graph
 
     # show last commit
-    lh = log --date=format:'%Y-%m-%d %H:%M' -1 --pretty=commit
+    lh = log --date=format:'%Y-%m-%d %H:%M' -1 --pretty=graph
 
     # show log with graph
     ls = log --graph --oneline --all --decorate --simplify-by-decoration --date=format:'%Y-%m-%d %H:%M' --pretty=graph
     lg = log --graph --oneline --decorate --topo-order -20 --date=relative --pretty=graph # --all
     llg = log --graph --oneline --all --decorate --topo-order --date=format:'%Y-%m-%d %H:%M' --pretty=graph
-
-    # show commit with all file changes
-    la = log --date=format:'%Y-%m-%d %H:%M' --decorate --numstat --pretty=commitline
 
     # show diff to last commit
     last = diff HEAD~1
@@ -129,45 +155,6 @@
     renametag = "!sh -c 'set -e; git tag $2 $1; git tag -d $1; git push origin :refs/tags/$1; git push --tags' -"
     renamebranch = "!sh -c 'git push origin origin/$1:refs/heads/$2 :$1' - "
 
-[color]
-# normal, black, red, green, yellow, blue, magenta, cyan, or white probably also #ff0ab3
-# bold, dim, ul (underline), blink, and reverse
-    ui = auto
-
-[color "status"]
-    added     = green
-    changed   = yellow
-    untracked = cyan
-
-[format]
-    pretty = "format:%C(green)%h %C(yellow)[%ad]%Cred%d %Creset%s%Cblue [%cn]"
-
-[pretty]
-    commitline = "format:%C(cyan bold)[%h] %Creset%C(green)[%ad] %C(red bold)%d %Creset%s%C(blue italic) [%cn]"
-    commit = "format:%C(cyan bold)[%h] %C(green)[%ad] %C(red bold)%d %C(blue italic)[%cn] %C(reset)[%G?]%n%s%n%n%b"
-    #                [   hash   ] [    date    ] [ reference ]           [ committer name ]
-    graph  = "format:%C(cyan)[%h] %C(green)[%ad] %C(red bold)%d %Creset%s %C(blue italic)[%cn]"
-
-[difftool]
-    prompt = false
-
-[difftool "araxis"]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-    path =
-
-[mergetool "araxis"]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-    trustExitCode = true
-
-[mergetool "vimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-
-[difftool "vimdiff"]
-    cmd = nvim -d $LOCAL $REMOTE
-
-[difftool "icdiff"]
-    cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE
-
 [filter "media"]
     required = true
     clean    = git media clean %f
@@ -184,3 +171,10 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+
+[apply]
+    # Cleanup whitespace by default when apply patches.
+    whitespace = fix
+
+[grep]
+    lineNumber = true
