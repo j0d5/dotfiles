@@ -631,8 +631,12 @@
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>880 726 799 448 -1440 -252 1440 877 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>1304 1155 400 129 0 0 3008 1669 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>498 1104 620 392 0 0 3008 1692 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1522 1417 0 0 2560 1440 </string>
+	<string>0 0 1564 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1406 30 1117 1387 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
@@ -1217,7 +1221,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SFMono-Regular 14</string>
+			<string>Menlo-Regular 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1285,25 +1289,33 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.10beta1</string>
+		<string>3.3.11</string>
+	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>Menlo</string>
+		<string>Inconsolata</string>
+		<string>Fira Code</string>
+		<string>SF Mono</string>
+		<string>Source Code Pro</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>SF Mono</string>
-		<string>Monaco</string>
-		<string>Source Code Pro for Powerline</string>
-		<string>Source Code Pro</string>
+		<string>Menlo</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{931, 825}</string>
+		<string>{212, 818}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>AC9A364C-BA24-4D65-8D4D-8F2F5049A002</string>
+	<key>NoSyncLastTipTime</key>
+	<real>613386326.64443004</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>15</integer>
+	<integer>33</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2046,6 +2058,10 @@
 	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>604307591.70509899</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+	</array>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -2090,8 +2106,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-16T08:15:10Z</date>
+	<date>2020-06-18T13:16:41Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
@@ -2102,6 +2120,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.10beta1</string>
+	<string>3.3.11</string>
 </dict>
 </plist>
