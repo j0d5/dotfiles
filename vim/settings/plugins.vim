@@ -64,3 +64,5 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Settings for backup edited files
 Plug 'tweetjay/vim-backstate'
+" mySPIN Syntax
+Plug 'tweetjay/vim-tweetjay-syntax'
