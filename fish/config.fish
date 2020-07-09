@@ -121,7 +121,7 @@ end
 
 # Flutter {{{
 if test -d "$HOME/Developer/flutter/bin/"
-  set -U fish_user_paths "$HOME/Developer/flutter/bin/"
+  set -U fish_user_paths $fish_user_paths "$HOME/Developer/flutter/bin/"
 end
 # }}}
 
