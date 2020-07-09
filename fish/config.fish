@@ -39,74 +39,57 @@ set -U fish_user_paths ""
 
 # Ruby {{{
 status --is-interactive; and source (rbenv init -|psub)
-set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/shims"
-set -U fish_user_paths $fish_user_paths "$HOME/.rbenv/bin"
-set -U fish_user_paths $fish_user_paths "/usr/local/opt/ruby/bin"
+__tweetjay_addPath "$HOME/.rbenv/shims"
+__tweetjay_addPath "$HOME/.rbenv/bin"
+__tweetjay_addPath "/usr/local/opt/ruby/bin"
 # }}}
 
 # Set most important paths {{{
-set -U fish_user_paths $fish_user_paths "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
+__tweetjay_addPath "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 # }}}
 
 # Add path for local scripts and binaries {{{
-if test -d "$HOME/.bin"
-  set -U fish_user_paths $fish_user_paths "$HOME/.bin"
-else
-  echo "Invalid path for .bin!"
-end
-
-if test -d "$HOME/.local/bin"
-  set -U fish_user_paths $fish_user_paths "$HOME/.local/bin"
-else
-  echo "Invalid path for .local/bin!"
-end
-
-if test -d "$HOME/.dev"
-  set -U fish_user_paths $fish_user_paths "$HOME/.dev"
-else
-  echo "Invalid path for .dev!"
-end
+__tweetjay_addPath "$HOME/.bin"
+__tweetjay_addPath "$HOME/.local/bin"
+__tweetjay_addPath "$HOME/.dev"
 # }}}
 
 # SQL {{{
-set -U fish_user_paths $fish_user_paths "/usr/local/opt/sqlite/bin"
+__tweetjay_addPath "/usr/local/opt/sqlite/bin"
 # }}}
 
 # SSL {{{
-set -U fish_user_paths $fish_user_paths "/usr/local/opt/openssl@1.1/bin"
+__tweetjay_addPath "/usr/local/opt/openssl@1.1/bin"
 # }}}
 
 # Haskell {{{
-if test -d "$HOME/.cabal/bin"
-  set -U fish_user_paths $fish_user_paths "$HOME/.cabal/bin"
-end
-if test -d "$HOME/.ghcup/bin"
-  set -U fish_user_paths $fish_user_paths "$HOME/.ghcup/bin"
-end
-if test -d "$HOME/.ghcup/env"
-  set -U fish_user_paths $fish_user_paths "$HOME/.ghcup/env"
-end
+__tweetjay_addPath "$HOME/.cabal/bin"
+__tweetjay_addPath "$HOME/.ghcup/bin"
+__tweetjay_addPath "$HOME/.ghcup/env"
 # }}}
 
 # Go {{{
-if test -d "$HOME/go/bin"
-  set -U fish_user_paths $fish_user_paths "$HOME/go/bin"
-else
-  echo "Invalid path for go!"
-end
+__tweetjay_addPath "$HOME/go/bin"
 # }}}
 
 # Python {{{
-if test -d "/usr/local/opt/python@2/bin"
-  set -U fish_user_paths $fish_user_paths "/usr/local/opt/python@2/bin"
-end
+__tweetjay_addPath "/usr/local/opt/python@2/bin"
 # }}}
 
-if test -d "$NPM_PACKAGES/bin"
-  set -U fish_user_paths $fish_user_paths "$NPM_PACKAGES/bin"
-  set -U NPM_PACKAGES "$HOME/.npm-packages"
-end
+# NPM {{{
+__tweetjay_addPath "$NPM_PACKAGES/bin"
+set -U NPM_PACKAGES "$HOME/.npm-packages"
+# }}}
 
+# Wireshark {{{
+__tweetjay_addPath "/Applications/Wireshark.app/Contents/MacOS"
+# }}}
+# Araxis Merge {{{
+__tweetjay_addPath "/Applications/Araxis Merge.app/Contents/Utilities"
+# }}}
+# Flutter {{{
+__tweetjay_addPath "$HOME/Developer/flutter/bin/"
+# }}}
 # Xcode Developer Dir {{{
 if test -d "/Applications/Xcode.app/Contents/Developer"
     set -U DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
@@ -117,24 +100,6 @@ end
 
 if test -f "/usr/local/etc/grc.fish"
     source /usr/local/etc/grc.fish
-end
-
-# Flutter {{{
-if test -d "$HOME/Developer/flutter/bin/"
-  set -U fish_user_paths $fish_user_paths "$HOME/Developer/flutter/bin/"
-end
-# }}}
-
-if test -d "/Applications/Wireshark.app/Contents/MacOS"
-  set -U fish_user_paths $fish_user_paths "/Applications/Wireshark.app/Contents/MacOS"
-else
-  echo "Wireshark does not seem to be installed!"
-end
-
-if test -d "/Applications/Araxis Merge.app/Contents/Utilities"
-  set -U fish_user_paths $fish_user_paths "/Applications/Araxis Merge.app/Contents/Utilities"
-else
-  echo "Araxis does not seem to be installed!"
 end
 
 set -l isCompanyLAN (ifconfig | grep 'inet 10.')
