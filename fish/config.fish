@@ -90,6 +90,9 @@ __tweetjay_addPath "/Applications/Araxis Merge.app/Contents/Utilities"
 # Flutter {{{
 __tweetjay_addPath "$HOME/Developer/flutter/bin/"
 # }}}
+
+__tweetjay_addPath "/usr/local/opt/binutils/bin"
+
 # Xcode Developer Dir {{{
 if test -d "/Applications/Xcode.app/Contents/Developer"
     set -U DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
