@@ -10,6 +10,7 @@
 		"AdvancedNewFile",
 		"Alignment",
 		"Case Conversion",
+		"ChannelRepositoryTools",
 		"CodeSearch",
 		"EditorConfig",
 		"GitGutter",
@@ -18,6 +19,7 @@
 		"MarkdownPreview",
 		"Material Theme",
 		"MultiEditUtils",
+		"MySpinLogAnalyser",
 		"Package Control",
 		"PlantUmlDiagrams",
 		"SideBarEnhancements",
@@ -37,6 +39,7 @@
 	],
 	"repositories":
 	[
-		"https://github.com/jvantuyl/sublime_diagram_plugin"
+		"https://github.com/jvantuyl/sublime_diagram_plugin",
+		"https://github.com/tweetjay/MySpinLogAnalyser"
 	]
 }

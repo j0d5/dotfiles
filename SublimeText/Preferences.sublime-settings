@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -50,7 +50,6 @@
 		"Vintageous"
 	],
 	"margin": 0,
-	"open_files_in_new_window": true,
 	"rulers":
 	[
 		120
@@ -63,5 +62,6 @@
 	"tab_size": 4,
 	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": "auto"
 }
