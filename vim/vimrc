@@ -149,6 +149,7 @@ so ~/.vim/settings/vim-expand-region.vim
 so ~/.vim/settings/plantuml-previewer.vim
 so ~/.vim/settings/coc.vim
 so ~/.vim/settings/buffergator.vim
+so ~/.vim/settings/markdown.vim
 " }}}
 
 " Configure fuzzy file search
