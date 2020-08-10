@@ -40,7 +40,6 @@ set -U fish_user_paths ""
 # Ruby {{{
 status --is-interactive; and source (rbenv init -|psub)
 __tweetjay_addPath "$HOME/.rbenv/shims"
-__tweetjay_addPath "$HOME/.rbenv/bin"
 __tweetjay_addPath "/usr/local/opt/ruby/bin"
 # }}}
 
