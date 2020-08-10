@@ -44,6 +44,10 @@ __tweetjay_addPath "$HOME/.rbenv/bin"
 __tweetjay_addPath "/usr/local/opt/ruby/bin"
 # }}}
 
+# Rust {{{
+__tweetjay_addPath "$HOME/.cargo/bin"
+# }}}
+
 # Set most important paths {{{
 __tweetjay_addPath "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sbin" "/sbin" "/usr/local/lib" "/usr/lib"
 # }}}
