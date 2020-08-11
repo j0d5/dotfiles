@@ -140,6 +140,8 @@ augroup CursorLineOnlyInActiveWindow
 augroup END
 " }}}
 
+let g:ale_disable_lsp = 1
+
 " Source settings {{{
 so ~/.vim/settings/statusline.vim
 so ~/.vim/settings/ale.vim
