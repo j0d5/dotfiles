@@ -32,6 +32,12 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-Tab> :bn<cr>
 nnoremap <C-S-Tab> :bp<cr>
 
+" Show buffers
+nnoremap <leader>b :b <C-d>
+
+" Run make
+nnoremap <leader>m :make<cr>
+
 " Change tab with Cmd + <number>
 nnoremap <silent> <D-1> :tabn 1<cr>
 nnoremap <silent> <D-2> :tabn 2<cr>
