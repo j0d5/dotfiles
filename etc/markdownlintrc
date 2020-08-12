@@ -1,7 +1,9 @@
 {
-  "default": true,
-  "header-style": { "style": "atx" }, // Consistent header style
-  "ul-style": { "style": "consistent" }, // Consistent list style
-  "ul-indent": { "indent": 4 }, // Indent lists by 4
-  "line-length": { "code_block_line:length": 120 }
+    "default": true,
+    "header-style": { "style": "atx" },
+    "ul-style": { "style": "consistent" },
+    "ul-indent": { "indent": 4 },
+    "line-length": { "code_block_line:length": 120 },
+    "siblings_only": true,
+    "allow_different_nesting": true
 }
