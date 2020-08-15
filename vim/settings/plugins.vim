@@ -1,17 +1,17 @@
 " Git plugin - show changed lines in gutter
 Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-fugitive'
 
 " Syntax checker and linter for vim
 Plug 'w0rp/ale'
 
-" Syntax highlighting plugins
+" {{{ Syntax highlighting plugins
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'b4winckler/vim-objc', { 'for': 'objc' }
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+" }}}
 
 " Haskell formatting and refactoring
 " Plug 'alx741/vim-hindent'
@@ -23,9 +23,10 @@ Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 
-" Add Theme
+" {{{ Themes
 Plug 'tweetjay/vim-tweetjay'
 Plug 'tomasr/molokai'
+" }}}
 
 " Uncover usage problems in your writing
 Plug 'reedes/vim-wordy', { 'for': 'markdown' }

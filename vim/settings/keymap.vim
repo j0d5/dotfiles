@@ -23,9 +23,9 @@ nnoremap j gj
 nnoremap k gk
 
 " Window navigation with hjkl
+nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Cycle through buffers
