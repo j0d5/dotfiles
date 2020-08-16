@@ -6,7 +6,7 @@
 
 syntax on
 
-" Shell {{{
+" {{{ Shell
 if $SHELL =~? 'bin/fish'
     set shell=/bin/sh
 endif
@@ -15,13 +15,13 @@ endif
 set hidden           " Allow switching edited buffers without saving
 set title            " Show filename
 
-" Layout {{{
+" {{{ Layout
 " set termencoding=utf-8
 set encoding=utf-8     " Use UTF-8 as the default buffer encoding
 " scriptencoding utf-8
 " }}}
 
-" Behavior {{{
+" {{{ Behavior
 set autoread         " Read open files again when changed outside Vim
 set switchbuf=useopen           " reveal already opened files from the
                                 " quickfix window instead of opening new
@@ -39,17 +39,17 @@ set completeopt=menu,menuone,longest,preview " Insert mode completion options
 set backspace=indent,eol,start
 " }}}
 
-" Show some invisible characters {{{
+" {{{ Show some invisible characters
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 " }}}
 
-" Indentation {{{
+" {{{ Indentation
 set autoindent       " copy indent from current line
 set shiftround       " shift to nearest indent
 " }}}
 
-" Tab settings {{{
+" {{{ Tab settings
 set tabstop=4        " Tab size
 set shiftwidth=4     " Shift width
 set expandtab        " Tabs to spaces
@@ -57,7 +57,7 @@ set expandtab        " Tabs to spaces
 " set smarttab
 " }}}
 
-" Handle long lines {{{
+" {{{ Handle long lines
 set wrap
 set textwidth=79
 set formatoptions=qrn1
@@ -65,7 +65,7 @@ set linebreak
 set display+=lastline
 " }}}
 
-" Search {{{ See http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" {{{  Search See http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set hlsearch             " Highlight search
 set incsearch            " incremental searching
 set ignorecase smartcase " Case-insensitive searching
@@ -74,13 +74,13 @@ nnoremap <tab> %
 vnoremap <tab> %
 " }}}
 
-" Scrolling {{{
-set scrolloff=8
-set sidescrolloff=15
-set sidescroll=1
+" {{{ Scrolling
+" set scrolloff=8
+" set sidescrolloff=15
+" set sidescroll=1
 " }}}
 
-" Wildmenu {{{
+" {{{ Wildmenu
 set wildmenu                   " Use menu to show command-line completion (in 'full' case)
 set wildmode=list:longest,full " set command-line completion mode:
 " - on first <Tab>, when more than one match, list all matches and complete the longest common string
@@ -101,7 +101,7 @@ set wildignore+=*/tmp/*           " MacOSX/Linux
 set wildignore+=*\\tmp\\*         " Windows
 " }}}
 
-" Python {{{
+" {{{ Python
 let g:python_host_prog  = '/usr/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
@@ -111,13 +111,13 @@ if has('python3')
 endif
 " }}}
 
-" PlugIn-Configuration {{{
+" {{{ PlugIn-Configuration
 call plug#begin('$HOME/.vim/plugged')
 so ~/.vim/settings/plugins.vim
 call plug#end()
 " }}}
 
-" Colorscheme {{{
+" {{{ Colorscheme
 if has('gui_running')
     colorscheme tweetjay
 elseif &t_Co < 256
@@ -142,7 +142,7 @@ augroup END
 
 let g:ale_disable_lsp = 1
 
-" Source settings {{{
+" {{{ Source settings
 so ~/.vim/settings/statusline.vim
 so ~/.vim/settings/ale.vim
 so ~/.vim/settings/ctrlp.vim
@@ -150,21 +150,17 @@ so ~/.vim/settings/keymap.vim
 so ~/.vim/settings/vim-expand-region.vim
 so ~/.vim/settings/plantuml-previewer.vim
 so ~/.vim/settings/coc.vim
-so ~/.vim/settings/buffergator.vim
 so ~/.vim/settings/markdown.vim
 " }}}
 
-" Configure fuzzy file search
-" set rtp+=/usr/local/opt/fzf
-
-" Special filetypes and encoding {{{
+" {{{ Special filetypes and encoding
 if has('autocmd')
     "autocmd BufEnter * cd %:p:h
     filetype plugin indent on
 endif
 " }}}
 
-" Encoding {{{
+" {{{ Encoding
 " Always check for UTF-8 when trying to determine encodings
 if &fileencodings !~? 'utf-8'
     set fileencodings+=utf-8
@@ -180,7 +176,7 @@ if has('nvim-0.3.2') || has("patch-8.1.0360")
 endif
 " }}}
 
-" Load local vim config {{{
+" {{{ Load local vim config
 let $LOCALFILE=expand('~/.vimrc_local')
 if filereadable($LOCALFILE)
     source $LOCALFILE
