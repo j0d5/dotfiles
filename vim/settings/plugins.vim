@@ -37,6 +37,11 @@ Plug 'vim-python/python-syntax', { 'for': 'python' }
 Plug 'tweetjay/vim-tweetjay-syntax'
 " }}}
 
+" {{{ Flutter Stuff
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+" }}}
 " {{{ Haskell Stuff
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 " Plug 'alx741/vim-hindent'
