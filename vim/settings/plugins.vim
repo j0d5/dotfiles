@@ -34,13 +34,13 @@ Plug 'b4winckler/vim-objc', { 'for': 'objc' }
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 " mySPIN Syntax
-Plug 'tweetjay/vim-tweetjay-syntax'
+Plug 'tweetjay/vim-tweetjay-syntax', { 'for': 'mySPIN' }
 " }}}
 
 " {{{ Flutter Stuff
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+Plug 'natebosch/vim-lsc', { 'for': 'dart' }
+Plug 'natebosch/vim-lsc-dart', { 'for': 'dart' }
 " }}}
 " {{{ Haskell Stuff
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }

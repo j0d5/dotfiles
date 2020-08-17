@@ -6,12 +6,6 @@
 
 syntax on
 
-" {{{ Shell
-if $SHELL =~? 'bin/fish'
-    set shell=/bin/sh
-endif
-" }}}
-
 set hidden           " Allow switching edited buffers without saving
 set title            " Show filename
 
@@ -22,19 +16,19 @@ set encoding=utf-8     " Use UTF-8 as the default buffer encoding
 " }}}
 
 " {{{ Behavior
-set autoread         " Read open files again when changed outside Vim
-set switchbuf=useopen           " reveal already opened files from the
-                                " quickfix window instead of opening new
-                                " buffers
-set nostartofline    " Keep cursor in current column when using page commands
-set autochdir        " Automatically set current directory to directory of last opened file
-set visualbell       " Set visual bell instead of acustic
-set mouse=a          " Enable the use of the mouse
+set autoread          " Read open files again when changed outside Vim
+set switchbuf=useopen " reveal already opened files from the
+                      " quickfix window instead of opening new
+                      " buffers
+set nostartofline     " Keep cursor in current column when using page commands
+set autochdir         " Automatically set current directory to directory of last opened file
+set visualbell        " Set visual bell instead of acustic
+set mouse=a           " Enable the use of the mouse
 set number relativenumber " hybrid relative numbers
-set matchtime=4      " Jump to matching bracket for n/10 seconds
+set matchtime=4       " Jump to matching bracket for n/10 seconds
 set nospell
-set nojoinspaces     " Insert only one space when joining lines
-set magic            " Use magic escaping
+set nojoinspaces      " Insert only one space when joining lines
+set magic             " Use magic escaping
 set completeopt=menu,menuone,longest,preview " Insert mode completion options
 set backspace=indent,eol,start
 " }}}
@@ -75,9 +69,9 @@ vnoremap <tab> %
 " }}}
 
 " {{{ Scrolling
-" set scrolloff=8
-" set sidescrolloff=15
-" set sidescroll=1
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
 " }}}
 
 " {{{ Wildmenu
@@ -99,16 +93,6 @@ set wildignore+=*.sw?             " Vim swap files
 set wildignore+=.DS_Store         " Mac files
 set wildignore+=*/tmp/*           " MacOSX/Linux
 set wildignore+=*\\tmp\\*         " Windows
-" }}}
-
-" {{{ Python
-let g:python_host_prog  = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
-
-" Temporary workaround for python 3.7: https://github.com/vim/vim/issues/3117#issuecomment-402622616
-if has('python3')
-  silent! python3 1
-endif
 " }}}
 
 " {{{ PlugIn-Configuration
@@ -143,13 +127,14 @@ augroup END
 let g:ale_disable_lsp = 1
 
 " {{{ Source settings
-so ~/.vim/settings/statusline.vim
-so ~/.vim/settings/ale.vim
-so ~/.vim/settings/ctrlp.vim
 so ~/.vim/settings/keymap.vim
+so ~/.vim/settings/statusline.vim
+so ~/.vim/settings/coc.vim
+so ~/.vim/settings/ale.vim
+so ~/.vim/settings/python.vim
+so ~/.vim/settings/ctrlp.vim
 so ~/.vim/settings/vim-expand-region.vim
 so ~/.vim/settings/plantuml-previewer.vim
-so ~/.vim/settings/coc.vim
 so ~/.vim/settings/markdown.vim
 " }}}
 
