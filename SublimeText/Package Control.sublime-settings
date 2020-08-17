@@ -1,7 +1,5 @@
 {
 	"bootstrapped": true,
-	"http_proxy": "localhost:8080",
-	"https_proxy": "localhost:8080",
 	"in_process_packages":
 	[
 	],
