@@ -181,3 +181,6 @@
 
 [grep]
     lineNumber = true
+
+[gitflow]
+    allowdirty=true
