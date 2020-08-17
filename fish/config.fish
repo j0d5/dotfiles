@@ -121,3 +121,7 @@ set -U EDITOR 'nvim'
 aliases
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+if test -f "$HOME/.fish_local"
+    source $HOME/.fish_local
+end
