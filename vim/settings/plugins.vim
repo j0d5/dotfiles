@@ -34,7 +34,7 @@ Plug 'b4winckler/vim-objc', { 'for': 'objc' }
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
 " mySPIN Syntax
-Plug 'tweetjay/vim-tweetjay-syntax', { 'for': 'mySPIN' }
+Plug 'tweetjay/vim-myspinloganalyser', { 'for': 'mySPIN' }
 " }}}
 
 " {{{ Flutter Stuff
