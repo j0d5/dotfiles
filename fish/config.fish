@@ -1,6 +1,6 @@
-#
+# {{{
 # fish initialization file
-#
+# }}}
 
 # fish specific configuration {{{
 set -g normal (set_color normal)
@@ -54,7 +54,6 @@ __tweetjay_addPath "/usr/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/usr/sb
 # Add path for local scripts and binaries {{{
 __tweetjay_addPath "$HOME/.bin"
 __tweetjay_addPath "$HOME/.local/bin"
-__tweetjay_addPath "$HOME/.dev"
 # }}}
 
 # SQL {{{
@@ -99,8 +98,6 @@ __tweetjay_addPath "/usr/local/opt/binutils/bin"
 # Xcode Developer Dir {{{
 if test -d "/Applications/Xcode.app/Contents/Developer"
     set -U DEVELOPER_DIR "/Applications/Xcode.app/Contents/Developer"
-else
-  echo "Xcode does not seem to be installed!"
 end
 # }}}
 
