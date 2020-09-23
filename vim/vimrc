@@ -109,11 +109,6 @@ elseif &t_Co < 256
     set nocursorline " Looks bad in this mode
 else
     colorscheme tweetjay
-    " Customized colors
-    highlight SignColumn ctermbg=234
-    highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
-    highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
-    highlight SpellBad cterm=underline
 endif
 
 " Highlight current line, but only in active window
