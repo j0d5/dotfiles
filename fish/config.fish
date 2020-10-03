@@ -27,7 +27,7 @@ fish_vi_key_bindings
 
 if test $TERM != "screen-256color"
   set -gx TERM xterm-256color
-  set -gx LS_COLORS (bash -c 'eval `gdircolors ~/.dircolors`; echo $LS_COLORS')
+  # set -gx LS_COLORS (bash -c 'eval `gdircolors ~/.dircolors`; echo $LS_COLORS')
   set -gx EXA_COLORS 'uu=0:gu=0:di=32:da=38;5;33'
 end
 
@@ -103,14 +103,6 @@ end
 
 if test -f "/usr/local/etc/grc.fish"
     source /usr/local/etc/grc.fish
-end
-
-set -l isCompanyLAN (ifconfig | grep 'inet 10.')
-
-if test -n "$isCompanyLAN"
-    echo "Connected to company LAN"
-    echo "Setting proxy values"
-    setProxy
 end
 
 set -U EDITOR 'nvim'
