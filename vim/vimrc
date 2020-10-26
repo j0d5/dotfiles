@@ -131,6 +131,7 @@ so ~/.vim/settings/ctrlp.vim
 so ~/.vim/settings/vim-expand-region.vim
 so ~/.vim/settings/plantuml-previewer.vim
 so ~/.vim/settings/markdown.vim
+so ~/.vim/settings/jenkins.vim
 " }}}
 
 " {{{ Special filetypes and encoding
