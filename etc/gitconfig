@@ -5,6 +5,9 @@
     excludesfile = ~/.gitignore
     editor = nvim
 
+[init]
+    templatedir = /Users/johannes/.git-template
+
 [commit]
     template = ~/.git/templates/commit-msg-template
 
@@ -184,3 +187,4 @@
 
 [gitflow]
     allowdirty=true
+

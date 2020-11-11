@@ -105,6 +105,13 @@ if test -f "/usr/local/etc/grc.fish"
     source /usr/local/etc/grc.fish
 end
 
+# talisman {{{
+# Below environment variables should not be modified unless you know what you are doing
+set -U TALISMAN_HOME $HOME/.talisman/bin
+alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
+set -U TALISMAN_INTERACTIVE false
+# }}}
+
 set -U EDITOR 'nvim'
 
 aliases
