@@ -1,6 +1,7 @@
 " {{{ Themes
 Plug 'tweetjay/vim-tweetjay'
 Plug 'tomasr/molokai'
+Plug 'patstockwell/vim-monokai-tasty'
 " }}}
 
 " Git plugin - show changed lines in gutter
