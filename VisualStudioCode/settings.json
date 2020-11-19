@@ -73,6 +73,6 @@
     }
   },
   "files.autoSave": "off",
-  "workbench.colorTheme": "Monokai Dimmed",
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Visual Studio 2019 Dark"
 }
