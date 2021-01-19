@@ -31,7 +31,9 @@ if test $TERM != "screen-256color"
   set -gx EXA_COLORS 'uu=0:gu=0:di=32:da=38;5;33'
 end
 
-set -gx  LC_ALL en_US.UTF-8
+set -gx LC_ALL "en_US.UTF-8"
+set -gx LANGUAGE "en_US.UTF-8"
+set -gx LANG "en_GB.UTF-8"
 # }}}
 
 # Clear user path
