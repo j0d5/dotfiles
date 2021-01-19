@@ -1,6 +1,7 @@
 " {{{ Themes
 Plug 'tweetjay/vim-tweetjay'
 Plug 'tomasr/molokai'
+Plug 'patstockwell/vim-monokai-tasty'
 " }}}
 
 " Git plugin - show changed lines in gutter
@@ -33,8 +34,7 @@ Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'b4winckler/vim-objc', { 'for': 'objc' }
 Plug 'aliva/vim-fish', { 'for': 'fish' }
 Plug 'vim-python/python-syntax', { 'for': 'python' }
-" mySPIN Syntax
-Plug 'tweetjay/vim-myspinloganalyser', { 'for': 'mySPIN' }
+Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'groovy' }
 " }}}
 
 " {{{ Flutter Stuff
@@ -42,6 +42,7 @@ Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'natebosch/vim-lsc', { 'for': 'dart' }
 Plug 'natebosch/vim-lsc-dart', { 'for': 'dart' }
 " }}}
+
 " {{{ Haskell Stuff
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 " Plug 'alx741/vim-hindent'
@@ -59,6 +60,20 @@ Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 " }}}
+
+" {{( Angular
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'bdauria/angular-cli.vim'
+Plug 'burnettk/vim-angular'
+Plug 'matthewsimo/angular-vim-snippets'
+Plug 'claco/jasmine.vim'
+Plug 'iamcco/coc-angular'
+" }}}
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " {{{ File Management
 " Delete, Rename, Move, SudoEdit, SudoWrite

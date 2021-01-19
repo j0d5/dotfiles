@@ -7,12 +7,14 @@
 	[
 		"AdvancedNewFile",
 		"Alignment",
+		"AngularJS",
 		"Case Conversion",
 		"ChannelRepositoryTools",
 		"CodeSearch",
 		"EditorConfig",
 		"GitGutter",
 		"LaTeXing",
+		"LSP-angular",
 		"MarkdownEditing",
 		"MarkdownPreview",
 		"Material Theme",
@@ -31,6 +33,7 @@
 		"SublimeLinter-shellcheck",
 		"Theme - Cobalt2",
 		"Theme - Soda SolarizedDark",
+		"TypeScript",
 		"Uncrustify",
 		"WordCount",
 		"WordHighlight"

@@ -5,6 +5,9 @@
     excludesfile = ~/.gitignore
     editor = nvim
 
+[init]
+    templatedir = /Users/johannes/.git-template
+
 [commit]
     template = ~/.git/templates/commit-msg-template
 
@@ -71,14 +74,6 @@
     commit = "format:%C(cyan bold)[%h] %C(green)[%ad] %C(red bold)%d %C(blue italic)[%cn] %C(reset)[%G?]%n%s%n%n%b"
     #                [   hash   ] [ reference ]                [ committer date ] [ committer name ]
     graph  = "format:%C(red)%h %Creset-%C(cyan bold)%d %Creset%s %C(green)[%cr] %C(blue italic)[%cn]"
-
-[difftool "araxis"]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
-    path =
-
-[mergetool "araxis"]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/araxisgitmerge-w.sh \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\"
-    trustExitCode = true
 
 [difftool "vimdiff"]
     cmd = nvim -d $LOCAL $REMOTE
@@ -184,3 +179,4 @@
 
 [gitflow]
     allowdirty=true
+
