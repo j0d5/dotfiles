@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "Menlo",
+  "editor.fontFamily": "Fira Code",
   "editor.renderWhitespace": "boundary",
   "editor.cursorStyle": "line",
   "editor.rulers": [120],
@@ -74,5 +74,10 @@
   },
   "files.autoSave": "off",
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Visual Studio 2019 Dark"
+  "eslint.validate": [
+    "javascript",
+    "html",
+    "markdown"
+  ],
+  "workbench.colorTheme": "GitHub Dark"
 }
