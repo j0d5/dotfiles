@@ -19,7 +19,11 @@ alias l='ls -Glhp'
 # list all as colored list with human readable sizes
 #alias la='ls -GAlhp'
 # exa:
-alias la="exa -abghl --git --color=automatic"
+if [[ "$OSTYPE" = darwin* ]]; then
+  alias la="exa -abghl --git --color=automatic"
+else
+  alias la="ls -lah"
+fi
 
 # `cat` with beautiful colors. requires: pip install -U Pygments
 alias c='pygmentize -O style=borland -f console256 -g'
