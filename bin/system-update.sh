@@ -13,22 +13,14 @@
 
 echo "Running system-update script"
 
-# check for proxy
-if ifconfig | grep -q 'inet 10.'; then
-  echo "Found company network"
-  export http_proxy=localhost:8080
-  export https_proxy=localhost:8080
-fi
-
 # homebrew
 BREW=/usr/local/bin/brew
 if [ -x "$BREW" ]; then
   echo "Updating brew"
   $BREW update
   $BREW upgrade
-  $BREW cask upgrade
+  $BREW upgrade --cask
   $BREW cleanup
-  $BREW prune
 else
   >&2 echo "Command brew not found!"
 fi
