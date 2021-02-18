@@ -24,7 +24,7 @@ ZSH=$HOME/.zsh
 # ZSH_THEME="tweetjay"
 ZSH_THEME="powerlevel10k"
 
-plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
 
 # You may seed to manually set your language environment
 export LANG=en_US.UTF-8
