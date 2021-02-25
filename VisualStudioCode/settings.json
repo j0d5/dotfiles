@@ -79,5 +79,7 @@
     "html",
     "markdown"
   ],
-  "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "GitHub Dark",
+  "angular.experimental-ivy": true,
+  "workbench.editor.tabSizing": "shrink"
 }
