@@ -24,6 +24,7 @@ folders: ## symlink all those folders
 	/bin/ln -sfn $(DOTPATH)/fish $(HOME)/.config/fish
 	/bin/ln -sfn $(DOTPATH)/zsh $(HOME)/.zsh
 	/bin/ln -sfn $(DOTPATH)/vim $(HOME)/.vim
+	/bin/ln -sfn $(DOTPATH)/vim/vimrc $(HOME)/.vimrc
 	/bin/ln -sfn $(DOTPATH)/vim $(HOME)/.config/nvim
 	/bin/ln -sfn $(DOTPATH)/kitty $(HOME)/.config/kitty
 	/bin/ln -sfn $(DOTPATH)/hammerspoon $(HOME)/.hammerspoon
