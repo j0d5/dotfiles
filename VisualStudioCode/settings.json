@@ -81,5 +81,7 @@
   ],
   "workbench.colorTheme": "GitHub Dark",
   "angular.experimental-ivy": true,
-  "workbench.editor.tabSizing": "shrink"
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.pinnedTabSizing": "shrink",
+  "workbench.editor.decorations.badges": true
 }
