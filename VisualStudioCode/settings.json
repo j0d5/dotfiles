@@ -73,7 +73,6 @@
     }
   },
   "files.autoSave": "off",
-  "window.zoomLevel": 0,
   "eslint.validate": [
     "javascript",
     "html",
