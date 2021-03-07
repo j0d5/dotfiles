@@ -24,7 +24,7 @@ set nostartofline     " Keep cursor in current column when using page commands
 set autochdir         " Automatically set current directory to directory of last opened file
 set visualbell        " Set visual bell instead of acustic
 set mouse=a           " Enable the use of the mouse
-set number relativenumber " hybrid relative numbers
+set number norelativenumber " hybrid relative numbers
 set matchtime=4       " Jump to matching bracket for n/10 seconds
 set nospell
 set nojoinspaces      " Insert only one space when joining lines
@@ -108,7 +108,7 @@ elseif &t_Co < 256
     colorscheme default
     set nocursorline " Looks bad in this mode
 else
-    colorscheme tweetjay
+    colorscheme sonokai
 endif
 
 " Highlight current line, but only in active window

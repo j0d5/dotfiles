@@ -2,6 +2,7 @@
 Plug 'tweetjay/vim-tweetjay'
 Plug 'tomasr/molokai'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'sainnhe/sonokai'
 " }}}
 
 " Git plugin - show changed lines in gutter
@@ -30,11 +31,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " }}}
 
 " {{{ Syntax highlighting plugins
-Plug 'keith/swift.vim', { 'for': 'swift' }
-Plug 'b4winckler/vim-objc', { 'for': 'objc' }
-Plug 'aliva/vim-fish', { 'for': 'fish' }
-Plug 'vim-python/python-syntax', { 'for': 'python' }
-Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'groovy' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " }}}
 
 " {{{ Flutter Stuff
@@ -63,7 +60,7 @@ Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 
 " {{( Angular
 Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'bdauria/angular-cli.vim'
 Plug 'burnettk/vim-angular'
