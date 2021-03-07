@@ -31,7 +31,11 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " }}}
 
 " {{{ Syntax highlighting plugins
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+if has('vim.treesitter.languagetree')
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+else
+    Plug 'sheerun/vim-polyglot'
+end
 " }}}
 
 " {{{ Flutter Stuff
