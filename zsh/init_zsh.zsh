@@ -1,12 +1,12 @@
-## {{{
-##
-## Author: Johannes Steudle
-## File: global_settings.zsh
-## Date: 24.03.2016
-##
-## Description: file for global settings
-##
-## }}}
+# {{{
+#
+# Author: Johannes Steudle
+# File: global_settings.zsh
+# Date: 24.03.2016
+#
+# Description: file for global settings
+#
+# }}}
 
 if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading init_zsh'
@@ -43,7 +43,9 @@ is_plugin() {
 # Add all defined plugins to fpath. This must be done before running compinit.
 for plugin ($plugins); do
   if is_plugin $ZSH $plugin; then
-    echo "Load plugin $plugin"
+    if [[ -n $DEBUG_ZSH ]]; then
+      echo "Load plugin $plugin"
+    fi
     fpath=($ZSH/plugins/$plugin $fpath)
   fi
 done

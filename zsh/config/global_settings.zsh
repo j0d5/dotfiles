@@ -24,11 +24,11 @@ setopt multios
 setopt cdablevars
 
 export TERM="xterm-256color"
-export SHELL=/usr/local/bin/zsh
+export SHELL=$(which zsh)
 
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/helpfiles
+# unalias run-help
+# autoload run-help
+# HELPDIR=/usr/local/share/zsh/helpfiles
 
 export HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS=i
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=magenta,fg=white,bold'

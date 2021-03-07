@@ -1,5 +1,10 @@
 # {{{
-# fish initialization file
+#
+# Author: Johannes Steudle
+# File: fish.config
+#
+# Description: fish initialization file
+#
 # }}}
 
 # fish specific configuration {{{
@@ -77,7 +82,7 @@ __tweetjay_addPath "$HOME/go/bin"
 # }}}
 
 # Python {{{
-__tweetjay_addPath "/usr/local/opt/python@2/bin"
+__tweetjay_addPath "/usr/local/opt/python@3.9/bin"
 # }}}
 
 # NPM {{{
@@ -87,9 +92,6 @@ set -U NPM_PACKAGES "$HOME/.npm-packages"
 
 # Wireshark {{{
 __tweetjay_addPath "/Applications/Wireshark.app/Contents/MacOS"
-# }}}
-# Araxis Merge {{{
-__tweetjay_addPath "/Applications/Araxis Merge.app/Contents/Utilities"
 # }}}
 # Flutter {{{
 __tweetjay_addPath "$HOME/Developer/flutter/bin/"

@@ -1,3 +1,13 @@
+# {{{
+#
+# Author: Johannes Steudle
+# File: hosts.zsh
+# Date: 24.03.2016
+#
+# Description: file for loading settings depending on the host
+#
+# }}}
+
 if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading hosts.plugin.zsh on host ' $HOST
 fi
