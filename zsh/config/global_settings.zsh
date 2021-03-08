@@ -44,3 +44,5 @@ bindkey -M vicmd 'j' history-substring-search-down
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
