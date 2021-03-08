@@ -113,3 +113,31 @@ function setjdk() {
 function removeFromPath() {
   export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
 }
+
+function brewup() {
+  BREW=$(which brew)
+  if [ -x "$BREW" ]; then
+    echo "Updating brew"
+    $BREW update
+    $BREW upgrade
+    $BREW upgrade --cask
+    $BREW cleanup
+  else
+    >&2 echo "Command brew not found!"
+  fi
+}
+
+function macup() {
+  echo "Updating macOS"
+  softwareupdate -l
+  softwareupdate -ia --verbose
+}
+
+function updateAll() {
+  echo "[gem] Update gems..."
+  gem update; gem cleanup
+
+  echo "[npm] Update node packages"
+  npm --global update
+}
+
