@@ -20,8 +20,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
 
   "[dart]": {
@@ -72,15 +81,11 @@
       "stash": true
     }
   },
-  "files.autoSave": "off",
-  "eslint.validate": [
-    "javascript",
-    "html",
-    "markdown"
-  ],
+  "eslint.validate": ["javascript", "html", "markdown"],
   "workbench.colorTheme": "GitHub Dark",
   "angular.experimental-ivy": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.editor.pinnedTabSizing": "shrink",
-  "workbench.editor.decorations.badges": true
+  "workbench.editor.decorations.badges": true,
+  "editor.minimap.enabled": false
 }
