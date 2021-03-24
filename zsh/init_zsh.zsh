@@ -91,3 +91,10 @@ unset config_file
 
 # Load the theme
 source "$ZSH/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme"
+
+if ! type "$kubectl" > /dev/null; then
+  source <(kubectl completion zsh)
+fi
+if ! type "$helm" > /dev/null; then
+  source <(helm completion zsh)
+fi
