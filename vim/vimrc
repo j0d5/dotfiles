@@ -103,7 +103,7 @@ call plug#end()
 
 " {{{ Colorscheme
 if has('gui_running')
-    colorscheme tweetjay
+    colorscheme sonokai
 elseif &t_Co < 256
     colorscheme default
     set nocursorline " Looks bad in this mode
