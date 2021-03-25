@@ -97,6 +97,14 @@ map('', '<leader>c', '"+y')       -- Copy to clipboard in normal, visual, select
 map('n', '<C-l>', '<cmd>noh<CR>')    -- Clear highlights
 map('n', '<Leader><Leader>', 'V')
 map('i', 'jj', '<ESC>')
+map('n', '<Leader>b', ':b <C-d>')
+-- Map <leader> o to CtrlP plugin
+map('n', '<Leader>o', ':CtrlP<CR>')
+
+map('', '<up>', '<nop>')
+map('', '<down>', '<nop>')
+map('', '<left>', '<nop>')
+map('', '<right>', '<nop>')
 
 -- Package Management
 cmd 'packadd paq-nvim'
@@ -110,9 +118,9 @@ paq{'sainnhe/sonokai'}
 -- }}}
 
 -- Git plugin - show changed lines in gutter
--- paq 'airblade/vim-gitgutter'
 paq{'nvim-lua/plenary.nvim'}
 paq{'lewis6991/gitsigns.nvim'}
+require('gitsigns').setup()
 
 -- {{{ Text handling
 -- Automatic closing of quotes etc
@@ -150,7 +158,6 @@ map('n', '<space>h', '<cmd>lua vim.lsp.buf.hover()<CR>')
 map('n', '<space>m', '<cmd>lua vim.lsp.buf.rename()<CR>')
 map('n', '<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
-
 -- }}}
 
 -- {{{ Syntax highlighting plugins
