@@ -86,7 +86,7 @@ paq 'tweetjay/vim-backstate'
 -- paq {"907th/vim-auto-save"}
 -- paq {"chriskempson/base16-vim"}
 -- paq {"sbdchd/neoformat"}
--- paq {"windwp/nvim-autopairs"}
+paq {"windwp/nvim-autopairs"}
 -- paq {"alvan/vim-closetag"}
 -- paq {"tweekmonster/startuptime.vim"}
 -- paq {"nvim-telescope/telescope.nvim"}

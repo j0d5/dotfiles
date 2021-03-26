@@ -39,7 +39,4 @@ cmd 'colorscheme sonokai'
 g.mouse = 'a'           -- Enable the use of the mouse
 g.mapleader = " "
 -- o.display+=lastline
--- nnoremap <tab> %
--- vnoremap <tab> %
-
 

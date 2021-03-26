@@ -29,3 +29,7 @@ map('i', '<silent><expr> <CR>', 'compe#confirm({ "keys": "<Plug>delimitMateCR", 
 map('i', '<silent><expr> <C-e>', 'compe#close("<C-e>")')
 map('i', '<silent><expr> <C-f>', 'compe#scroll({ "delta": +4 })')
 map('i', '<silent><expr> <C-d>', 'compe#scroll({ "delta": -4 })')
+
+map('n', '%', '<tab>')
+map('v', '%', '<tab>')
+
