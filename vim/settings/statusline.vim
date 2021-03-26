@@ -41,6 +41,7 @@ function! ReadOnly()
         return ''
     else
         return ''
+    endif
 endfunction
 
 set laststatus=2
