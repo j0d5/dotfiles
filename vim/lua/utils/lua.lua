@@ -36,8 +36,8 @@ opt('o', 'smartcase', true)                           -- Don't ignore case with 
 opt('o', 'splitbelow', true)                          -- Put new windows below current
 opt('o', 'splitright', true)                          -- Put new windows right of current
 opt('o', 'termguicolors', true)                       -- True color support
-opt('o', 'wildmode', 'list:longest')                  -- Command-line completion mode
-opt('o', 'completeopt', 'menuone,noselect') -- Insert mode completion options
+-- opt('o', 'wildmode', 'list:longest')                  -- Command-line completion mode
+-- opt('o', 'completeopt', 'menuone,noselect') -- Insert mode completion options
 -- opt('w', 'statusline', '2')
 opt('w', 'list', true)                                -- Show some invisible characters (tabs...)
 opt('w', 'number', true)                              -- Print line number
@@ -67,7 +67,7 @@ opt('o', 'sidescroll', 1)
 -- - on second <Tab>, complete the next full match and show menu
 
 -- Ignore these filenames during enhanced command line completion.
-opt('o', 'wildignore', '*/.idea/*,*/.project/*')    -- ignore IDE project files
+-- opt('o', 'wildignore', '*/.idea/*,*/.project/*')    -- ignore IDE project files
 -- o.wildignore+=*/.git/*,*/.hg/*,*/.svn/* -- ignore version control files
 -- o.wildignore+=*.aux,*.out,*.toc -- LaTeX intermediate files
 -- o.wildignore+=*.jpg,*.bmp,*.gif -- binary images

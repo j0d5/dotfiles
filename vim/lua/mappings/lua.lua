@@ -10,26 +10,25 @@ end
 -- map("n", "<C-b>" , [[<Cmd> vnew term://bash<CR>]] , opt) -- split term vertically , over the right  
 -- map("n", "<C-x>" , [[<Cmd> split term://bash | resize 10 <CR>]] , opt) -- split term vertically , over the right  
 
--------------------- MAPPINGS ------------------------------
-map('', '<leader>c', '"+y')       -- Copy to clipboard in normal, visual, select and operator modes
-map('n', '<C-l>', '<cmd>noh<CR>')    -- Clear highlights
-map('n', '<Leader><Leader>', 'V')
-map('i', 'jj', '<ESC>')
-map('n', '<Leader>b', ':b <C-d>')
--- Map <leader> o to CtrlP plugin
-map('n', '<Leader>o', ':CtrlP<CR>')
+map('', '<leader>c', '"+y')         -- Copy to clipboard in normal, visual, select and operator modes
+map('n', '<silent><ESC><ESC>', ':nohl<CR>')   -- Clear highlights
+map('n', '<Leader><Leader>', 'V')   -- Select line on <leader><leader>
+map('i', 'jj', '<ESC>')		    -- Map jj to Escape in input mode
+map('n', '<Leader>b', ':b <C-d>')   -- Show buffers on <leader> b
+map('n', '<Leader>o', ':CtrlP<CR>') -- Map <leader> o to CtrlP plugin
+map('n', '<leader> -', "'.")
+map('n', 'j', 'gj')                 -- Also move through visual lines
+map('n', 'k', 'gk')
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+
+map('n', '<tab>', '%')
+map('v', '<tab>', '%')
 
 map('', '<up>', '<nop>')
 map('', '<down>', '<nop>')
 map('', '<left>', '<nop>')
 map('', '<right>', '<nop>')
-
-map('i', '<silent><expr> <C-Space>', 'compe#complete()')
-map('i', '<silent><expr> <CR>', 'compe#confirm({ "keys": "<Plug>delimitMateCR", "mode": "" })')
-map('i', '<silent><expr> <C-e>', 'compe#close("<C-e>")')
-map('i', '<silent><expr> <C-f>', 'compe#scroll({ "delta": +4 })')
-map('i', '<silent><expr> <C-d>', 'compe#scroll({ "delta": -4 })')
-
-map('n', '%', '<tab>')
-map('v', '%', '<tab>')
 

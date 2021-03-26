@@ -18,7 +18,7 @@ paq{'lewis6991/gitsigns.nvim'}
 
 -- {{{ Text handling
 -- Automatic closing of quotes etc
-paq{'Raimondi/delimitMate'}
+-- paq{'Raimondi/delimitMate'}
 -- Region expanding - use 'v' to visually mark regions
 paq{'terryma/vim-expand-region'}
 
