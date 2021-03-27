@@ -17,8 +17,6 @@ paq{'nvim-lua/plenary.nvim'}
 paq{'lewis6991/gitsigns.nvim'}
 
 -- {{{ Text handling
--- Automatic closing of quotes etc
--- paq{'Raimondi/delimitMate'}
 -- Region expanding - use 'v' to visually mark regions
 paq{'terryma/vim-expand-region'}
 
@@ -30,7 +28,6 @@ paq {"ryanoasis/vim-devicons"}
 -- }}}
 
 -- {{{ Syntax checker and linter for vim
-paq{'w0rp/ale'}
 -- Autocompletion with LSP support
 -- paq 'neoclide/coc.nvim', { 'branch': 'release' }
 paq{'neovim/nvim-lspconfig'}

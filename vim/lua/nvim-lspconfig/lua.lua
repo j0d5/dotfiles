@@ -18,7 +18,7 @@ local function buf_set_option(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
 end
 
-buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+-- buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
 -- Mappings.
 local opts = {noremap = true, silent = true}
@@ -35,13 +35,22 @@ buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>",
 local lsp = require 'lspconfig'
 local lspfuzzy = require 'lspfuzzy'
 
+lsp.bashls.setup {}
 -- For ccls we use the default settings
 lsp.ccls.setup {}
 -- root_dir is where the LSP server will start: here at the project root otherwise in current folder
 lsp.pyls.setup {root_dir = lsp.util.root_pattern('.git', fn.getcwd())}
 lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
-lsp.tsserver.setup {}
+lsp.angularls.setup {}
+lsp.cssls.setup {}
 lsp.html.setup {}
+lsp.jsonls.setup {}
+lsp.pyls.setup {}
+lsp.terraformls.setup {}
+lsp.tsserver.setup {}
+lsp.vimls.setup {}
+lsp.yamlls.setup {}
+lsp.sumneko_lua.setup {}
 
 map('n', '<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 map('n', '<space>;', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')

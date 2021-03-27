@@ -11,7 +11,7 @@ end
 -- map("n", "<C-x>" , [[<Cmd> split term://bash | resize 10 <CR>]] , opt) -- split term vertically , over the right  
 
 map('', '<leader>c', '"+y')         -- Copy to clipboard in normal, visual, select and operator modes
-map('n', '<silent><ESC><ESC>', ':nohl<CR>')   -- Clear highlights
+map('n', '<ESC><ESC>', ':nohl<CR>')   -- Clear highlights
 map('n', '<Leader><Leader>', 'V')   -- Select line on <leader><leader>
 map('i', 'jj', '<ESC>')		    -- Map jj to Escape in input mode
 map('n', '<Leader>b', ':b <C-d>')   -- Show buffers on <leader> b

@@ -1,16 +1,13 @@
 " {{{ Themes
 Plug 'tweetjay/vim-tweetjay'
-Plug 'tomasr/molokai'
-Plug 'patstockwell/vim-monokai-tasty'
 Plug 'sainnhe/sonokai'
 " }}}
 
 " Git plugin - show changed lines in gutter
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 " {{{ Text handling
 " Automatic closing of quotes etc
-Plug 'Raimondi/delimitMate'
 " Region expanding - use 'v' to visually mark regions
 Plug 'terryma/vim-expand-region'
 
