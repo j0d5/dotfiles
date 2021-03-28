@@ -124,7 +124,6 @@ let g:ale_disable_lsp = 1
 " {{{ Source settings
 so ~/.vim/settings/keymap.vim
 so ~/.vim/settings/statusline.vim
-so ~/.vim/settings/coc.vim
 so ~/.vim/settings/ale.vim
 so ~/.vim/settings/python.vim
 so ~/.vim/settings/ctrlp.vim

@@ -4,24 +4,24 @@ cmd 'packadd paq-nvim'
 
 -- Package Management
 local paq = require('paq-nvim').paq
-paq{'savq/paq-nvim', opt=true}     -- Let Paq manage itself
+paq {'savq/paq-nvim', opt=true}     -- Let Paq manage itself
 
 -- {{{ Themes
-paq{'tweetjay/vim-tweetjay'}
-paq{'tomasr/molokai'}
-paq{'sainnhe/sonokai'}
+paq {'tweetjay/vim-tweetjay'}
+paq {'tomasr/molokai'}
+paq {'sainnhe/sonokai'}
 -- }}}
 
 -- Git plugin - show changed lines in gutter
-paq{'nvim-lua/plenary.nvim'}
-paq{'lewis6991/gitsigns.nvim'}
+paq {'nvim-lua/plenary.nvim'}
+paq {'lewis6991/gitsigns.nvim'}
 
 -- {{{ Text handling
 -- Region expanding - use 'v' to visually mark regions
-paq{'terryma/vim-expand-region'}
+paq {'terryma/vim-expand-region'}
 
 -- Nice highlighting of words
-paq{'RRethy/vim-illuminate'}
+paq {'RRethy/vim-illuminate'}
 -- Color highlighting
 paq {"norcalli/nvim-colorizer.lua"}
 paq {"ryanoasis/vim-devicons"}
@@ -30,40 +30,41 @@ paq {"ryanoasis/vim-devicons"}
 -- {{{ Syntax checker and linter for vim
 -- Autocompletion with LSP support
 -- paq 'neoclide/coc.nvim', { 'branch': 'release' }
-paq{'neovim/nvim-lspconfig'}
+paq {'hrsh7th/vim-vsnip'}
+paq {'neovim/nvim-lspconfig'}
 paq {"hrsh7th/nvim-compe"}
 
 -- {{{ Syntax highlighting plugins
-paq{'nvim-treesitter/nvim-treesitter'}  -- We recommend updating the parsers on update
+paq {'nvim-treesitter/nvim-treesitter'}  -- We recommend updating the parsers on update
 -- }}}
 
-paq{'onsails/lspkind-nvim'}
-paq{'kyazdani42/nvim-web-devicons'}
-paq{'glepnir/galaxyline.nvim', branch = 'main'}
+paq {'onsails/lspkind-nvim'}
+paq {'kyazdani42/nvim-web-devicons'}
+paq {'glepnir/galaxyline.nvim', branch = 'main'}
 
 -- {{( Angular
-paq 'bdauria/angular-cli.vim'
-paq 'burnettk/vim-angular'
-paq 'matthewsimo/angular-vim-snippets'
-paq 'claco/jasmine.vim'
-paq 'iamcco/coc-angular'
+paq {'bdauria/angular-cli.vim'}
+paq {'burnettk/vim-angular'}
+-- paq {'matthewsimo/angular-vim-snippets'}
+paq {'claco/jasmine.vim'}
+-- paq {'iamcco/coc-angular'}
 -- }}}
 
-paq 'editorconfig/editorconfig-vim'
+paq {'editorconfig/editorconfig-vim'}
 
 -- {{{ File Management
-paq{'kyazdani42/nvim-tree.lua'}
-paq{'akinsho/nvim-bufferline.lua'}
+paq {'kyazdani42/nvim-tree.lua'}
+paq {'akinsho/nvim-bufferline.lua'}
 -- Delete, Rename, Move, SudoEdit, SudoWrite
-paq 'tpope/vim-eunuch'
-paq 'ctrlpvim/ctrlp.vim'
-paq{'junegunn/fzf', hook = fn['fzf#install']}
-paq{'junegunn/fzf.vim'}
-paq{'ojroques/nvim-lspfuzzy'}
+paq {'tpope/vim-eunuch'}
+paq {'ctrlpvim/ctrlp.vim'}
+paq {'junegunn/fzf', hook = fn['fzf#install']}
+paq {'junegunn/fzf.vim'}
+paq {'ojroques/nvim-lspfuzzy'}
 -- }}}
 
 -- {{{ Settings for backup edited files
-paq 'tweetjay/vim-backstate'
+paq {'tweetjay/vim-backstate'}
 -- }}}
 
 -- {{{ Markdown Stuff
