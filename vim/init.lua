@@ -1,12 +1,18 @@
--------------------- HELPERS -------------------------------
+-- {{{
+-- Neovim configuration
+-- }}}
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local g = vim.g      -- a table to access global variables
+
+g.mapleader = " " -- Set leader to space
+g.mouse = 'a'     -- Enable the use of the mouse
 
 -- load all plugins
 require("pluginsList.lua")
 require("web-devicons.lua")
 -- set vim options
 require("utils.lua")
+require("mappings.lua")
 
 -- set options for file tree
 require("nvimTree.lua")
@@ -26,10 +32,5 @@ require("treesitter.lua")
 require('nvim-autopairs').setup()
 require('nvim-ts-autotag').setup()
 
-require("mappings.lua")
-
 cmd 'colorscheme sonokai' -- Set colorscheme
-
-g.mouse = 'a'     -- Enable the use of the mouse
-g.mapleader = " " -- Set leader to space
 
