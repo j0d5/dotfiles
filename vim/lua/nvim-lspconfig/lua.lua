@@ -12,6 +12,7 @@ lsp.bashls.setup {}
 lsp.ccls.setup {}
 -- root_dir is where the LSP server will start: here at the project root otherwise in current folder
 lsp.pyls.setup {root_dir = lsp.util.root_pattern('.git', fn.getcwd())}
+lsp.pyright.setup {}
 lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
 lsp.angularls.setup {}
 lsp.cssls.setup {}
@@ -22,5 +23,4 @@ lsp.terraformls.setup {}
 lsp.tsserver.setup {}
 lsp.vimls.setup {}
 lsp.yamlls.setup {}
-lsp.sumneko_lua.setup {}
-
+require'lua-language-server.lua'

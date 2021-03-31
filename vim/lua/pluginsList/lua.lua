@@ -99,6 +99,5 @@ paq {'windwp/nvim-ts-autotag' }
 -- }}}
 
 -- paq { '907th/vim-auto-save' }
--- paq { 'chriskempson/base16-vim' }
 -- paq { 'tweekmonster/startuptime.vim' }
 
