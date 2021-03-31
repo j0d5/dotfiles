@@ -10,9 +10,9 @@ require("utils.lua")
 
 -- set options for file tree
 require("nvimTree.lua")
-require("telescope-nvim.lua")
 require("bufferline.lua")
 require("statusline.lua")
+require("telescope-nvim.lua")
 
 require("gitsigns.lua")
 require("colorizer").setup()

@@ -37,6 +37,9 @@ paq { 'tpope/vim-eunuch' }
 -- paq { 'ctrlpvim/ctrlp.vim' }
 paq { 'junegunn/fzf', hook = fn['fzf#install'] }
 paq { 'junegunn/fzf.vim' }
+paq { 'nvim-lua/popup.nvim' }
+paq { 'nvim-telescope/telescope.nvim' }
+paq { 'nvim-telescope/telescope-media-files.nvim' }
 -- }}}
 
 -- {{{ Syntax checker and linter
@@ -98,7 +101,4 @@ paq {'windwp/nvim-ts-autotag' }
 -- paq { '907th/vim-auto-save' }
 -- paq { 'chriskempson/base16-vim' }
 -- paq { 'tweekmonster/startuptime.vim' }
-paq { 'nvim-lua/popup.nvim' }
-paq { 'nvim-telescope/telescope.nvim' }
-paq { 'nvim-telescope/telescope-media-files.nvim' }
 
