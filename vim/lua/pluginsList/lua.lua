@@ -23,6 +23,10 @@ paq { 'norcalli/nvim-colorizer.lua' }
 -- Icons
 paq { 'ryanoasis/vim-devicons' }
 paq { 'kyazdani42/nvim-web-devicons' }
+-- Indentation guides for blank lines
+paq { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+-- Formatting
+paq { 'sbdchd/neoformat' }
 -- }}}
 
 -- {{{ File Management
@@ -30,15 +34,14 @@ paq { 'kyazdani42/nvim-tree.lua' }
 paq { 'akinsho/nvim-bufferline.lua' }
 -- Delete, Rename, Move, SudoEdit, SudoWrite
 paq { 'tpope/vim-eunuch' }
-paq { 'ctrlpvim/ctrlp.vim' }
+-- paq { 'ctrlpvim/ctrlp.vim' }
 paq { 'junegunn/fzf', hook = fn['fzf#install'] }
 paq { 'junegunn/fzf.vim' }
 -- }}}
 
 -- {{{ Syntax checker and linter
--- Autocompletion with LSP support
--- paq 'neoclide/coc.nvim', { 'branch': 'release' }
 paq { 'hrsh7th/vim-vsnip' }
+-- Autocompletion with LSP support
 paq { 'neovim/nvim-lspconfig' }
 paq { 'hrsh7th/nvim-compe' }
 paq { 'dense-analysis/ale' }
@@ -74,6 +77,11 @@ paq { 'editorconfig/editorconfig-vim' }
 paq { 'tweetjay/vim-backstate' }
 -- }}}
 
+paq { 'windwp/nvim-autopairs' }
+-- Treesitter based autoclosing
+paq {'windwp/nvim-ts-autotag' }
+-- paq { 'alvan/vim-closetag' }
+
 -- {{{ Markdown Stuff
 -- paq 'plasticboy/vim-markdown', { 'for': 'markdown' }
 -- paq 'itspriddle/vim-marked', { 'for': 'markdown' }
@@ -89,12 +97,8 @@ paq { 'tweetjay/vim-backstate' }
 
 -- paq { '907th/vim-auto-save' }
 -- paq { 'chriskempson/base16-vim' }
--- paq { 'sbdchd/neoformat' }
-paq { 'windwp/nvim-autopairs' }
--- paq { 'alvan/vim-closetag' }
 -- paq { 'tweekmonster/startuptime.vim' }
--- paq { 'nvim-telescope/telescope.nvim' }
--- paq { 'nvim-telescope/telescope-media-files.nvim' }
--- paq { 'nvim-lua/popup.nvim' }
--- paq { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+paq { 'nvim-lua/popup.nvim' }
+paq { 'nvim-telescope/telescope.nvim' }
+paq { 'nvim-telescope/telescope-media-files.nvim' }
 

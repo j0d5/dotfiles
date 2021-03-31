@@ -4,24 +4,29 @@ local g = vim.g      -- a table to access global variables
 
 -- load all plugins
 require("pluginsList.lua")
+require("web-devicons.lua")
+-- set vim options
+require("utils.lua")
 
+-- set options for file tree
 require("nvimTree.lua")
+require("telescope-nvim.lua")
 require("bufferline.lua")
 require("statusline.lua")
--- require("telescope-nvim.lua")
 
 require("gitsigns.lua")
-require "colorizer".setup()
+require("colorizer").setup()
 
--- lsp
+-- setup lsp
 require("nvim-lspconfig.lua")
 require("nvim-compe.lua")
 
 require("treesitter.lua")
-require("web-devicons.lua")
+
+require('nvim-autopairs').setup()
+require('nvim-ts-autotag').setup()
 
 require("mappings.lua")
-require("utils.lua")
 
 cmd 'colorscheme sonokai' -- Set colorscheme
 
