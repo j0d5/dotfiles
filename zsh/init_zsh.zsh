@@ -1,8 +1,7 @@
 # {{{
 #
 # Author: Johannes Steudle
-# File: global_settings.zsh
-# Date: 24.03.2016
+# File: init_zsh.zsh
 #
 # Description: file for global settings
 #
@@ -12,43 +11,57 @@ if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading init_zsh'
 fi
 
-# Check for updates on initial load...
-# if [ "$DISABLE_AUTO_UPDATE" != "true" ]; then
-#   env ZSH=$ZSH DISABLE_UPDATE_PROMPT=$DISABLE_UPDATE_PROMPT zsh -f $ZSH/tools/check_for_upgrade.sh
-# fi
-
-# Initializes My Zsh
-
-# add a function path
-# fpath=($ZSH/functions $ZSH/completions $fpath)
-
 # Load all stock functions (from $fpath files) called below.
 autoload -Uz compaudit compinit
 
 : ${ZSH_DISABLE_COMPFIX:=true}
 
-# Load all of the config files in ~/oh-my-zsh that end in .zsh
-# TIP: Add files you don't want in git to .gitignore
-for config_file ($ZSH/lib/*.zsh); do
-  source $config_file
-done
+# add a function path
+# fpath=($ZSH/functions $ZSH/completions $fpath)
 
-is_plugin() {
-  local base_dir=$1
-  local name=$2
-  test -f $base_dir/plugins/$name/$name.plugin.zsh \
-    || test -f $base_dir/plugins/$name/_$name
-}
+# is_plugin() {
+#   local base_dir=$1
+#   local name=$2
+#   test -f $base_dir/plugins/$name/$name.plugin.zsh \
+#     || test -f $base_dir/plugins/$name/_$name
+# }
 
 # Add all defined plugins to fpath. This must be done before running compinit.
+# for plugin ($plugins); do
+#   if is_plugin $ZSH $plugin; then
+#     if [[ -n $DEBUG_ZSH ]]; then
+#       echo "Load plugin $plugin"
+#     fi
+#     fpath=($ZSH/plugins/$plugin $fpath)
+#   fi
+# done
+
+# Load all of the plugins that were defined in ~/.zshrc
 for plugin ($plugins); do
-  if is_plugin $ZSH $plugin; then
+  if [ -f $ZSH/plugins/$plugin/$plugin.plugin.zsh ]; then
     if [[ -n $DEBUG_ZSH ]]; then
       echo "Load plugin $plugin"
     fi
-    fpath=($ZSH/plugins/$plugin $fpath)
+    source $ZSH/plugins/$plugin/$plugin.plugin.zsh
   fi
 done
+
+# Load files in $ZSH/lib/ that end in .zsh
+for lib_file ($ZSH/lib/*.zsh); do
+  if [[ -n $DEBUG_ZSH ]]; then
+    echo "Load lib $lib_file"
+  fi
+  source $lib_file
+done
+
+# Load files in $ZSH/config/ that end in .zsh
+for config_file ($ZSH/config/*.zsh(N)); do
+  if [[ -n $DEBUG_ZSH ]]; then
+    echo "Load config $config_file"
+  fi
+  source $config_file
+done
+unset config_file
 
 # Figure out the SHORT hostname
 if [[ "$OSTYPE" = darwin* ]]; then
@@ -76,26 +89,15 @@ else
   compinit -i -d "${ZSH_COMPDUMP}"
 fi
 
-# Load all of the plugins that were defined in ~/.zshrc
-for plugin ($plugins); do
-  if [ -f $ZSH/plugins/$plugin/$plugin.plugin.zsh ]; then
-    source $ZSH/plugins/$plugin/$plugin.plugin.zsh
-  fi
-done
-
-# Load all of configurations
-for config_file ($ZSH/config/*.zsh(N)); do
-  source $config_file
-done
-unset config_file
-
 # Load the theme
 source "$ZSH/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme"
 
+# Load completion for kubectl
 if ! type "$kubectl" > /dev/null; then
   source <(kubectl completion zsh)
 fi
 
+# Load completion for helm
 if ! type "$helm" > /dev/null; then
   source <(helm completion zsh)
 fi

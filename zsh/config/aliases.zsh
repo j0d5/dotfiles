@@ -1,12 +1,12 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: aliases.zsh                            ##
-## Date: 03.12.2015                             ##
-##                                              ##
-## Description: file for global aliases         ##
-##                                              ##
-##################################################
+# {{{
+#
+# Author: Johannes Steudle
+# File: aliases.zsh
+#
+# Description: file for aliases
+#
+# }}}
+
 if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading global aliases'
 fi

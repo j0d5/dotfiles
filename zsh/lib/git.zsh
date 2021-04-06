@@ -1,3 +1,13 @@
+# {{{
+#
+# File: git.zsh
+#
+# }}}
+
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading git.zsh'
+fi
+
 # Outputs current branch info in prompt format
 function git_prompt_info() {
   local ref

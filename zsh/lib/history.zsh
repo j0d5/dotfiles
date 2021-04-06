@@ -1,3 +1,13 @@
+# {{{
+#
+# File: history.zsh
+#
+# }}}
+
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading history.zsh'
+fi
+
 ## Command history configuration
 if [ -z "$HISTFILE" ]; then
     HISTFILE=$HOME/.zsh_history

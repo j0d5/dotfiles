@@ -2,7 +2,6 @@
 #
 # Author: Johannes Steudle
 # File: hosts.zsh
-# Date: 24.03.2016
 #
 # Description: file for loading settings depending on the host
 #

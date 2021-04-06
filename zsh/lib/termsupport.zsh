@@ -1,3 +1,13 @@
+# {{{
+#
+# File: termsupport.zsh
+#
+# }}}
+
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading termsupport.zsh'
+fi
+
 # Set terminal window and tab/icon title
 #
 # usage: title short_tab_title [long_window_title]

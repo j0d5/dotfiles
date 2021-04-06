@@ -1,12 +1,11 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: jaybook.local.path.zsh                 ##
-## Date: 03.12.2015                             ##
-##                                              ##
-## Description: file for host specific paths    ##
-##                                              ##
-##################################################
+# {{{
+#
+# Author: Johannes Steudle
+# File: jaybook.local.zsh
+#
+# Description: file for global settings
+#
+# }}}
 
 if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading jaybook.path.zsh'

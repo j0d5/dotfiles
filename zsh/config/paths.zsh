@@ -1,12 +1,12 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: paths.zsh                              ##
-## Date: 03.12.2015                             ##
-##                                              ##
-## Description: file for global path settings   ##
-##                                              ##
-##################################################
+# {{{
+#
+# Author: Johannes Steudle
+# File: paths.zsh
+#
+# Description: file for global settings
+#
+# }}}
+
 if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading global paths'
 fi

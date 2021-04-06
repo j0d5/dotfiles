@@ -1,3 +1,13 @@
+# {{{
+#
+# File: completion.zsh
+#
+# }}}
+
+if [[ -n $DEBUG_ZSH ]]; then
+  echo 'loading completion.zsh'
+fi
+
 # fixme - the load process here seems a bit bizarre
 
 unsetopt menu_complete   # do not autoselect the first completion entry
