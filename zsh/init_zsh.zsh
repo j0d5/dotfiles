@@ -11,30 +11,29 @@ if [[ -n $DEBUG_ZSH ]]; then
   echo 'loading init_zsh'
 fi
 
+# Set default editor
+export EDITOR=nvim
+export PAGER=less
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Set name of the theme to load.
+# ZSH_THEME="tweetjay"
+ZSH_THEME="powerlevel10k"
+
 # Load all stock functions (from $fpath files) called below.
-autoload -Uz compaudit compinit
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-: ${ZSH_DISABLE_COMPFIX:=true}
-
-# add a function path
-# fpath=($ZSH/functions $ZSH/completions $fpath)
-
-# is_plugin() {
-#   local base_dir=$1
-#   local name=$2
-#   test -f $base_dir/plugins/$name/$name.plugin.zsh \
-#     || test -f $base_dir/plugins/$name/_$name
-# }
-
-# Add all defined plugins to fpath. This must be done before running compinit.
-# for plugin ($plugins); do
-#   if is_plugin $ZSH $plugin; then
-#     if [[ -n $DEBUG_ZSH ]]; then
-#       echo "Load plugin $plugin"
-#     fi
-#     fpath=($ZSH/plugins/$plugin $fpath)
-#   fi
-# done
+  autoload -Uz compaudit compinit
+  compaudit
+  compinit
+fi
 
 # Load all of the plugins that were defined in ~/.zshrc
 for plugin ($plugins); do
@@ -71,36 +70,25 @@ else
   SHORT_HOST=${HOST/.*/}
 fi
 
-# Save the location of the current completion dump file.
-if [ -z "$ZSH_COMPDUMP" ]; then
-  ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
-fi
-
-if [[ $ZSH_DISABLE_COMPFIX != true ]]; then
-  # If completion insecurities exist, warn the user without enabling completions.
-  if ! compaudit &>/dev/null; then
-    # This function resides in the "lib/compfix.zsh" script sourced above.
-    handle_completion_insecurities
-  # Else, enable and cache completions to the desired file.
-  else
-    compinit -d "${ZSH_COMPDUMP}"
-  fi
-else
-  compinit -i -d "${ZSH_COMPDUMP}"
-fi
-
 # Load the theme
 source "$ZSH/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme"
 
+[ -f $HOME/fzf.zsh ] && source $HOME/fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+
 # Load completion for kubectl
-if ! type "$kubectl" > /dev/null; then
+if type kubectl > /dev/null 2>&1; then
   source <(kubectl completion zsh)
 fi
 
 # Load completion for helm
-if ! type "$helm" > /dev/null; then
+if type helm > /dev/null 2>&1; then
   source <(helm completion zsh)
 fi
 
 # PyEnv
 eval "$(pyenv init -)"
+
+[ -f $HOME/zshrc_local ] && source $HOME/zshrc_local

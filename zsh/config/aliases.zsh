@@ -7,10 +7,6 @@
 #
 # }}}
 
-if [[ -n $DEBUG_ZSH ]]; then
-  echo 'loading global aliases'
-fi
-
 alias ..='cd ..'
 
 # list as colored list with human readable sizes

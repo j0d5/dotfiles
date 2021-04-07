@@ -7,10 +7,6 @@
 #
 # }}}
 
-if [[ -n $DEBUG_ZSH ]]; then
-  echo 'loading hosts.plugin.zsh on host ' $HOST
-fi
-
 platform=`uname`
 test -r $ZSH/hosts/$platform.zsh && source $ZSH/hosts/$platform.zsh
 

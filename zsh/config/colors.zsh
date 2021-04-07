@@ -7,10 +7,6 @@
 #
 # }}}
 
-if [[ -n $DEBUG_ZSH ]]; then
- echo 'loading colors'
-fi
-
 # ls colors
 autoload -U colors && colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"

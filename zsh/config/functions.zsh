@@ -7,10 +7,6 @@
 #
 # }}}
 
-if [[ -n $DEBUG_ZSH ]]; then
-  echo 'loading functions'
-fi
-
 # greps for process
 function psg() {
   if [ ! -z $1 ] ; then
