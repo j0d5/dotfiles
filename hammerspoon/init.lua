@@ -16,7 +16,7 @@ end
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", reloadConfig)
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
-local homeSSID = "Mustermann5G"
+local homeSSID = "Mustermann"
 local lastSSID = hs.wifi.currentNetwork()
 
 local function ssidChangedCallback()
@@ -34,55 +34,4 @@ end
 
 local wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
 wifiWatcher:start()
-
--- create an usb watcher and look for known devices
-local function usbDeviceCallback(data)
-  if (data["productName"] == "dynadock U3.0") then
-    if (data["eventType"] == "added") then
-      hs.alert.show("dynadock U3.0 connected")
-    elseif (data["eventType"] == "removed") then
-      --  app = hs.appfinder.appFromName("ScanSnap Manager")
-      --  app:kill()
-      hs.alert.show("dynadock U3.0 disconnected")
-    end
-  end
-end
-
-local usbWatcher = hs.usb.watcher.new(usbDeviceCallback)
-usbWatcher:start()
-
--- local bambooState = hs.menubar.new()
-
--- function parseResult(responseStatus, responseBody, responseHeader)
---     hs.pasteboard.setContents(responseBody)
--- end
-
--- function getServerPage()
---   -- fetch serverpage and extract branch state
---     hs.http.asyncGet("http://bsot-macsrv2.hi.de.bosch.com:8085/telemetry.action?filter=favourites", nil, parseResult)
--- end
-
--- if bambooState then
---     bambooState:setTitle("All clear")
---     bambooState:setClickCallback(getServerPage)
---     -- bambooState:setIcon() -- place small icon in hammerspoon folder
--- end
-
--- local caffeine = hs.menubar.new()
--- function setCaffeineDisplay(state)
---     if state then
---         caffeine:setTitle("AWAKE")
---     else
---         caffeine:setTitle("SLEEPY")
---     end
--- end
-
--- function caffeineClicked()
---     setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
--- end
-
--- if caffeine then
---     caffeine:setClickCallback(caffeineClicked)
---     setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
--- end
 
