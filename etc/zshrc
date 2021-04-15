@@ -21,3 +21,5 @@ plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zs
 
 source $ZSH/init_zsh.zsh
 
+test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
+
