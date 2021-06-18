@@ -14,7 +14,7 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.defaultFormatter": "EditorConfig.EditorConfig",
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.vim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.lua",
 
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -81,11 +81,39 @@
       "stash": true
     }
   },
-  "eslint.validate": ["javascript", "html", "markdown"],
-  "workbench.colorTheme": "GitHub Dark",
+  "eslint.validate": [
+    "javascript",
+    "html",
+    "markdown"
+  ],
   "angular.experimental-ivy": true,
-  "workbench.editor.tabSizing": "shrink",
-  "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.editor.decorations.badges": true,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "vim.enableNeovim": true,
+  "vim.neovimUseConfigFile": true,
+  "vim.leader": " ",
+  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "editor.renderIndentGuides": true,
+  "files.insertFinalNewline": true,
+  "editor.fontSize": 11,
+  "files.hotExit": "off",
+  "editor.scrollBeyondLastLine": true,
+  "editor.mouseWheelScrollSensitivity": 3,
+  "window.title": "${activeEditorShort}${separator}${rootName}",
+  "editor.tabSize": 4,
+  "files.trimTrailingWhitespace": true,
+  "editor.wordWrap": "on",
+  "editor.formatOnPaste": true,
+  "editor.snippetSuggestions": "top",
+  "terminal.integrated.tabs.enabled": true,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.tabSizing": "shrink",
+  "redhat.telemetry.enabled": false,
+  "files.exclude": {
+    "**/.git": false
+  },
+  "window.autoDetectColorScheme": true,
+  "workbench.fontAliasing": "auto",
+  "workbench.colorTheme": "Default Light+"
 }

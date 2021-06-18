@@ -16,6 +16,7 @@ set encoding=utf-8     " Use UTF-8 as the default buffer encoding
 " }}}
 
 " {{{ Behavior
+set nocompatible
 set autoread          " Read open files again when changed outside Vim
 set switchbuf=useopen " reveal already opened files from the
                       " quickfix window instead of opening new

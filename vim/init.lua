@@ -6,6 +6,7 @@ local g = vim.g      -- a table to access global variables
 
 g.mapleader = " " -- Set leader to space
 g.mouse = 'a'     -- Enable the use of the mouse
+g.nocompatible = true
 
 -- load all plugins
 require("pluginsList.lua")
