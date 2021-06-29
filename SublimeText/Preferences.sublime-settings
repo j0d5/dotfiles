@@ -45,9 +45,11 @@
 	"ignored_packages":
 	[
 		"AndLog",
+		"LSP-yaml",
+		"Solarized Color Scheme",
 		"Sublimerge Pro",
 		"Vintage",
-		"Vintageous"
+		"Vintageous",
 	],
 	"margin": 0,
 	"rulers":
@@ -60,8 +62,10 @@
 	"show_full_path": false,
 	"spell_check": false,
 	"tab_size": 4,
-	"theme": "GitHub-Theme.sublime-theme",
+	"theme": "auto",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": "auto"
+	"word_wrap": "auto",
+	"dark_theme": "Default Dark.sublime-theme",
+	"light_theme": "Default.sublime-theme",
 }
