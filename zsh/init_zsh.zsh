@@ -89,6 +89,7 @@ if type helm > /dev/null 2>&1; then
 fi
 
 # PyEnv
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 [ -f $HOME/zshrc_local ] && source $HOME/zshrc_local
