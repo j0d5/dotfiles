@@ -24,7 +24,7 @@ paq { 'norcalli/nvim-colorizer.lua' }
 paq { 'ryanoasis/vim-devicons' }
 paq { 'kyazdani42/nvim-web-devicons' }
 -- Indentation guides for blank lines
-paq { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+paq { 'lukas-reineke/indent-blankline.nvim', branch = 'master' }
 -- Formatting
 paq { 'sbdchd/neoformat' }
 -- }}}
