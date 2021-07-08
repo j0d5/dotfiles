@@ -1,8 +1,13 @@
+-- {{{
+-- Neovim plugin configuration
+-- }}}
 local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
-cmd 'packadd paq-nvim'
+local g = vim.g      -- a table to access global variables
+local opt = vim.opt  -- to set options
 
 -- {{{ Package Management
+cmd 'packadd paq-nvim'
 local paq = require('paq-nvim').paq
 paq { 'savq/paq-nvim', opt=true}     -- Let Paq manage itself
 -- }}}
@@ -35,8 +40,8 @@ paq { 'akinsho/nvim-bufferline.lua' }
 -- Delete, Rename, Move, SudoEdit, SudoWrite
 paq { 'tpope/vim-eunuch' }
 -- paq { 'ctrlpvim/ctrlp.vim' }
-paq { 'junegunn/fzf', hook = fn['fzf#install'] }
-paq { 'junegunn/fzf.vim' }
+-- paq { 'junegunn/fzf', run = fn['fzf#install'] }
+-- paq { 'junegunn/fzf.vim' }
 paq { 'nvim-lua/popup.nvim' }
 paq { 'nvim-telescope/telescope.nvim' }
 paq { 'nvim-telescope/telescope-media-files.nvim' }
@@ -49,7 +54,7 @@ paq { 'neovim/nvim-lspconfig' }
 paq { 'hrsh7th/nvim-compe' }
 paq { 'dense-analysis/ale' }
 paq { 'onsails/lspkind-nvim' }
-paq { 'ojroques/nvim-lspfuzzy' }
+paq { 'ojroques/nvim-lspfuzzy' } -- needed by fzf
 -- }}}
 
 -- {{{ Syntax highlighting

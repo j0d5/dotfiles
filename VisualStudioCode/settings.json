@@ -30,7 +30,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "[dart]": {
@@ -81,11 +81,7 @@
       "stash": true
     }
   },
-  "eslint.validate": [
-    "javascript",
-    "html",
-    "markdown"
-  ],
+  "eslint.validate": ["javascript", "html", "markdown"],
   "angular.experimental-ivy": true,
   "workbench.editor.decorations.badges": true,
   "editor.minimap.enabled": false,
@@ -107,7 +103,6 @@
   "editor.formatOnPaste": true,
   "editor.snippetSuggestions": "top",
   "terminal.integrated.tabs.enabled": true,
-  "workbench.editor.pinnedTabSizing": "compact",
   "redhat.telemetry.enabled": false,
   "files.exclude": {
     "**/.git": false,
@@ -121,5 +116,7 @@
   "workbench.editor.wrapTabs": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.pinnedTabSizing": "compact",
   "workbench.colorTheme": "Default Light+"
 }

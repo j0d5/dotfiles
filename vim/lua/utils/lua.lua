@@ -1,3 +1,9 @@
+
+local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
+local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
+local g = vim.g      -- a table to access global variables
+local opt = vim.opt  -- to set options
+
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
 
 local function opt(scope, key, value)
@@ -11,12 +17,12 @@ local indent = 4
 
 opt("o", "numberwidth", 2)
 
-opt("o", "mouse", "a")
+-- opt("o", "mouse", "a")
 
 opt("w", "signcolumn", "yes")
 opt("o", "cmdheight", 1)
 
-opt("o", "updatetime", 250) -- update interval for gitsigns 
+opt("o", "updatetime", 250) -- update interval for gitsigns
 opt("o", "clipboard", "unnamedplus")
 
 opt('o', 'syntax', 'on')
