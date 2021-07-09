@@ -10,17 +10,11 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- {{{ General mappings
--- open terminals  
--- map("n", "<C-b>" , [[<Cmd> vnew term://bash<CR>]] , opt) -- split term vertically , over the right  
--- map("n", "<C-x>" , [[<Cmd> split term://bash | resize 10 <CR>]] , opt) -- split term vertically , over the right  
-
 map('', '<leader>c', '"+y')         -- Copy to clipboard in normal, visual, select and operator modes
 map('n', '<ESC><ESC>', ':nohl<CR>') -- Clear highlights
 map('n', '<Leader><Leader>', 'V')   -- Select line on <leader><leader>
 map('i', 'jj', '<ESC>')		        -- Map jj to Escape in input mode
 map('n', '<Leader>b', ':b <C-d>')   -- Show buffers on <leader> b
-map('n', '<Leader>o', ':CtrlP<CR>') -- Map <leader> o to CtrlP plugin
-map('n', '<leader> -', "'.")
 map('n', 'j', 'gj')                 -- Also move through visual lines
 map('n', 'k', 'gk')
 map('n', '<C-h>', '<C-w>h')
@@ -28,13 +22,21 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
-map('n', '<tab>', '%')
-map('v', '<tab>', '%')
-
 map('', '<up>', '<nop>')
 map('', '<down>', '<nop>')
 map('', '<left>', '<nop>')
 map('', '<right>', '<nop>')
+
+-- open terminals  
+-- map("n", "<C-b>" , [[<Cmd> vnew term://bash<CR>]] , opt) -- split term vertically , over the right  
+-- map("n", "<C-x>" , [[<Cmd> split term://bash | resize 10 <CR>]] , opt) -- split term vertically , over the right  
+
+-- map('n', '<Leader>o', ':CtrlP<CR>') -- Map <leader> o to CtrlP plugin
+-- map('n', '<leader> -', "'.")
+
+-- map('n', '<tab>', '%')
+-- map('v', '<tab>', '%')
+
 -- }}}
 
 -- {{{ nvim-compe mappings
@@ -73,12 +75,6 @@ map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 map( "n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- }}}
 
--- {{{ bufferline tabnew and tabprev
-local opt = {silent = true}
-map("n", "<Leader>tn", "<Cmd>BufferLineCycleNext<CR>", opt)
-map("n", "<Leader>tp", "<Cmd>BufferLineCyclePrev<CR>", opt)
--- }}}
-
 -- {{{ telescope
 local opt = {noremap = true, silent = true}
 map("n", "<Leader>ff", "<Cmd>lua require('telescope.builtin').find_files()<CR>", opt)
@@ -88,5 +84,5 @@ map("n", "<Leader>fh", "<Cmd>lua require('telescope.builtin').help_tags()<CR>", 
 map("n", "<Leader>fo", "<Cmd>lua require('telescope.builtin').oldfiles()<CR>", opt)
 map("n", "<Leader>fm", "<Cmd> Neoformat<CR>", opt)
 
-map("n", "<C-a>", "<Cmd> %y+<CR>", opt)
+-- map("n", "<C-a>", "<Cmd> %y+<CR>", opt)
 -- }}}

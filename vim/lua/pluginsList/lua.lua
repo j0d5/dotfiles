@@ -36,9 +36,6 @@ paq { 'sbdchd/neoformat' }
 
 -- {{{ File Management
 paq { 'kyazdani42/nvim-tree.lua' }
-paq { 'akinsho/nvim-bufferline.lua' }
--- Delete, Rename, Move, SudoEdit, SudoWrite
-paq { 'tpope/vim-eunuch' }
 -- paq { 'ctrlpvim/ctrlp.vim' }
 -- paq { 'junegunn/fzf', run = fn['fzf#install'] }
 -- paq { 'junegunn/fzf.vim' }
@@ -89,20 +86,4 @@ paq { 'windwp/nvim-autopairs' }
 -- Treesitter based autoclosing
 paq {'windwp/nvim-ts-autotag' }
 -- paq { 'alvan/vim-closetag' }
-
--- {{{ Markdown Stuff
--- paq 'plasticboy/vim-markdown', { 'for': 'markdown' }
--- paq 'itspriddle/vim-marked', { 'for': 'markdown' }
--- Uncover usage problems in your writing
--- paq 'reedes/vim-wordy', { 'for': 'markdown' }
--- }}}
-
--- {{{ Plantuml Stuff
--- paq 'aklt/plantuml-syntax', { 'for': 'plantuml' }
--- paq 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
--- paq 'tyru/open-browser.vim', { 'for': 'plantuml' }
--- }}}
-
--- paq { '907th/vim-auto-save' }
--- paq { 'tweekmonster/startuptime.vim' }
 
