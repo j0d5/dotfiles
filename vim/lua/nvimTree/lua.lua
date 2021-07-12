@@ -2,10 +2,9 @@ vim.cmd [[packadd nvim-web-devicons]]
 vim.cmd [[packadd nvim-tree.lua]]
 
 vim.g.nvim_tree_side = "left"
-vim.g.nvim_tree_width = 25
 vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
 vim.g.nvim_tree_special_files = { ['README.md']= 1, ['Makefile']= 1, ['MAKEFILE']= 1 } -- List of filenames that gets highlighted with NvimTreeSpecialFile
-vim.g.nvim_tree_auto_open = 0
+vim.g.nvim_tree_auto_open = 1
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 0
 vim.g.nvim_tree_follow = 1
@@ -15,30 +14,15 @@ vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_root_folder_modifier = ":~"
 vim.g.nvim_tree_tab_open = 1
 vim.g.nvim_tree_allow_resize = 1
-vim.g.nvim_tree_update_cwd = 1
+vim.g.nvim_tree_hijack_netrw = 1
+-- vim.g.nvim_tree_width = 25
+-- vim.g.nvim_tree_update_cwd = 1
 
 vim.g.nvim_tree_show_icons = {
     git = 1,
     folders = 1,
     files = 1
 }
-
--- vim.g.nvim_tree_icons = {
---     default = " ",
---     symlink = " ",
---     git = {
---         unstaged = "✗",
---         staged = "✓",
---         unmerged = "",
---         renamed = "➜",
---         untracked = "★"
---     },
---     folder = {
---         default = "",
---         open = "",
---         symlink = ""
---     }
--- }
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 vim.g.nvim_tree_bindings = {
