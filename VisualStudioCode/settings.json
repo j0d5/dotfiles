@@ -42,7 +42,6 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "git.countBadge": "tracked",
   "git.defaultCloneDirectory": "$HOME/Developer",
   "gitlens.menus": {
@@ -118,7 +117,50 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
-  "workbench.colorTheme": "Default Light+",
   "todo-tree.general.statusBar": "current file",
-  "todo-tree.highlights.useColourScheme": true
+  "todo-tree.highlights.useColourScheme": true,
+  "python.defaultInterpreterPath": "$HOME/.pyenv/shims/python",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "workbench.colorTheme": "Default Light+",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "zsh (2)": {
+      "path": "/usr/local/bin/zsh"
+    }
+  },
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": false
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.automationShell.osx": "zsh"
 }
