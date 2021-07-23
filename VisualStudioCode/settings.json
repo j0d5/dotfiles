@@ -130,7 +130,6 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Default Light+",
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
@@ -162,5 +161,6 @@
     "editor.wordBasedSuggestions": false
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.automationShell.osx": "zsh"
+  "terminal.integrated.automationShell.osx": "zsh",
+  "workbench.colorTheme": "Default Light+"
 }
