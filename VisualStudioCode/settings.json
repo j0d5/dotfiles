@@ -81,7 +81,6 @@
     }
   },
   "eslint.validate": ["javascript", "html", "markdown"],
-  "angular.experimental-ivy": true,
   "workbench.editor.decorations.badges": true,
   "editor.minimap.enabled": false,
   "vim.enableNeovim": true,
@@ -89,7 +88,6 @@
   "vim.leader": " ",
   "vim.neovimConfigPath": "~/.config/nvim/init.lua",
   "vim.neovimPath": "/usr/local/bin/nvim",
-  "editor.renderIndentGuides": true,
   "files.insertFinalNewline": true,
   "editor.fontSize": 11,
   "files.hotExit": "off",
@@ -139,7 +137,7 @@
       "icon": "terminal-bash"
     },
     "zsh": {
-      "path": "zsh",
+      "path": "/usr/local/bin/zsh",
       "args": ["-l"]
     },
     "fish": {
@@ -153,15 +151,19 @@
     "pwsh": {
       "path": "pwsh",
       "icon": "terminal-powershell"
-    },
-    "zsh (2)": {
-      "path": "/usr/local/bin/zsh"
     }
   },
   "[python]": {
     "gitlens.codeLens.symbolScopes": ["!Module"],
     "editor.wordBasedSuggestions": false
   },
+  "sonarlint.connectedMode.connections.sonarqube": [
+    {
+      "connectionId": "mySonar",
+      "serverUrl": "https://sonarqube.core.build.vwn.cloud",
+      "token": "a04facb530d42a6123b78cca3f41360425978db1"
+    }
+  ],
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.automationShell.osx": "zsh",
   "editor.bracketPairColorization.enabled": true,
@@ -176,5 +178,7 @@
   "typescript.inlayHints.parameterTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
-  "editor.suggest.showReferences": false
+  "editor.suggest.showReferences": false,
+  "workbench.colorTheme": "Default Dark+",
+  "editor.guides.bracketPairs": true
 }
