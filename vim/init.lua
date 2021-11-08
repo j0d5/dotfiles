@@ -35,7 +35,7 @@ g.splitbelow = true                     -- Put new windows below current
 g.splitright = true                     -- Put new windows right of current
 g.showmatch = true                      -- When a bracket is inserted, briefly jump to a matching one
 g.spell = false
-g.termguicolors = true                  -- True color support
+opt.termguicolors = true                  -- True color support
 g.grepprg='ag --nogroup --nocolor --skip-vcs-ignores'
 
 -- load all plugins
