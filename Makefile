@@ -4,6 +4,7 @@
 DOTPATH  := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 DOTFILES := $(wildcard etc/??*)
 BINFILES := $(wildcard bin/??*)
+CONFIG_DIR="$(HOME)/.config"
 
 help:
 	@echo ".dotfiles Tasks:"
@@ -20,6 +21,9 @@ bin: ## symlink bin files to $HOME/.bin
 	/bin/ln -sfn $(DOTPATH)/bin $(HOME)/.bin
 
 folders: ## symlink all those folders
+	if [ ! -d "$(CONFIG_DIR)" ]; then \
+		/bin/mkdir "$(CONFIG_DIR)"; \
+	fi
 	/bin/ln -sfn $(DOTPATH)/git $(HOME)/.git
 	/bin/ln -sfn $(DOTPATH)/fish $(HOME)/.config/fish
 	/bin/ln -sfn $(DOTPATH)/zsh $(HOME)/.zsh
@@ -28,7 +32,9 @@ folders: ## symlink all those folders
 	/bin/ln -sfn $(DOTPATH)/vim $(HOME)/.config/nvim
 	/bin/ln -sfn $(DOTPATH)/kitty $(HOME)/.config/kitty
 	/bin/ln -sfn $(DOTPATH)/hammerspoon $(HOME)/.hammerspoon
-	/bin/ln -sfn $(DOTPATH)/VisualStudioCode/settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"
+	if [ -d "$(HOME)/Library" ]; then \
+		/bin/ln -sfn $(DOTPATH)/VisualStudioCode/settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"; \
+	fi
 
 osx: ## run osx all task, see below
 	$(MAKE) -C ./osx all
