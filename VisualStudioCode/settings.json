@@ -179,6 +179,7 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "editor.suggest.showReferences": false,
-  "workbench.colorTheme": "Default Dark+",
-  "editor.guides.bracketPairs": true
+  "editor.guides.bracketPairs": true,
+  "editor.wordWrapColumn": 120,
+  "window.openFilesInNewWindow": "default"
 }
