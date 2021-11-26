@@ -92,7 +92,7 @@ fi
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
-[ -f $HOME/zshrc_local ] && source $HOME/zshrc_local
+[ -f $HOME/.zshrc_local ] && source $HOME/.zshrc_local
 
 # >>> talisman >>>
 # Below environment variables should not be modified unless you know what you are doing
