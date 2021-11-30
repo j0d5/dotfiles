@@ -1,62 +1,25 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-## {{{
-##
-## Author: Johannes Steudle
-## File: .zshrc
-## Date: 17.03.2014
-##
-## Description: .zshrc general settings
-##
-## }}}
+# {{{
+#
+# Author: Johannes Steudle
+# File: .zshrc
+#
+# Description: .zshrc general settings
+#
+# }}}
 
 # export DEBUG_ZSH=true
 
-# Path to your oh-my-zsh configuration.
+# Path to zsh configuration directory
 ZSH=$HOME/.zsh
 
-# Set name of the theme to load.
-# ZSH_THEME="tweetjay"
-ZSH_THEME="powerlevel10k"
+# Set language environment
+export LC_ALL="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LANG="en_GB.UTF-8"
 
-plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
-
-# You may seed to manually set your language environment
-export LANG=en_US.UTF-8
+plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-z)
 
 source $ZSH/init_zsh.zsh
 
-# Set default editor
-export EDITOR=nvim
-export PAGER=less
+test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
 
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-eval $(/usr/libexec/path_helper -s)
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-###-tns-completion-start-###
-if [ -f /Users/johannes/.tnsrc ]; then
-    source /Users/johannes/.tnsrc
-fi
-###-tns-completion-end-###
-
-if [ -f ~/.zshrc_local ]; then
-    source ~/.zshrc_local
-fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

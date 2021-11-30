@@ -1,3 +1,9 @@
+# {{{
+#
+# File: key-bindings.zsh
+#
+# }}}
+
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Zle-Builtins
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
@@ -15,17 +21,7 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-finish
 fi
 
-bindkey -e                                            # Use emacs key bindings
-
-bindkey '\ew' kill-region                             # [Esc-w] - Kill from the cursor to the mark
-bindkey -s '\el' 'ls\n'                               # [Esc-l] - run command: ls
-bindkey '^r' history-incremental-search-backward      # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
-if [[ "${terminfo[kpp]}" != "" ]]; then
-  bindkey "${terminfo[kpp]}" up-line-or-history       # [PageUp] - Up a line of history
-fi
-if [[ "${terminfo[knp]}" != "" ]]; then
-  bindkey "${terminfo[knp]}" down-line-or-history     # [PageDown] - Down a line of history
-fi
+# zmodload zsh/terminfo
 
 # start typing + [Up-Arrow] - fuzzy find history forward
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
@@ -40,6 +36,10 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
   bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
 
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
 if [[ "${terminfo[khome]}" != "" ]]; then
   bindkey "${terminfo[khome]}" beginning-of-line      # [Home] - Go to beginning of line
 fi
@@ -49,8 +49,8 @@ fi
 
 bindkey ' ' magic-space                               # [Space] - do history expansion
 
-bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
-bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
+bindkey "\e[1;3C" forward-word                        # [Alt-LeftArrow] - move backward one word
+bindkey "\e[1;3D" backward-word                       # [Alt-RightArrow] - move backward one word
 
 if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
@@ -73,21 +73,3 @@ bindkey '\C-x\C-e' edit-command-line
 # file rename magick
 bindkey "^[m" copy-prev-shell-word
 
-# consider emacs keybindings:
-
-#bindkey -e  ## emacs key bindings
-#
-#bindkey '^[[A' up-line-or-search
-#bindkey '^[[B' down-line-or-search
-#bindkey '^[^[[C' emacs-forward-word
-#bindkey '^[^[[D' emacs-backward-word
-#
-#bindkey -s '^X^Z' '%-^M'
-#bindkey '^[e' expand-cmd-path
-#bindkey '^[^I' reverse-menu-complete
-#bindkey '^X^N' accept-and-infer-next-history
-#bindkey '^W' kill-region
-#bindkey '^I' complete-word
-## Fix weird sequence that rxvt produces
-#bindkey -s '^[[Z' '\t'
-#

@@ -1,16 +1,11 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: global_settings.zsh                    ##
-## Date: 24.03.2016                             ##
-##                                              ##
-## Description: file for global settings        ##
-##                                              ##
-##################################################
-
-if [[ -n $DEBUG_ZSH ]]; then
- echo 'loading colors'
-fi
+# {{{
+#
+# Author: Johannes Steudle
+# File: colors.zsh
+#
+# Description: file for global settings
+#
+# }}}
 
 # ls colors
 autoload -U colors && colors

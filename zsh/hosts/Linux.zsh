@@ -1,13 +1,13 @@
-##################################################
-##                                              ##
-## Author: Johannes Steudle                     ##
-## File: Linux.zsh                              ##
-## Date: 03.12.2015                             ##
-##                                              ##
-## Description: file for platform specific      ##
-##              settings                        ##
-##                                              ##
-##################################################
+# {{{
+#
+# Author: Johannes Steudle
+# File: Linux.zsh
+#
+# Description: file for global settings
+#
+# }}}
 
-# custom zsh commands
-echo "i'm on a linux system!"
+if [[ -n $DEBUG_ZSH ]]; then
+  echo "i'm on a linux system!"
+fi
+

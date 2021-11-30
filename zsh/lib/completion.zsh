@@ -1,3 +1,9 @@
+# {{{
+#
+# File: completion.zsh
+#
+# }}}
+
 # fixme - the load process here seems a bit bizarre
 
 unsetopt menu_complete   # do not autoselect the first completion entry

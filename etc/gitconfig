@@ -5,12 +5,6 @@
     excludesfile = ~/.gitignore
     editor = nvim
 
-[init]
-    templatedir = /Users/johannes/.git-template
-
-[commit]
-    template = ~/.git/templates/commit-msg-template
-
 [push]
     default = simple
 
@@ -37,9 +31,6 @@
     log = true
     commit = false
     # mergeoptions = --no-commit
-
-[gpg]
-    program = gpg
 
 [rerere]
     enabled = true

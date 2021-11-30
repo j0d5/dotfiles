@@ -1,6 +1,11 @@
-if [[ -n $DEBUG_ZSH ]]; then
-  echo 'loading hosts.plugin.zsh on host ' $HOST
-fi
+# {{{
+#
+# Author: Johannes Steudle
+# File: hosts.zsh
+#
+# Description: file for loading settings depending on the host
+#
+# }}}
 
 platform=`uname`
 test -r $ZSH/hosts/$platform.zsh && source $ZSH/hosts/$platform.zsh

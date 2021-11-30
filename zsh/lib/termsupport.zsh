@@ -1,3 +1,9 @@
+# {{{
+#
+# File: termsupport.zsh
+#
+# }}}
+
 # Set terminal window and tab/icon title
 #
 # usage: title short_tab_title [long_window_title]
