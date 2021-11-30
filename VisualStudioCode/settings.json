@@ -181,5 +181,7 @@
   "editor.suggest.showReferences": false,
   "editor.guides.bracketPairs": true,
   "editor.wordWrapColumn": 120,
-  "window.openFilesInNewWindow": "default"
+  "window.openFilesInNewWindow": "default",
+  "gitlens.fileAnnotations.command": "changes",
+  "gitlens.integrations.enabled": true,
 }
