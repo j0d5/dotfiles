@@ -39,7 +39,8 @@ opt.termguicolors = true                  -- True color support
 g.grepprg='ag --nogroup --nocolor --skip-vcs-ignores'
 
 -- load all plugins
-require("pluginsList.lua")
+require('plugins')
+
 require("web-devicons.lua")
 -- set vim options
 require("utils.lua")
