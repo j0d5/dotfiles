@@ -32,6 +32,7 @@ folders: ## symlink all those folders
 	/bin/ln -sfn $(DOTPATH)/vim $(HOME)/.config/nvim
 	/bin/ln -sfn $(DOTPATH)/kitty $(HOME)/.config/kitty
 	/bin/ln -sfn $(DOTPATH)/hammerspoon $(HOME)/.hammerspoon
+	/bin/ln -sfn $(DOTPATH)/tmuxinator $(HOME)/.config/tmuxinator
 	if [ -d "$(HOME)/Library" ]; then \
 		/bin/ln -sfn $(DOTPATH)/VisualStudioCode/settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"; \
 	fi
