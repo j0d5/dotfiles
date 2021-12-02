@@ -183,5 +183,5 @@
   "editor.wordWrapColumn": 120,
   "window.openFilesInNewWindow": "default",
   "gitlens.fileAnnotations.command": "changes",
-  "gitlens.integrations.enabled": true,
+  "gitlens.integrations.enabled": true
 }
