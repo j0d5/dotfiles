@@ -16,20 +16,7 @@
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.lua",
 
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
+  "[typescript][javascript][html][scss][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
@@ -112,7 +99,6 @@
   },
   "window.autoDetectColorScheme": true,
   "workbench.fontAliasing": "auto",
-  "workbench.editor.wrapTabs": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.editor.highlightModifiedTabs": true,
@@ -165,16 +151,15 @@
     }
   ],
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.automationShell.osx": "zsh",
   "editor.bracketPairColorization.enabled": true,
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
   "javascript.inlayHints.parameterTypes.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.referencesCodeLens.showOnAllFunctions": true,
   "typescript.suggest.completeFunctionCalls": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.parameterTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
@@ -183,5 +168,6 @@
   "editor.wordWrapColumn": 120,
   "window.openFilesInNewWindow": "default",
   "gitlens.fileAnnotations.command": "changes",
-  "gitlens.integrations.enabled": true
+  "gitlens.integrations.enabled": true,
+  "workbench.editor.wrapTabs": true
 }
