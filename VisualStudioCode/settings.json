@@ -99,7 +99,6 @@
   "window.autoDetectColorScheme": true,
   "workbench.fontAliasing": "auto",
   "editor.suggestSelection": "recentlyUsed",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
   "todo-tree.general.statusBar": "current file",
@@ -168,5 +167,15 @@
   "window.openFilesInNewWindow": "default",
   "gitlens.fileAnnotations.command": "changes",
   "gitlens.integrations.enabled": true,
-  "workbench.editor.wrapTabs": true
+  "workbench.editor.wrapTabs": true,
+
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  // Remove .fvm files from search
+  "search.exclude": {
+    "**/.fvm": true
+  },
+  // Remove from file watching
+  "files.watcherExclude": {
+    "**/.fvm": true
+  }
 }
