@@ -111,7 +111,8 @@
     "TODO",
     "XXX",
     "[ ]",
-    "[x]"
+    "[x]",
+    "IDEA"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "terminal.integrated.profiles.osx": {
@@ -177,5 +178,14 @@
   // Remove from file watching
   "files.watcherExclude": {
     "**/.fvm": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "IDEA": {
+      "type": "tag",
+      "foreground": "blue",
+      "iconColour": "blue",
+      "background": "#00000000",
+      "gutterIcon": false
+    }
   }
 }
