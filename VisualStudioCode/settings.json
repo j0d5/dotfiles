@@ -1,4 +1,11 @@
 {
+  "window.openFilesInNewWindow": "default",
+  "window.title": "${activeEditorShort}${separator}${rootName}",
+  "window.autoDetectColorScheme": true,
+
+  // Editor settings
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.defaultFormatter": "EditorConfig.EditorConfig",
   "editor.fontFamily": "Fira Code",
   "editor.renderWhitespace": "boundary",
   "editor.cursorStyle": "line",
@@ -7,30 +14,54 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 11,
+  "editor.scrollBeyondLastLine": true,
+  "editor.mouseWheelScrollSensitivity": 3,
+  "editor.tabSize": 4,
+  "editor.wordWrap": "on",
+  "editor.formatOnPaste": true,
+  "editor.suggest.showReferences": false,
+  "editor.guides.bracketPairs": true,
+  "editor.wordWrapColumn": 120,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.hover.delay": 1000,
+
+  // Workbench settings
+  "workbench.editor.wrapTabs": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.decorations.badges": true,
+  "workbench.fontAliasing": "auto",
 
   "terminal.external.osxExec": "iTerm.app",
-  "git.autofetch": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.defaultFormatter": "EditorConfig.EditorConfig",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.tabs.enabled": true,
+
+  "files.hotExit": "off",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    ".git": true,
+    ".idea": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.git": false,
+    "**/.project": true,
+    "**/.settings": true
+  },
+
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.lua",
 
-  "[typescript][javascript][html][scss][jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[dart]": {
-    "editor.formatOnType": true,
-    "editor.rulers": [80],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
-  },
+  "git.autofetch": true,
   "git.countBadge": "tracked",
   "git.defaultCloneDirectory": "$HOME/Developer",
+
+  "gitlens.fileAnnotations.command": "changes",
+  "gitlens.integrations.enabled": true,
   "gitlens.menus": {
     "editor": {
       "blame": false,
@@ -67,43 +98,38 @@
       "stash": true
     }
   },
+
   "eslint.validate": ["javascript", "html", "markdown"],
-  "workbench.editor.decorations.badges": true,
-  "editor.minimap.enabled": false,
+
   "vim.enableNeovim": true,
   "vim.neovimUseConfigFile": true,
   "vim.leader": " ",
   "vim.neovimConfigPath": "~/.config/nvim/init.lua",
   "vim.neovimPath": "/usr/local/bin/nvim",
-  "files.insertFinalNewline": true,
-  "editor.fontSize": 11,
-  "files.hotExit": "off",
-  "editor.scrollBeyondLastLine": true,
-  "editor.mouseWheelScrollSensitivity": 3,
-  "window.title": "${activeEditorShort}${separator}${rootName}",
-  "editor.tabSize": 4,
-  "files.trimTrailingWhitespace": true,
-  "editor.wordWrap": "on",
-  "editor.formatOnPaste": true,
-  "terminal.integrated.tabs.enabled": true,
+
   "redhat.telemetry.enabled": false,
-  "files.exclude": {
-    ".git": true,
-    ".idea": true,
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.git": false,
-    "**/.project": true,
-    "**/.settings": true
-  },
-  "window.autoDetectColorScheme": true,
-  "workbench.fontAliasing": "auto",
-  "editor.suggestSelection": "recentlyUsed",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.pinnedTabSizing": "compact",
+
+  // Python
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+
+  // JavaScript
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  // TypeScript
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+
+  // TODO Tree
   "todo-tree.general.statusBar": "current file",
   "todo-tree.highlights.useColourScheme": true,
-  "python.defaultInterpreterPath": "$HOME/.pyenv/shims/python",
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -114,7 +140,16 @@
     "[x]",
     "IDEA"
   ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.highlights.customHighlight": {
+    "IDEA": {
+      "type": "tag",
+      "foreground": "blue",
+      "iconColour": "blue",
+      "background": "#00000000",
+      "gutterIcon": false
+    }
+  },
+
   "terminal.integrated.profiles.osx": {
     "bash": {
       "path": "bash",
@@ -138,10 +173,27 @@
       "icon": "terminal-powershell"
     }
   },
+
   "[python]": {
     "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+
+  "[typescript][javascript][html][scss][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[dart]": {
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
+
   "sonarlint.connectedMode.connections.sonarqube": [
     {
       "connectionId": "mySonar",
@@ -149,26 +201,6 @@
       "token": "a04facb530d42a6123b78cca3f41360425978db1"
     }
   ],
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "editor.bracketPairColorization.enabled": true,
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.suggest.completeFunctionCalls": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.referencesCodeLens.showOnAllFunctions": true,
-  "typescript.suggest.completeFunctionCalls": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "editor.suggest.showReferences": false,
-  "editor.guides.bracketPairs": true,
-  "editor.wordWrapColumn": 120,
-  "window.openFilesInNewWindow": "default",
-  "gitlens.fileAnnotations.command": "changes",
-  "gitlens.integrations.enabled": true,
-  "workbench.editor.wrapTabs": true,
 
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
   // Remove .fvm files from search
@@ -179,13 +211,8 @@
   "files.watcherExclude": {
     "**/.fvm": true
   },
-  "todo-tree.highlights.customHighlight": {
-    "IDEA": {
-      "type": "tag",
-      "foreground": "blue",
-      "iconColour": "blue",
-      "background": "#00000000",
-      "gutterIcon": false
-    }
+
+  "yaml.schemas": {
+    "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   }
 }
