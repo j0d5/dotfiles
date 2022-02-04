@@ -6,7 +6,7 @@
   // Editor settings
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.defaultFormatter": "EditorConfig.EditorConfig",
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "JetBrains Mono",
   "editor.renderWhitespace": "boundary",
   "editor.cursorStyle": "line",
   "editor.rulers": [120],
@@ -15,7 +15,6 @@
     "source.organizeImports": true
   },
   "editor.minimap.enabled": false,
-  "editor.fontSize": 11,
   "editor.scrollBeyondLastLine": true,
   "editor.mouseWheelScrollSensitivity": 3,
   "editor.tabSize": 4,

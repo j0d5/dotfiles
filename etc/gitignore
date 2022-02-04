@@ -135,3 +135,4 @@ tags
 *.class
 *.fls
 *.sublime-project
+node_modules
