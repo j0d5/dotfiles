@@ -17,16 +17,16 @@
     # different prefix for kind of object
     # mnemonicprefix = true
     colorMoved = zebra
-    tool = araxis
+    # tool = araxis
     # algorithm = patience
     # indentHeuristic = true
     # compactionheuristic = true
 
 [branch]
-    autosetuprebase = always
+    # autosetuprebase = always
 
 [merge]
-    tool = araxis
+    # tool = araxis
     ff = false
     log = true
     commit = false
