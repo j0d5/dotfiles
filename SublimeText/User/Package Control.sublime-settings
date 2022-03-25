@@ -2,6 +2,10 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Angular CLI",
+		"Case Conversion",
+		"GitHub Theme",
+		"Uncrustify",
 	],
 	"installed_packages":
 	[

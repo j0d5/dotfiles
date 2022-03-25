@@ -35,6 +35,7 @@ folders: ## symlink all those folders
 	/bin/ln -sfn $(DOTPATH)/tmuxinator $(HOME)/.config/tmuxinator
 	if [ -d "$(HOME)/Library" ]; then \
 		/bin/ln -sfn $(DOTPATH)/VisualStudioCode/settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"; \
+		/bin/ln -sfFn $(DOTPATH)/SublimeText/User "$(HOME)/Library/Application Support/Sublime Text/Packages"; \
 	fi
 
 osx: ## run osx all task, see below
