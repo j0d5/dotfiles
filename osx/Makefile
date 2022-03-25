@@ -29,4 +29,4 @@ endif
 shell: ## adds homebrew bash and zsh to /etc/shells and sets bash as new shell
 	sudo sh -c "if ! grep /usr/local/bin/zsh /etc/shells; then echo /usr/local/bin/zsh >> /etc/shells; fi"
 	sudo sh -c "if ! grep /usr/local/bin/fish /etc/shells; then echo /usr/local/bin/fish >> /etc/shells; fi"
-	chsh -s /usr/local/bin/fish
+	chsh -s /usr/local/bin/zsh

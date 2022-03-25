@@ -1220,7 +1220,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/jst2hi</string>
+			<string>/Users/johannes</string>
 		</dict>
 	</array>
 	<key>OpenTmuxWindowsIn</key>
@@ -1258,13 +1258,13 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
-	<key>SplitPaneDimmingAmount</key>
-	<real>0.32892564273049651</real>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>1</integer>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
-	<key>findMode_iTerm</key>
-	<integer>0</integer>
 </dict>
 </plist>

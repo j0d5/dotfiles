@@ -214,7 +214,7 @@
   },
 
   "yaml.schemas": {
-    "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "remote.SSH.configFile": "/var/folders/n4/y16p69wx5072ht9kkknt1r6r0000gn/T/gitpod_ssh_config-70442-jHVu1bDeh73E",
