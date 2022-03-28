@@ -3,9 +3,6 @@
 	"in_process_packages":
 	[
 		"Angular CLI",
-		"Case Conversion",
-		"GitHub Theme",
-		"Uncrustify",
 	],
 	"installed_packages":
 	[
@@ -20,7 +17,6 @@
 		"ESLint",
 		"GitGutter",
 		"GitHub Theme",
-		"LaTeXing",
 		"LSP",
 		"LSP-angular",
 		"LSP-bash",
@@ -50,9 +46,10 @@
 		"Theme - Soda SolarizedDark",
 		"Theme - Spacegray",
 		"TypeScript",
+		"TypescriptCompletion",
 		"Uncrustify",
 		"WordCount",
-		"WordHighlight"
+		"WordHighlight",
 	],
 	"repositories":
 	[

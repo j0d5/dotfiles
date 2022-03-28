@@ -1,7 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 	"dictionary": "Packages/German/de_DE_frami.dic",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
@@ -35,27 +35,14 @@
 		".bundle",
 		".sass-cache",
 		".svn",
-		".hg"
+		".hg",
+    "node_modules"
 	],
-	"font_face": "Fira Code",
-	"font_size": 11,
+	"font_face": "JetBrains Mono",
+	"font_size": 12,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
-	"ignored_packages":
-	[
-		"AndLog",
-		"Angular CLI",
-		"Case Conversion",
-		"GitHub Theme",
-		"LSP-yaml",
-		"Markdown",
-		"Solarized Color Scheme",
-		"Sublimerge Pro",
-		"Uncrustify",
-		"Vintage",
-		"Vintageous",
-	],
 	"margin": 0,
 	"rulers":
 	[
@@ -68,9 +55,14 @@
 	"spell_check": false,
 	"tab_size": 4,
 	"theme": "auto",
-	"translate_tabs_to_spaces": true,
+	// "translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": "auto",
 	"dark_theme": "Default Dark.sublime-theme",
 	"light_theme": "Default.sublime-theme",
+	"ignored_packages":
+	[
+		"Angular CLI",
+		"Vintage"
+	],
 }
