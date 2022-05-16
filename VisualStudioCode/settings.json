@@ -14,7 +14,6 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "editor.minimap.enabled": false,
   "editor.scrollBeyondLastLine": true,
   "editor.mouseWheelScrollSensitivity": 3,
   "editor.tabSize": 4,
@@ -24,20 +23,32 @@
   "editor.guides.bracketPairs": true,
   "editor.wordWrapColumn": 120,
   "editor.bracketPairColorization.enabled": true,
-  "editor.suggestSelection": "recentlyUsed",
+  "editor.suggestSelection": "first",
   "editor.hover.delay": 1000,
+  "editor.codeLensFontFamily": "JetBrains Mono",
 
   // Workbench settings
+  "workbench.iconTheme": "vs-minimal",
   "workbench.editor.wrapTabs": true,
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.decorations.badges": true,
+  "workbench.editor.pinnedTabSizing": "compact",
   "workbench.fontAliasing": "auto",
   "workbench.colorCustomizations": {
+    "tab.border": "#000000",
     "tab.activeBorder": "#0026ff",
     "tab.activeBorderTop": "#0026ff",
     "tab.activeForeground": "#ffffff",
-    "tab.activeBackground": "#000000"
+    "tab.activeBackground": "#000000",
+
+    "[Default Light+]": {
+      "tab.border": "#000000",
+      "tab.activeBorder": "#000000",
+      "tab.activeBorderTop": "#000000",
+      "tab.activeForeground": "#000000",
+      "tab.activeBackground": "#ffffff",
+      "tab.inactiveBackground": "#e1e1e1"
+    }
   },
 
   "terminal.external.osxExec": "iTerm.app",
@@ -186,6 +197,7 @@
   },
 
   "[dart]": {
+    "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.rulers": [80],
     "editor.selectionHighlight": false,
@@ -210,19 +222,22 @@
   },
   // Remove from file watching
   "files.watcherExclude": {
-    "**/.fvm": true
+    "**/.fvm": true,
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
   },
 
   "yaml.schemas": {
-    "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.11/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "remote.SSH.configFile": "/var/folders/n4/y16p69wx5072ht9kkknt1r6r0000gn/T/gitpod_ssh_config-70442-jHVu1bDeh73E",
-  "jupyter.jupyterServerType": "remote",
+  "jupyter.jupyterServerType": "local",
   "terminal.integrated.fontFamily": "monospace",
-  "editor.codeLensFontFamily": "JetBrains Mono",
   "java.debug.settings.console": "internalConsole",
   "go.toolsManagement.autoUpdate": true,
-  "workbench.editor.pinnedTabSizing": "compact",
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "workbench.colorTheme": "Default Light+"
 }

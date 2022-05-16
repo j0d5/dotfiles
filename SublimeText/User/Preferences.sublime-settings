@@ -62,7 +62,6 @@
 	"light_theme": "Default.sublime-theme",
 	"ignored_packages":
 	[
-		"Angular CLI",
-		"Vintage"
+		"Vintage",
 	],
 }
