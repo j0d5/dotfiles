@@ -23,3 +23,4 @@ source $ZSH/init_zsh.zsh
 
 test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

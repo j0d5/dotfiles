@@ -14,10 +14,7 @@
 [diff]
     context = 3
     noprefix = true
-    # different prefix for kind of object
-    # mnemonicprefix = true
     colorMoved = zebra
-    # tool = araxis
     # algorithm = patience
     # indentHeuristic = true
     # compactionheuristic = true
@@ -26,11 +23,9 @@
     # autosetuprebase = always
 
 [merge]
-    # tool = araxis
     ff = false
     log = true
     commit = false
-    # mergeoptions = --no-commit
 
 [rerere]
     enabled = true
