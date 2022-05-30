@@ -239,5 +239,7 @@
   "go.toolsManagement.autoUpdate": true,
   "telemetry.telemetryLevel": "off",
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Default Light+"
 }
