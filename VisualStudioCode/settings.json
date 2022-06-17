@@ -241,7 +241,10 @@
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Default Light+",
   "git.autoStash": true,
-  "git.pruneOnFetch": true
+  "git.pruneOnFetch": true,
+  "thunder-client.codeSnippetLanguage": "cs-httpclient",
+  "projectManager.git.baseFolders": ["~/Developer"],
+  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
+  "workbench.colorTheme": "Default Light+"
 }
