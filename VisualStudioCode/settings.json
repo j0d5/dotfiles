@@ -28,7 +28,7 @@
   "editor.codeLensFontFamily": "JetBrains Mono",
 
   // Workbench settings
-  "workbench.iconTheme": "vs-minimal",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.wrapTabs": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.decorations.badges": true,
@@ -245,6 +245,5 @@
   "git.pruneOnFetch": true,
   "thunder-client.codeSnippetLanguage": "cs-httpclient",
   "projectManager.git.baseFolders": ["~/Developer"],
-  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
-  "workbench.colorTheme": "Default Light+"
+  "projectManager.openInNewWindowWhenClickingInStatusBar": true
 }
