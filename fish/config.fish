@@ -125,3 +125,7 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 if test -f "$HOME/.fish_local"
     source $HOME/.fish_local
 end
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/johannes/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
