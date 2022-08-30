@@ -210,8 +210,7 @@
   "sonarlint.connectedMode.connections.sonarqube": [
     {
       "connectionId": "mySonar",
-      "serverUrl": "https://sonarqube.core.build.vwn.cloud",
-      "token": "a04facb530d42a6123b78cca3f41360425978db1"
+      "serverUrl": "https://sonarqube.core.build.vwn.cloud"
     }
   ],
 
@@ -245,5 +244,17 @@
   "git.pruneOnFetch": true,
   "thunder-client.codeSnippetLanguage": "cs-httpclient",
   "projectManager.git.baseFolders": ["~/Developer"],
-  "projectManager.openInNewWindowWhenClickingInStatusBar": true
+  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
+  "git.mergeEditor": true,
+  "window.commandCenter": true,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.shellIntegration.history": 10000,
+  "git.confirmSync": false,
+  "workbench.tree.indent": 4,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
+  "boot-java.support-spring-xml-config.on": true,
+  "workbench.colorTheme": "Default Light+"
 }
