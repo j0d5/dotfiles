@@ -2,6 +2,7 @@
   "window.openFilesInNewWindow": "default",
   "window.title": "${activeEditorShort}${separator}${rootName}",
   "window.autoDetectColorScheme": true,
+  "window.commandCenter": true,
 
   // Editor settings
   "editor.multiCursorModifier": "ctrlCmd",
@@ -26,18 +27,21 @@
   "editor.suggestSelection": "first",
   "editor.hover.delay": 1000,
   "editor.codeLensFontFamily": "JetBrains Mono",
-  "workbench.iconTheme": "material-icon-theme",
+
+  // Workbench settings
+  "workbench.tree.indent": 4,
   "workbench.editor.wrapTabs": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.decorations.badges": true,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.fontAliasing": "auto",
   "workbench.colorCustomizations": {
-    "tab.border": "#000000",
-    "tab.activeBorder": "#0026ff",
-    "tab.activeBorderTop": "#0026ff",
-    "tab.activeForeground": "#ffffff",
-    "tab.activeBackground": "#000000",
+    // "tab.border": "#666666",
+    // "tab.activeBorder": "#0026ff",
+    // "tab.activeBorderTop": "#0026ff",
+    // "tab.activeForeground": "#aaaaaa",
+    // "tab.activeBackground": "#cccccc7c",
+    // "tab.inactiveBackground": "#f2f2f246",
 
     "[Default Light+]": {
       "tab.border": "#000000",
@@ -48,7 +52,8 @@
       "tab.inactiveBackground": "#e1e1e1"
     }
   },
-  "workbench.tree.indent": 4,
+  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.iconTheme": "eq-material-theme-icons",
 
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "zsh",
@@ -258,13 +263,9 @@
   "go.toolsManagement.autoUpdate": true,
   "telemetry.telemetryLevel": "off",
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
-  "projectManager.git.baseFolders": ["~/Developer"],
-  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
-  "window.commandCenter": true,
 
   "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
   "boot-java.support-spring-xml-config.on": true,
   "maven.executable.path": "/opt/homebrew/bin/mvn",
-  "java.configuration.maven.globalSettings": "/opt/homebrew/Cellar/maven/3.8.6/libexec/conf/settings.xml",
-  "workbench.colorTheme": "Default Light+"
+  "java.configuration.maven.globalSettings": "/opt/homebrew/Cellar/maven/3.8.6/libexec/conf/settings.xml"
 }
