@@ -1,3 +1,5 @@
 *.jar -diff
 # *.doc diff=word
 # *.odt diff=odt
+*.sketch diff=sketchtool
+

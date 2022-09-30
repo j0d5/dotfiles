@@ -4,6 +4,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = nvim
+    attributesfile = ~/.gitattributes
 
 [push]
     default = simple
@@ -69,6 +70,11 @@
 
 [difftool "icdiff"]
     cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE
+
+[diff "sketchtool"]
+  textconv = "/Applications/Sketch.app/Contents/MacOS/sketchtool dump"
+  cachetextconv = true
+  binary = true
 
 [alias]
     ec = config --global -e # open git configuration in editor
