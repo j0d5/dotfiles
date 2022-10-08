@@ -94,9 +94,3 @@ eval "$(pyenv init -)"
 
 [ -f $HOME/.zshrc_local ] && source $HOME/.zshrc_local
 
-# >>> talisman >>>
-# Below environment variables should not be modified unless you know what you are doing
-export TALISMAN_HOME=/Users/johannes/.talisman/bin
-alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
-export TALISMAN_INTERACTIVE=false
-# <<< talisman <<<
