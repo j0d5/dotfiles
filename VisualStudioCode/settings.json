@@ -52,7 +52,6 @@
       "tab.inactiveBackground": "#e1e1e1"
     }
   },
-  "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "eq-material-theme-icons",
 
   "terminal.external.osxExec": "iTerm.app",
@@ -148,7 +147,6 @@
   // JavaScript
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
@@ -156,7 +154,6 @@
   // TypeScript
   "typescript.referencesCodeLens.showOnAllFunctions": true,
   "typescript.suggest.completeFunctionCalls": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -267,5 +264,10 @@
   "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
   "boot-java.support-spring-xml-config.on": true,
   "maven.executable.path": "/opt/homebrew/bin/mvn",
-  "java.configuration.maven.globalSettings": "/opt/homebrew/Cellar/maven/3.8.6/libexec/conf/settings.xml"
+  "java.configuration.maven.globalSettings": "/opt/homebrew/Cellar/maven/3.8.6/libexec/conf/settings.xml",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "codestream.serverUrl": "https://api.codestream.com",
+  "haskell.manageHLS": "PATH",
+  "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Default Light+"
 }
