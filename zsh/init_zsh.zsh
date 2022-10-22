@@ -73,8 +73,13 @@ fi
 # Load the theme
 source "$ZSH/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme"
 
+### Load shellfishrc
+test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
+
+### Load fuzzy search
 [ -f $HOME/fzf.zsh ] && source $HOME/fzf.zsh
 
+### Load Powerlevel10k configuration
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
