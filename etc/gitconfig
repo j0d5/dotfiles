@@ -76,6 +76,13 @@
   cachetextconv = true
   binary = true
 
+[diff "localizablestrings"]
+	textconv = "iconv -f utf-16 -t utf-8"
+	binary = false
+
+[diff "word"]
+	textconv = docx2txt
+
 [alias]
     ec = config --global -e # open git configuration in editor
     st = status -sb

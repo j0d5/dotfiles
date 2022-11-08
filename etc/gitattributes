@@ -1,5 +1,7 @@
 *.jar -diff
-# *.doc diff=word
+*.doc diff=word
 # *.odt diff=odt
 *.sketch diff=sketchtool
+*.docx diff=word
+*.strings utf16 diff=localizablestrings
 
