@@ -255,19 +255,46 @@
     "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
-  "remote.SSH.configFile": "/var/folders/n4/y16p69wx5072ht9kkknt1r6r0000gn/T/gitpod_ssh_config-70442-jHVu1bDeh73E",
-  "java.debug.settings.console": "internalConsole",
   "go.toolsManagement.autoUpdate": true,
   "telemetry.telemetryLevel": "off",
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
 
   "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
-  "boot-java.support-spring-xml-config.on": true,
-  "maven.executable.path": "/opt/homebrew/bin/mvn",
-  "java.configuration.maven.globalSettings": "/opt/homebrew/Cellar/maven/3.8.6/libexec/conf/settings.xml",
+
   "javascript.inlayHints.parameterTypes.enabled": true,
   "codestream.serverUrl": "https://api.codestream.com",
   "haskell.manageHLS": "PATH",
   "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Default Light+"
+
+  "settingsSync.ignoredSettings": ["configurationSync.store"],
+  "configurationSync.store": {
+    "url": "https://gitpod.io/code-sync",
+    "stableUrl": "https://gitpod.io/code-sync",
+    "insidersUrl": "https://gitpod.io/code-sync",
+    "canSwitch": false,
+    "authenticationProviders": {
+      "gitpod": {
+        "scopes": [
+          "function:accessCodeSyncStorage",
+          "function:getLoggedInUser",
+          "resource:default"
+        ]
+      }
+    }
+  },
+  "gitpod.remote.syncExtensions": true,
+  "sonarlint.disableTelemetry": true,
+
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-19",
+      "path": "/Users/johannes/.sdkman/candidates/java/19.0.1-oracle"
+    },
+    {
+      "name": "JavaSE-17",
+      "path": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
+      "default": true
+    }
+  ],
+  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
 }
