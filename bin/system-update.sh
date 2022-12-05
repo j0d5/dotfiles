@@ -13,10 +13,9 @@
 
 echo "Running system-update script"
 
-# homebrew
 BREW=/usr/local/bin/brew
 if [ -x "$BREW" ]; then
-  echo "Updating brew"
+  echo "[brew] updating brew"
   $BREW update
   $BREW upgrade
   $BREW upgrade --cask
@@ -25,17 +24,14 @@ else
   >&2 echo "Command brew not found!"
 fi
 
-echo "Updating gems"
-# ruby gems
+echo "[gem] updating gems"
 gem update
 gem cleanup
 
-echo "Updating macOS"
-# macOS update
+echo "[macOS] check for updates"
 softwareupdate -l
 softwareupdate -ia --verbose
 
-echo "Updating npm"
-# npm disaster
+echo "[npm] update node packages"
 npm install npm -g
-npm update -g
+npm --global update

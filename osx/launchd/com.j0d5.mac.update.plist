@@ -7,7 +7,7 @@
 
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/johannes/Developer/dotfiles/bin/update-repos.sh</string>
+      <string>/Users/johannes/Developer/dotfiles/bin/system-update.sh</string>
       <string>/Users/johannes/Developer</string>
     </array>
 
@@ -17,7 +17,7 @@
     <key>StartCalendarInterval</key>
     <dict>
       <key>Minute</key>
-      <integer>30</integer>
+      <integer>35</integer>
       <key>Hour</key>
       <integer>8</integer>
     </dict>
@@ -26,9 +26,9 @@
     <true />
 
     <key>StandardErrorPath</key>
-    <string>/Users/johannes/update-repos.err</string>
+    <string>/Users/johannes/system-update.err</string>
 
     <key>StandardOutPath</key>
-    <string>/Users/johannes/update-repos.out</string>
+    <string>/Users/johannes/system-update.out</string>
   </dict>
 </plist>

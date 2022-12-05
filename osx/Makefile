@@ -16,6 +16,10 @@ etc: $(foreach F, $(DOTFILES), _install-dot/$F) ## Symlink files into home
 _install-dot/%:
 	#/bin/ln -sf $(DOTPATH)/$* $(HOME)/.$(notdir $*)
 
+launch-agents:
+	ln -s "$HOME/Developer/dotfiles/osx/launchd/com.j0d5.mac.update.plist ~/Library/LaunchAgents/"
+	ln -s "$HOME/Developer/dotfiles/osx/launchd/com.j0d5.repo.update.plist ~/Library/LaunchAgents/"
+
 defaults: ## set some sane osx default preferences
 	$(DOTPATH)/osx-defaults
 

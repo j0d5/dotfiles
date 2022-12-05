@@ -1,9 +1,6 @@
-[include]
-    path = ~/.gitconfig_local
-
 [core]
     excludesfile = ~/.gitignore
-    editor = nvim
+    editor = lvim
     attributesfile = ~/.gitattributes
 
 [push]
@@ -176,3 +173,5 @@
 [gitflow]
     allowdirty=true
 
+[include]
+    path = ~/.gitconfig_local
