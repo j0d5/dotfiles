@@ -13,7 +13,7 @@
 
 echo "Running system-update script"
 
-BREW=/usr/local/bin/brew
+BREW="$(which brew)"
 if [ -x "$BREW" ]; then
   echo "[brew] updating brew"
   $BREW update

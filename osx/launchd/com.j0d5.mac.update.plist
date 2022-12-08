@@ -7,7 +7,7 @@
 
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/johannes/Developer/dotfiles/bin/system-update.sh</string>
+      <string>/Users/johannes/Developer/dotfiles/bin/update-system.sh</string>
       <string>/Users/johannes/Developer</string>
     </array>
 
@@ -26,9 +26,9 @@
     <true />
 
     <key>StandardErrorPath</key>
-    <string>/Users/johannes/system-update.err</string>
+    <string>/Users/johannes/update-system.err</string>
 
     <key>StandardOutPath</key>
-    <string>/Users/johannes/system-update.out</string>
+    <string>/Users/johannes/update-system.out</string>
   </dict>
 </plist>
