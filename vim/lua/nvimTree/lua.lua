@@ -3,10 +3,6 @@ require'nvim-tree'.setup {
     hijack_netrw        = true,
     open_on_setup       = false,
     ignore_ft_on_setup  = {},
-    update_to_buf_dir   = {
-        enable = true,
-        auto_open = true,
-    },
     open_on_tab         = false,
     hijack_cursor       = false,
     update_cwd          = false,
@@ -30,9 +26,7 @@ require'nvim-tree'.setup {
     },
     view = {
         width = 30,
-        height = 30,
         side = 'left',
-        auto_resize = false,
         mappings = {
             custom_only = false,
             list = {}
