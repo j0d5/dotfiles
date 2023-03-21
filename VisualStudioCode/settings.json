@@ -5,7 +5,7 @@
   "window.commandCenter": true,
 
   // Editor settings
-  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.multiCursorModifier": "alt",
   "editor.defaultFormatter": "EditorConfig.EditorConfig",
   "editor.fontFamily": "JetBrains Mono",
   "editor.renderWhitespace": "boundary",
@@ -27,6 +27,7 @@
   "editor.suggestSelection": "first",
   "editor.hover.delay": 1000,
   "editor.codeLensFontFamily": "JetBrains Mono",
+  "editor.minimap.enabled": false,
 
   // Workbench settings
   "workbench.tree.indent": 4,
@@ -150,6 +151,7 @@
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   // TypeScript
   "typescript.referencesCodeLens.showOnAllFunctions": true,
@@ -175,8 +177,8 @@
   "todo-tree.highlights.customHighlight": {
     "IDEA": {
       "type": "tag",
-      "foreground": "blue",
-      "iconColour": "blue",
+      "foreground": "#4c4cfc",
+      "iconColour": "#4c4cfc",
       "background": "#00000000",
       "gutterIcon": false
     }
@@ -210,6 +212,10 @@
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
 
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   "[python]": {
     "gitlens.codeLens.symbolScopes": ["!Module"],
     "editor.wordBasedSuggestions": false,
@@ -238,6 +244,8 @@
       "serverUrl": "https://sonarqube.core.build.vwn.cloud"
     }
   ],
+  "sonarlint.disableTelemetry": true,
+  "sonarlint.pathToNodeExecutable": "/Users/johannes/.nvm/versions/node/v16.18.0/bin/node",
 
   // Remove .fvm files from search
   "search.exclude": {
@@ -261,10 +269,8 @@
 
   "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
 
-  "javascript.inlayHints.parameterTypes.enabled": true,
   "codestream.serverUrl": "https://api.codestream.com",
   "haskell.manageHLS": "PATH",
-  "editor.minimap.enabled": false,
 
   "settingsSync.ignoredSettings": ["configurationSync.store"],
   "configurationSync.store": {
@@ -283,7 +289,6 @@
     }
   },
   "gitpod.remote.syncExtensions": true,
-  "sonarlint.disableTelemetry": true,
 
   "java.configuration.runtimes": [
     {
@@ -296,5 +301,7 @@
       "default": true
     }
   ],
-  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
+  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
+  "boot-java.rewrite.reconcile": true,
+  "quarkus.tools.alwaysShowWelcomePage": false,
 }

@@ -7,9 +7,7 @@
 #
 # }}}
 
-if [[ -n $DEBUG_ZSH ]]; then
-  echo 'loading init_zsh'
-fi
+[[ -n $DEBUG_ZSH ]] && echo 'loading init_zsh'
 
 # Set default editor
 export EDITOR=nvim
@@ -77,11 +75,11 @@ source "$ZSH/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme"
 test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
 
 ### Load fuzzy search
-[ -f $HOME/fzf.zsh ] && source $HOME/fzf.zsh
+[ -f "$HOME/fzf.zsh" ] && source "$HOME/fzf.zsh"
 
 ### Load Powerlevel10k configuration
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+[[ ! -f "$HOME/.p10k.zsh" ]] || source "$HOME/.p10k.zsh"
 
 # Load completion for kubectl
 if type kubectl > /dev/null 2>&1; then
@@ -97,10 +95,12 @@ fi
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+# Rust
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+
 ### Initialize SDKMAN
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-[ -f $HOME/.zshrc_local ] && source $HOME/.zshrc_local
-
+[[ -f "$HOME/.zshrc_local" ]] && source "$HOME/.zshrc_local"

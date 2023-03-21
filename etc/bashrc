@@ -63,38 +63,32 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.dotfiles/mybash ]; then
-	. ~/.dotfiles/mybash
-fi
+[ -f $HOME/.dotfiles/mybash ] && . $HOME/.dotfiles/mybash
 # Alias definitions.
-if [ -f ~/.dotfiles/global_aliases ]; then
-	. ~/.dotfiles/global_aliases
-fi
-
+[ -f $HOME/.dotfiles/global_aliases ] && . $HOME/.dotfiles/global_aliases
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ###-tns-completion-start-###
-if [ -f /Users/johannes/.tnsrc ]; then
-    source /Users/johannes/.tnsrc
-fi
+[ -f "$HOME/.tnsrc" ] && source "$HOME/.tnsrc"
 ###-tns-completion-end-###
+
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # >>> talisman >>>
 # Below environment variables should not be modified unless you know what you are doing
-export TALISMAN_HOME=/Users/johannes/.talisman/bin
-alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
+export TALISMAN_HOME=$HOME/.talisman/bin
+alias talisman='$TALISMAN_HOME'/talisman_darwin_amd64
 export TALISMAN_INTERACTIVE=false
 # <<< talisman <<<
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/johannes/.rd/bin:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
