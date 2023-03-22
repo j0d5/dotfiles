@@ -13,15 +13,15 @@
 
 echo "Running system-update script"
 
-BREW="$(which brew)"
-if [ -x "$BREW" ]; then
+BREW="$(command -v brew)"
+if [ -x "${BREW}" ]; then
   echo "[brew] updating brew"
-  $BREW update
-  $BREW upgrade
-  $BREW upgrade --cask
-  $BREW cleanup
+  ${BREW} update
+  ${BREW} upgrade
+  ${BREW} upgrade --cask
+  ${BREW} cleanup
 else
-  >&2 echo "Command brew not found!"
+  echo >&2 "Command brew not found!"
 fi
 
 echo "[gem] updating gems"

@@ -45,6 +45,4 @@ root: ~/
 # attach: false
 
 windows:
-  - default:
-  - portal: Developer/portal
-  - ios: Developer/ios-app
+  - default: ~/

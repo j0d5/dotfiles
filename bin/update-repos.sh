@@ -11,19 +11,22 @@
 #
 # }}}
 
-if [[ -z "$1" ]]; then
-    curDir=$(pwd)
+if [[ -z $1 ]]; then
+  curDir=$(pwd)
 else
-    curDir="$1"
+  curDir="$1"
 fi
 
 echo "Checking directory: ${curDir}"
 
-readonly repos=( $(find "${curDir}" -type d -maxdepth 2) )
+readonly repos=($(find "${curDir}" -type d -maxdepth 2))
 
 for name in "${repos[@]}"; do
-    if [[ -d "${name}"/.git ]]; then
-        echo "Updating repository ${name}"
-        (cd "${name}" && git remote update -p; git merge --ff-only @\{u\})
-    fi
+  if [[ -d "${name}"/.git ]]; then
+    echo "Updating repository ${name}"
+    (
+      cd "${name}" && git remote update -p
+      git merge --ff-only @\{u\}
+    )
+  fi
 done

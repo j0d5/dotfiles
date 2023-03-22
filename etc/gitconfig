@@ -69,13 +69,13 @@
     cmd = icdiff --line-numbers --numlines=3 --no-bold $LOCAL $REMOTE
 
 [diff "sketchtool"]
-  textconv = "/Applications/Sketch.app/Contents/MacOS/sketchtool dump"
-  cachetextconv = true
-  binary = true
+    textconv = "/Applications/Sketch.app/Contents/MacOS/sketchtool dump"
+    cachetextconv = true
+    binary = true
 
 [diff "localizablestrings"]
-	textconv = "iconv -f utf-16 -t utf-8"
-	binary = false
+    textconv = "iconv -f utf-16 -t utf-8"
+    binary = false
 
 [diff "word"]
 	textconv = docx2txt
