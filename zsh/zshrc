@@ -20,11 +20,3 @@ export LANG="en_GB.UTF-8"
 plugins=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-z)
 
 source $ZSH/init_zsh.zsh
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/johannes/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-

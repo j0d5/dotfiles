@@ -98,6 +98,12 @@ eval "$(pyenv init -)"
 # Rust
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
+# 1Password plugins
+source $HOME/.config/op/plugins.sh
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
 ### Initialize SDKMAN
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

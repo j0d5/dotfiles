@@ -12,6 +12,7 @@
   "editor.cursorStyle": "line",
   "editor.rulers": [120],
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
@@ -19,15 +20,13 @@
   "editor.mouseWheelScrollSensitivity": 3,
   "editor.tabSize": 4,
   "editor.wordWrap": "on",
-  "editor.formatOnPaste": true,
   "editor.suggest.showReferences": false,
   "editor.guides.bracketPairs": true,
   "editor.wordWrapColumn": 120,
   "editor.bracketPairColorization.enabled": true,
-  "editor.suggestSelection": "first",
-  "editor.hover.delay": 1000,
   "editor.codeLensFontFamily": "JetBrains Mono",
   "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
 
   // Workbench settings
   "workbench.tree.indent": 4,
@@ -37,21 +36,7 @@
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.fontAliasing": "auto",
   "workbench.colorCustomizations": {
-    // "tab.border": "#666666",
-    // "tab.activeBorder": "#0026ff",
-    // "tab.activeBorderTop": "#0026ff",
-    // "tab.activeForeground": "#aaaaaa",
-    // "tab.activeBackground": "#cccccc7c",
-    // "tab.inactiveBackground": "#f2f2f246",
-
-    "[Default Light+]": {
-      "tab.border": "#000000",
-      "tab.activeBorder": "#000000",
-      "tab.activeBorderTop": "#000000",
-      "tab.activeForeground": "#000000",
-      "tab.activeBackground": "#ffffff",
-      "tab.inactiveBackground": "#e1e1e1"
-    }
+    "editorStickyScroll.background": "#333333"
   },
   "workbench.iconTheme": "eq-material-theme-icons",
 
@@ -70,15 +55,17 @@
     ".idea": true,
     "**/.classpath": true,
     "**/.factorypath": true,
-    "**/.git": false,
     "**/.project": true,
-    "**/.settings": true
+    "**/.settings": true,
+    "docker_dist": true,
+    ".husky": true,
+    ".angular": true,
+    "**/.trunk/*out": true
   },
 
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.lua",
 
-  "git.autofetch": true,
   "git.countBadge": "tracked",
   "git.defaultCloneDirectory": "$HOME/Developer",
   "git.autoStash": true,
@@ -94,46 +81,9 @@
   ],
   "gitlens.defaultTimeFormat": "hh:mm:ss",
   "gitlens.defaultDateShortFormat": "DD.MM.YY",
-  "gitlens.defaultDateFormat": null,
   "gitlens.defaultDateLocale": "system",
   "gitlens.fileAnnotations.command": "changes",
   "gitlens.integrations.enabled": true,
-  "gitlens.menus": {
-    "editor": {
-      "blame": false,
-      "clipboard": true,
-      "compare": true,
-      "details": false,
-      "history": false,
-      "remote": false
-    },
-    "editorGroup": false,
-    "editorTab": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "explorer": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "scmGroup": {
-      "compare": true,
-      "openClose": true,
-      "stash": true,
-      "stashInline": true
-    },
-    "scmItem": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true,
-      "stash": true
-    }
-  },
 
   "eslint.validate": ["javascript", "html", "markdown"],
 
@@ -142,8 +92,6 @@
   "vim.leader": " ",
   "vim.neovimConfigPath": "~/.config/nvim/init.lua",
   "vim.neovimPath": "/usr/local/bin/nvim",
-
-  "redhat.telemetry.enabled": false,
 
   // JavaScript
   "javascript.inlayHints.enumMemberValues.enabled": true,
@@ -256,39 +204,22 @@
     "**/.fvm": true,
     "**/.bloop": true,
     "**/.metals": true,
-    "**/.ammonite": true
+    "**/.ammonite": true,
+    "**/.trunk/*out": true
   },
 
   "yaml.schemas": {
     "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
-  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
   "go.toolsManagement.autoUpdate": true,
   "telemetry.telemetryLevel": "off",
-  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "redhat.telemetry.enabled": false,
+
+  // "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
 
   "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
 
-  "codestream.serverUrl": "https://api.codestream.com",
   "haskell.manageHLS": "PATH",
-
-  "settingsSync.ignoredSettings": ["configurationSync.store"],
-  "configurationSync.store": {
-    "url": "https://gitpod.io/code-sync",
-    "stableUrl": "https://gitpod.io/code-sync",
-    "insidersUrl": "https://gitpod.io/code-sync",
-    "canSwitch": false,
-    "authenticationProviders": {
-      "gitpod": {
-        "scopes": [
-          "function:accessCodeSyncStorage",
-          "function:getLoggedInUser",
-          "resource:default"
-        ]
-      }
-    }
-  },
-  "gitpod.remote.syncExtensions": true,
 
   "java.configuration.runtimes": [
     {
@@ -303,5 +234,9 @@
   ],
   "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
   "boot-java.rewrite.reconcile": true,
+
   "quarkus.tools.alwaysShowWelcomePage": false,
+
+  "trunk.trunkGrayOutNonBlockingIssues": false,
+  "svg.preview.mode": "svg"
 }
