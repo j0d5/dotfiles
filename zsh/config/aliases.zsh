@@ -17,7 +17,9 @@ alias lt='ls -GAlhTt'
 
 # list all as colored list with human readable sizes
 # exa:
-if [[ "$OSTYPE" = darwin* ]]; then
+if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
+  alias la="ls -lahG"
+elif [[ "$OSTYPE" = darwin* ]]; then
   alias la="exa -abghl --git --color=automatic"
 else
   alias la="ls -lah"
