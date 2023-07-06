@@ -102,7 +102,9 @@ eval "$(pyenv init -)"
 source $HOME/.config/op/plugins.sh
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+if type ng > /dev/null 2>&1; then
+  source <(ng completion script)
+fi
 
 ### Initialize SDKMAN
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
