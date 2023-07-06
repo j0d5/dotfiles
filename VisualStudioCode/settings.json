@@ -28,8 +28,6 @@
   "editor.minimap.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.linkedEditing": true,
-
-  "workbench.colorTheme": "Default Light Modern",
   "workbench.editor.wrapTabs": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.decorations.badges": true,
@@ -237,5 +235,6 @@
 
   "quarkus.tools.alwaysShowWelcomePage": false,
 
-  "svg.preview.mode": "svg"
+  "svg.preview.mode": "svg",
+  "workbench.colorTheme": "Default Light Modern"
 }
