@@ -76,4 +76,3 @@ function _G.completions()
     end
     return npairs.check_break_line_char()
 end
-

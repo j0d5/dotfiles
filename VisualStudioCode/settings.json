@@ -1,239 +1,239 @@
 {
-  "window.openFilesInNewWindow": "default",
-  "window.title": "${activeEditorShort}${separator}${rootName}",
-  "window.autoDetectColorScheme": true,
-  "window.commandCenter": true,
+    "window.openFilesInNewWindow": "default",
+    "window.title": "${activeEditorShort}${separator}${rootName}",
+    "window.autoDetectColorScheme": true,
+    "window.commandCenter": true,
 
-  // Editor settings
-  "editor.multiCursorModifier": "alt",
-  "editor.defaultFormatter": "EditorConfig.EditorConfig",
-  "editor.fontFamily": "JetBrains Mono",
-  "editor.renderWhitespace": "boundary",
-  "editor.cursorStyle": "line",
-  "editor.rulers": [120],
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-  "editor.scrollBeyondLastLine": true,
-  "editor.mouseWheelScrollSensitivity": 3,
-  "editor.tabSize": 4,
-  "editor.wordWrap": "on",
-  "editor.suggest.showReferences": false,
-  "editor.guides.bracketPairs": true,
-  "editor.wordWrapColumn": 120,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.codeLensFontFamily": "JetBrains Mono",
-  "editor.minimap.enabled": false,
-  "editor.stickyScroll.enabled": false,
-  "editor.linkedEditing": true,
-  "workbench.editor.wrapTabs": true,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.decorations.badges": true,
-  "workbench.editor.pinnedTabSizing": "compact",
-  "workbench.fontAliasing": "auto",
-  "workbench.colorCustomizations": {
-    "editorStickyScroll.background": "#333333"
-  },
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.tabSizing": "fit",
-
-  "terminal.external.osxExec": "Warp.app",
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.tabs.enabled": true,
-  "terminal.integrated.shellIntegration.enabled": true,
-  "terminal.integrated.shellIntegration.history": 10000,
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-
-  "files.hotExit": "off",
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.exclude": {
-    ".git": true,
-    ".idea": true,
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "docker_dist": true,
-    ".husky": true,
-    ".angular": true,
-    "**/.trunk/*out": true
-  },
-
-  "git.countBadge": "tracked",
-  "git.defaultCloneDirectory": "$HOME/Developer",
-  "git.autoStash": true,
-  "git.pruneOnFetch": true,
-  "git.mergeEditor": true,
-  "git.confirmSync": false,
-
-  "gitlens.autolinks": [
-    {
-      "prefix": "VWCON-",
-      "url": "https://collaboration.msi.audi.com/jira/browse/"
-    }
-  ],
-  "gitlens.defaultTimeFormat": "hh:mm:ss",
-  "gitlens.defaultDateShortFormat": "DD.MM.YY",
-  "gitlens.defaultDateLocale": "system",
-  "gitlens.fileAnnotations.command": "changes",
-  "gitlens.integrations.enabled": true,
-
-  "eslint.validate": ["javascript", "html", "markdown"],
-
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.lua",
-
-  "vim.enableNeovim": true,
-  "vim.neovimUseConfigFile": true,
-  "vim.leader": " ",
-  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
-  "vim.neovimPath": "/usr/local/bin/nvim",
-
-  // JavaScript
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.suggest.completeFunctionCalls": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  // TypeScript
-  "typescript.referencesCodeLens.showOnAllFunctions": true,
-  "typescript.suggest.completeFunctionCalls": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-
-  // TODO Tree
-  "todo-tree.general.statusBar": "current file",
-  "todo-tree.highlights.useColourScheme": true,
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]",
-    "IDEA"
-  ],
-  "todo-tree.highlights.customHighlight": {
-    "IDEA": {
-      "type": "tag",
-      "foreground": "#4c4cfc",
-      "iconColour": "#4c4cfc",
-      "background": "#00000000",
-      "gutterIcon": false
-    }
-  },
-
-  "terminal.integrated.profiles.osx": {
-    "bash": {
-      "path": "bash",
-      "args": ["-l"],
-      "icon": "terminal-bash"
-    },
-    "zsh": {
-      "path": "/usr/local/bin/zsh",
-      "args": ["-l"]
-    },
-    "fish": {
-      "path": "fish",
-      "args": ["-l"]
-    },
-    "tmux": {
-      "path": "tmux",
-      "icon": "terminal-tmux"
-    },
-    "pwsh": {
-      "path": "pwsh",
-      "icon": "terminal-powershell"
-    }
-  },
-
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
-
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[python]": {
-    "gitlens.codeLens.symbolScopes": ["!Module"],
-    "editor.wordBasedSuggestions": false
-  },
-
-  "[typescript][javascript][html][scss][jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "dart.flutterSdkPath": ".fvm/flutter_sdk",
-  "[dart]": {
+    // Editor settings
+    "editor.multiCursorModifier": "alt",
+    "editor.defaultFormatter": "EditorConfig.EditorConfig",
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorStyle": "line",
+    "editor.rulers": [120],
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
-  },
-
-  "sonarlint.connectedMode.connections.sonarqube": [
-    {
-      "connectionId": "mySonar",
-      "serverUrl": "https://sonarqube.core.build.vwn.cloud"
-    }
-  ],
-  "sonarlint.disableTelemetry": true,
-  "sonarlint.pathToNodeExecutable": "/Users/johannes/.nvm/versions/node/v16.20.1/bin/node",
-
-  // Remove .fvm files from search
-  "search.exclude": {
-    "**/.fvm": true
-  },
-  // Remove from file watching
-  "files.watcherExclude": {
-    "**/.fvm": true,
-    "**/.bloop": true,
-    "**/.metals": true,
-    "**/.ammonite": true,
-    "**/.trunk/*out": true
-  },
-
-  "yaml.schemas": {
-    "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
-  "go.toolsManagement.autoUpdate": true,
-  "telemetry.telemetryLevel": "off",
-  "redhat.telemetry.enabled": false,
-
-  // "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
-
-  "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
-
-  "haskell.manageHLS": "PATH",
-
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-19",
-      "path": "/Users/johannes/.sdkman/candidates/java/19.0.1-oracle"
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
     },
-    {
-      "name": "JavaSE-17",
-      "path": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
-      "default": true
-    }
-  ],
-  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
-  "boot-java.rewrite.reconcile": true,
+    "editor.scrollBeyondLastLine": true,
+    "editor.mouseWheelScrollSensitivity": 3,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "editor.suggest.showReferences": false,
+    "editor.guides.bracketPairs": true,
+    "editor.wordWrapColumn": 120,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeLensFontFamily": "JetBrains Mono",
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "editor.linkedEditing": true,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.pinnedTabSizing": "compact",
+    "workbench.fontAliasing": "auto",
+    "workbench.colorCustomizations": {
+        "editorStickyScroll.background": "#333333"
+    },
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.tabSizing": "fit",
 
-  "quarkus.tools.alwaysShowWelcomePage": false,
+    "terminal.external.osxExec": "Warp.app",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.shellIntegration.history": 10000,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
 
-  "svg.preview.mode": "svg"
+    "files.hotExit": "off",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        ".git": true,
+        ".idea": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "docker_dist": true,
+        ".husky": true,
+        ".angular": true,
+        "**/.trunk/*out": true
+    },
+
+    "git.countBadge": "tracked",
+    "git.defaultCloneDirectory": "$HOME/Developer",
+    "git.autoStash": true,
+    "git.pruneOnFetch": true,
+    "git.mergeEditor": true,
+    "git.confirmSync": false,
+
+    "gitlens.autolinks": [
+        {
+            "prefix": "VWCON-",
+            "url": "https://collaboration.msi.audi.com/jira/browse/"
+        }
+    ],
+    "gitlens.defaultTimeFormat": "hh:mm:ss",
+    "gitlens.defaultDateShortFormat": "DD.MM.YY",
+    "gitlens.defaultDateLocale": "system",
+    "gitlens.fileAnnotations.command": "changes",
+    "gitlens.integrations.enabled": true,
+
+    "eslint.validate": ["javascript", "html", "markdown"],
+
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.lua",
+
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": true,
+    "vim.leader": " ",
+    "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+
+    // JavaScript
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    // TypeScript
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    // TODO Tree
+    "todo-tree.general.statusBar": "current file",
+    "todo-tree.highlights.useColourScheme": true,
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "IDEA"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "IDEA": {
+            "type": "tag",
+            "foreground": "#4c4cfc",
+            "iconColour": "#4c4cfc",
+            "background": "#00000000",
+            "gutterIcon": false
+        }
+    },
+
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": ["-l"],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "/usr/local/bin/zsh",
+            "args": ["-l"]
+        },
+        "fish": {
+            "path": "fish",
+            "args": ["-l"]
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[python]": {
+        "gitlens.codeLens.symbolScopes": ["!Module"],
+        "editor.wordBasedSuggestions": false
+    },
+
+    "[typescript][javascript][html][scss][jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [80],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+
+    "sonarlint.connectedMode.connections.sonarqube": [
+        {
+            "connectionId": "mySonar",
+            "serverUrl": "https://sonarqube.core.build.vwn.cloud"
+        }
+    ],
+    "sonarlint.disableTelemetry": true,
+    "sonarlint.pathToNodeExecutable": "/Users/johannes/.nvm/versions/node/v16.20.1/bin/node",
+
+    // Remove .fvm files from search
+    "search.exclude": {
+        "**/.fvm": true
+    },
+    // Remove from file watching
+    "files.watcherExclude": {
+        "**/.fvm": true,
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true,
+        "**/.trunk/*out": true
+    },
+
+    "yaml.schemas": {
+        "file:///Users/johannes/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "telemetry.telemetryLevel": "off",
+    "redhat.telemetry.enabled": false,
+
+    // "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+
+    "monkeyC.developerKeyPath": "/Users/johannes/Downloads/developer_key",
+
+    "haskell.manageHLS": "PATH",
+
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-19",
+            "path": "/Users/johannes/.sdkman/candidates/java/19.0.1-oracle"
+        },
+        {
+            "name": "JavaSE-17",
+            "path": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
+            "default": true
+        }
+    ],
+    "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
+    "boot-java.rewrite.reconcile": true,
+
+    "quarkus.tools.alwaysShowWelcomePage": false,
+
+    "svg.preview.mode": "svg"
 }

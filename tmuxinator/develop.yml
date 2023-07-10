@@ -45,4 +45,4 @@ root: ~/
 # attach: false
 
 windows:
-  - default: ~/
+    - default: ~/

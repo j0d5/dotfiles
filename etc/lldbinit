@@ -5,4 +5,3 @@ command script import /usr/local/opt/chisel/libexec/fbchisellldb.py
 command alias poc expression -l objc -O --
 
 command regex po s/([[:xdigit:]]+)/expression -l objc -O %1/ s/(.+)/expression -O %1/
-

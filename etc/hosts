@@ -41,4 +41,3 @@ fe80::1%lo0 apps.facebook.com
 # To allow the same kube context to work on the host and the container:
 127.0.0.1 kubernetes.docker.internal
 # End of section
-

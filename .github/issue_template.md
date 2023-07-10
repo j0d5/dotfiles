@@ -2,21 +2,10 @@
 
 # Area
 
-
-
 # Steps to Reproduce
-
-
 
 # Expected Results
 
-
-
 # Actual Results
 
-
-
 # Configuration
-
-
-

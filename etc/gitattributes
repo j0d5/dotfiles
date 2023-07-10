@@ -4,4 +4,3 @@
 *.sketch diff=sketchtool
 *.docx diff=word
 *.strings utf16 diff=localizablestrings
-

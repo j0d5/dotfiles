@@ -13,4 +13,3 @@ fi
 
 # general
 alias top='top -o cpu -n 30'
-

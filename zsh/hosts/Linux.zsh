@@ -10,4 +10,3 @@
 if [[ -n $DEBUG_ZSH ]]; then
   echo "i'm on a linux system!"
 fi
-

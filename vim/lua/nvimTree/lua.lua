@@ -35,4 +35,3 @@ require'nvim-tree'.setup {
         custom = {"node_modules"}
     }
 }
-

@@ -9,7 +9,7 @@
 			"-synctex={synctex}",
 			"-jobname={pdfname}",
 			"-outdir={outdir}",
-			"{file}" 
+			"{file}"
 		],
 		"path": "$PATH:/usr/texbin:/usr/local/bin:/opt/local/bin",
 		"file_regex": "^(?:W|E|B):\\s(.*):([0-9]+)"
@@ -35,15 +35,15 @@
 			"-synctex={synctex}",
 			"-jobname={pdfname}",
 			"-outdir={outdir}",
-			"{file}" 
+			"{file}"
 		],
 		"path": "$PATH:/usr/texbin:/usr/local/bin:/opt/local/bin",
 		"file_regex": "^(?:W|E|B):\\s(.*):([0-9]+)"
 	},
-	"variants": 
+	"variants":
 	[
 		{
-			"name": "Clean up Files", 
+			"name": "Clean up Files",
 			"target": "ltx_clean"
 		}
 	]

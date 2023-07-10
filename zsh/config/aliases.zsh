@@ -53,4 +53,3 @@ alias fif='find . -type f \( -name "*.c*" -o -name "*.h" \) -print | xargs grep 
 
 # lines of code, counts the lines of code in source code files
 alias loc='find . -type f \( -name "*.c*" -o -name "*.h" -o -name "*.py" -o -name "*.sh" -o -name "*.m" -o -name "*.swift" -o -name "*.java" -o -name "*.js" -o -name "*.ts" \) -print | xargs cat | wc -l'
-

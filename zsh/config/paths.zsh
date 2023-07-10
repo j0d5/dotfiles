@@ -35,4 +35,3 @@ export TALISMAN_INTERACTIVE=false
 export PNPM_HOME="/Users/johannes/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-
