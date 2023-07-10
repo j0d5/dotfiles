@@ -1275,9 +1275,9 @@
 		</dict>
 	</array>
 	<key>OpenArrangementAtStartup</key>
-	<true/>
-	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>

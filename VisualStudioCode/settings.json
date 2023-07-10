@@ -235,5 +235,11 @@
 
     "quarkus.tools.alwaysShowWelcomePage": false,
 
-    "svg.preview.mode": "svg"
+    "svg.preview.mode": "svg",
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
