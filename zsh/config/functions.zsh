@@ -18,12 +18,6 @@ function lsofg() {
     fi
 }
 
-# changes the modifier for given file and dir
-function chmod_fd {
-    find . -type f -exec chmod "$1" {} \;
-    find . -type d -exec chmod "$2" {} \;
-}
-
 # prompts the virtual environment information
 function virtualenv_info {
     [ "$VIRTUAL_ENV" ] && echo '('"$(basename "$VIRTUAL_ENV")"') '
