@@ -9,7 +9,7 @@
 # }}}
 
 [[ -n $DEBUG_ZSH ]] && echo 'loading init_zsh'
-DEBUG_ZSH=true
+
 # Set default editor
 export EDITOR=nvim
 export PAGER=less
