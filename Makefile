@@ -38,6 +38,9 @@ folders: ## symlink all those folders
 		/bin/ln -sfFn $(DOTPATH)/SublimeText/User "$(HOME)/Library/Application Support/Sublime Text/Packages"; \
 	fi
 
+update-sub-repos:
+	git submodule update --recursive --remote
+
 osx: ## run osx all task, see below
 	$(MAKE) -C ./osx all
 
