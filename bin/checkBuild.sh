@@ -200,12 +200,12 @@ __print () {
         COLOR=$WHITE
     fi
 
-    echo "\\033[0;$COLOR" "▸ $1" "\\033[0m"
+    printf "\\033[0;%s ▸ %s" "\\033[0m" $COLOR "$1"
 }
 
 if [ -z "$1" ]; then
     __print "No file name!" "error"
-    echo "Usage: checkForDebugBuild <file>"
+    printf "Usage: checkForDebugBuild <file>"
     exit 1
 fi
 

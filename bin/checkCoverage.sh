@@ -21,7 +21,7 @@ __print() {
     COLOR=${WHITE}
   fi
 
-  echo "\\033[0;${COLOR}" "▸ $1" '\033[0m'
+  printf "\\033[0;%s ▸ %s" '\033[0m' $COLOR "$1"
 }
 
 if [ -z "$1" ]; then

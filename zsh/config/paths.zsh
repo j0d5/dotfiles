@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # {{{
 #
 # Author: Johannes Steudle
@@ -20,15 +21,16 @@ export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.local/bin
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# shellcheck source=/dev/null
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # >>> talisman >>>
 # Below environment variables should not be modified unless you know what you are doing
-export TALISMAN_HOME=/Users/johannes/.talisman/bin
-alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
+export TALISMAN_HOME="$HOME/.talisman/bin"
+alias talisman='$TALISMAN_HOME/talisman_darwin_amd64'
 export TALISMAN_INTERACTIVE=false
 # <<< talisman <<<
 # pnpm

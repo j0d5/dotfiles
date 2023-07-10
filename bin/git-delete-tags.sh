@@ -28,7 +28,7 @@ __print() {
     COLOR=${WHITE}
   fi
 
-  echo "\\033[0;${COLOR}" "▸ $1" '\033[0m'
+  printf "\\033[0;%s ▸ %s" '\033[0m' $COLOR "$1"
 }
 
 # Check if we're in valid git repository
@@ -58,21 +58,21 @@ __print "${INVALID_TAGS}"
 __print "Delete the tags? [Y/N]" "warning"
 read -r ANSWER
 case "${ANSWER}" in
-[Yy] | [Yy][Ee][Ss]) echo "Deleting tags ..." ;;
+[Yy] | [Yy][Ee][Ss]) printf "Deleting tags ..." ;;
 [Nn] | [Nn][Oo])
-  echo "Aborting."
+  printf "Aborting."
   exit 3
   ;;
 
 *)
-  echo "Aborting."
+  printf "Aborting."
   exit 3
   ;;
 esac
 
 # Delete those tags
 for TAG in ${INVALID_TAGS}; do
-  echo "Delete ${TAG}"
+  printf "Delete %s" "$TAG"
   git push origin :"${TAG}"
 done
 

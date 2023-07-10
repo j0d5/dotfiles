@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # {{{
 #
 # File: key-bindings.zsh
@@ -24,13 +25,13 @@ fi
 # zmodload zsh/terminfo
 
 # start typing + [Up-Arrow] - fuzzy find history forward
-if [[ "${terminfo[kcuu1]}" != "" ]]; then
+if [ -n "${terminfo[kcuu1]}" ]; then
   autoload -U up-line-or-beginning-search
   zle -N up-line-or-beginning-search
   bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
 fi
 # start typing + [Down-Arrow] - fuzzy find history backward
-if [[ "${terminfo[kcud1]}" != "" ]]; then
+if [ -n "${terminfo[kcud1]}" ]; then
   autoload -U down-line-or-beginning-search
   zle -N down-line-or-beginning-search
   bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
@@ -40,10 +41,10 @@ fi
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-if [[ "${terminfo[khome]}" != "" ]]; then
+if [ -n "${terminfo[khome]}" ]; then
   bindkey "${terminfo[khome]}" beginning-of-line      # [Home] - Go to beginning of line
 fi
-if [[ "${terminfo[kend]}" != "" ]]; then
+if [ -n "${terminfo[kend]}" ]; then
   bindkey "${terminfo[kend]}"  end-of-line            # [End] - Go to end of line
 fi
 
@@ -52,12 +53,12 @@ bindkey ' ' magic-space                               # [Space] - do history exp
 bindkey "\e[1;3C" forward-word                        # [Alt-LeftArrow] - move backward one word
 bindkey "\e[1;3D" backward-word                       # [Alt-RightArrow] - move backward one word
 
-if [[ "${terminfo[kcbt]}" != "" ]]; then
+if [ -n "${terminfo[kcbt]}" ]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
 fi
 
 bindkey '^?' backward-delete-char                     # [Backspace] - delete backward
-if [[ "${terminfo[kdch1]}" != "" ]]; then
+if [ -n "${terminfo[kdch1]}" ]; then
   bindkey "${terminfo[kdch1]}" delete-char            # [Delete] - delete forward
 else
   bindkey "^[[3~" delete-char

@@ -21,7 +21,7 @@ __print () {
         COLOR=$WHITE
     fi
 
-    echo "\\033[0;$COLOR" "▸ $1" "\\033[0m"
+    printf "\\033[0;%s ▸ %s" "\\033[0m" $COLOR "$1"
 }
 
 # Checks for patterns like 'fit('
@@ -37,9 +37,8 @@ __print "Checking for $CHECKED_FLAGS" "info"
 RESULT=$(ag --swift --objc "$CHECKED_FLAGS" ./SDK/)
 
 if [ -n "$RESULT" ]; then
-    echo "Found $RESULT"
+    printf "Found %s" "$RESULT"
     exit 1
 else
-    echo "Nothing found!"
+    printf "Nothing found!"
 fi
-

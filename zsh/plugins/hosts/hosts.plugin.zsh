@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # {{{
 #
 # Author: Johannes Steudle
@@ -7,9 +8,13 @@
 #
 # }}}
 
-platform=`uname`
-test -r $ZSH/hosts/$platform.zsh && source $ZSH/hosts/$platform.zsh
+platform=$(uname)
+# shellcheck source=/dev/null
+test -r "$ZSH/hosts/$platform.zsh" && . "$ZSH/hosts/$platform.zsh"
 
-test -r $ZSH/hosts/$HOST.zsh && source $ZSH/hosts/$HOST.zsh
-test -r $ZSH/hosts/$HOST.path.zsh && source $ZSH/hosts/$HOST.path.zsh
-test -r $ZSH/hosts/$HOST.aliases.zsh && source $ZSH/hosts/$HOST.aliases.zsh
+# shellcheck source=/dev/null
+test -r "$ZSH/hosts/$HOST.zsh" && . "$ZSH/hosts/$HOST.zsh"
+# shellcheck source=/dev/null
+test -r "$ZSH/hosts/$HOST.path.zsh" && . "$ZSH/hosts/$HOST.path.zsh"
+# shellcheck source=/dev/null
+test -r "$ZSH/hosts/$HOST.aliases.zsh" && . "$ZSH/hosts/$HOST.aliases.zsh"

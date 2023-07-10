@@ -1,4 +1,4 @@
-#!/bin/bash
+# shellcheck shell=bash
 ##################################################
 ##                                              ##
 ## Author: Johannes Steudle                     ##
@@ -10,18 +10,17 @@
 ##################################################
 
 # history settings
-shopt -s histappend           # append to the end of $HISTFILE
+shopt -s histappend # append to the end of $HISTFILE
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
-export HISTFILESIZE=20000     # number events saved in total
-export HISTSIZE=20000         # number events saved during a session
+export HISTFILESIZE=20000 # number events saved in total
+export HISTSIZE=20000     # number events saved during a session
 export HISTTIMEFORMAT="%A  %Y-%m-%d  [%T %z] "
 export HISTCONTROL=ignoreboth:erasedups
 export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/bin:~/.bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
-
 
 # prompt settings
 THIS_TTY=tty$(ps aux | grep $$ | grep bash | awk '{ print $7 }')
@@ -29,55 +28,55 @@ SESS_SRC=$(who | grep "$THIS_TTY" | awk '{ print $6 }')
 
 SSH_FLAG=0
 SSH_IP=$(echo "$SSH_CLIENT" | awk '{ print $1 }')
-if [ "$SSH_IP" ] ; then
-  SSH_FLAG=1
+if [ "$SSH_IP" ]; then
+    SSH_FLAG=1
 fi
 
 SSH2_IP=$(echo "$SSH2_CLIENT" | awk '{ print $1 }')
-if [ "$SSH2_IP" ] ; then
-  SSH_FLAG=1
+if [ "$SSH2_IP" ]; then
+    SSH_FLAG=1
 fi
 
-if [ $SSH_FLAG -eq 1 ] ; then
-  CONN=ssh
-elif [ -z "$SESS_SRC" ] ; then
-  CONN=local
-elif [ "$SESS_SRC" = "(:0.0)" -o "$SESS_SRC" = "" ] ; then
-  CONN=local
+if [ $SSH_FLAG -eq 1 ]; then
+    CONN=ssh
+elif [ -z "$SESS_SRC" ]; then
+    CONN=local
+elif [ "$SESS_SRC" = "(:0.0)" -o "$SESS_SRC" = "" ]; then
+    CONN=local
 else
-  CONN=tel
+    CONN=tel
 fi
 
-if [ "$(/usr/bin/whoami)" = "root" ] ; then
-  USR=root
+if [ "$(/usr/bin/whoami)" = "root" ]; then
+    USR=root
 else
-  USR=notroot
+    USR=notroot
 fi
 
 # normal bash session
-if [ $CONN = local -a $USR = notroot ] ; then
-#  PS1='<${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\][\D{%Y/%m/%d}]:[\t]\[\033[00m\]>\w\n: '
-  PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]:\[\033[31m\]\w\[\033[00m\]][\j]\n: '
+if [ $CONN = local -a $USR = notroot ]; then
+    #  PS1='<${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\][\D{%Y/%m/%d}]:[\t]\[\033[00m\]>\w\n: '
+    PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]:\[\033[31m\]\w\[\033[00m\]][\j]\n: '
 
 # normal bash session root
-elif [ $CONN = local -a $USR = root ] ; then
-  PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]:[\j]\[\033[31m\]\w\[\033[00m\]]\n: '
+elif [ $CONN = local -a $USR = root ]; then
+    PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]:[\j]\[\033[31m\]\w\[\033[00m\]]\n: '
 
 # bash session ssh
-elif [ $CONN = ssh -a $USR = notroot ] ; then
-  PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
+elif [ $CONN = ssh -a $USR = notroot ]; then
+    PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
 
 #bash session ssh root
-elif [ $CONN = ssh -a $USR = root ] ; then
-  PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
+elif [ $CONN = ssh -a $USR = root ]; then
+    PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
 
 # bash session telnet
-elif [ $CONN = tel -a $USR = notroot ] ; then
-  PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
+elif [ $CONN = tel -a $USR = notroot ]; then
+    PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
 
 # bash session telnet root
-elif [ $CONN = tel -a $USR = root ] ; then
-  PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
+elif [ $CONN = tel -a $USR = root ]; then
+    PS1='\$[${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[34m\]\h\[\033[00m\]:\[\033[0;36m\]\t\[\033[00m\]::\j:\[\033[31m\]\w\[\033[00m\]]\n: '
 fi
 
 export PS1

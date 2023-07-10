@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # {{{
 #
 # Author: Johannes Steudle
@@ -7,7 +8,8 @@
 #
 # }}}
 
-export DEFAULT_USER=$(whoami)
+DEFAULT_USER=$(whoami)
+export DEFAULT_USER
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -19,7 +21,8 @@ setopt multios
 setopt cdablevars
 
 export TERM="xterm-256color"
-export SHELL=$(which zsh)
+SHELL=$(which zsh)
+export SHELL
 
 # History search settings
 export HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS=i
@@ -32,6 +35,5 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # Autosuggestion settings
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
