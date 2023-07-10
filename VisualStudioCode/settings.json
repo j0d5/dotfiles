@@ -191,7 +191,7 @@
     }
   ],
   "sonarlint.disableTelemetry": true,
-  "sonarlint.pathToNodeExecutable": "/Users/johannes/.nvm/versions/node/v16.18.0/bin/node",
+  "sonarlint.pathToNodeExecutable": "/Users/johannes/.nvm/versions/node/v16.20.1/bin/node",
 
   // Remove .fvm files from search
   "search.exclude": {
@@ -235,6 +235,5 @@
 
   "quarkus.tools.alwaysShowWelcomePage": false,
 
-  "svg.preview.mode": "svg",
-  "workbench.colorTheme": "Default Light Modern"
+  "svg.preview.mode": "svg"
 }
