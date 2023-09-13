@@ -33,11 +33,9 @@
     "workbench.editor.decorations.badges": true,
     "workbench.editor.pinnedTabSizing": "compact",
     "workbench.fontAliasing": "auto",
-    "workbench.colorCustomizations": {
-        "editorStickyScroll.background": "#333333"
-    },
     "workbench.editor.enablePreview": false,
     "workbench.editor.tabSizing": "fit",
+    "workbench.colorTheme": "Default Light Modern",
 
     "terminal.external.osxExec": "Warp.app",
     "terminal.integrated.defaultProfile.osx": "zsh",
@@ -159,20 +157,20 @@
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
     },
 
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-
     "[python]": {
         "gitlens.codeLens.symbolScopes": ["!Module"],
         "editor.wordBasedSuggestions": false
     },
 
-    "[typescript][javascript][html][scss][jsonc]": {
+    "[typescript][javascript][html][scss][jsonc][json][yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
     "dart.flutterSdkPath": ".fvm/flutter_sdk",
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+
     "[dart]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
@@ -184,6 +182,7 @@
         "editor.wordBasedSuggestions": false
     },
 
+    // SonarLint
     "sonarlint.connectedMode.connections.sonarqube": [
         {
             "connectionId": "mySonar",
@@ -236,10 +235,5 @@
     "quarkus.tools.alwaysShowWelcomePage": false,
 
     "svg.preview.mode": "svg",
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "[yaml]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    "cSpell.language": "en,de,de-DE"
 }

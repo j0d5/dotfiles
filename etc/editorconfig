@@ -13,14 +13,14 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 # Matches multiple files with brace expansion notation
 # Set default charset
 [*.{java, aidl, c, cpp, cs}]
 charset = utf-8
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [*.{swift, m, h}]
 charset = utf-8
@@ -40,8 +40,8 @@ indent_size = 4
 
 [vimrc]
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [zshrc]
 indent_style = space
-indent_size = 2
+indent_size = 4
