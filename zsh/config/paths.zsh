@@ -19,7 +19,7 @@ export PATH=$PATH:/Library/Apple/usr/bin:/Applications/Wireshark.app/Contents/Ma
 # Own stuff
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.local/bin
-
+# Node stuff
 export NVM_DIR="$HOME/.nvm"
 # shellcheck source=/dev/null
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
@@ -33,7 +33,15 @@ export TALISMAN_HOME="$HOME/.talisman/bin"
 alias talisman='$TALISMAN_HOME/talisman_darwin_amd64'
 export TALISMAN_INTERACTIVE=false
 # <<< talisman <<<
+
 # pnpm
 export PNPM_HOME="/Users/johannes/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:${PATH}"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

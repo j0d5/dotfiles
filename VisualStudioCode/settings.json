@@ -34,15 +34,15 @@
     "workbench.editor.pinnedTabSizing": "compact",
     "workbench.fontAliasing": "auto",
     "workbench.editor.enablePreview": false,
-    "workbench.editor.tabSizing": "fit",
-    "workbench.colorTheme": "Default Light Modern",
+
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
 
     "terminal.external.osxExec": "Warp.app",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.tabs.enabled": true,
     "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.shellIntegration.history": 10000,
-    "terminal.integrated.fontFamily": "MesloLGS NF",
 
     "files.hotExit": "off",
     "files.trimTrailingWhitespace": true,
@@ -80,15 +80,6 @@
     "gitlens.integrations.enabled": true,
 
     "eslint.validate": ["javascript", "html", "markdown"],
-
-    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.vim/init.lua",
-
-    "vim.enableNeovim": true,
-    "vim.neovimUseConfigFile": true,
-    "vim.leader": " ",
-    "vim.neovimConfigPath": "~/.config/nvim/init.lua",
-    "vim.neovimPath": "/usr/local/bin/nvim",
 
     // JavaScript
     "javascript.inlayHints.enumMemberValues.enabled": true,
@@ -166,7 +157,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
-    "dart.flutterSdkPath": ".fvm/flutter_sdk",
     "[shellscript]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
@@ -235,5 +225,7 @@
     "quarkus.tools.alwaysShowWelcomePage": false,
 
     "svg.preview.mode": "svg",
-    "cSpell.language": "en,de,de-DE"
+    "cSpell.language": "en,de,de-DE",
+    "terminal.integrated.env.osx": {},
+    "diffEditor.renderSideBySide": false
 }

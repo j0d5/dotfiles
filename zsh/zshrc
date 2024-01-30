@@ -21,3 +21,7 @@ export LANG="en_GB.UTF-8"
 PLUGINS=(hosts zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-z)
 
 . $ZSH/init_zsh.zsh
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/johannes/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
