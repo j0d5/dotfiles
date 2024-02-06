@@ -17,13 +17,10 @@ alias l='ls -Glhp'
 alias lt='ls -GAlhTt'
 
 # list all as colored list with human readable sizes
-# exa:
 if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
-  alias la="ls -lahG"
-elif [[ "$OSTYPE" = darwin* ]]; then
-  alias la="exa -abghl --git --color=automatic"
+    alias la="ls -lahG"
 else
-  alias la="ls -lah"
+    alias la="ls -lah"
 fi
 
 # `cat` with beautiful colors. requires: pip install -U Pygments

@@ -72,7 +72,6 @@ brew "cmake"
 
 brew "icdiff"
 brew "z"    # Fuzzy cd
-brew "exa"  # cool ls -la
 brew "cloc" # Count Lines Of Code
 brew "duti"
 brew "bat"
