@@ -82,6 +82,57 @@ unset config_file
 # shellcheck source=/dev/null
 [ -s "$HOME/.p10k.zsh" ] && . "$HOME/.p10k.zsh"
 
+# >>> talisman >>>
+# Below environment variables should not be modified unless you know what you are doing
+export TALISMAN_HOME="$HOME/.talisman/bin"
+alias talisman='$TALISMAN_HOME/talisman_darwin_amd64'
+export TALISMAN_INTERACTIVE=false
+# <<< talisman <<<
+
+# Node Version Management
+export NVM_DIR="$HOME/.nvm"
+# shellcheck source=/dev/null
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# shellcheck source=/dev/null
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use > /dev/null
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default > /dev/null
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+# Node Version Management
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:${PATH}"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Load completion for kubectl
 if type kubectl > /dev/null 2>&1; then
 # shellcheck source=/dev/null
@@ -94,10 +145,6 @@ if type helm > /dev/null 2>&1; then
   . <(helm completion zsh)
 fi
 
-# PyEnv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
 # Rust
 # shellcheck source=/dev/null
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
@@ -105,13 +152,6 @@ eval "$(pyenv init -)"
 # 1Password plugins
 # shellcheck source=/dev/null
 . "$HOME/.config/op/plugins.sh"
-
-# Node Version Management
-export NVM_DIR="$HOME/.nvm"
-# shellcheck source=/dev/null
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# shellcheck source=/dev/null
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load Angular CLI autocompletion.
 if type ng > /dev/null 2>&1; then

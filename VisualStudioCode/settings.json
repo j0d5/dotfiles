@@ -180,7 +180,7 @@
         }
     ],
     "sonarlint.disableTelemetry": true,
-    "sonarlint.pathToNodeExecutable": "/Users/johannes/.nvm/versions/node/v16.20.1/bin/node",
+    "sonarlint.pathToNodeExecutable": "/Users/johannes/.nvm/versions/node/v20.11.1/bin/node",
 
     // Remove .fvm files from search
     "search.exclude": {
