@@ -4,7 +4,7 @@
 DOTPATH  := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 DOTFILES := $(wildcard etc/??*)
 BINFILES := $(wildcard bin/??*)
-CONFIG_DIR="$(HOME)/.config"
+CONFIG_DIR := $(HOME)/.config
 
 help:
 	@echo ".dotfiles Tasks:"
@@ -21,7 +21,7 @@ bin: ## symlink bin files to $HOME/.bin
 	/bin/ln -sfn $(DOTPATH)/bin $(HOME)/.bin
 
 folders: ## symlink all those folders
-	if [ ! -d "$(CONFIG_DIR)" ]; then \
+	@if [ ! -d "$(CONFIG_DIR)" ]; then \
 		/bin/mkdir "$(CONFIG_DIR)"; \
 	fi
 	/bin/ln -sfn $(DOTPATH)/git $(HOME)/.git
@@ -33,10 +33,19 @@ folders: ## symlink all those folders
 	/bin/ln -sfn $(DOTPATH)/vim $(HOME)/.config/nvim
 	/bin/ln -sfn $(DOTPATH)/kitty $(HOME)/.config/kitty
 	/bin/ln -sfn $(DOTPATH)/tmuxinator $(HOME)/.config/tmuxinator
-	if [ -d "$(HOME)/Library" ]; then \
-		/bin/ln -sfn $(DOTPATH)/VisualStudioCode/settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"; \
-		/bin/ln -sfFn $(DOTPATH)/SublimeText/User "$(HOME)/Library/Application Support/Sublime Text/Packages"; \
+
+	@if [ ! -d "$(HOME)/Library/Application Support/Code/User/" ]; then \
+		/bin/mkdir -p "$(HOME)/Library/Application Support/Code/User/"; \
 	fi
+
+	/bin/ln -sfn $(DOTPATH)/VisualStudioCode/settings.json "$(HOME)/Library/Application Support/Code/User/settings.json"
+	/bin/ln -sfn $(DOTPATH)/VisualStudioCode/keybindings.json "$(HOME)/Library/Application Support/Code/User/keybindings.json"
+
+	@if [ ! -d "$(HOME)/Library/Application Support/Sublime Text/Packages" ]; then \
+		/bin/mkdir -p "$(HOME)/Library/Application Support/Sublime Text/Packages"; \
+	fi
+
+	/bin/ln -sfFn $(DOTPATH)/SublimeText/User "$(HOME)/Library/Application Support/Sublime Text/Packages"
 
 update-sub-repos:
 	git submodule update --recursive --remote
