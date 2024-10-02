@@ -34,7 +34,7 @@
         "command": "-workbench.action.toggleAuxiliaryBar"
     },
     {
-        "key": "alt+cmd+b",
+        "key": "cmd+b",
         "command": "editor.action.goToReferences",
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
@@ -78,5 +78,13 @@
     {
         "key": "alt+cmd+right",
         "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+cmd+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
     }
 ]
