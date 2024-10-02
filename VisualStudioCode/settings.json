@@ -25,7 +25,6 @@
     "editor.wordWrapColumn": 120,
     "editor.bracketPairColorization.enabled": true,
     "editor.codeLensFontFamily": "JetBrains Mono",
-    "editor.minimap.enabled": false,
     "editor.stickyScroll.enabled": false,
     "editor.linkedEditing": true,
     "workbench.editor.wrapTabs": true,
@@ -228,5 +227,10 @@
     "cSpell.language": "en,de,de-DE",
     "terminal.integrated.env.osx": {},
     "diffEditor.renderSideBySide": false,
-    "editor.foldingImportsByDefault": true
+    "editor.foldingImportsByDefault": true,
+    "editor.accessibilitySupport": "off",
+    "[lua]": {
+        "editor.defaultFormatter": "yinfei.luahelper"
+    },
+    "editor.minimap.enabled": false
 }
